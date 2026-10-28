@@ -34,7 +34,7 @@ in review TSX. No assignment is hardware-tested.
 
 Preserve USB19/20 (pads25/26), UART43/44 (49/50), GPIO0/3/45/46 boot straps,
 and all memory resources. R8 SPICS1/pad28 and GPIO33–37/pads38–42 are unavailable.
-VDD_SPI/pad29 powers external flash; pads30–35 carry its quad bus. Pads53/54
+VDD_SPI/pad29 receives the common3.296 V supply through R25 and powers external flash; pads30–35 carry its quad bus. Pads53/54
 connect the external40 MHz crystal. These differ from the preserved PICO SiP. GPIO45 low selects the
 required3.3 V memory domain. EN is physical pad4, not GPIO3.
 

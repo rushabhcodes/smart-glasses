@@ -1,0 +1,34 @@
+{
+  "generatedAtUTC": "2026-10-28T18:50:12.893754+00:00",
+  "note": "Actual OpenSCAD bounding-volume meshes. Not a detailed battery model or an assembled frame.",
+  "models": [
+    {
+      "model": "jauch1900",
+      "listedEnvelopeMm": [
+        52.0,
+        34.5,
+        10.0
+      ],
+      "STLsha256": "6168fe14fce25b22a8b9ec01cfd81f3ce1231bc66249c181731433a12645dae8"
+    },
+    {
+      "model": "jauch2050",
+      "listedEnvelopeMm": [
+        84.5,
+        47.5,
+        5.2
+      ],
+      "STLsha256": "e836ae078c8408132a6bccae1b9247cc13c0fa8f72bc1f2616d0ab94732a8f88"
+    },
+    {
+      "model": "jauch350",
+      "listedEnvelopeMm": [
+        38.5,
+        18.5,
+        5.6
+      ],
+      "STLsha256": "3902cd093c87dd97c9f8f875e1d8b309c179077b180acc1ac13f55a095168070"
+    }
+  ],
+  "imageSHA256": "731d528e9c672fa27d008058dec1158073af9e95f8b0a1ef652ab3ed971e3450"
+}

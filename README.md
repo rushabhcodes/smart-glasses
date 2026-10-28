@@ -17,9 +17,14 @@ LCSC stock observations. JLC assembly availability remains unconfirmed. See
 [MCU sourcing tradeoffs](docs/core-sourcing.md).
 The old WROOM implementation is preserved at `codex/wroom-power-baseline` (`c45edaa`).
 
-Latest actual [R8 board snapshot](docs/progress/2026-10-28-r8-review.png) and
+Latest actual [clock/memory board snapshot](docs/progress/2026-10-28-clock-memory-review.png) and
 [provisional carrier CAD view](docs/progress/2026-10-28-carrier-access.png).
 Neither image establishes mechanical fit or hardware function.
+
+Candidate camera/pack evidence and the pending battery architecture decision are in
+[assembly candidates](docs/assembly-candidates.md); [power review](docs/electrical-power-review.md)
+records current and thermal constraints. [Routing scope](docs/routing-scope-and-plan.md)
+distinguishes the current stage setting from a user prohibition.
 
 ## Intended features
 
@@ -85,7 +90,7 @@ current circuit uses ICS-43434; this hardware combination remains bench-unverifi
 
 - Exact camera module/lens/connector and its power/reset sequence.
 - Measured frame envelope; actual battery, speaker and antenna assembly.
-- Exact crystal option and JLC assembly availability for R8/flash; RF/memory-rail/thermal validation.
+- JLC assembly availability and low crystal stock; clock/RF/memory-rail/thermal validation.
 - Protected cell and genuine battery-attached NTC; charge remains disabled by default.
 - Final input protection, cable current/continuity/hinge validation, routing and manufacturing review.
 

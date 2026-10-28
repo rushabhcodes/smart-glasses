@@ -154,7 +154,10 @@ for (const [i,[a,b]] of [["SPICS0","FLASH_CS"],["SPICLK","FLASH_CLK"],["SPIQ","F
 for (const [ref,net] of [["R22","FLASH_CS"],["R23","FLASH_IO2"],["R24","FLASH_IO3"]]) {
   connected(ref,1,"VDD_SPI");connected(ref,2,net);assert.equal(components.get(ref).resistance,10000)
 }
-assert.notEqual(find(nets.get("VDD_SPI")),find(nets.get("VCORE3V3")),"Memory output must not be tied to the main rail")
+connected("R25",1,"VCORE3V3");connected("R25",2,"VDD_SPI")
+assert.equal(components.get("R25").resistance,0,"R8 memory feed must use the reviewed common3.3 V supply")
+connected("TP9",1,"VDD_SPI")
+assert.notEqual(find(nets.get("VDD_SPI")),find(nets.get("GND")),"Memory supply is shorted to ground")
 for(const ref of ["C21","C22","C23"]) {connected(ref,1,"VDD_SPI");connected(ref,2,"GND")}
 for(const [n,net] of [[1,"XTAL_P"],[2,"GND"],[3,"XTAL_N"],[4,"GND"]]) connected("Y1",n,net)
 assert.equal(components.get("Y1").ftype,"simple_crystal","Crystal must remain passive, not a powered oscillator")
@@ -162,8 +165,8 @@ assert.equal(components.get("Y1").frequency,40e6,"ESP32-S3 requires a 40 MHz cry
 for(const [ref,a,b] of [["L4","XTAL_P_CHIP","XTAL_P"],["C24","XTAL_P","GND"],["C25","XTAL_N","GND"],
  ["L3","VCORE3V3","VDD_RF"],["C16","VDD_RF","GND"],["C17","VCORE3V3","GND"],["C18","VCORE3V3","GND"],
  ["C19","VCORE3V3","GND"],["C20","VCORE3V3","GND"],["C14","RF_CHIP","GND"],["L2","RF_CHIP","RF_MATCHED"],["C15","RF_MATCHED","GND"]]) {connected(ref,1,a);connected(ref,2,b)}
-for(const [ref,id] of [["U5","C2940197"],["Y1","C9010"],["L2","C86109"],["L3","C18216"],["L4","C167472"],
- ["C14","C85897"],["C15","C85897"],["C24","C281755"],["C25","C281755"]])
+for(const [ref,id] of [["R25","C21189"],["U5","C2940197"],["Y1","C1985328"],["L2","C86109"],["L3","C18216"],["L4","C167472"],
+ ["C14","C85897"],["C15","C85897"],["C24","C106199"],["C25","C106199"]])
  assert.deepEqual(components.get(ref).supplier_part_numbers.jlcpcb,[id])
 const flashPcb=all("pcb_component").find(p=>p.source_component_id===components.get("U5").source_component_id)
 const flashPads=all("pcb_smtpad").filter(p=>p.pcb_component_id===flashPcb.pcb_component_id)
@@ -175,3 +178,13 @@ for(const via of all("pcb_via")) {
  "Winbond requires no exposed vias underneath its center pad")
 }
 console.log("R8 external flash/clock/RF guards passed; power integrity, timing, crystal and RF tuning are unmeasured.")
+
+assert.equal(components.get("Y1").load_capacitance,8e-12)
+const crystalPcb=all("pcb_component").find(p=>p.source_component_id===components.get("Y1").source_component_id)
+const crystalPads=all("pcb_smtpad").filter(p=>p.pcb_component_id===crystalPcb.pcb_component_id)
+assert.equal(crystalPads.length,4)
+for(const pad of crystalPads) {assert.ok(Math.abs(pad.width-1.2)<1e-8);assert.ok(Math.abs(pad.height-.85)<1e-8)}
+const px=crystalPads.map(p=>p.x);const py=crystalPads.map(p=>p.y)
+assert.ok(Math.abs(Math.max(...px)-Math.min(...px)-1.625)<1e-8)
+assert.ok(Math.abs(Math.max(...py)-Math.min(...py)-1.2)<1e-8)
+console.log("Exact Abracon crystal option, ground-case pins and corrected manufacturer land pattern passed.")

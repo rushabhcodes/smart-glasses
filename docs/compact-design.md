@@ -25,7 +25,7 @@ original8 MB/8 MB capacity. LCSC showed8,294 R8 and80 flash at lookup, whereas
 PICO C7545129 remained at zero. These are observations, not a stock reservation
 or proof of JLC assembly inventory. Official tsci exact-footprint imports succeeded.
 See [sourcing review](core-sourcing.md) for the primary evidence, price/area tradeoffs
-and remaining exact crystal-specification/assembly checks.
+and clock measurements and assembly checks.
 
 R8 is a7 ×7 mm QFN, maximum0.9 mm high, with its own imported56 perimeter lands,
 4 mm EPAD and nine grounded thermal vias. The vias remain intentional; filled/capped
@@ -35,21 +35,23 @@ The earlier WROOM baseline retains its corrected nine EPAD segments.
 
 Unlike PICO, R8 requires external flash,40 MHz crystal, analog filtering and RF matching.
 Pins2/3 use VDD_RF through a2 nH filter;20/46/55/56 use VCORE3V3,57GND. Pins30–35
-connect the external flash through six zero-ohm tuning links. VDD_SPI/pad29 feeds
-flash with100 nF +1 µF bypass; it is not shorted to the main rail. SPICS1/pad28 and
+connect the external flash through six zero-ohm tuning links. VDD_SPI/pad29 and external flash now use a common3.296 V feed through R25=0 Ω,
+with100 nF +1 µF bypass and TP9 for measurement. SPICS1/pad28 and
 GPIO33–37/pads38–42 remain reserved for in-package PSRAM. GPIO45 is pulled low for
 R8's3.3 V memory domain. R8V is a different1.8 V variant and must not be substituted.
 USB19/20, strapGPIO3 and the pending camera GPIOs remain unconnected. UART, EN/BOOT,
 controls, audio and the frame interface preserve their previous physical pad mapping.
 
-The external crystal uses a24 nH series element and provisional24 pF loads. The chip
+The exact Abracon8 pF crystal uses a24 nH series element and provisional10 pF loads. The chip
 RF network uses0201 CLC starting values1.5 pF/2.7 nH/1.5 pF. Hirose U.FL-R-SMT(10),
 C434808, and R13 remain the provisional RF output. No tuned RF geometry, selected
 antenna/coax, completed50 Ω route, final antenna matching/ESD or RF measurements exist.
 Some support parts are on the underside; the main carrier cavity was increased to2 mm.
 This is an implemented schematic/placement alternative, not a validated radio design.
 
-Camera header/rail/reset evidence is recorded in [camera interface review](camera-interface-review.md).
+Historical OV2640 header evidence is in [camera interface review](camera-interface-review.md).
+Current exact assembly candidates and the OV5640 DOVDD conflict are in
+[assembly candidates](assembly-candidates.md).
 Routing limits are recorded in [routing feasibility](routing-feasibility.md).
 
 ## Logic regulator and load envelope
@@ -66,8 +68,8 @@ ICS-43434 supports 1.65–3.63 V, permitting the standard nominal 3.3 V MCU rail
 Reference/divider tolerance is checked in the guard script; ±100 mV droop and
 +40 mV ripple allowances are bench acceptance targets, not measurements.
 Espressif memory-rail guidance gives typical 14 Ω in the internal VDD_SPI path and requires
-accounting for flash/PSRAM current and voltage drop. Memory-rail burst margin at
-low battery is unresolved; an external 3.3 V connection to VDD_SPI is not assumed.
+accounting for flash/PSRAM current and voltage drop. The common external memory feed avoids that internal resistance; burst margin,
+3.3 V configuration and supply sequencing still require bring-up checks.
 CPU voltage must be ≤3.3 V during any future eFuse programming; no such operation
 is authorized or tested here.
 

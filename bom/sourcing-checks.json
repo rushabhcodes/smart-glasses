@@ -20,6 +20,15 @@
       "observedAtUTC": "2026-10-28T14:32:32.224256+00:00"
     },
     {
+      "productCode": "C106199",
+      "productModel": "CC0402JRNPO9BN100",
+      "brandNameEn": "YAGEO",
+      "encapStandard": "0402",
+      "stockNumber": 2863100,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T18:22:21.812028+00:00"
+    },
+    {
       "productCode": "C122538",
       "productModel": "RT0603BRD07100KL",
       "brandNameEn": "YAGEO",
@@ -81,6 +90,15 @@
       "stockNumber": 74400,
       "isForeignOnsale": true,
       "observedAtUTC": "2026-10-28T17:23:17.711557+00:00"
+    },
+    {
+      "productCode": "C1985328",
+      "productModel": "ABM10W-40.0000MHZ-8-B1U-T3",
+      "brandNameEn": "ABRACON",
+      "encapStandard": "SMD2520-4P",
+      "stockNumber": 5,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T18:16:33.943294+00:00"
     },
     {
       "productCode": "C21189",
@@ -153,15 +171,6 @@
       "stockNumber": 24396,
       "isForeignOnsale": true,
       "observedAtUTC": "2026-10-28T13:40:44.560657+00:00"
-    },
-    {
-      "productCode": "C281755",
-      "productModel": "CC0402JRNPO9BN240",
-      "brandNameEn": "YAGEO",
-      "encapStandard": "0402",
-      "stockNumber": 296400,
-      "isForeignOnsale": true,
-      "observedAtUTC": "2026-10-28T17:24:07.199063+00:00"
     },
     {
       "productCode": "C2913194",
@@ -288,15 +297,6 @@
       "stockNumber": 3400,
       "isForeignOnsale": true,
       "observedAtUTC": "2026-10-28T15:02:33.039383+00:00"
-    },
-    {
-      "productCode": "C9010",
-      "productModel": "X322540MPB4SI",
-      "brandNameEn": "YXC Crystal Oscillators",
-      "encapStandard": "SMD3225-4P",
-      "stockNumber": 54805,
-      "isForeignOnsale": true,
-      "observedAtUTC": "2026-10-28T17:23:18.199552+00:00"
     },
     {
       "productCode": "C910544",

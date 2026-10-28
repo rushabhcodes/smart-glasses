@@ -37,21 +37,35 @@ startup. The IQ option supports quad SPI; boot/read/erase compatibility on the
 actual S3 ROM/firmware is untested. Do not configure133 MHz just because the flash
 supports it. Initial80 MHz or lower operation still needs routed timing review.
 
-VDD_SPI is the chip output through its internal typical14 Ω path, not shorted to
-VCORE3V3. Local100 nF +1 µF follow Espressif guidance, plus100 nF at flash.
-The sum of internal PSRAM and external flash burst currents and the minimum
-memory rail remain bench gates. Analog RF supply uses a2 nH/900 mA Murata filter;
-CPU/RTC and VDDA receive separate local bypass footprints.
+VDD_SPI now receives the common regulated3.296 V supply through R25=0 Ω rather
+than relying on the internal typical14 Ω path for combined flash/PSRAM load. TP9
+provides a rail test pad. This uses the manufacturer external-supply option; only
+3.3 V boot/eFuse/software modes are compatible. See [electrical review](electrical-power-review.md)
+for the primary TRM basis and remaining bring-up/transient checks. Local100 nF +1 µF
+and flash100 nF remain. Analog supply uses the2 nH filter and separate bypass.
 
-**YXC X322540MPB4SI / C9010**, stock54,805, is listed as40 MHz, ±10 ppm,
-15 pF CL. Its YSX321SL manufacturer family drawing confirms3.2 ×2.5 ×0.7 mm,
-40 Ω maximum ESR at32–64 MHz, active pads1/3 and grounded case pads2/4.
-The family sheet allows specified load options but does not independently encode
-this exact15 pF order variant; obtain the exact supplier/manufacturer specification
-before release. Two24 pF loads assume3 pF board/pin stray capacitance:
-CL=24/2+3=15 pF. A24 nH series XTAL_P inductor follows Espressif's initial
-recommendation. These are starting values; startup, drive level and ≤10 ppm
-frequency offset require measurements across supply/temperature.
+**Abracon ABM10W-40.0000MHZ-8-B1U-T3 / C1985328** replaces the incompletely
+specified YXC option. Abracon datasheet rev2024-02-23 decodes40.0000 MHz,8 pF CL,
+B=−20 to+70 °C,1=±10 ppm initial tolerance,U=±10 ppm stability and T3=reel. At
+40 MHz/8 pF the current sheet specifies≤30 Ω ESR,100 µW maximum drive and±2 ppm
+first-year aging. Body2.5 ×2.0 mm, drawing maximum height0.65 mm. Initial tolerance,
+temperature stability, aging and load pulling are distinct; no±10 ppm total error
+across all conditions is claimed. Verify startup/drive/frequency after assembly.
+
+The official exact-footprint import succeeded. Its oversized lands were corrected
+to the manufacturer's1.2 ×0.85 mm pads on1.625 ×1.2 mm centers, with pads2/4 grounded.
+The imported3D body's2.5 ×2.0 mm bounds were also checked. Two10 pF loads assume
+3 pF stray:10/2+3=8 pF; load tuning remains a board measurement. Espressif's initial
+24 nH XTAL_P series element is retained. LCSC listed **five** units; DigiKey search
+listed31,088. JLC assembly inventory is still not confirmed.
+
+ECS-400-10-37B2-CKY-TR / C5357833 is a second exact-spec alternative (40 MHz,
+10 pF,±10 ppm initial/stability,2.0 ×1.6 mm; LCSC202 and DigiKey46,619 at lookup).
+Its official tsci/JLC import failed because the EasyEDA component was absent. It is
+not integrated and no footprint/import success is invented. The old YXC import is
+preserved in history; it is no longer the active crystal.
+Primary: [Abracon](https://abracon.com/datasheets/ABM10W.pdf),
+[ECS](https://ecsxtal.com/store/pdf/ECX-1637B2.pdf).
 
 The chip RF CLC uses0201 Murata1.5 pF /2.7 nH /1.5 pF, within Espressif's
 recommended starting ranges. It is **untuned**. The existing U.FL interface remains;

@@ -1,0 +1,24 @@
+{
+  "timestampUTC": "2026-10-28T18:47:19.987652+00:00",
+  "note": "Actual validated crystal/memory revision; no routing, camera assembly, pack or frame fit.",
+  "boards": {
+    "main": {
+      "width": 80,
+      "height": 18,
+      "components": 74,
+      "sha256": "7443a07eabb58fbbc250a1599eec1035f95b8e2304c565af2a3740a4675094ca"
+    },
+    "secondary": {
+      "width": 100,
+      "height": 18,
+      "components": 46,
+      "sha256": "5e3b5d6d7787ea57f82fdbfae31e4add3108be8d60faf6e45aaa9e76b64e5b0a"
+    }
+  },
+  "image": {
+    "filename": "2026-10-28-clock-memory-review.png",
+    "width": 1100,
+    "height": 690,
+    "sha256": "9f090356bb3888323d8d00b19c599944b283e7b922c34f873c36e14bfd3bc7e4"
+  }
+}

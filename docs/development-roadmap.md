@@ -11,7 +11,8 @@ Current status is detailed in [compact design](compact-design.md).
 - [x] Matching20-contact logical cable contract and generated connectivity guards.
 - [ ] Resolve exact camera module/lens/carrier and its connector/rails/reset behavior.
 - [x] Research stocked same-capacity R8 + external-flash alternative; preserve PICO milestone139a02a.
-- [ ] Close exact crystal option, JLC assembly availability and routed RF/memory qualification.
+- [x] Exact Abracon crystal option/land correction and common3.3 V memory-feed review.
+- [ ] Confirm assembly inventory; measure clock/RF/memory behavior.
 - [ ] Select physical cell/NTC adapter, antenna/coax, speaker and final frame envelope.
 - [ ] Finish input protection and low-battery shutdown/recovery against the selected pack.
 - [ ] Close footprint/paste/via-in-pad, power/thermal/RF/memory-rail and mechanical reviews.

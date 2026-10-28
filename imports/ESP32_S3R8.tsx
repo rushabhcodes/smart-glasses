@@ -65,7 +65,7 @@ const pinAttributes = {
   pin2: {requiresPower: true}, pin3: {requiresPower: true},
   pin20: {requiresPower: true}, pin46: {requiresPower: true},
   pin55: {requiresPower: true}, pin56: {requiresPower: true},
-  pin57: {requiresGround: true}, pin29: {isOutput: true},
+  pin57: {requiresGround: true}, pin29: {requiresPower: true},
 } as const
 
 export const ESP32_S3R8 = (props: ChipProps<typeof pinLabels>) => {

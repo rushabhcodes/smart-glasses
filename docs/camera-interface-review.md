@@ -1,3 +1,6 @@
+> Current procurement and electrical conflicts: [assembly candidates](assembly-candidates.md).
+> The Waveshare8532 reference below is discontinued; it is not an available final choice.
+
 # Camera interface review
 
 The current board reserves GPIOs for an8-bit DVP OV2640 camera. No exact wearable

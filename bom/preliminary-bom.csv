@@ -1,5 +1,6 @@
 PCB location,References,Manufacturer part number,Quantity,LCSC/JLCPCB ID,Verification status
 Left,C18,CC0603KRX7R9BB103,1,C100042,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 914500 at 2026-10-28T14:32:32.224256+00:00
+Left,C24 C25,CC0402JRNPO9BN100,2,C106199,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 2863100 at 2026-10-28T18:22:21.812028+00:00
 Left,U2,TPS63070RNMR,1,C109322,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; current stock quantity not checked
 Left,R10 R11 R14 R15,RT0603BRD07100KL,4,C122538,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 1092600 at 2026-10-28T13:47:30.326877+00:00
 Left,U4,TLV3201AIDCKR,1,C130037,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 1 at 2026-10-28T15:44:03.150947+00:00
@@ -7,11 +8,11 @@ Left,C2 C21 C23 C19 C20 C4 C5 C11 C12 C13,CC0603KRX7R9BB104,10,C14663,Official t
 Left,C3 C22 C16 C17,CL10A105KB8NNNC,4,C15849,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; current stock quantity not checked
 Left,L4,LQW15AN24NG00D,1,C167472,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 6100 at 2026-10-28T17:24:03.531100+00:00
 Left,L3,LQG15HS2N0S02D,1,C18216,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 74400 at 2026-10-28T17:23:17.711557+00:00
-Left,R13 R16 R17 R18 R19 R20 R21,0603WAF0000T5E,7,C21189,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 12138000 at 2026-10-28T15:02:05.267677+00:00
+Left,Y1,ABM10W-40.0000MHZ-8-B1U-T3,1,C1985328,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 5 at 2026-10-28T18:16:33.943294+00:00
+Left,R13 R25 R16 R17 R18 R19 R20 R21,0603WAF0000T5E,8,C21189,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 12138000 at 2026-10-28T15:02:05.267677+00:00
 Left,R8 R7 R6,0603WAF1001T5E,3,C21190,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; current stock quantity not checked
 Left,R12,0603WAF1003T5E,1,C25803,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; current stock quantity not checked
 Left,R1 R2 R3 R4 R22 R23 R24 R5,0603WAF1002T5E,8,C25804,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; current stock quantity not checked
-Left,C24 C25,CC0402JRNPO9BN240,2,C281755,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 296400 at 2026-10-28T17:24:07.199063+00:00
 Left,U1,ESP32-S3R8,1,C2913194,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 8294 at 2026-10-28T17:12:46.286072+00:00
 Left,U5,W25Q64JVZPIQ,1,C2940197,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 80 at 2026-10-28T17:22:07.488230+00:00
 Left,LED1,150060RS75000,1,C3030991,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; current stock quantity not checked
@@ -25,7 +26,6 @@ Left,Q1,MMBT3904LT1G,1,C81464,Official tsci exact-footprint import; generated co
 Left,C14 C15,GRM0335C1H1R5CA01D,2,C85897,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 29500 at 2026-10-28T17:22:37.547918+00:00
 Left,L2,LQP03TG2N7B02D,1,C86109,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 5400 at 2026-10-28T17:23:14.151591+00:00
 Left,R9,RT0603BRD07312KL,1,C861315,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 3400 at 2026-10-28T15:02:33.039383+00:00
-Left,Y1,X322540MPB4SI,1,C9010,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 54805 at 2026-10-28T17:23:18.199552+00:00
 Right,C33,CC0603KRX7R9BB102,1,C100040,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 1865750 at 2026-10-28T14:32:31.556264+00:00
 Right,C26,CC0603KRX7R9BB103,1,C100042,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 914500 at 2026-10-28T14:32:32.224256+00:00
 Right,U2,TPS22965DSGR,1,C122837,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 14265 at 2026-10-28T13:40:49.504602+00:00
@@ -51,8 +51,8 @@ Right,U5,AT42QT1010-TSHR,1,C74512,Official tsci exact-footprint import; generate
 Right,U6,SN74LVC1G125DCKR,1,C7833,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 35 at 2026-10-28T15:51:09.306262+00:00
 Right,Q2,MMBT3904LT1G,1,C81464,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 1581100 at 2026-10-28T13:50:15.764938+00:00
 Right,U4,MAX98357AETE+T,1,C910544,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 31112 at 2026-10-28T13:40:45.244649+00:00
-Left/front,Camera,TBD exact OV2640 module/lens/carrier,1,,"NOT IMPLEMENTED; exact connector, rails and PWDN/reset behavior required"
-External,Cell,Adafruit 2011 / PKCELL LP803860 (bench candidate),1,,Protected 2000mAh 1S; not a temple-fit selection; 2A discharge and charge0-45C per vendor; needs custom 3-wire adapter
+Left/front,Camera,TBD exact camera assembly; OV2640/OV5640 decision open,1,,NOT IMPLEMENTED; candidate sensor/rail/logic conflict and final connector/fit must be resolved
+External,Cell,TBD exact protected1S pack; see docs/assembly-candidates.md,1,,NOT SELECTED; external-pack versus lower-power in-arm architecture pending; pack/NTC/polarity/current/UVLO/protection review required
 Battery-attached,Pack sensor,Vishay NTCLE100E3103JB0 (external candidate),1,,10k 5% B3977; C141588 catalog checked; not fitted or thermally validated
 External,Frame cable,Wurth 687620100002 (static bench candidate),1,,20contacts 0.5mm type1 100mm; 0.5A/conductor; mating/contact-side continuity and dynamic hinge rating unverified
 Right/external,Speaker,TBD exact >=8ohm speaker and acoustic enclosure,1,,No close-ear output or thermal limit established

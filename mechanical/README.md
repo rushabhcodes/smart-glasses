@@ -27,3 +27,21 @@ insulation, material/fire/thermal behavior, connector access, microphone/LED ope
 RF clearance, battery swelling and the camera/hinge interfaces are not resolved.
 Frame internal length/width/height and exact external assemblies are required to
 replace these provisional volumes with a product enclosure.
+
+`battery-envelopes.scad` exports manufacturer-listed pack bounding volumes for the
+candidate study. These are not detailed pack shapes or an installed assembly.
+See `docs/assembly-candidates.md` for electrical exclusions and procurement limits.
+The study's green PCB box is a separate dimensional reference only; wires, NTC,
+swelling/tolerances and frame geometry are absent.
+
+To reproduce the bounding-volume image with OpenSCAD, Python, NumPy and Matplotlib:
+
+```sh
+mkdir -p dist/mechanical
+for pack in jauch1900 jauch2050 jauch350; do
+  openscad -D "pack=\"$pack\"" -o "dist/mechanical/$pack-envelope.stl" mechanical/battery-envelopes.scad
+done
+python mechanical/render-battery-study.py
+```
+
+These optional plotting packages are separate from the locked tsCircuit dependencies.

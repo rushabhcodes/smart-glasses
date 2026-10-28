@@ -1,0 +1,76 @@
+{
+  "observedDateUTC": "2026-10-28",
+  "note": "Read-only public manufacturer/shop evidence; no reservation, vendor message, quote or purchase. Null quantity means inventory not exposed. Camera assembly dimensions are product-page figures, not the smaller sensor/flex body.",
+  "parts": [
+    {
+      "mpn": "Adafruit OV5640 120deg low distortion",
+      "sku": "5839",
+      "vendorListedAssemblyEnvelopeLWTmm": [
+        35.7,
+        23,
+        17.5
+      ],
+      "observedStockQuantity": 38,
+      "source": "https://www.adafruit.com/product/5839",
+      "primaryPDFsha256": "96ab64330fa0089acbd391449274b03e55f64fb050ae6722a16de8e9cc7526e2",
+      "status": "Candidate only; vendor schematic3.3V DOVDD conflicts with module2.8V/sensor3.0V limits",
+      "selected": false
+    },
+    {
+      "mpn": "Adafruit OV5640 72deg AF",
+      "sku": "5840",
+      "vendorListedAssemblyEnvelopeLWTmm": [
+        35.7,
+        23,
+        17.5
+      ],
+      "observedStockQuantity": 18,
+      "source": "https://www.adafruit.com/product/5840",
+      "primaryPDFsha256": "455e44c0edb269b69eb7bff1467741daed53d766e5fad32fd3d9f78c95b4eca0",
+      "status": "Candidate only; same rail conflict; product72deg versus linked drawing68deg lens revision unresolved",
+      "selected": false
+    },
+    {
+      "mpn": "Jauch LP103450JH",
+      "sku": "246520",
+      "vendorListedAssemblyEnvelopeLWTmm": [
+        52,
+        34.5,
+        10
+      ],
+      "observedStockQuantity": null,
+      "source": "https://www.jauch.com/en-INT/products/battery_technology/getPrm/batteries/Lithium%20Polymer%20Batteries/",
+      "primaryPDFsha256": "50a0d8734ed072c495fab092145f704391775285abaaf2728b15adfb708bc6ab",
+      "status": "Conditional external pack candidate; inventory not exposed; no attached NTC assumed",
+      "selected": false
+    },
+    {
+      "mpn": "Jauch LP504783JU",
+      "sku": "246521",
+      "vendorListedAssemblyEnvelopeLWTmm": [
+        84.5,
+        47.5,
+        5.2
+      ],
+      "observedStockQuantity": null,
+      "source": "https://www.jauch.com/en-INT/products/battery_technology/getPrm/batteries/Lithium%20Polymer%20Batteries/",
+      "primaryPDFsha256": "71247bd90704753d5fa19b1bb49cf5ead973bf39c9172828a808bf478c84cfdd",
+      "status": "Conditional; cold420mA charge limit below present446mA upper corner",
+      "selected": false
+    },
+    {
+      "mpn": "Jauch LP561836JU",
+      "sku": "246501",
+      "vendorListedAssemblyEnvelopeLWTmm": [
+        38.5,
+        18.5,
+        5.6
+      ],
+      "observedStockQuantity": null,
+      "source": "https://www.jauch.com/en-INT/products/battery_technology/getPrm/batteries/Lithium%20Polymer%20Batteries/",
+      "primaryPDFsha256": "2654f6ad43e2e5ab7a1e78424c444ad40891791b77e92a15455b18435d8e8e37",
+      "status": "Rejected for current370mA discharge/74mA cold-charge budget",
+      "selected": false
+    }
+  ]
+}
