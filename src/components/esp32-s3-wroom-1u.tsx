@@ -19,7 +19,7 @@ export const esp32S3Wroom1uPins = {
 // Remove a noConnect entry only when adding that reviewed subsystem.
 // Pads 28/29/30 must STAY unconnected externally on the N8R8 PSRAM variant.
 const unconnectedPads = [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17, 18, 19, 20,
-  21, 22, 23, 24, 25, 28, 29, 30, 31, 32, 33, 34, 35, 38, 39] as const
+  21, 22, 23, 24, 28, 29, 30, 31, 32, 33, 34, 35, 38] as const
 
 export function Esp32S3Wroom1uCoreModule() {
   return (
@@ -32,9 +32,10 @@ export function Esp32S3Wroom1uCoreModule() {
       schX={0} schY={0}
       noConnect={unconnectedPads.map((n) => `pin${n}` as const)}
       connections={{
-        pin1: "net.GND", pin2: "net.V3V3_CORE", pin3: "net.MCU_EN",
+        pin1: "net.GND", pin2: "net.VCORE3V2", pin3: "net.MCU_EN",
         pin16: "net.STRAP_GPIO46", pin26: "net.STRAP_GPIO45", pin27: "net.BOOT_N",
         pin36: "net.UART0_RX", pin37: "net.UART0_TX", pin40: "net.GND", pin41: "net.GND",
+        pin25: "net.REC_LED", pin39: "net.USER_BUTTON",
       }}
     />
   )

@@ -57,10 +57,11 @@ muted. Ramp/limit software volume and test pop/noise behavior during wake and sh
 
 ### Microphone electrical additions
 
-- Nominal 3.3 V-domain operation is the interface baseline; the INMP441 specifies 1.8–3.3 V
-  supply. Resolve regulator positive tolerance, ripple and sequencing against that range
-  before approving the fixed-3.3 V TPS63031/microphone combination. Absolute maximum
-  voltage is not a normal operating target; adjust the rail/regulator arrangement if needed.
+- Nominal 3.3 V-domain operation is the interface baseline. The manufacturer-hosted
+  DS-INMP441-00 Rev. 1.1, Table 1, lists **1.62–3.63 V**, but its Table 6 VDD description
+  says **1.8–3.3 V**. This may describe limits versus nominal supply rails. Until the
+  wording is clarified, use the conservative range, including regulator tolerance, ripple,
+  sequencing and transients. TPS63031 output-current headroom remains a separate issue.
 - Strap L/R to GND and CHIPEN to its VDD for the first bench configuration. This saves a
   GPIO, but idle current must be measured; firmware muting alone is not power isolation.
 - Include the manufacturer's 100 kΩ SD pulldown and local 100 nF bypass capacitor.

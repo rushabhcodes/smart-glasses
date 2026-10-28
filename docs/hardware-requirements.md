@@ -24,7 +24,7 @@ No finalized manufacturer/LCSC purchasing list is provided.
 | --- | --- | --- |
 | ESP32-S3-WROOM-1U-N8R8 | 3.0–3.6 V module; 8 MB flash + 8 MB octal PSRAM; nominal 18.0 × 19.2 × 3.2 mm; external antenna connector | Exact 40-pad + ground-pad land pattern, module revision, antenna stack height, stock and thermal/mechanical fit remain open. GPIO35/36/37 unavailable with this PSRAM variant. |
 | OV2640 module | Parallel DVP camera support exists in Espressif's driver; the sensor name is not an orderable module definition | Choose exact supplier/lens/flex; verify all rails, pin order, connector pitch/contact side, module dimensions and current supply. Older sensor supply is a sourcing risk. No generic OV2640 footprint. |
-| INMP441 | 24-bit Philips I2S; 64 clocks/frame required; 1.8–3.3 V supply; 4.72 × 3.76 × 1 mm bottom-port body; SDK adapter reference found | Include 100 kΩ SD pulldown and 100 nF bypass. Resolve nominal 3.3 V regulator tolerance, enable/channel straps, selected suffix/lifecycle/stock and acoustic footprint. Custom-board samples remain untested. |
+| INMP441 | 24-bit Philips I2S; 64 clocks/frame required; DS-INMP441-00 Rev. 1.1 Table 1 lists 1.62–3.63 V, while Table 6 describes VDD as 1.8–3.3 V; 4.72 × 3.76 × 1 mm bottom-port body | Include 100 kΩ SD pulldown and 100 nF bypass. Use the conservative 1.8–3.3 V range for supply design until the nominal-versus-limit wording is clarified. Verify suffix, lifecycle/stock, enable/channel straps and acoustic footprint; custom-board samples remain untested. |
 | TPS63031 | Fixed 3.3 V buck-boost; 1.8–5.5 V input; 10-pin DSK 2.5 × 2.5 mm; TI ACTIVE | Datasheet specifies up to 500 mA in boost under its stated conditions. Budget MCU, camera, mic and control loads at low battery; switch-current rating is not output-current capacity. Verify inductor, capacitors, exposed pad and transient margin. |
 | BQ24074 | 1S linear charger with power path, 4.2 V battery regulation, ~4.4 V OUT; 16-pin RGT 3 × 3 mm; TI ACTIVE | Full ordering suffix, pad/thermal design, NTC, timers, current settings and stock TBD. Charger does not replace battery protection. |
 | MAX17048 | Single-cell ModelGauge, I2C; 2 × 2 mm 8-pin TDFN or 0.9 × 1.7 mm WLP; ADI production listing | Pick orderable package before pin numbers. Verify battery model, cell voltage vs OUT sensing, pull-ups and off-state I/O. It does not protect the cell. |
@@ -51,8 +51,10 @@ remain blank. Identifier verification is separate from schematic/footprint relea
   charger's 1.5 A maximum. Provide pack-temperature sensing and correct charger TS circuitry.
 - Linear charger heating depends on input/output drop and current. Measure the wearer-side
   surface while charging and operating; no skin-contact thermal claim is made here.
-- Review INMP441's 3.3 V operating-supply ceiling against converter positive tolerance and
-  ripple. The microphone/regulator combination is not finalized merely by naming a 3.3 V rail.
+- DS-INMP441-00 Rev. 1.1 Table 1 specifies 1.62–3.63 V, while its Table 6 VDD description
+  says 1.8–3.3 V. This may distinguish supply limits from nominal rails, but the wording
+  needs manufacturer clarification before depending on the wider range. Conservatively
+  keep tolerance, ripple and transients below 3.3 V in the supply design for now.
 - Review amplifier SD_MODE drive and all FPC logic when VSYS is below the regulated MCU rail,
   and when either board is unpowered. Include a voltage-safe default-off interface.
 - Select pack polarity/keying, fuse/current limiting, strain relief and service disconnect.
