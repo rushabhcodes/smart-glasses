@@ -1,4 +1,4 @@
-> Current revision: [compact PICO design and validation gates](compact-design.md).
+> Current revision: [current compact design and validation gates](compact-design.md).
 > The original WROOM/INMP441/scaffold discussion below is historical planning;
 > current TSX/BOM and the compact-design status take precedence.
 

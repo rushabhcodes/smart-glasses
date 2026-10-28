@@ -591,6 +591,14 @@
         "y": 11
       },
       "relative_to": "group_center"
+    },
+    {
+      "selector": "R26",
+      "center": {
+        "x": -7,
+        "y": 5
+      },
+      "relative_to": "group_center"
     }
   ]
 }

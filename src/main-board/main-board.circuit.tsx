@@ -19,6 +19,9 @@ export default function MainBoard() {
     <schematicsheet name="MainCore" displayName="S3R8 core - nominal 3.3 V" sheetIndex={0}>
       <SchematicParts section="Core" title="Compact R8 core">
         <Esp32S3R8Core />
+        {/* GPIO3 has no internal bias. High chooses USB JTAG when strap selection is enabled. */}
+        <A_0603WAF1002T5E name="R26" layer="bottom" pcbX={-23.5} pcbY={-2} schRotation={270}
+          connections={{ pin1: "net.VCORE3V3", pin2: "net.STRAP_GPIO3" }} />
         <CL21A226MAQNNNE name="C1" maxVoltageRating="25V" schRotation={-90}
           pcbX={-21} pcbY={1} connections={{ pin1: "net.VCORE3V3", pin2: "net.GND" }} />
         <CC0603KRX7R9BB104 name="C2" pcbRotation={180} maxVoltageRating="50V" schRotation={-90}

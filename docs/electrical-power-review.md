@@ -43,6 +43,9 @@ Primary documents: [S3 datasheet](https://www.espressif.com/sites/default/files/
 [TRM](https://www.espressif.com/sites/default/files/documentation/esp32-s3_technical_reference_manual_en.pdf),
 [hardware guide](https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32s3/esp-hardware-design-guidelines-en-master-esp32s3.pdf).
 
+The [boot/supply review](boot-memory-review.md) records all supply pads, effective
+eFuse/RTC states, sleep implications and the GPIO3 external-bias correction.
+
 ## Current and cable scenarios
 
 Assume3.0 V at the cell,85% buck-boost efficiency,85% amplifier efficiency,8 Ω

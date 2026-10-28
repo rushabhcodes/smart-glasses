@@ -5,9 +5,9 @@ command derives component layers, pads, net membership and geometric spans from 
 built Circuit JSON files. Its output is `dist/routing-feasibility.json`. It does not
 run an autorouter, create copper, or prove that a board is routable.
 
-The R8 placement checkpoint has74 source components on the80 ×18 mm main board
-(51 top,23 bottom),250 SMT lands and nine intentional ground thermal vias. The
-100 ×18 mm secondary has46 components on top and157 SMT lands. There are49 and33
+The R8 placement checkpoint has75 source components on the80 ×18 mm main board
+(51 top,24 bottom),252 SMT lands and nine intentional ground thermal vias. The
+100 ×18 mm secondary has46 components on top and157 SMT lands. There are50 and33
 named nets connecting multiple components, respectively, and **zero PCB traces**.
 DNP test pads are included. Net extent is a bounding-box span, not routed length.
 

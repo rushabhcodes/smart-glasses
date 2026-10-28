@@ -72,5 +72,69 @@
       "status": "Rejected for current370mA discharge/74mA cold-charge budget",
       "selected": false
     }
+  ],
+  "cameraReview": "docs/camera-voltage-review.md",
+  "inspectedAdafruitCarrier": {
+    "commit": "6eba49749bf953b8e4c8abfd61bd996d184dc0c7",
+    "schematicGitBlob": "88c69d578110c53e3754fb732da4a065e11f749d",
+    "boardGitBlob": "998013af5b61ea79f75dc1c339836a0f439f3d63",
+    "deliveredRevisionVerified": false,
+    "DOVDD": "Direct3.3V connection; specification conflict unresolved"
+  },
+  "cameraInterfaceCandidates": [
+    {
+      "mpn": "SN74AXC4T774PWR",
+      "manufacturer": "Texas Instruments",
+      "lcscCode": "C1849453",
+      "observedStockQuantity": 2400,
+      "observedDateUTC": "2026-10-28",
+      "officialExactImportSucceeded": true,
+      "pinMapChecked": true,
+      "landPatternQualified": false,
+      "integrated": false
+    },
+    {
+      "mpn": "TCA9517DGKR",
+      "manufacturer": "Texas Instruments",
+      "lcscCode": "C544515",
+      "observedStockQuantity": 99,
+      "observedDateUTC": "2026-10-28",
+      "officialExactImportSucceeded": true,
+      "pinMapChecked": true,
+      "landPatternQualified": false,
+      "integrated": false
+    }
+  ],
+  "cameraSPIAlternatives": [
+    {
+      "name": "Arducam Shield Mini2MP Plus",
+      "sensor": "OV2640",
+      "orderSKU": null,
+      "boardSizeMm": [
+        34,
+        24
+      ],
+      "supplyV": [
+        3.3,
+        5
+      ],
+      "source": "https://docs.arducam.com/Arduino-SPI-camera/Legacy-SPI-camera/Hardware/Arducam-Shield-Mini-2MP-Plus/",
+      "stockQuantity": null,
+      "selected": false,
+      "note": "Manufacturer documents5V/3.3V tolerant I/O; exact delivered revision/output guarantees and firmware transport remain open; published3.3V supply minimum is not covered by existing3.15V rail-budget floor."
+    },
+    {
+      "name": "Arducam Mega5MP autofocus",
+      "orderSKU": "B0401",
+      "boardSizeMm": null,
+      "supplyV": [
+        3.3,
+        5
+      ],
+      "source": "https://docs.arducam.com/Arduino-SPI-camera/MEGA-SPI/MEGA-SPI-Camera/",
+      "stockQuantity": null,
+      "selected": false,
+      "note": "B0401 is the manufacturer SKU; B0410 was an unverified prior candidate. Host-I/O guarantees, mechanics and transport remain open. Supply tolerance not specified by the inspected page; existing rail compatibility unqualified."
+    }
   ]
 }

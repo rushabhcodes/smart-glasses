@@ -60,6 +60,10 @@ layout was copied. Any future adaptation of its design files must retain attribu
 and comply with that license. Arducam's storefront returned a Cloudflare403; it was
 not retried or bypassed. No current Arducam assembly was qualified from that response.
 
+The [camera voltage review](camera-voltage-review.md) pins the carrier source to
+commit6eba497, confirms the conflict, and records conditional1.8 V level translation
+and manufacturer-documented SPI alternatives. No camera is selected by this review.
+
 ## Batteries
 
 The modeled worst-case scenario is about1.65 A at3.0 V cell with0.20 Ω total path,

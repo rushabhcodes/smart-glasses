@@ -82,7 +82,7 @@ assert.notEqual(find(nets.get("VCORE3V3")), find(nets.get("REC_LED_ANODE")), "Re
 assert.notEqual(find(nets.get("REC_LED")), find(nets.get("REC_LED_BASE")), "Recording LED base current limiter is bypassed")
 for (const [ref, net] of [["TP1", "VCORE3V3"], ["TP2", "GND"], ["TP3", "UART0_TX"],
   ["TP4", "UART0_RX"], ["TP5", "MCU_EN"], ["TP6", "BOOT_N"]]) connected(ref, 1, net)
-for (const n of [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 24, 25, 26, 28, 38, 39, 40, 41, 42]) {
+for (const n of [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 24, 25, 26, 28, 38, 39, 40, 41, 42]) {
   const port = pin("U1", n)[0]
   assert.equal(port.do_not_connect, true, `Reserved camera/USB/PSRAM pad ${n} must remain unconnected in this stage`)
   assert.ok(![...nets.values()].some((net) => find(net) === find(port.source_port_id)), `Reserved pad ${n} has a net`)
@@ -188,3 +188,13 @@ const px=crystalPads.map(p=>p.x);const py=crystalPads.map(p=>p.y)
 assert.ok(Math.abs(Math.max(...px)-Math.min(...px)-1.625)<1e-8)
 assert.ok(Math.abs(Math.max(...py)-Math.min(...py)-1.2)<1e-8)
 console.log("Exact Abracon crystal option, ground-case pins and corrected manufacturer land pattern passed.")
+
+connected("U1",8,"STRAP_GPIO3");connected("R26",1,"VCORE3V3");connected("R26",2,"STRAP_GPIO3")
+assert.equal(components.get("R26").resistance,10000)
+assert.deepEqual(components.get("R26").supplier_part_numbers.jlcpcb,["C25804"])
+assert.notEqual(find(nets.get("STRAP_GPIO3")),find(nets.get("GND")),"GPIO3 must select USB JTAG when strapping is enabled")
+const gpio3Ports=ports.filter(p=>find(p.source_port_id)===find(nets.get("STRAP_GPIO3")))
+assert.deepEqual(gpio3Ports.map(p=>[p.source_component_id,p.pin_number]).sort(),
+ [[components.get("U1").source_component_id,8],[components.get("R26").source_component_id,2]].sort(),
+ "GPIO3 must not be used by another peripheral")
+console.log("GPIO3 has a deterministic external pull-up and remains reserved from peripherals.")

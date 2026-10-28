@@ -39,7 +39,8 @@ connect the external flash through six zero-ohm tuning links. VDD_SPI/pad29 and 
 with100 nF +1 µF bypass and TP9 for measurement. SPICS1/pad28 and
 GPIO33–37/pads38–42 remain reserved for in-package PSRAM. GPIO45 is pulled low for
 R8's3.3 V memory domain. R8V is a different1.8 V variant and must not be substituted.
-USB19/20, strapGPIO3 and the pending camera GPIOs remain unconnected. UART, EN/BOOT,
+GPIO3/pad8 now has an external10 kΩ pull-up through R26; it remains reserved from
+peripherals. USB19/20 and the pending camera GPIOs remain unconnected. UART, EN/BOOT,
 controls, audio and the frame interface preserve their previous physical pad mapping.
 
 The exact Abracon8 pF crystal uses a24 nH series element and provisional10 pF loads. The chip
@@ -51,7 +52,9 @@ This is an implemented schematic/placement alternative, not a validated radio de
 
 Historical OV2640 header evidence is in [camera interface review](camera-interface-review.md).
 Current exact assembly candidates and the OV5640 DOVDD conflict are in
-[assembly candidates](assembly-candidates.md).
+[assembly candidates](assembly-candidates.md); the pinned carrier revision and conditional
+1.8 V interface are reviewed in [camera voltage review](camera-voltage-review.md).
+The complete memory/strap state review is in [boot and supply review](boot-memory-review.md).
 Routing limits are recorded in [routing feasibility](routing-feasibility.md).
 
 ## Logic regulator and load envelope
@@ -133,10 +136,12 @@ CE has a pull-up: **charging defaults disabled**. Only a deliberate service link
 between TP31 and TP32 enables it after cell, NTC and thermal validation.
 The charger still supplies its power-path output when charging is inhibited.
 
-The benchmark cell is external Adafruit2011/PKCELL LP803860 2000mAh with PCM:
+The historical benchmark cell was external Adafruit2011/PKCELL LP803860 2000mAh with PCM:
 4.2 V termination, standard400 mA charge, quick-charge≤2 A, continuous discharge≤2 A,
 charge0–45°C and standard discharge end3.0 V per the vendor document. It is too large
-to treat as an established temple battery. Its stock harness has two wires, no NTC.
+to treat as an established temple battery. Its historical stock harness has two wires, no NTC. It is not the selected current pack;
+current vendor availability/revision and the open architecture choice are in
+[assembly candidates](assembly-candidates.md).
 J2 requires a documented custom adapter: pin1 VBAT, pin2 GND, pin3 PACK_NTC.
 No adapter, modification or sensor attachment has been physically performed.
 

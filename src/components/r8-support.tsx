@@ -63,7 +63,7 @@ export function R8Support() {
           connections={{ pin1: "net.RF_CHIP", pin2: "net.RF_MATCHED" }} />
         <GRM0335C1H1R5CA01D name="C15" pcbRotation={90} pcbX={-22.5} pcbY={3.3} schRotation={-90}
           connections={{ pin1: "net.RF_MATCHED", pin2: "net.GND" }} />
-        <LQG15HS2N0S02D name="L3" layer="bottom" pcbX={-22} pcbY={1}
+        <LQG15HS2N0S02D name="L3" pcbRotation={180} layer="bottom" pcbX={-22} pcbY={1}
           connections={{ pin1: "net.VCORE3V3", pin2: "net.VDD_RF" }} />
         <CL10A105KB8NNNC name="C16" pcbX={-21.5} pcbY={7} schRotation={-90}
           connections={{ pin1: "net.VDD_RF", pin2: "net.GND" }} />

@@ -22,5 +22,6 @@ CTRL_SDA,47,37,Bidirectional,FPC; proposed I2C1 gauge/control,WIRED in review TS
 CTRL_SCL,2,7,Out,FPC; proposed I2C1 gauge/control,WIRED in review TSX; no hardware validation
 TOUCH_OUT,21,27,In,FPC; right touch controller output,WIRED in review TSX; no hardware validation
 AMP_ENABLE,42,48,Out,FPC; voltage-safe default-off SD_MODE network,WIRED in review TSX; no hardware validation
-USER_BUTTON,1,6,In,Left; capture/talk; external bias and debounce TBD,WIRED in review TSX; no hardware validation
+USER_BUTTON,1,6,In,Left; capture/talk; 10k pull-up and 100nF debounce,WIRED in review TSX; no hardware validation
 REC_LED,48,36,Out,Left/front; recording indication; drive network,WIRED in review TSX; no hardware validation
+STRAP_GPIO3,3,8,In,Reserved JTAG boot strap; R26 10k pull-up,WIRED; USB selection conditional on eFuses; no hardware validation

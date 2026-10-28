@@ -8,7 +8,8 @@ the official **Muse Gadgets SDK**. Inference stays off the glasses.
 WROOM module. The left board implements the R8 core, nominal 3.3 V buck-boost,
 ICS-43434 microphone, capture/LED controls, RF connector and frame connector. The
 right implements charger/power switch, gauge, amplifier, touch and mating connector.
-The camera module/interface is still unresolved. See [current design and gates](docs/compact-design.md).
+The camera module/interface is still unresolved. See [current design and gates](docs/compact-design.md),
+[boot/memory review](docs/boot-memory-review.md) and [camera voltage review](docs/camera-voltage-review.md).
 
 No physical hardware has been assembled, flashed or tested. Detailed routing remains
 disabled. Provisional 80 × 18 mm / 100 × 18 mm four-layer outlines do not establish frame

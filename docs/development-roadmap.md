@@ -9,6 +9,10 @@ Current status is detailed in [compact design](compact-design.md).
 - [x] Officially imported ICS-43434 replacement, local bypass/pulldown/acoustic-hole correction.
 - [x] Right charger, hardware switch, gauge, amplifier and touch review circuits.
 - [x] Matching20-contact logical cable contract and generated connectivity guards.
+- [x] Review R8 supply/boot modes and add an external GPIO3 bias; generated guards pass.
+- [x] Pin the OV5640 carrier source revision and investigate a conditional1.8 V interface.
+- [ ] Select camera architecture/revision, qualify rail sequencing and close routed timing.
+- [ ] Receive battery architecture choice; neither direction is selected by silence.
 - [ ] Resolve exact camera module/lens/carrier and its connector/rails/reset behavior.
 - [x] Research stocked same-capacity R8 + external-flash alternative; preserve PICO milestone139a02a.
 - [x] Exact Abracon crystal option/land correction and common3.3 V memory-feed review.

@@ -1,0 +1,26 @@
+{
+  "timestampUTC": "2026-10-28T19:46:50Z",
+  "note": "Actual75/46 component boot-bias review; conditional camera interface remains documentation only; no routes, camera, pack or verified frame fit.",
+  "boards": {
+    "main": {
+      "width": 80,
+      "height": 18,
+      "components": 75,
+      "sha256": "c4898251e535910a357e7ff62fcc1830a5b3ce74f311762cee4f90d9558ac027",
+      "pcbTraces": 0
+    },
+    "secondary": {
+      "width": 100,
+      "height": 18,
+      "components": 46,
+      "sha256": "edefa89e3d57013d5f3499a59992280a18ff7b86269330e1e05398f41a75f95c",
+      "pcbTraces": 0
+    }
+  },
+  "image": {
+    "filename": "2026-10-28-boot-review.png",
+    "width": 1100,
+    "height": 690,
+    "sha256": "f59e804e22cbb88a9113642fa01ff1924af09696b38e1cc0b6f33c932dcd53ca"
+  }
+}

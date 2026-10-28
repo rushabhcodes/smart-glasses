@@ -41,7 +41,9 @@ VDD_SPI now receives the common regulated3.296 V supply through R25=0 Ω rather
 than relying on the internal typical14 Ω path for combined flash/PSRAM load. TP9
 provides a rail test pad. This uses the manufacturer external-supply option; only
 3.3 V boot/eFuse/software modes are compatible. See [electrical review](electrical-power-review.md)
-for the primary TRM basis and remaining bring-up/transient checks. Local100 nF +1 µF
+for the primary TRM basis and remaining bring-up/transient checks. The
+[boot/supply state matrix](boot-memory-review.md) includes eFuse/RTC overrides,
+all related supply pads, GPIO47/48 domain selection and sleep implications. Local100 nF +1 µF
 and flash100 nF remain. Analog supply uses the2 nH filter and separate bypass.
 
 **Abracon ABM10W-40.0000MHZ-8-B1U-T3 / C1985328** replaces the incompletely

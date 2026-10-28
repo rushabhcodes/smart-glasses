@@ -33,7 +33,8 @@
     "check:main-core": "node scripts/check-main-core.mjs",
     "check:peripherals": "node scripts/check-peripherals.mjs",
     "report:routing-feasibility": "node scripts/report-routing-feasibility.mjs",
-    "report:power-budget": "node scripts/report-power-budget.mjs"
+    "report:power-budget": "node scripts/report-power-budget.mjs",
+    "report:camera-interface": "node scripts/report-camera-interface.mjs"
   },
   "dependencies": {
     "react": "19.3.1"
