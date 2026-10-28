@@ -1,33 +1,35 @@
 # Compact revision validation — 28 October 2026
 
-The current review branch is `codex/smart-glasses-circuits`. Each board has46 source
-components, including DNP test pads, with one independent PCB and zero routed traces.
-Main outline80×18mm; secondary100×18mm; four-layer settings are provisional.
+Current branch: `codex/smart-glasses-circuits`. The R8 main has72 source components
+(51 top,21 bottom), the secondary46, including DNP test pads. Each has one independent
+PCB and zero routed traces. Outlines80 ×18 mm /100 ×18 mm and four-layer settings
+are provisional. PICO milestone139a02a and its snapshot remain preserved.
 
 | Check actually run | Result and limit |
 | --- | --- |
 | `npm run validate` | PASS: strict TypeScript, both netlists, schematic and PCB placement, both builds, main-core and peripheral guards |
-| `npm run check:source` | Latest run0 errors/0 warnings for both; earlier external datasheet metadata calls returnedHTTP500, so this is not a claim that remote metadata is reliable |
-| Physical-pin invariants | PASS: SiP supplies/EPAD/9ground vias, memory/USB reservations, straps/recovery, regulator, controls, mic/restorer, charger/NTC, hardware switch, gauge, amplifier/touch buffer, both20-contact contracts |
-| Mic geometry | PASS: generated0.5mm aperture and continuous1.025/1.625mm ground annulus; exact ring stencil remains an assembly gate |
-| Voltage/timing/NTC calculations | PASS as design budgets; not measurements. Comparator output load≤15pF and noise/settling limits remain to be verified |
-| Board images | Both PCB and schematic SVG/PNG exported; all10 schematic sheets exported individually; main PCB/core/mic and right PCB/charger/touch inspected |
-| Actual3D images | Both boards rendered from frozen Circuit JSON; no frame, battery, antenna, camera or speaker assembly invented |
-| Development previews | Both HTML, healthOK, exact served source and independent compiled Circuit JSON verified;46 source components each. Only the owned preview processes were stopped |
-| Parametric CAD | OpenSCAD exports succeed, simple geometry;44 STL triangles per open carrier. Dimensions are adjustable assumptions, not verified frame fit |
-| Original firmware baseline | Earlier build/profile/size and host suites passed; upstream826 passed,3 optional skips, plus3 port tests. No firmware logic changed in this hardware revision |
+| `npm run check:source` |0 errors and6 warnings per board: remote datasheet metadata lookup returnedHTTP500 for six parts on each board. These metadata fetches did not complete; primary-document and physical-pin review is separate |
+| Physical-pin invariants | PASS: R8 supplies/EPAD/nine grounded vias, reserved camera/USB/PSRAM pins, straps/recovery, external flash/clock/RF, regulator, controls, mic/restorer, charger/NTC, switch, gauge, amplifier/touch buffer, both20-contact contracts |
+| Flash geometry | PASS: nine WSON lands, underside placement and absence of exposed vias beneath its center pad; paste/assembly review remains open |
+| Mic geometry | PASS:0.5 mm aperture and continuous1.025/1.625 mm copper annulus; exact ring stencil remains an assembly gate |
+| Voltage/timing/NTC calculations | PASS as design budgets; no measurements. Comparator load/noise/settling and memory-rail burst margins remain untested |
+| Routing feasibility report |72/46 components,49/33 named multi-component nets and0 PCB traces; a geometry report, not proof of routability |
+| Actual3D snapshot | Both boards rendered from frozen Circuit JSON. Pad/via/outline geometry was compared with the final validated build and matches;1100 ×690 composite in `docs/progress/2026-10-28-r8-review.png` |
+| Board/schematic images | Both PCB and schematic SVG/PNG exported; all12 schematic sheets exported individually. New flash and clock/RF sheets inspected |
+| Development previews | Both HTML, health `ok:true`, exact served entry source and independent compiled Circuit JSON verified:72/46 components. Only owned preview process groups stopped |
+| Parametric CAD | OpenSCAD main/secondary tray and lid exports succeed as simple geometry. Main housing83.2 ×21.2 ×12.0 mm, secondary103.2 ×21.2 ×16.6 mm with lids; clearances and openings remain provisional |
+| Original firmware baseline | Earlier build/profile/size and host suites passed: upstream826 passed,3 optional skips, plus3 port tests. Firmware was unchanged; no hardware test or Muse account pairing occurred |
 
-The preview smoke test initially used the wrong response field (`files` instead of
-`file_list`); after correcting the harness against the CLI API it passed both targets.
-The latest complete validation ran after switch symbol/common-contact and mounting-hole
-corrections. Final text formatting and BOM refresh do not change electrical connectivity.
+The final crystal-symbol readability correction was rechecked with TypeScript, main
+netlist/schematic placement/build and physical-pin guards. PCB geometry still matches
+the frozen render.
 
-The previous WROOM design remains at `c45edaa` / `codex/wroom-power-baseline`.
-Its49-land/9EPAD-segment module is distinct from the new57-land PICO footprint.
+The raw renders, frozen JSON, SHA256 values and UTC timestamp are recorded in the
+snapshot metadata. External camera, battery, antenna, speaker and frame assemblies
+are absent. The new crystal import is modeled as a passive four-pin crystal with
+its manufacturer pin map; X1/X2 aliases correct the importer/core naming mismatch.
 
-No hardware has been assembled, flashed, powered, charged or paired to Muse here.
-No finished-product, routing, manufacturability, hinge endurance, RF/thermal/acoustic or
-wearable-fit validation is claimed. Charge remains default-disabled. Required next
-inputs and release gates are in [the current design](compact-design.md) and
-[roadmap](development-roadmap.md). PICO catalog stock is zero; other low-stock parts
-also require rechecking before any assembly commitment. No order or publication occurred.
+No hardware was assembled, flashed, powered, charged or paired here. Detailed routing
+is disabled. Exact crystal option, JLC assembly availability, final camera/cell/frame,
+RF/clock/thermal/current budgets and manufacture/bench/fit gates remain open. Charge
+stays disabled by default. No purchase, fabrication order or publication occurred.

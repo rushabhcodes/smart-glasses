@@ -3,12 +3,18 @@
 `board-carriers.scad` is editable OpenSCAD CAD for the current PCB review coupons.
 It is a parameter study, not a model of Rushabh's frame or a printable product release.
 The assembly view includes only a PCB bounding box and an exploded flat lid; it does
-not invent missing camera, battery, antenna or speaker geometry.
+not invent missing camera, battery, antenna or speaker geometry. Main-floor microphone
+aperture, lid LED window and end-wall FFC slots are provisional access studies located
+from the implemented board coordinates. Their dimensions are adjustable assumptions,
+not validated acoustic, optical or cable-clearance tolerances.
 
-Defaults produce a left carrier83.2 ×21.2 ×10.6 mm and right103.2 ×21.2 ×16.6 mm,
+Defaults produce a left carrier83.2 ×21.2 ×12.0 mm and right103.2 ×21.2 ×16.6 mm,
 including lid. Board widths18mm and tall bench connectors make these deliberately
 provisional. PCB thickness1.6mm, edge clearance0.4mm, wall/floor1.2mm and headroom
-6/12mm are adjustable assumptions. None is a measured frame or fabrication tolerance.
+6/12mm and underside cavities2.0/0.6mm are adjustable assumptions.
+The main underside cavity now includes space for external flash and bypass components;
+physical component heights, assembly tolerances and support-ledge clearance still need
+review. None is a measured frame or fabrication tolerance.
 
 ```sh
 mkdir -p dist/mechanical

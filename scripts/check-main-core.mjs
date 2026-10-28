@@ -38,10 +38,11 @@ function connected(ref, number, net) {
 }
 assert.notEqual(find(nets.get("GND")), find(nets.get("VCORE3V3")), "3.3 V is shorted to GND")
 connected("U1", 57, "GND")
-for (const n of [2, 3, 20, 46, 55, 56]) connected("U1", n, "VCORE3V3")
-assert.equal(pin("U1", 2)[0].name, "VDD3P31", "PICO physical pad-2 supply label changed")
+for (const n of [20, 46, 55, 56]) connected("U1", n, "VCORE3V3")
+for (const n of [2, 3]) connected("U1", n, "VDD_RF")
+assert.equal(pin("U1", 2)[0].name, "VDD3P31", "R8 physical pad-2 supply label changed")
 assert.notEqual(pin("U1", 2)[0].requires_ground, true, "Imported ground attribute incorrectly marks the supply pad")
-for (const [ref, a, b] of [["C1", "VCORE3V3", "GND"], ["C2", "VCORE3V3", "GND"],
+for (const [ref, a, b] of [["C1", "VCORE3V3", "GND"], ["C2", "VDD_RF", "GND"],
   ["C3", "MCU_EN", "GND"], ["R1", "VCORE3V3", "MCU_EN"], ["R2", "VCORE3V3", "BOOT_N"],
   ["R3", "STRAP_GPIO46", "GND"], ["R4", "STRAP_GPIO45", "GND"]]) {
   connected(ref, 1, a); connected(ref, 2, b)
@@ -81,23 +82,23 @@ assert.notEqual(find(nets.get("VCORE3V3")), find(nets.get("REC_LED_ANODE")), "Re
 assert.notEqual(find(nets.get("REC_LED")), find(nets.get("REC_LED_BASE")), "Recording LED base current limiter is bypassed")
 for (const [ref, net] of [["TP1", "VCORE3V3"], ["TP2", "GND"], ["TP3", "UART0_TX"],
   ["TP4", "UART0_RX"], ["TP5", "MCU_EN"], ["TP6", "BOOT_N"]]) connected(ref, 1, net)
-for (const n of [8, 25, 26, 28, 29, 30, 31, 32, 33, 34, 35, 38, 39, 40, 41, 42, 53, 54]) {
+for (const n of [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 24, 25, 26, 28, 38, 39, 40, 41, 42]) {
   const port = pin("U1", n)[0]
-  assert.equal(port.do_not_connect, true, `Reserved USB/PSRAM pad ${n} must remain unconnected in this stage`)
+  assert.equal(port.do_not_connect, true, `Reserved camera/USB/PSRAM pad ${n} must remain unconnected in this stage`)
   assert.ok(![...nets.values()].some((net) => find(net) === find(port.source_port_id)), `Reserved pad ${n} has a net`)
 }
-for (const [ref, id] of [["U1", "C7545129"], ["C1", "C45783"], ["C2", "C14663"], ["C3", "C15849"],
+for (const [ref, id] of [["U1", "C2913194"], ["C1", "C45783"], ["C2", "C14663"], ["C3", "C15849"],
   ["C4", "C14663"], ["SW1", "C398741"], ["LED1", "C3030991"], ["R6", "C21190"], ["R7", "C21190"], ["R8", "C21190"], ["Q1", "C81464"],
   ["U2", "C109322"], ["L1", "C3033018"], ["R9", "C861315"], ["R10", "C122538"], ["R11", "C122538"],
   ...["R1", "R2", "R3", "R4", "R5"].map((ref) => [ref, "C25804"])])
   assert.deepEqual(components.get(ref)?.supplier_part_numbers?.jlcpcb, [id], `${ref} must retain its verified import ID`)
 const pcb = all("pcb_component").find((e) => e.source_component_id === components.get("U1").source_component_id)
 const pads = all("pcb_smtpad").filter((e) => e.pcb_component_id === pcb.pcb_component_id)
-assert.equal(pads.length, 57, "Expected 56 PICO LGA lands plus its ground EPAD")
-assert.equal(pads.filter((p) => p.port_hints.includes("pin57")).length, 1, "PICO EPAD was lost")
+assert.equal(pads.length, 57, "Expected 56 R8 QFN lands plus its ground EPAD")
+assert.equal(pads.filter((p) => p.port_hints.includes("pin57")).length, 1, "R8 EPAD was lost")
 assert.equal(all("pcb_via").length, 9, "Imported thermal via array changed; assembly review required")
 assert.equal(all("pcb_trace").length, 0, "Routing must remain disabled during schematic development")
-console.log("MCU and control guards passed: physical supplies, EN/BOOT/straps, UART, capture switch, LED polarity/current path, reserved pins, supplier IDs, PICO EPAD and no routing.")
+console.log("MCU and control guards passed: physical supplies, EN/BOOT/straps, UART, capture switch, LED polarity/current path, reserved pins, supplier IDs, R8 EPAD and no routing.")
 
 // Selected replacement mic uses its OWN physical pin map.
 for (const [n,net] of [[1,"AUDIO_LRCLK"],[2,"GND"],[3,"GND"],[4,"AUDIO_BCLK"],[5,"VCORE3V3"],[6,"MIC_SD_RAW"]]) connected("U3",n,net)
@@ -109,7 +110,7 @@ assert.deepEqual(components.get("U3").supplier_part_numbers.jlcpcb,["C5656610"])
 const micPcb = all("pcb_component").find(e => e.source_component_id === components.get("U3").source_component_id)
 const hole = all("pcb_hole").find(e => e.pcb_component_id === micPcb.pcb_component_id)
 assert.ok(hole?.hole_diameter >= 0.5 || hole?.hole_diameter_mm >= 0.5, "TDK acoustic aperture minimum is 0.5 mm")
-connected("U1",1,"RF_SIP"); connected("R13",1,"RF_SIP"); connected("R13",2,"RF_ANTENNA")
+connected("U1",1,"RF_CHIP"); connected("R13",1,"RF_MATCHED"); connected("R13",2,"RF_ANTENNA")
 connected("J2",1,"GND");connected("J2",2,"RF_ANTENNA");connected("J2",3,"GND")
 console.log("Compact microphone, shared audio/control GPIO map and RF connector connectivity passed; RF tuning and memory-rail droop remain bench gates.")
 
@@ -142,3 +143,35 @@ for (const pad of ringPads) for (const point of pad.points) {
 console.log("Mic copper ID/OD and acoustic aperture match the primary land drawing; final stencil review remains open.")
 
 assert.equal(components.get("R7").resistance,1000);assert.equal(components.get("R8").resistance,1000)
+
+// R8 retains 8MB in-package octal PSRAM and adds the verified 8MB quad flash.
+for (const [n,net] of [[29,"VDD_SPI"],[30,"SPIHD"],[31,"SPIWP"],[32,"SPICS0"],[33,"SPICLK"],[34,"SPIQ"],[35,"SPID"],[53,"XTAL_N"],[54,"XTAL_P_CHIP"]]) connected("U1",n,net)
+for (const [n,net] of [[1,"FLASH_CS"],[2,"FLASH_IO1"],[3,"FLASH_IO2"],[4,"GND"],[5,"FLASH_IO0"],[6,"FLASH_CLK"],[7,"FLASH_IO3"],[8,"VDD_SPI"],[9,"GND"]]) connected("U5",n,net)
+for (const [i,[a,b]] of [["SPICS0","FLASH_CS"],["SPICLK","FLASH_CLK"],["SPIQ","FLASH_IO1"],["SPID","FLASH_IO0"],["SPIWP","FLASH_IO2"],["SPIHD","FLASH_IO3"]].entries()) {
+  connected(`R${16+i}`,1,a); connected(`R${16+i}`,2,b)
+  assert.equal(components.get(`R${16+i}`).resistance,0)
+}
+for (const [ref,net] of [["R22","FLASH_CS"],["R23","FLASH_IO2"],["R24","FLASH_IO3"]]) {
+  connected(ref,1,"VDD_SPI");connected(ref,2,net);assert.equal(components.get(ref).resistance,10000)
+}
+assert.notEqual(find(nets.get("VDD_SPI")),find(nets.get("VCORE3V3")),"Memory output must not be tied to the main rail")
+for(const ref of ["C21","C22","C23"]) {connected(ref,1,"VDD_SPI");connected(ref,2,"GND")}
+for(const [n,net] of [[1,"XTAL_P"],[2,"GND"],[3,"XTAL_N"],[4,"GND"]]) connected("Y1",n,net)
+assert.equal(components.get("Y1").ftype,"simple_crystal","Crystal must remain passive, not a powered oscillator")
+assert.equal(components.get("Y1").frequency,40e6,"ESP32-S3 requires a 40 MHz crystal")
+for(const [ref,a,b] of [["L4","XTAL_P_CHIP","XTAL_P"],["C24","XTAL_P","GND"],["C25","XTAL_N","GND"],
+ ["L3","VCORE3V3","VDD_RF"],["C16","VDD_RF","GND"],["C17","VCORE3V3","GND"],["C18","VCORE3V3","GND"],
+ ["C19","VCORE3V3","GND"],["C20","VCORE3V3","GND"],["C14","RF_CHIP","GND"],["L2","RF_CHIP","RF_MATCHED"],["C15","RF_MATCHED","GND"]]) {connected(ref,1,a);connected(ref,2,b)}
+for(const [ref,id] of [["U5","C2940197"],["Y1","C9010"],["L2","C86109"],["L3","C18216"],["L4","C167472"],
+ ["C14","C85897"],["C15","C85897"],["C24","C281755"],["C25","C281755"]])
+ assert.deepEqual(components.get(ref).supplier_part_numbers.jlcpcb,[id])
+const flashPcb=all("pcb_component").find(p=>p.source_component_id===components.get("U5").source_component_id)
+const flashPads=all("pcb_smtpad").filter(p=>p.pcb_component_id===flashPcb.pcb_component_id)
+assert.equal(flashPcb.layer,"bottom","Review underside placement changed; update mechanical cavity")
+assert.equal(flashPads.length,9)
+const flashEP=flashPads.find(p=>p.port_hints.includes("pin9"))
+for(const via of all("pcb_via")) {
+ assert.ok(Math.abs(via.x-flashEP.x)>(flashEP.width+via.outer_diameter)/2 || Math.abs(via.y-flashEP.y)>(flashEP.height+via.outer_diameter)/2,
+ "Winbond requires no exposed vias underneath its center pad")
+}
+console.log("R8 external flash/clock/RF guards passed; power integrity, timing, crystal and RF tuning are unmeasured.")

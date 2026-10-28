@@ -5,12 +5,13 @@ Current status is detailed in [compact design](compact-design.md).
 - [x] Locked tsCircuit development environment; both previews functionally checked.
 - [x] Original firmware build/size and host tests; no flashing or account/hardware proof.
 - [x] Preserve WROOM baseline and actual3D snapshot.
-- [x] Compact PICO SiP core, regulator and capture/indicator schematic.
+- [x] Compact PICO comparison and R8 alternative, regulator and capture/indicator schematic.
 - [x] Officially imported ICS-43434 replacement, local bypass/pulldown/acoustic-hole correction.
 - [x] Right charger, hardware switch, gauge, amplifier and touch review circuits.
 - [x] Matching20-contact logical cable contract and generated connectivity guards.
 - [ ] Resolve exact camera module/lens/carrier and its connector/rails/reset behavior.
-- [ ] Verify PICO sourcing; catalog currently shows zero stock.
+- [x] Research stocked same-capacity R8 + external-flash alternative; preserve PICO milestone139a02a.
+- [ ] Close exact crystal option, JLC assembly availability and routed RF/memory qualification.
 - [ ] Select physical cell/NTC adapter, antenna/coax, speaker and final frame envelope.
 - [ ] Finish input protection and low-battery shutdown/recovery against the selected pack.
 - [ ] Close footprint/paste/via-in-pad, power/thermal/RF/memory-rail and mechanical reviews.

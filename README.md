@@ -4,16 +4,22 @@ A tsCircuit/TypeScript research repository for custom AI-powered glasses with in
 left and right temple PCBs. The intended assistant is **Meta's Muse personal agent**, using
 the official **Muse Gadgets SDK**. Inference stays off the glasses.
 
-**Current state:** a compact **ESP32-S3-PICO-1-N8R8** review circuit replaces the
-WROOM module. The left board implements the SiP core, nominal 3.3 V buck-boost,
+**Current state:** a compact **ESP32-S3R8 with external 8 MB flash** review circuit replaces the
+WROOM module. The left board implements the R8 core, nominal 3.3 V buck-boost,
 ICS-43434 microphone, capture/LED controls, RF connector and frame connector. The
 right implements charger/power switch, gauge, amplifier, touch and mating connector.
 The camera module/interface is still unresolved. See [current design and gates](docs/compact-design.md).
 
 No physical hardware has been assembled, flashed or tested. Detailed routing remains
 disabled. Provisional 80 × 18 mm / 100 × 18 mm four-layer outlines do not establish frame
-fit or fabrication readiness. The PICO candidate currently has zero catalog stock.
+fit or fabrication readiness. The PICO comparison still has zero catalog stock; the current R8 and flash have dated
+LCSC stock observations. JLC assembly availability remains unconfirmed. See
+[MCU sourcing tradeoffs](docs/core-sourcing.md).
 The old WROOM implementation is preserved at `codex/wroom-power-baseline` (`c45edaa`).
+
+Latest actual [R8 board snapshot](docs/progress/2026-10-28-r8-review.png) and
+[provisional carrier CAD view](docs/progress/2026-10-28-carrier-access.png).
+Neither image establishes mechanical fit or hardware function.
 
 ## Intended features
 
@@ -31,7 +37,7 @@ consumer-frame fit are not established by this prototype plan.
 
 | Board | Implemented schematic blocks | Open items |
 | --- | --- | --- |
-| Left | PICO-1 N8R8, TPS63070, ICS-43434, capture button/LED driver, U.FL and FH12 connector | Exact camera, RF matching/layout, sourcing and measured fit |
+| Left | S3R8 +8 MB flash, TPS63070, ICS-43434, capture button/LED driver, U.FL and FH12 connector | Exact camera, RF matching/layout, sourcing and measured fit |
 | Right | BQ24075T, TPS22965 hardware switch, MAX17048, MAX98357A, AT42QT1010, JST and FH12 connectors | Selected cell/attached NTC, speaker/electrode/enclosure, input protection and thermal release |
 
 The [BOM](bom/preliminary-bom.csv) reflects generated components; [dated sourcing
@@ -79,7 +85,7 @@ current circuit uses ICS-43434; this hardware combination remains bench-unverifi
 
 - Exact camera module/lens/connector and its power/reset sequence.
 - Measured frame envelope; actual battery, speaker and antenna assembly.
-- PICO sourcing (C7545129 currently zero stock), RF/memory-rail/thermal validation.
+- Exact crystal option and JLC assembly availability for R8/flash; RF/memory-rail/thermal validation.
 - Protected cell and genuine battery-attached NTC; charge remains disabled by default.
 - Final input protection, cable current/continuity/hinge validation, routing and manufacturing review.
 

@@ -1,0 +1,16 @@
+{
+  "generatedAtUTC": "2026-10-28T17:48:12.018430+00:00",
+  "source": "mechanical/board-carriers.scad; actual OpenSCAD tray/lid STL geometry rendered with matplotlib",
+  "imageSHA256": "dd74125546fc7350f9430b3fcddcf2d96d97f896d90995ec89269edca4cfbb17",
+  "mainOuterMmWithLid": [
+    83.2,
+    21.2,
+    12.0
+  ],
+  "secondaryOuterMmWithLid": [
+    103.2,
+    21.2,
+    16.6
+  ],
+  "frameFitVerified": false
+}

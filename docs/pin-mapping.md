@@ -1,10 +1,10 @@
 # Physical pin allocation and frame cable contract
 
-Current compact revision; Espressif PICO-1 v1.2 Table2-1. GPIO numbers are not LGA
+Current compact revision; Espressif S3 series v2.2 Tables2-1/2-14. GPIO numbers are not QFN
 pad numbers. Camera GPIOs remain reserved; all other functional rows are drawn
 in review TSX. No assignment is hardware-tested.
 
-| Signal | GPIO | PICO physical pad | State |
+| Signal | GPIO | R8 physical pad | State |
 | --- | --- | --- | --- |
 | CAM_D0 | 4 | 9 | Camera pending |
 | CAM_D1 | 5 | 10 | Camera pending |
@@ -33,8 +33,9 @@ in review TSX. No assignment is hardware-tested.
 | REC_LED | 48 | 36 | Wired; bench pending |
 
 Preserve USB19/20 (pads25/26), UART43/44 (49/50), GPIO0/3/45/46 boot straps,
-and all memory resources. N8R8 SPICS1/pad28 and GPIO33–37/pads38–42 are unavailable.
-VDD_SPI/pad29 and all NC pads stay unconnected externally. GPIO45 low selects the
+and all memory resources. R8 SPICS1/pad28 and GPIO33–37/pads38–42 are unavailable.
+VDD_SPI/pad29 powers external flash; pads30–35 carry its quad bus. Pads53/54
+connect the external40 MHz crystal. These differ from the preserved PICO SiP. GPIO45 low selects the
 required3.3 V memory domain. EN is physical pad4, not GPIO3.
 
 ## Frame connector J1, both boards

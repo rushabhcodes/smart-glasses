@@ -1,4 +1,4 @@
-Signal,Proposed GPIO,Module pad (datasheet lookup),Direction at MCU,Purpose,Status
+Signal,Proposed GPIO,R8 physical pad (datasheet lookup),Direction at MCU,Purpose,Status
 CAM_D0,4,9,In,Left; camera DVP bit 0,RESERVED; camera not wired; exact module pending
 CAM_D1,5,10,In,Left; camera DVP bit 1,RESERVED; camera not wired; exact module pending
 CAM_D2,6,11,In,Left; camera DVP bit 2,RESERVED; camera not wired; exact module pending

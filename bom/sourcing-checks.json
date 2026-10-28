@@ -65,6 +65,24 @@
       "observedAtUTC": "2026-10-28T15:02:07.067657+00:00"
     },
     {
+      "productCode": "C167472",
+      "productModel": "LQW15AN24NG00D",
+      "brandNameEn": "muRata",
+      "encapStandard": "0402",
+      "stockNumber": 6100,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T17:24:03.531100+00:00"
+    },
+    {
+      "productCode": "C18216",
+      "productModel": "LQG15HS2N0S02D",
+      "brandNameEn": "muRata",
+      "encapStandard": "0402",
+      "stockNumber": 74400,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T17:23:17.711557+00:00"
+    },
+    {
       "productCode": "C21189",
       "productModel": "0603WAF0000T5E",
       "brandNameEn": "UNI-ROYAL",
@@ -137,6 +155,33 @@
       "observedAtUTC": "2026-10-28T13:40:44.560657+00:00"
     },
     {
+      "productCode": "C281755",
+      "productModel": "CC0402JRNPO9BN240",
+      "brandNameEn": "YAGEO",
+      "encapStandard": "0402",
+      "stockNumber": 296400,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T17:24:07.199063+00:00"
+    },
+    {
+      "productCode": "C2913194",
+      "productModel": "ESP32-S3R8",
+      "brandNameEn": "ESPRESSIF",
+      "encapStandard": "QFN-56(7x7)",
+      "stockNumber": 8294,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T17:12:46.286072+00:00"
+    },
+    {
+      "productCode": "C2940197",
+      "productModel": "W25Q64JVZPIQ",
+      "brandNameEn": "Winbond",
+      "encapStandard": "WSON-8-EP(5x6)",
+      "stockNumber": 80,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T17:22:07.488230+00:00"
+    },
+    {
       "productCode": "C3033018",
       "productModel": "XFL4020-152MEC",
       "brandNameEn": "Coilcraft",
@@ -200,15 +245,6 @@
       "observedAtUTC": "2026-10-28T13:50:19.912894+00:00"
     },
     {
-      "productCode": "C7545129",
-      "productModel": "ESP32-S3-PICO-1-N8R8",
-      "brandNameEn": "ESPRESSIF",
-      "encapStandard": "LGA-56(7x7)",
-      "stockNumber": 0,
-      "isForeignOnsale": true,
-      "observedAtUTC": "2026-10-28T14:57:17.358854+00:00"
-    },
-    {
       "productCode": "C7833",
       "productModel": "SN74LVC1G125DCKR",
       "brandNameEn": "TI",
@@ -227,6 +263,24 @@
       "observedAtUTC": "2026-10-28T13:50:15.764938+00:00"
     },
     {
+      "productCode": "C85897",
+      "productModel": "GRM0335C1H1R5CA01D",
+      "brandNameEn": "muRata",
+      "encapStandard": "0201",
+      "stockNumber": 29500,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T17:22:37.547918+00:00"
+    },
+    {
+      "productCode": "C86109",
+      "productModel": "LQP03TG2N7B02D",
+      "brandNameEn": "muRata",
+      "encapStandard": "0201",
+      "stockNumber": 5400,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T17:23:14.151591+00:00"
+    },
+    {
       "productCode": "C861315",
       "productModel": "RT0603BRD07312KL",
       "brandNameEn": "YAGEO",
@@ -234,6 +288,15 @@
       "stockNumber": 3400,
       "isForeignOnsale": true,
       "observedAtUTC": "2026-10-28T15:02:33.039383+00:00"
+    },
+    {
+      "productCode": "C9010",
+      "productModel": "X322540MPB4SI",
+      "brandNameEn": "YXC Crystal Oscillators",
+      "encapStandard": "SMD3225-4P",
+      "stockNumber": 54805,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T17:23:18.199552+00:00"
     },
     {
       "productCode": "C910544",

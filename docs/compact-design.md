@@ -9,7 +9,7 @@ fabrication, purchasing, flashing or physical testing has occurred.
 
 | Board | Current source blocks | Provisional outline |
 | --- | --- | --- |
-| Left | PICO-1 N8R8 core, TPS63070 buck-boost, ICS-43434 mic, button/record LED driver, RF and frame connectors | 80 × 18 mm, four layers |
+| Left | S3R8 +8 MB flash core, TPS63070 buck-boost, ICS-43434 mic, button/record LED driver, RF and frame connectors | 80 × 18 mm, four layers |
 | Right | BQ24075T charger/power path, TPS22965 hardware switch, MAX17048 gauge, MAX98357A amplifier/enable driver, AT42QT1010 touch, battery/input/speaker/frame connectors | 100 × 18 mm, four layers |
 
 These are placement coupons, not approved temple geometry. Neither outline includes
@@ -19,48 +19,53 @@ Source graphs and PCB traces are distinct: all detailed routing remains disabled
 
 ## Compact MCU and RF
 
-Espressif **ESP32-S3-PICO-1-N8R8 / C7545129** retains 8 MB flash and 8 MB octal
-PSRAM. Its LGA body is nominal 7 × 7 × 0.96 mm, maximum 7.1 × 7.1 × 1.06 mm,
-with 56 edge pads at 0.4 mm pitch and a 4 mm ground EPAD. This replaces the
-18 × 19.2 × 3.2 mm WROOM body; it is not a drop-in module substitution.
+The current alternative uses **ESP32-S3R8 / C2913194**, with8 MB in-package octal
+PSRAM and external **W25Q64JVZPIQ / C2940197**8 MB quad flash. It preserves the
+original8 MB/8 MB capacity. LCSC showed8,294 R8 and80 flash at lookup, whereas
+PICO C7545129 remained at zero. These are observations, not a stock reservation
+or proof of JLC assembly inventory. Official tsci exact-footprint imports succeeded.
+See [sourcing review](core-sourcing.md) for the primary evidence, price/area tradeoffs
+and remaining exact crystal-specification/assembly checks.
 
-The official exact-footprint import was compared with Espressif datasheet v1.2,
-Table 2-1 and Figure 6-1. The current footprint has 57 copper pads and nine
-thermal vias connected to GND. Intentional via-in-pad is declared on this board;
-those vias were retained. Filling/capping, paste, solder wicking, stencil and
-X-ray inspection need assembly review. This is not an Espressif-approved land pattern.
-The supplier describes Standard-only/X-ray-required assembly. **Catalog stock was
-zero at lookup**; no stocked substitute or assembly slot has been established.
+R8 is a7 ×7 mm QFN, maximum0.9 mm high, with its own imported56 perimeter lands,
+4 mm EPAD and nine grounded thermal vias. The vias remain intentional; filled/capped
+via-in-pad, mask/paste and X-ray/assembly requirements need review. The PICO SiP,
+its separate LGA import and its actual snapshot remain preserved in commit139a02a.
+The earlier WROOM baseline retains its corrected nine EPAD segments.
 
-Only the external circuit in Section 5/Figure 5-1 informs the carrier. Internal
-flash/PSRAM, crystal and RF matching are not duplicated. All six supply pads
-2/3/20/46/55/56 use VCORE3V3 and pad57 is ground. SPICS1/pad28,
-GPIO33–37/pads38–42, VDD_SPI/pad29 and NC pads stay unconnected externally.
-GPIO45 is biased low for the SiP's 3.3 V flash/PSRAM domain. This differs from
-other S3 modules: do not burn module-specific memory-voltage eFuses on this SiP.
-USB GPIO19/20 and strap GPIO3 remain reserved; UART43/44, EN and BOOT have pads.
-The old WROOM's nine EPAD segments remain intact in its preserved baseline;
-the new LGA uses its own single EPAD geometry.
+Unlike PICO, R8 requires external flash,40 MHz crystal, analog filtering and RF matching.
+Pins2/3 use VDD_RF through a2 nH filter;20/46/55/56 use VCORE3V3,57GND. Pins30–35
+connect the external flash through six zero-ohm tuning links. VDD_SPI/pad29 feeds
+flash with100 nF +1 µF bypass; it is not shorted to the main rail. SPICS1/pad28 and
+GPIO33–37/pads38–42 remain reserved for in-package PSRAM. GPIO45 is pulled low for
+R8's3.3 V memory domain. R8V is a different1.8 V variant and must not be substituted.
+USB19/20, strapGPIO3 and the pending camera GPIOs remain unconnected. UART, EN/BOOT,
+controls, audio and the frame interface preserve their previous physical pad mapping.
 
-Hirose U.FL-R-SMT(10), C434808, provides a provisional external RF interface.
-R13 is a zero-ohm tuning link. No controlled-impedance route, tuned external
-matching network, selected antenna/coax or enclosure/body RF test exists yet.
-The manufacturer's RF/memory power requirements still apply after a netlist passes.
+The external crystal uses a24 nH series element and provisional24 pF loads. The chip
+RF network uses0201 CLC starting values1.5 pF/2.7 nH/1.5 pF. Hirose U.FL-R-SMT(10),
+C434808, and R13 remain the provisional RF output. No tuned RF geometry, selected
+antenna/coax, completed50 Ω route, final antenna matching/ESD or RF measurements exist.
+Some support parts are on the underside; the main carrier cavity was increased to2 mm.
+This is an implemented schematic/placement alternative, not a validated radio design.
+
+Camera header/rail/reset evidence is recorded in [camera interface review](camera-interface-review.md).
+Routing limits are recorded in [routing feasibility](routing-feasibility.md).
 
 ## Logic regulator and load envelope
 
 TPS63070RNMR / C109322 is operated in forced PWM, with a 1.5 µH Coilcraft
 XFL4020-152MEC inductor and 312 kΩ / 100 kΩ, 0.1%, 25 ppm/K feedback divider.
 Nominal output is **3.296 V**, named VCORE3V3. Input has 2 × 22 µF; output has
-3 × 22 µF plus the MCU's 22 µF bulk and 100 nF bypass. VAUX has 100 nF.
+3 × 22 µF plus22 µF main bulk. R8 adds separate CPU/RTC/VDDA/RF bypass and a2 nH RF supply filter. VAUX has100 nF.
 PG has a 100 kΩ pull-up and test pad. VSYS never directly supplies an MCU pad.
 Imported physical VIN pads12/13 and VOUT pads7/8 are separately represented.
 
 The former 3.2 V setting protected the INMP441's ambiguous supply specification.
-ICS-43434 supports 1.65–3.63 V, permitting the standard nominal 3.3 V SiP rail.
+ICS-43434 supports 1.65–3.63 V, permitting the standard nominal 3.3 V MCU rail.
 Reference/divider tolerance is checked in the guard script; ±100 mV droop and
 +40 mV ripple allowances are bench acceptance targets, not measurements.
-Espressif Table3-3 gives typical 14 Ω in the internal VDD_SPI path and requires
+Espressif memory-rail guidance gives typical 14 Ω in the internal VDD_SPI path and requires
 accounting for flash/PSRAM current and voltage drop. Memory-rail burst margin at
 low battery is unresolved; an external 3.3 V connection to VDD_SPI is not assumed.
 CPU voltage must be ≤3.3 V during any future eFuse programming; no such operation

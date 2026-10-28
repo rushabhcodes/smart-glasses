@@ -1,0 +1,28 @@
+{
+  "timestampUTC": "2026-10-28T17:44:35.780262+00:00",
+  "note": "Actual R8 review circuits, rendered from frozen Circuit JSON. Physical pad/via/outline geometry matches the final validated build. Routing disabled; camera and external assemblies absent; no fit claim.",
+  "boards": {
+    "main": {
+      "width": 80,
+      "height": 18,
+      "components": 72,
+      "sha256": "c6302d7ec06da001ff72e7e2a41dfbd77bc44f7715a74cf0dd45b80b49a5ae0f",
+      "geometryMatchesValidatedBuild": true,
+      "validatedCircuitSHA256": "a646eb0da4fa2be3aeda8fb4b4fc614d11d384f00c081b74f2f689cea1ac8b03"
+    },
+    "secondary": {
+      "width": 100,
+      "height": 18,
+      "components": 46,
+      "sha256": "2bb179a4e78af36b6ed236dd623b3fd8e1ac95ee435106c79108cc858e4fcf58",
+      "geometryMatchesValidatedBuild": true,
+      "validatedCircuitSHA256": "f18ed2fed42fe139a1f27c87d38a1686b6f1f9aa7d77728bf10fbfde10ecaf65"
+    }
+  },
+  "image": {
+    "filename": "2026-10-28-r8-review.png",
+    "width": 1100,
+    "height": 690,
+    "sha256": "896437e4bb9cff71328d7b4ab99875dd506b2d08ecb6f2c230f00506443b6f28"
+  }
+}

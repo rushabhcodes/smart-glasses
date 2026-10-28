@@ -1,0 +1,55 @@
+{
+  "note": "Dated public catalog observations, not reservations or JLC assembly inventory. Name search results were checked against exact manufacturer models.",
+  "parts": [
+    {
+      "productCode": "C7545129",
+      "productModel": "ESP32-S3-PICO-1-N8R8",
+      "brandNameEn": "ESPRESSIF",
+      "encapStandard": "LGA-56(7x7)",
+      "stockNumber": 0,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T17:11:44.030720+00:00",
+      "source": "https://www.lcsc.com/product-detail/C7545129.html"
+    },
+    {
+      "productCode": "C2913194",
+      "productModel": "ESP32-S3R8",
+      "brandNameEn": "ESPRESSIF",
+      "encapStandard": "QFN-56(7x7)",
+      "stockNumber": 8294,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T17:12:46.286072+00:00",
+      "source": "https://www.lcsc.com/product-detail/C2913194.html"
+    },
+    {
+      "productCode": "C2980299",
+      "productModel": "ESP32-S3-MINI-1U-N8",
+      "brandNameEn": "ESPRESSIF",
+      "encapStandard": "VFQFN-56-EP",
+      "stockNumber": 545,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T17:11:45.602704+00:00",
+      "source": "https://www.lcsc.com/product-detail/C2980299.html"
+    },
+    {
+      "productCode": "C7558093",
+      "productModel": "ESP32-S3-PICO-1-N8R2",
+      "brandNameEn": "ESPRESSIF",
+      "encapStandard": "LGA-56-EP(7x7)",
+      "stockNumber": 0,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T17:11:46.326697+00:00",
+      "source": "https://www.lcsc.com/product-detail/C7558093.html"
+    },
+    {
+      "productCode": "C2940197",
+      "productModel": "W25Q64JVZPIQ",
+      "brandNameEn": "Winbond",
+      "encapStandard": "WSON-8-EP(5x6)",
+      "stockNumber": 80,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T17:22:07.488230+00:00",
+      "source": "https://www.lcsc.com/product-detail/C2940197.html"
+    }
+  ]
+}

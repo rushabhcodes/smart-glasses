@@ -31,7 +31,8 @@
     "firmware:test": "bash firmware/scripts/build.sh test",
     "firmware:size": "bash firmware/scripts/build.sh size",
     "check:main-core": "node scripts/check-main-core.mjs",
-    "check:peripherals": "node scripts/check-peripherals.mjs"
+    "check:peripherals": "node scripts/check-peripherals.mjs",
+    "report:routing-feasibility": "node scripts/report-routing-feasibility.mjs"
   },
   "dependencies": {
     "react": "19.3.1"
