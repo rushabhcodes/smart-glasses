@@ -1,0 +1,19 @@
+node_modules/
+dist/
+checks/
+.tscircuit/
+.cache/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+Thumbs.db
+
+# ESP-IDF generated files and build-only local credentials
+firmware/build/
+firmware/logs/
+firmware/sdkconfig.local*
+firmware/__pycache__/
+firmware/tests/__pycache__/
+firmware/scripts/__pycache__/

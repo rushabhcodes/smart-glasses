@@ -1,0 +1,12 @@
+{
+  "muse_sdk": {
+    "url": "https://github.com/facebookincubator/muse-gadget-sdk.git",
+    "commit": "1db6a26f4ca56939c4465d8a12e241c1b1b5c8dc"
+  },
+  "esp_idf": {
+    "url": "https://github.com/espressif/esp-idf.git",
+    "tag": "v6.0.1",
+    "commit": "8c19b156084a0753687347cca1f5355782893533"
+  },
+  "esp32_camera": "2.1.8"
+}

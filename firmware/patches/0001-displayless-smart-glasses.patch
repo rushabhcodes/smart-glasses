@@ -1,0 +1,200 @@
+--- a/esp32/main/CMakeLists.txt
++++ b/esp32/main/CMakeLists.txt
+@@ -75,6 +75,8 @@
+     mbedtls
+     efuse
+     muse
++    camera
++    espressif__esp32-camera
+     # The voice board's. Requirements are resolved before the configuration
+     # is loaded, so this is unconditional; unused code is not linked.
+     esp_driver_i2s
+@@ -118,6 +120,8 @@
+     )
+     if(CONFIG_HOMEHUB_LED_BACKEND_RESPEAKER_LITE)
+         list(APPEND GADGET_SRCS "voice_board_respeaker_lite.c")
++    elseif(CONFIG_HOMEHUB_SMART_GLASSES)
++        list(APPEND GADGET_SRCS "voice_board_smart_glasses.c" "sg_recording.c" "sg_camera.c")
+     else()
+         list(APPEND GADGET_SRCS "voice_board.c")
+     endif()
+--- a/esp32/main/Kconfig.projbuild
++++ b/esp32/main/Kconfig.projbuild
+@@ -472,9 +472,11 @@
+             agent name (a still status screen on e-paper), and the display.*
+             commands.
+ 
++    rsource "Kconfig.smart_glasses"
++
+     config HOMEHUB_VOICE
+         bool "Push-to-talk voice chat"
+-        depends on (HOMEHUB_LED_BACKEND_VOICE_RING || HOMEHUB_LED_BACKEND_RESPEAKER_LITE) && SPIRAM
++        depends on (HOMEHUB_LED_BACKEND_VOICE_RING || HOMEHUB_LED_BACKEND_RESPEAKER_LITE || HOMEHUB_SMART_GLASSES) && SPIRAM
+         default y
+         help
+             Hold the centre button (XIAO BOOT on reSpeaker Lite), speak,
+--- a/esp32/main/idf_component.yml
++++ b/esp32/main/idf_component.yml
+@@ -15,6 +15,7 @@
+ dependencies:
+   espressif/esp_websocket_client: "~1.2"
+   espressif/cjson: "~1.7"
++  espressif/esp32-camera: "2.1.8"
+   espressif/led_strip: "~3.0"
+   idf:
+     version: ">=5.1"
+--- a/esp32/main/voice_board.h
++++ b/esp32/main/voice_board.h
+@@ -30,7 +30,14 @@
+ // through the XMOS to an AIC3204 codec and an amplifier.
+ 
+ #define VOICE_MIC_RATE      16000
++#ifdef ESP_PLATFORM
++#include "sdkconfig.h"
++#endif
++#if CONFIG_HOMEHUB_SMART_GLASSES
++#define VOICE_SPEAKER_RATE  16000
++#else
+ #define VOICE_SPEAKER_RATE  48000
++#endif
+ 
+ // Reset the XMOS and set up the board's codec and both I2S channels.
+ esp_err_t voice_board_init(void);
+@@ -42,7 +49,7 @@
+ // peak absolute sample in `peak`.
+ size_t voice_board_mic_read(int16_t *pcm, size_t frames, int *peak);
+ 
+-// Speaker: 48 kHz stereo, 32-bit samples, interleaved. Blocks until queued.
++// Speaker: VOICE_SPEAKER_RATE stereo, 32-bit MSB-aligned samples. Blocks until queued.
+ esp_err_t voice_board_speaker_write(const int32_t *frames, size_t count);
+ void voice_board_amp(bool on);
+ // 0 to 100.
+--- a/esp32/main/voice_player.c
++++ b/esp32/main/voice_player.c
+@@ -49,6 +49,13 @@
+ // 16 kHz mono to 48 kHz stereo 32-bit, by linear interpolation. `last`
+ // carries the previous sample across chunks.
+ static size_t upsample(const int16_t *in, size_t n, int32_t *out, int16_t *last) {
++#if CONFIG_HOMEHUB_SMART_GLASSES
++    (void)last;
++    for (size_t i = 0; i < n; i++) {
++        out[2 * i] = out[2 * i + 1] = (int32_t)in[i] * 65536;
++    }
++    return n;
++#else
+     for (size_t i = 0; i < n; i++) {
+         int32_t prev = *last, cur = in[i];
+         int32_t s[3] = {(2 * prev + cur) / 3, (prev + 2 * cur) / 3, cur};
+@@ -59,6 +66,7 @@
+         *last = in[i];
+     }
+     return 3 * n;
++#endif
+ }
+ 
+ static void player_task(void *arg) {
+@@ -86,7 +94,11 @@
+                 continue;
+             }
+             size_t frames = upsample(in, got / sizeof(int16_t), out, &last);
+-            voice_board_speaker_write(out, frames);
++            esp_err_t err = voice_board_speaker_write(out, frames);
++            if (err != ESP_OK) {
++                ESP_LOGE(TAG, "speaker write failed: %s", esp_err_to_name(err));
++                break;
++            }
+             s_started = true;
+         }
+         vTaskDelay(pdMS_TO_TICKS(AMP_TAIL_MS));
+--- a/esp32/main/voice.c
++++ b/esp32/main/voice.c
+@@ -43,7 +43,11 @@
+ static const char *TAG = "link.voice";
+ 
+ #define KEY_VOLUME          "voice_volume"
++#if CONFIG_HOMEHUB_SMART_GLASSES
++#define DEFAULT_VOLUME      CONFIG_SG_DEFAULT_VOLUME
++#else
+ #define DEFAULT_VOLUME      60
++#endif
+ // Volume change per detent of the dial.
+ #define VOLUME_STEP         5
+ // Store a dialled volume once the dial has rested this long.
+--- a/esp32/main/led_status.c
++++ b/esp32/main/led_status.c
+@@ -938,11 +938,12 @@
+ }
+ 
+ #if CONFIG_HOMEHUB_VOICE
++#define VOICE_VOLUME_MS 1500
++#endif
++#if CONFIG_HOMEHUB_LED_BACKEND_VOICE_RING || CONFIG_HOMEHUB_LED_BACKEND_RESPEAKER_LITE
+ #define VOICE_FRAME_MS 40
+ // Three 200 ms flashes.
+ #define VOICE_ERROR_FRAMES 30
+-// How long the volume stays up after the dial stops.
+-#define VOICE_VOLUME_MS 1500
+ 
+ static rgb_t scaled(rgb_t c, float level) {
+     return (rgb_t){c.r * level, c.g * level, c.b * level};
+@@ -1050,7 +1051,7 @@
+         s_title_dirty = false;
+         xSemaphoreGive(s_mutex);
+         if (title_dirty) led_hw_set_title(title);
+-#if CONFIG_HOMEHUB_VOICE
++#if CONFIG_HOMEHUB_LED_BACKEND_VOICE_RING || CONFIG_HOMEHUB_LED_BACKEND_RESPEAKER_LITE
+         if (voice_render()) continue;
+ #endif
+ 
+--- a/esp32/main/app.c
++++ b/esp32/main/app.c
+@@ -14,7 +14,11 @@
+  * limitations under the License.
+  */
+ 
++#include "sdkconfig.h"
+ #include "app.h"
++#if CONFIG_HOMEHUB_SMART_GLASSES
++#include "sg_camera.h"
++#endif
+ #include "stack_monitor.h"
+ 
+ #include <string.h>
+@@ -1911,6 +1915,11 @@
+         return result;
+     }
+ #endif
++#if CONFIG_HOMEHUB_SMART_GLASSES
++    if (strcmp(command, "camera.capture") == 0) {
++        return sg_camera_command(request_id, session_generation);
++    }
++#endif
+ #if CONFIG_MUSE_WATCHER_CAMERA
+     if (strcmp(command, "camera.capture") == 0) {
+         watcher_camera_task_args_t *args = calloc(1, sizeof(*args));
+@@ -2751,6 +2760,9 @@
+                      on_button_long_press)) {
+         ESP_LOGW(TAG, "button init failed — physical setup reset unavailable");
+     }
++#endif
++#if CONFIG_HOMEHUB_SMART_GLASSES
++    sg_camera_register();
+ #endif
+ #if CONFIG_HOMEHUB_VOICE
+     voice_init();
+--- a/esp32/main/noise_control.cpp
++++ b/esp32/main/noise_control.cpp
+@@ -1526,6 +1526,13 @@
+                 nullptr, nullptr);
+ #endif
+ 
++#if CONFIG_HOMEHUB_SMART_GLASSES
++    add_command(commands, "camera.capture",
++                "Capture one 320x240 JPEG from the glasses OV2640 camera, with the recording indicator on. "
++                "Returns jpeg-base64 only when explicitly requested; no continuous recording.",
++                nullptr, nullptr);
++    cJSON_AddNumberToObject(cJSON_GetObjectItem(commands, "camera.capture"), "timeout_ms", 30000);
++#endif
+ #if CONFIG_MUSE_WATCHER_CAMERA
+     add_command(commands, "camera.capture",
+                 "Capture one still JPEG frame from the SenseCAP Watcher camera. "

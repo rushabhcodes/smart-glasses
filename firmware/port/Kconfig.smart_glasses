@@ -1,0 +1,28 @@
+config HOMEHUB_SMART_GLASSES
+    bool "Displayless custom ESP32-S3 smart glasses (experimental)"
+    depends on IDF_TARGET_ESP32S3 && SPIRAM
+    default n
+    help
+        Proposed N8R8 hardware with OV2640, INMP441 and MAX98357A.
+        Uses the headless voice path. GPIOs come from docs/proposed-gpio-map.csv.
+
+if HOMEHUB_SMART_GLASSES
+config SG_RECORD_LED_ACTIVE_HIGH
+    bool "Recording indicator active high"
+    default y
+config SG_AMP_ACTIVE_HIGH
+    bool "External voltage-safe amplifier enable stage active high"
+    default y
+config SG_DEFAULT_VOLUME
+    int "Initial software playback volume percent"
+    range 0 20
+    default 10
+config SG_MAX_VOLUME
+    int "Maximum software playback volume percent"
+    range 0 100
+    default 20
+config SG_CAMERA_MAX_JPEG_BYTES
+    int "Maximum JPEG result bytes (before base64)"
+    range 1024 32768
+    default 32768
+endif

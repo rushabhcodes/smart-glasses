@@ -1,0 +1,5 @@
+# Keep source line endings consistent across development machines.
+* text=auto eol=lf
+
+# Unified diff blank context lines contain a required space marker.
+firmware/patches/*.patch whitespace=-blank-at-eol

@@ -1,0 +1,45 @@
+{
+  "name": "smart-glasses",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Two-board tsCircuit research scaffold for cloud-AI smart glasses",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": "24.x",
+    "bun": ">=1.3.3"
+  },
+  "scripts": {
+    "dev": "tsci dev src/main-board/main-board.circuit.tsx",
+    "dev:main": "tsci dev src/main-board/main-board.circuit.tsx",
+    "dev:secondary": "tsci dev src/secondary-board/secondary-board.circuit.tsx --port 3021",
+    "typecheck": "tsc --noEmit",
+    "build:main": "tsci build src/main-board/main-board.circuit.tsx --routing-disabled --disable-parts-engine",
+    "build:secondary": "tsci build src/secondary-board/secondary-board.circuit.tsx --routing-disabled --disable-parts-engine",
+    "build": "npm run build:main && npm run build:secondary",
+    "check:netlist": "node scripts/check-boards.mjs netlist",
+    "check:schematic": "node scripts/check-boards.mjs schematic-placement",
+    "check:placement": "node scripts/check-boards.mjs placement",
+    "check:source": "node scripts/check-boards.mjs source",
+    "render:main": "tsci build src/main-board/main-board.circuit.tsx --svgs --pcb-png --schematic-png --routing-disabled --disable-parts-engine",
+    "render:secondary": "tsci build src/secondary-board/secondary-board.circuit.tsx --svgs --pcb-png --schematic-png --routing-disabled --disable-parts-engine",
+    "render": "npm run render:main && npm run render:secondary",
+    "validate": "npm run typecheck && npm run check:netlist && npm run check:schematic && npm run check:placement && npm run build && npm run check:main-core",
+    "firmware:bootstrap": "bash firmware/scripts/bootstrap.sh",
+    "firmware:prepare": "python3 firmware/scripts/prepare.py",
+    "firmware:build": "bash firmware/scripts/build.sh build",
+    "firmware:test": "bash firmware/scripts/build.sh test",
+    "firmware:size": "bash firmware/scripts/build.sh size",
+    "check:main-core": "node scripts/check-main-core.mjs"
+  },
+  "dependencies": {
+    "react": "19.3.1"
+  },
+  "devDependencies": {
+    "@tscircuit/props": "0.0.712",
+    "@types/node": "24.10.0",
+    "@types/react": "19.3.0",
+    "tscircuit": "0.0.3033",
+    "typescript": "5.9.3"
+  }
+}
