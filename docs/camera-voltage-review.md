@@ -142,11 +142,13 @@ product. Do not infer compatibility from a nominal3.3 V label.
 
 ## Decision and independent-work boundary
 
-The open camera decision is5 MP fixed-lens custom DVP versus preserving2 MP and
-continuing module sourcing. The new SPI information adds a possible larger bench
-module path, not a silent choice. Neither it nor the separate external-pack versus
-integrated-battery decision has been answered. Frame internal dimensions also remain
-unknown. Main camera pins therefore stay reserved, and battery/camera-dependent final
+The latest instruction authorizes choosing compatible components autonomously.
+Camera selection is now an engineering qualification gate: the exact module must
+satisfy rail limits, supply sequencing, timing and the required image capability.
+The conditional custom DVP and larger SPI paths have not yet closed all those
+requirements, so none is labelled selected/qualified. The separate external-pack
+versus integrated-battery architecture question remains unanswered. Frame internal
+dimensions also remain unknown. Main camera pins therefore stay reserved, and battery/camera-dependent final
 routing is not started. A camera choice can close capability direction; exact module
 revision, compliant rails/sequence and physical measurements still close implementation.
 

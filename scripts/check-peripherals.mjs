@@ -102,10 +102,18 @@ console.log(`TS model: 0 C ratio ${cold.min.toFixed(4)}..${cold.max.toFixed(4)};
 right.pins("R38",{1:"VOUT_ALWAYS",2:"SWITCH_BIAS"});assert.equal(right.components.get("R38").resistance,10000)
 right.pins("U6",{1:"GND",2:"TOUCH_RAW",3:"GND",4:"TOUCH_OUT",5:"VCORE3V3"})
 right.pins("C27",{1:"VCORE3V3",2:"GND"});right.separate("TOUCH_RAW","TOUCH_OUT")
-assert.deepEqual(right.components.get("U6").supplier_part_numbers.jlcpcb,["C7833"])
+assert.deepEqual(right.components.get("U6").supplier_part_numbers.jlcpcb,["C23654"])
 // QT1010 VOH>=2.3V / VOL<=0.5V; LVC thresholds 2.0V / 0.8V at3.0..3.6V.
 const logicNominal = 0.8 * (1 + left.components.get("R9").resistance / left.components.get("R10").resistance)
 assert.ok(logicNominal * 0.97 - 0.1 >= 3 && logicNominal * 1.03 + 0.04 <= 3.6, "Touch buffer rail must stay within its 3.0..3.6 V TTL-threshold range")
 console.log("Touch TTL buffer and current-limited hardware-switch bias connectivity passed.")
 
 assert.equal(right.components.get("R24").resistance,1000);assert.equal(right.components.get("R25").resistance,1000)
+
+
+const touchBufferPcb=right.all("pcb_component").find(p=>p.source_component_id===right.components.get("U6").source_component_id)
+const touchBufferPads=right.all("pcb_smtpad").filter(p=>p.pcb_component_id===touchBufferPcb.pcb_component_id)
+assert.equal(touchBufferPads.length,5)
+for(const pad of touchBufferPads){assert.ok(Math.abs(pad.width-.6)<1e-8);assert.ok(Math.abs(pad.height-1.1)<1e-8)}
+assert.ok(Math.abs(Math.max(...touchBufferPads.map(p=>p.y))-Math.min(...touchBufferPads.map(p=>p.y))-2.6)<1e-8)
+console.log("Selected touch buffer DBV0005A land dimensions and row spacing match the TI drawing.")

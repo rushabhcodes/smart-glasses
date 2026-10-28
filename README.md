@@ -11,6 +11,9 @@ right implements charger/power switch, gauge, amplifier, touch and mating connec
 The camera module/interface is still unresolved. See [current design and gates](docs/compact-design.md),
 [boot/memory review](docs/boot-memory-review.md) and [camera voltage review](docs/camera-voltage-review.md).
 
+Current [actual CAD snapshot](docs/progress/2026-10-28-contact-review.png) shows both review boards.
+Generate frozen PNG/GLB progress artifacts with `npm run render:progress` after building.
+
 No physical hardware has been assembled, flashed or tested. Detailed routing remains
 disabled. Provisional 80 × 18 mm / 100 × 18 mm four-layer outlines do not establish frame
 fit or fabrication readiness. The PICO comparison still has zero catalog stock; the current R8 and flash have dated
@@ -46,8 +49,11 @@ consumer-frame fit are not established by this prototype plan.
 | Left | S3R8 +8 MB flash, TPS63070, ICS-43434, capture button/LED driver, U.FL and FH12 connector | Exact camera, RF matching/layout, sourcing and measured fit |
 | Right | BQ24075T, TPS22965 hardware switch, MAX17048, MAX98357A, AT42QT1010, JST and FH12 connectors | Selected cell/attached NTC, speaker/electrode/enclosure, input protection and thermal release |
 
-The [BOM](bom/preliminary-bom.csv) reflects generated components; [dated sourcing
-observations](bom/sourcing-checks.json) are availability checks, not orders or reservations.
+The [BOM](bom/preliminary-bom.csv) reflects generated components; the
+[verified recommendation](docs/recommended-bom.md), [complete catalog audit](bom/component-audit.json)
+and [CSV](bom/jlcpcb-recommendation.csv) record current JLC/LCSC stock and process gates.
+Earlier [LCSC observations](bom/sourcing-checks.json) remain available for comparison.
+Catalog observations are availability checks, not orders or reservations.
 All imported geometry still needs assembly review, including thermal vias and paste.
 
 ## Communication between PCBs

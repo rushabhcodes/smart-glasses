@@ -1,4 +1,4 @@
-import { SN74LVC1G125DCKR } from "../../imports/SN74LVC1G125DCKR"
+import { SN74LVC1G125DBVR } from "../../imports/SN74LVC1G125DBVR"
 import { AT42QT1010_TSHR } from "../../imports/AT42QT1010_TSHR"
 import { A_0603WAF1001T5E } from "../../imports/A_0603WAF1001T5E"
 import { CC0603KRX7R9BB103 } from "../../imports/CC0603KRX7R9BB103"
@@ -20,7 +20,7 @@ export function SecondaryTouch() {
       <testpoint name="TP21" pcbX={45} pcbY={2} doNotPlace footprintVariant="pad" padDiameter="3mm"
         connections={{ pin1: "net.TOUCH_ELECTRODE" }} />
       {/* TTL input thresholds accept QT1010's specified 2.3 V / 0.5 V output levels. */}
-      <SN74LVC1G125DCKR name="U6" pcbX={32} pcbY={-3}
+      <SN74LVC1G125DBVR name="U6" pcbX={32} pcbY={-3}
         connections={{ pin1: "net.GND", pin2: "net.TOUCH_RAW", pin3: "net.GND",
           pin4: "net.TOUCH_OUT", pin5: "net.VCORE3V3" }} />
       <CC0603KRX7R9BB104 name="C27" maxVoltageRating="50V" schRotation={-90}

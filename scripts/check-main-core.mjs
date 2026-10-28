@@ -50,7 +50,7 @@ for (const [ref, a, b] of [["C1", "VCORE3V3", "GND"], ["C2", "VDD_RF", "GND"],
 for (const [n, net] of [[4, "MCU_EN"], [52, "STRAP_GPIO46"], [51, "STRAP_GPIO45"],
   [5, "BOOT_N"], [50, "UART0_RX"], [49, "UART0_TX"], [36, "REC_LED"], [6, "USER_BUTTON"]]) connected("U1", n, net)
 for (const [ref, a, b] of [["R5", "VCORE3V3", "USER_BUTTON"], ["C4", "USER_BUTTON", "GND"],
-  ["SW1", "USER_BUTTON", "GND"], ["R6", "VCORE3V3", "REC_LED_ANODE"],
+  ["R6", "VCORE3V3", "REC_LED_ANODE"],
   ["R7", "REC_LED_BASE", "GND"], ["R8", "REC_LED", "REC_LED_BASE"],
   ["LED1", "REC_LED_CATHODE", "REC_LED_ANODE"]]) {
   connected(ref, 1, a); connected(ref, 2, b)
@@ -88,9 +88,9 @@ for (const n of [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 24, 25, 
   assert.ok(![...nets.values()].some((net) => find(net) === find(port.source_port_id)), `Reserved pad ${n} has a net`)
 }
 for (const [ref, id] of [["U1", "C2913194"], ["C1", "C45783"], ["C2", "C14663"], ["C3", "C15849"],
-  ["C4", "C14663"], ["SW1", "C398741"], ["LED1", "C3030991"], ["R6", "C21190"], ["R7", "C21190"], ["R8", "C21190"], ["Q1", "C81464"],
+  ["C4", "C14663"], ["SW1", "C72443"], ["LED1", "C3030991"], ["R6", "C21190"], ["R7", "C21190"], ["R8", "C21190"], ["Q1", "C81464"],
   ["U2", "C109322"], ["L1", "C3033018"], ["R9", "C861315"], ["R10", "C122538"], ["R11", "C122538"],
-  ...["R1", "R2", "R3", "R4", "R5"].map((ref) => [ref, "C25804"])])
+  ...["R1", "R2", "R3", "R4"].map((ref) => [ref, "C25804"])])
   assert.deepEqual(components.get(ref)?.supplier_part_numbers?.jlcpcb, [id], `${ref} must retain its verified import ID`)
 const pcb = all("pcb_component").find((e) => e.source_component_id === components.get("U1").source_component_id)
 const pads = all("pcb_smtpad").filter((e) => e.pcb_component_id === pcb.pcb_component_id)
@@ -120,7 +120,7 @@ for (const [number, net] of [[1,"MIC_SD"],[2,"GND"],[3,"MIC_SD_RAW"],[4,"MIC_REF
 assert.notEqual(find(nets.get("MIC_SD_RAW")),find(nets.get("MIC_SD")),"Mic output bypasses threshold restoration")
 for (const [ref,a,b] of [["C12","VCORE3V3","GND"],["R14","VCORE3V3","MIC_REF_HALF"],["R15","MIC_REF_HALF","GND"],["C13","MIC_REF_HALF","GND"]]) {connected(ref,1,a);connected(ref,2,b)}
 assert.equal(components.get("R14").resistance,100000);assert.equal(components.get("R15").resistance,100000)
-assert.deepEqual(components.get("U4").supplier_part_numbers.jlcpcb,["C130037"])
+assert.deepEqual(components.get("U4").supplier_part_numbers.jlcpcb,["C133590"])
 // TDK SD at .35/.65 VDD, half-rail divider including resistor/temperature error,
 // TI max4mV offset plus10mV allowance for hysteresis/noise (bench acceptance).
 const refLo=(1-dividerError)/((1-dividerError)+(1+dividerError))
@@ -165,8 +165,8 @@ assert.equal(components.get("Y1").frequency,40e6,"ESP32-S3 requires a 40 MHz cry
 for(const [ref,a,b] of [["L4","XTAL_P_CHIP","XTAL_P"],["C24","XTAL_P","GND"],["C25","XTAL_N","GND"],
  ["L3","VCORE3V3","VDD_RF"],["C16","VDD_RF","GND"],["C17","VCORE3V3","GND"],["C18","VCORE3V3","GND"],
  ["C19","VCORE3V3","GND"],["C20","VCORE3V3","GND"],["C14","RF_CHIP","GND"],["L2","RF_CHIP","RF_MATCHED"],["C15","RF_MATCHED","GND"]]) {connected(ref,1,a);connected(ref,2,b)}
-for(const [ref,id] of [["R25","C21189"],["U5","C2940197"],["Y1","C1985328"],["L2","C86109"],["L3","C18216"],["L4","C167472"],
- ["C14","C85897"],["C15","C85897"],["C24","C106199"],["C25","C106199"]])
+for(const [ref,id] of [["R25","C21189"],["U5","C2940197"],["Y1","C5357833"],["L2","C86109"],["L3","C18216"],["L4","C167472"],
+ ["C14","C85897"],["C15","C85897"],["C24","C106997"],["C25","C106997"]])
  assert.deepEqual(components.get(ref).supplier_part_numbers.jlcpcb,[id])
 const flashPcb=all("pcb_component").find(p=>p.source_component_id===components.get("U5").source_component_id)
 const flashPads=all("pcb_smtpad").filter(p=>p.pcb_component_id===flashPcb.pcb_component_id)
@@ -179,15 +179,15 @@ for(const via of all("pcb_via")) {
 }
 console.log("R8 external flash/clock/RF guards passed; power integrity, timing, crystal and RF tuning are unmeasured.")
 
-assert.equal(components.get("Y1").load_capacitance,8e-12)
+assert.equal(components.get("Y1").load_capacitance,10e-12)
 const crystalPcb=all("pcb_component").find(p=>p.source_component_id===components.get("Y1").source_component_id)
 const crystalPads=all("pcb_smtpad").filter(p=>p.pcb_component_id===crystalPcb.pcb_component_id)
 assert.equal(crystalPads.length,4)
-for(const pad of crystalPads) {assert.ok(Math.abs(pad.width-1.2)<1e-8);assert.ok(Math.abs(pad.height-.85)<1e-8)}
+for(const pad of crystalPads) {assert.ok(Math.abs(pad.width-.85)<1e-8);assert.ok(Math.abs(pad.height-.75)<1e-8)}
 const px=crystalPads.map(p=>p.x);const py=crystalPads.map(p=>p.y)
-assert.ok(Math.abs(Math.max(...px)-Math.min(...px)-1.625)<1e-8)
-assert.ok(Math.abs(Math.max(...py)-Math.min(...py)-1.2)<1e-8)
-console.log("Exact Abracon crystal option, ground-case pins and corrected manufacturer land pattern passed.")
+assert.ok(Math.abs(Math.max(...px)-Math.min(...px)-1.35)<1e-8)
+assert.ok(Math.abs(Math.max(...py)-Math.min(...py)-1.05)<1e-8)
+console.log("Exact ECS crystal option, ground-case pins and corrected manufacturer land pattern passed.")
 
 connected("U1",8,"STRAP_GPIO3");connected("R26",1,"VCORE3V3");connected("R26",2,"STRAP_GPIO3")
 assert.equal(components.get("R26").resistance,10000)
@@ -198,3 +198,25 @@ assert.deepEqual(gpio3Ports.map(p=>[p.source_component_id,p.pin_number]).sort(),
  [[components.get("U1").source_component_id,8],[components.get("R26").source_component_id,2]].sort(),
  "GPIO3 must not be used by another peripheral")
 console.log("GPIO3 has a deterministic external pull-up and remains reserved from peripherals.")
+
+for(const n of [1,2]) connected("SW1",n,"CAPTURE_CONTACT")
+for(const n of [3,4,5]) connected("SW1",n,"GND")
+assert.equal(components.get("R5").resistance,2700)
+assert.deepEqual(components.get("R5").supplier_part_numbers.jlcpcb,["C13167"])
+connected("R27",1,"USER_BUTTON");connected("R27",2,"CAPTURE_CONTACT")
+assert.equal(components.get("R27").resistance,150)
+assert.deepEqual(components.get("R27").supplier_part_numbers.jlcpcb,["C22808"])
+assert.ok((railMin-.1)/((2700+150)*1.01+.1)>.001,"KMR silver contacts need at least1mA closed current")
+assert.ok((railMax+.04)/(150*.99)<.05,"C4 discharge must stay below the50mA switch rating")
+assert.ok((railMax+.04)**2/(150*.99)<.1,"R27 peak power exceeds its100mW rating")
+assert.ok((railMax+.04)*(150*1.01+.1)/(2700*.99+150*1.01+.1)<.25*(railMin-.1),"Closed switch fails MCU low threshold")
+assert.equal(components.get("C24").capacitance,15e-12)
+assert.equal(components.get("C25").capacitance,15e-12)
+console.log("KMR contact groups/ground lug, minimum steady current, capacitor-discharge current, GPIO low and15pF initial crystal loads passed.")
+
+const comparatorPcb=all("pcb_component").find(p=>p.source_component_id===components.get("U4").source_component_id)
+const comparatorPads=all("pcb_smtpad").filter(p=>p.pcb_component_id===comparatorPcb.pcb_component_id)
+assert.equal(comparatorPads.length,5)
+for(const p of comparatorPads){assert.ok(Math.abs(p.width-.4)<1e-8);assert.ok(Math.abs(p.height-.95)<1e-8)}
+assert.ok(Math.abs(Math.max(...comparatorPads.map(p=>p.y))-Math.min(...comparatorPads.map(p=>p.y))-2.2)<1e-8)
+console.log("Selected comparator DCK0005A land dimensions and row spacing match the TI drawing.")

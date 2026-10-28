@@ -12,6 +12,10 @@ and schematic alternative, not a qualified manufacturing release.
 | ESP32-S3-MINI-1U-N8, C2980299 | LCSC stock 545 | 15.4 mm square module; no PSRAM | Does not preserve the existing memory requirement |
 | ESP32-S3-PICO-1-N8R2, C7558093 | LCSC stock 0; tsci external search listed Mouser stock 3,038 | 2 MB PSRAM instead of 8 MB | Capability change; not substituted |
 
+The latest direct JLC check also confirms PICO C7545129 has zero stock.
+Current R8 JLC stock is10,183 versus8,067 in LCSC; external flash80 in both.
+Earlier numbers in the comparison table are historical observations.
+
 Observations are public listings, not reserved stock. Exact `tsci import C2913194
 --jlcpcb --use-exact-footprint` succeeded. The tsci JLC search returned unrelated
 parts for the name and no results for the exact code; it did **not** establish JLC
@@ -46,28 +50,26 @@ for the primary TRM basis and remaining bring-up/transient checks. The
 all related supply pads, GPIO47/48 domain selection and sleep implications. Local100 nF +1 µF
 and flash100 nF remain. Analog supply uses the2 nH filter and separate bypass.
 
-**Abracon ABM10W-40.0000MHZ-8-B1U-T3 / C1985328** replaces the incompletely
-specified YXC option. Abracon datasheet rev2024-02-23 decodes40.0000 MHz,8 pF CL,
-B=−20 to+70 °C,1=±10 ppm initial tolerance,U=±10 ppm stability and T3=reel. At
-40 MHz/8 pF the current sheet specifies≤30 Ω ESR,100 µW maximum drive and±2 ppm
-first-year aging. Body2.5 ×2.0 mm, drawing maximum height0.65 mm. Initial tolerance,
-temperature stability, aging and load pulling are distinct; no±10 ppm total error
-across all conditions is claimed. Verify startup/drive/frequency after assembly.
+**ECS-400-10-37B2-CKY-TR / C5357833** is now the selected crystal. The primary
+ECX-1637B2 Rev2026 sheet decodes40 MHz,10 pF CL, C=±10 ppm initial tolerance,
+K=±10 ppm stability and Y=−30 to+85 °C. ESR≤40 Ω at40 MHz; first-year aging±2 ppm;
+maximum drive200 µW. Body2.0 ×1.6 ×0.45±0.05 mm, planar tolerance±0.1 mm.
+The JLC catalog and LCSC both listed202 units. These figures do not establish
+±10 ppm total error over every temperature, aging and load condition.
 
-The official exact-footprint import succeeded. Its oversized lands were corrected
-to the manufacturer's1.2 ×0.85 mm pads on1.625 ×1.2 mm centers, with pads2/4 grounded.
-The imported3D body's2.5 ×2.0 mm bounds were also checked. Two10 pF loads assume
-3 pF stray:10/2+3=8 pF; load tuning remains a board measurement. Espressif's initial
-24 nH XTAL_P series element is retained. LCSC listed **five** units; DigiKey search
-listed31,088. JLC assembly inventory is still not confirmed.
+The official tsci exact import has no EasyEDA component. A manufacturer-defined
+component therefore uses Figure2's0.85 ×0.75 mm lands on1.35 ×1.05 mm centers,
+with case pins2/4 grounded. Its CAD is explicitly a simple maximum package envelope
+2.1 ×1.7 ×0.5 mm, not a detailed supplier model. Two15 pF C0G loads (C106997)
+use an initial2.5 pF stray estimate:15/2+2.5=10 pF. This estimate differs from the
+old load model; only actual-board frequency/drive/startup measurements can close it.
+Espressif's starting24 nH XTAL_P series inductor remains. No RF/frequency test ran.
 
-ECS-400-10-37B2-CKY-TR / C5357833 is a second exact-spec alternative (40 MHz,
-10 pF,±10 ppm initial/stability,2.0 ×1.6 mm; LCSC202 and DigiKey46,619 at lookup).
-Its official tsci/JLC import failed because the EasyEDA component was absent. It is
-not integrated and no footprint/import success is invented. The old YXC import is
-preserved in history; it is no longer the active crystal.
-Primary: [Abracon](https://abracon.com/datasheets/ABM10W.pdf),
-[ECS](https://ecsxtal.com/store/pdf/ECX-1637B2.pdf).
+The previously reviewed Abracon8 pF option remains in history and its unused import:
+ABM10W-40.0000MHZ-8-B1U-T3/C1985328 showed only five units at both JLC/LCSC.
+It is no longer active. The original YXC option is also preserved but inactive.
+Primary: [ECS](https://ecsxtal.com/store/pdf/ECX-1637B2.pdf),
+[Abracon](https://abracon.com/datasheets/ABM10W.pdf).
 
 The chip RF CLC uses0201 Murata1.5 pF /2.7 nH /1.5 pF, within Espressif's
 recommended starting ranges. It is **untuned**. The existing U.FL interface remains;

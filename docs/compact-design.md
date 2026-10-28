@@ -21,9 +21,11 @@ Source graphs and PCB traces are distinct: all detailed routing remains disabled
 
 The current alternative uses **ESP32-S3R8 / C2913194**, with8 MB in-package octal
 PSRAM and external **W25Q64JVZPIQ / C2940197**8 MB quad flash. It preserves the
-original8 MB/8 MB capacity. LCSC showed8,294 R8 and80 flash at lookup, whereas
-PICO C7545129 remained at zero. These are observations, not a stock reservation
+original8 MB/8 MB capacity. The latest audit showed10,183 R8 at JLC /8,067 at LCSC and80 flash in both;
+PICO C7545129 remained at zero in the direct JLC check. These are observations, not a stock reservation
 or proof of JLC assembly inventory. Official tsci exact-footprint imports succeeded.
+The [current JLC/LCSC audit](recommended-bom.md) records exact identities, separate
+stock counts, assembly tiers and process gates for all45 current PCB IDs.
 See [sourcing review](core-sourcing.md) for the primary evidence, price/area tradeoffs
 and clock measurements and assembly checks.
 
@@ -43,7 +45,7 @@ GPIO3/pad8 now has an external10 kΩ pull-up through R26; it remains reserved fr
 peripherals. USB19/20 and the pending camera GPIOs remain unconnected. UART, EN/BOOT,
 controls, audio and the frame interface preserve their previous physical pad mapping.
 
-The exact Abracon8 pF crystal uses a24 nH series element and provisional10 pF loads. The chip
+The exact ECS10 pF crystal uses a24 nH series element and provisional15 pF loads. The chip
 RF network uses0201 CLC starting values1.5 pF/2.7 nH/1.5 pF. Hirose U.FL-R-SMT(10),
 C434808, and R13 remain the provisional RF output. No tuned RF geometry, selected
 antenna/coax, completed50 Ω route, final antenna matching/ESD or RF measurements exist.
@@ -87,7 +89,7 @@ Battery undervoltage shutdown/recovery and final input protection are release ga
 The user has bought no INMP441 and requested tsci/JLCPCB sourcing. Exact
 **TDK ICS-43434 / C5656610** identity and LGA6 package were verified using the
 official tsci exact-footprint import and manufacturer DS-000069 revision1.2.
-LCSC showed **2,893** at the dated lookup (not a reservation).
+The latest lookup showed **3,561 at JLC /2,860 at LCSC** (not a reservation).
 
 Physical pins: 1WS, 2LR=GND (left slot), 3GND, 4SCK, 5VDD, 6SD. C11 is the
 100 nF local bypass; R12 is a 100 kΩ SD pulldown. The imported 0.4 mm acoustic
@@ -101,21 +103,29 @@ mask, port sealing and assembly yield remain explicit review gates. This is not 
 Audio uses 16 kHz Philips I2S with two 32-bit wire slots (1.024 MHz BCLK), shared
 between mic RX and amp TX; 16 kHz is the mic's low-power sample-rate mode.
 The microphone SD guarantees0.35/0.65×VDD, whereas the S3 specifies0.25/0.75×VDD
-input limits. The current circuit therefore restores SD through a **TLV3201AIDCKR
-/C130037** comparator at half-supply, rather than connecting SD directly to the MCU.
-Pins1OUT,2GND,3IN+,4IN−,5VCC match the primary TI pin table and official SC70-5 import.
+input limits. The current circuit therefore restores SD through a **TLV3201AIDCKT
+/C133590** comparator at half-supply, rather than connecting SD directly to the MCU.
+Pins1OUT,2GND,3IN+,4IN−,5VCC match the primary TI pin table and official SC70-5 import. TI DCK0005A lands were corrected to0.4×0.95 mm
+on2.2 mm row centers (rotated90°), with the comparator polarity drawn explicitly.
 100 kΩ/100 kΩ0.1% divider plus100 nF establishes the reference; another100 nF bypasses
 the comparator. R12 pulls the raw mic output low. TI specifies≤4 mV offset and55 ns
 propagation at its2.7 V/15 pF corner; the75 ns mic delay plus55 ns comparator and50 ns
 setup allowance fit the488 ns half-clock at1.024 MHz. The reference has5 ms nominal
-RC; startup settling and routed load≤15 pF still require measurements. Only **one unit**
-was listed at lookup, so sourcing is a gate. This restores the static-level budget;
+RC; startup settling and routed load≤15 pF still require measurements. The T packing option showed58 units at both JLC and LCSC; it replaces the R
+packing option, which had only one. The electrical part/package is unchanged. This restores the static-level budget;
 it is not a hardware test result. [TI datasheet](https://www.ti.com/lit/ds/symlink/tlv3201.pdf).
 
 No MCLK is used. Existing firmware host/build results do not establish acoustic,
 slot alignment or capture success with this replacement.
 
-GPIO1 capture/PTT has 10 kΩ pull-up, 100 nF and a tactile switch. GPIO48 drives
+GPIO1 capture/PTT uses C&K KMR221GLFS/C72443, a2.7 kΩ pull-up and100 nF.
+R27=150 Ω/C22808 separates the filtered MCU input from the contact node. It bounds
+capacitor-discharge current below23 mA and peak resistor power below78 mW, while
+the2.7 kΩ/150 Ω network preserves at least1.09 mA closed current (minimum1 mA
+required) and a valid GPIO low below0.19 V. Physical top-row pads1/2 share the
+contact node, bottom-row
+3/4 and case lug5 are grounded. The1.9 mm-height switch needs enclosure actuation
+and at least3 ms software debounce review; the RC alone does not reject all bounce. GPIO48 drives
 a default-off NPN recording LED driver with 1 kΩ base resistor, 1 kΩ pulldown
 and 1 kΩ LED series limiter. The stronger base pulldowns resist weak reset bias; asserted GPIO current stays below3 mA in the nominal3.3 V circuit. Reset behavior, indicator optical visibility and fault behavior are untested.
 
@@ -175,10 +185,11 @@ filter/emissions needs and close-ear acoustic safety remain unverified.
 
 AT42QT1010-TSHR / C74512 uses VCORE3V3, 100 nF bypass and low-power SYNC=GND.
 10 nF Cs joins SNSK/SNS; a1 kΩ series resistor feeds the electrode review pad.
-Its output passes through SN74LVC1G125DCKR/C7833 with OE grounded and100 nF bypass.
+Its output passes through SN74LVC1G125DBVR/C23654 with OE grounded and100 nF bypass.
 The buffer's2.0/0.8 V input thresholds accept the touch IC's2.3 V high /0.5 V low
-specification, then restore full logic swing to the MCU. Exact TI identity/SC70-5
-import and35 units at lookup were verified. Startup OUT is invalid for about100 ms;
+specification, then restore full logic swing to the MCU. Exact TI identity/SOT23-5
+import were verified. The DBV SOT-23 variant has177,134 JLC catalog units at lookup;
+its TI0.6 ×1.1 mm lands/2.6 mm row centers replace the imported undersized lands. Startup OUT is invalid for about100 ms;
 firmware must ignore it during that interval. [Buffer datasheet](https://www.ti.com/lit/ds/symlink/sn74lvc1g125.pdf).
 The final insulated electrode/cover needs tuning; the 3 mm test pad is not an
 approved touch area. Maximum-on behavior and amplifier/touch operation are untested.

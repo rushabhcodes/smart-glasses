@@ -1,0 +1,40 @@
+{
+  "timestampUTC": "2026-10-28T23:34:03.885Z",
+  "note": "Actual final CAD; original supplier OBJ bytes cached. Empty transport cache hint removed only in render copy. No placement, geometry or electrical changes. ECS is a maximum-package envelope; imported models are not fit verification.",
+  "boards": {
+    "main": {
+      "width": 80,
+      "height": 18,
+      "components": 76,
+      "sourceSHA256": "a23411a7e459bca558d685edafc2cc5c1fd440abb14f560b96816cbacc72bff2",
+      "loadedImportedMeshes": 66,
+      "requestedImportedMeshes": 66,
+      "pcbTraces": 0
+    },
+    "secondary": {
+      "width": 100,
+      "height": 18,
+      "components": 46,
+      "sourceSHA256": "50bd5a48a54b5b3b3b0c8d9842afcb820a61f8ab7f853029d40bab94736a5835",
+      "loadedImportedMeshes": 43,
+      "requestedImportedMeshes": 43,
+      "pcbTraces": 0
+    }
+  },
+  "modelAssets": {
+    "uniqueCount": 44,
+    "allImportedMeshesLoaded": true
+  },
+  "renderOptions": {
+    "width": 720,
+    "height": 480,
+    "supersampling": 2,
+    "realistic": true
+  },
+  "image": {
+    "filename": "2026-10-28-contact-review.png",
+    "width": 1100,
+    "height": 740,
+    "sha256": "ad5a23e45467543b0b63a59dd26e8733145afea2138e1a9161d89be972ea6117"
+  }
+}

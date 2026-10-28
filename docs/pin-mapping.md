@@ -29,7 +29,7 @@ in review TSX. No assignment is hardware-tested.
 | CTRL_SCL | 2 | 7 | Wired; bench pending |
 | TOUCH_OUT | 21 | 27 | Wired; bench pending |
 | AMP_ENABLE | 42 | 48 | Wired; bench pending |
-| USER_BUTTON | 1 | 6 | Wired; bench pending |
+| USER_BUTTON | 1 | 6 | Wired; KMR/2.7k/100nF; bench pending |
 | REC_LED | 48 | 36 | Wired; bench pending |
 
 Preserve USB19/20 (pads25/26), UART43/44 (49/50), GPIO0/3/45/46 boot straps,

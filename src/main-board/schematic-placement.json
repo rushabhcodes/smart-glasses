@@ -139,16 +139,16 @@
     {
       "selector": "SW1",
       "center": {
-        "x": 2.11445535,
-        "y": -1.122500000000001
+        "x": 1.83,
+        "y": -1.12
       },
       "relative_to": "group_center"
     },
     {
       "selector": "C4",
       "center": {
-        "x": 2.205,
-        "y": 0.9324999999999989
+        "x": 2.48,
+        "y": 0.93
       },
       "relative_to": "group_center"
     },
@@ -597,6 +597,14 @@
       "center": {
         "x": -7,
         "y": 5
+      },
+      "relative_to": "group_center"
+    },
+    {
+      "selector": "R27",
+      "center": {
+        "x": 4.8,
+        "y": -1.1225
       },
       "relative_to": "group_center"
     }

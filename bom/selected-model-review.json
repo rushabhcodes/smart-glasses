@@ -1,0 +1,75 @@
+{
+  "observedDateUTC": "2026-10-28",
+  "note": "Measured supplier OBJ bounds, not physical measurements. Detailed imported models are visualization inputs, not authoritative mechanical fit evidence. Manufacturer drawings govern package limits.",
+  "models": [
+    {
+      "name": "KMR221GLFS",
+      "vertices": 1922,
+      "min": [
+        -2.3,
+        -1.4,
+        -0.026272
+      ],
+      "max": [
+        2.3,
+        1.442542,
+        1.95
+      ],
+      "size": [
+        4.6,
+        2.842542,
+        1.976272
+      ],
+      "manufacturerNominalEnvelopeMm": [
+        4.6,
+        2.8,
+        1.9
+      ],
+      "status": "Imported model approx4.6x2.84x1.98; verify manufacturer tolerances and physical actuation/enclosure separately."
+    },
+    {
+      "name": "TLV3201AIDCKT",
+      "vertices": 7294,
+      "min": [
+        -1.056278,
+        -1,
+        -0.049083
+      ],
+      "max": [
+        1.056278,
+        1,
+        1.2
+      ],
+      "size": [
+        2.112556,
+        2,
+        1.249083
+      ],
+      "manufacturerDCKMaxHeightMm": 1.1,
+      "modelHeightAboveItsImportedBoardOriginMm": 1.249083,
+      "status": "Model exceeds published maximum height; retained as a conservative imported visualization. Do not use it as a package-height specification or fit proof."
+    },
+    {
+      "name": "SN74LVC1G125DBVR",
+      "vertices": 6525,
+      "min": [
+        -1.506278,
+        -1.45,
+        -0.049083
+      ],
+      "max": [
+        1.506278,
+        1.45,
+        1.2
+      ],
+      "size": [
+        3.012556,
+        2.9,
+        1.249083
+      ],
+      "manufacturerDBVMaxHeightMm": 1.45,
+      "modelHeightAboveItsImportedBoardOriginMm": 1.249083,
+      "status": "Model is within published maximum but does not establish maximum assembly clearance."
+    }
+  ]
+}

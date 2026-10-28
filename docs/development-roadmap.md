@@ -11,11 +11,13 @@ Current status is detailed in [compact design](compact-design.md).
 - [x] Matching20-contact logical cable contract and generated connectivity guards.
 - [x] Review R8 supply/boot modes and add an external GPIO3 bias; generated guards pass.
 - [x] Pin the OV5640 carrier source revision and investigate a conditional1.8 V interface.
-- [ ] Select camera architecture/revision, qualify rail sequencing and close routed timing.
+- [ ] Qualify and select exact camera/revision, rail sequencing and capture timing.
 - [ ] Receive battery architecture choice; neither direction is selected by silence.
 - [ ] Resolve exact camera module/lens/carrier and its connector/rails/reset behavior.
 - [x] Research stocked same-capacity R8 + external-flash alternative; preserve PICO milestone139a02a.
-- [x] Exact Abracon crystal option/land correction and common3.3 V memory-feed review.
+- [x] Stocked ECS crystal/manual manufacturer land pattern and common3.3 V memory-feed review.
+- [x] Audit45 PCB supplier IDs against direct JLC records; distinguish LCSC inventory and process tiers.
+- [x] Replace scarce comparator/button and qualify touch-buffer package/initial crystal loads.
 - [ ] Confirm assembly inventory; measure clock/RF/memory behavior.
 - [ ] Select physical cell/NTC adapter, antenna/coax, speaker and final frame envelope.
 - [ ] Finish input protection and low-battery shutdown/recovery against the selected pack.

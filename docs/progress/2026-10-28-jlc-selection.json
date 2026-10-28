@@ -1,0 +1,26 @@
+{
+  "timestampUTC": "2026-10-28T22:34:29+00:00",
+  "note": "Actual CAD; selected supplier revision, unrouted; ECS is a simple maximum package-envelope model; no assembled frame/pack/camera or physical validation. Historical first selection snapshot before the later R27 contact-current limiter.",
+  "boards": {
+    "main": {
+      "width": 80,
+      "height": 18,
+      "components": 75,
+      "sourceJSONsha256": "59e1364873a707b73ae944e046b35ce22de36dda727deb922cc1a571e4cc93e9",
+      "pcbTraces": 0
+    },
+    "secondary": {
+      "width": 100,
+      "height": 18,
+      "components": 46,
+      "sourceJSONsha256": "80249cfeddd2b79a51196b18bfd771d44b22b763621de9c4819d4b892585c773",
+      "pcbTraces": 0
+    }
+  },
+  "image": {
+    "filename": "2026-10-28-jlc-selection.png",
+    "width": 1100,
+    "height": 740,
+    "sha256": "ee838fbb98ff1c0bb34982cfa6881b764be34dcd3d5d523127b561159aa88b3a"
+  }
+}

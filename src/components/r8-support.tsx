@@ -1,10 +1,10 @@
 import { W25Q64JVZPIQ } from "../../imports/W25Q64JVZPIQ"
-import { ABM10W_40_0000MHZ_8_B1U_T3 } from "../../imports/ABM10W_40_0000MHZ_8_B1U_T3"
+import { ECS400Crystal } from "./ecs-400-crystal"
 import { LQP03TG2N7B02D } from "../../imports/LQP03TG2N7B02D"
 import { LQG15HS2N0S02D } from "../../imports/LQG15HS2N0S02D"
 import { LQW15AN24NG00D } from "../../imports/LQW15AN24NG00D"
 import { GRM0335C1H1R5CA01D } from "../../imports/GRM0335C1H1R5CA01D"
-import { CC0402JRNPO9BN100 } from "../../imports/CC0402JRNPO9BN100"
+import { CC0402JRNPO9BN150 } from "../../imports/CC0402JRNPO9BN150"
 import { CC0603KRX7R9BB104 } from "../../imports/CC0603KRX7R9BB104"
 import { CC0603KRX7R9BB103 } from "../../imports/CC0603KRX7R9BB103"
 import { CL10A105KB8NNNC } from "../../imports/CL10A105KB8NNNC"
@@ -47,21 +47,21 @@ export function R8Support() {
     </schematicsheet>
     <schematicsheet name="R8ClockRF" displayName="External crystal, analog bypass and untuned RF" sheetIndex={6}>
       <SchematicParts section="ClockRF" title="R8 support — RF and clock tuning outstanding">
-        <ABM10W_40_0000MHZ_8_B1U_T3 name="Y1" pcbX={-15} pcbY={7}
+        <ECS400Crystal name="Y1" pcbX={-15} pcbY={7}
           connections={{ pin1: "net.XTAL_P", pin2: "net.GND", pin3: "net.XTAL_N", pin4: "net.GND" }} />
         <LQW15AN24NG00D name="L4" pcbX={-18.8} pcbY={5.9}
           connections={{ pin1: "net.XTAL_P_CHIP", pin2: "net.XTAL_P" }} />
-        {/* 8 pF CL exact Abracon option: 10/2 + assumed 3 pF stray. Tune on actual PCB. */}
-        <CC0402JRNPO9BN100 name="C24" pcbX={-18} pcbY={7.5} schRotation={-90}
+        {/* 10 pF CL exact ECS option: 15/2 + assumed 2.5 pF stray. Tune on actual PCB. */}
+        <CC0402JRNPO9BN150 name="C24" pcbX={-18} pcbY={7.5} schRotation={-90}
           connections={{ pin1: "net.XTAL_P", pin2: "net.GND" }} />
-        <CC0402JRNPO9BN100 name="C25" pcbX={-12} pcbY={7.5} schRotation={-90}
+        <CC0402JRNPO9BN150 name="C25" pcbX={-12} pcbY={7.5} schRotation={-90}
           connections={{ pin1: "net.XTAL_N", pin2: "net.GND" }} />
         {/* 0201 CLC starting values within Espressif's ranges, not a tuned network. */}
         <GRM0335C1H1R5CA01D name="C14" pcbRotation={270} pcbX={-19.5} pcbY={3.6} schRotation={-90}
           connections={{ pin1: "net.RF_CHIP", pin2: "net.GND" }} />
         <LQP03TG2N7B02D name="L2" pcbRotation={180} pcbX={-21} pcbY={3.6}
           connections={{ pin1: "net.RF_CHIP", pin2: "net.RF_MATCHED" }} />
-        <GRM0335C1H1R5CA01D name="C15" pcbRotation={90} pcbX={-22.5} pcbY={3.3} schRotation={-90}
+        <GRM0335C1H1R5CA01D name="C15" pcbRotation={270} pcbX={-22.5} pcbY={3.3} schRotation={-90}
           connections={{ pin1: "net.RF_MATCHED", pin2: "net.GND" }} />
         <LQG15HS2N0S02D name="L3" pcbRotation={180} layer="bottom" pcbX={-22} pcbY={1}
           connections={{ pin1: "net.VCORE3V3", pin2: "net.VDD_RF" }} />

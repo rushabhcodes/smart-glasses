@@ -34,7 +34,9 @@
     "check:peripherals": "node scripts/check-peripherals.mjs",
     "report:routing-feasibility": "node scripts/report-routing-feasibility.mjs",
     "report:power-budget": "node scripts/report-power-budget.mjs",
-    "report:camera-interface": "node scripts/report-camera-interface.mjs"
+    "report:camera-interface": "node scripts/report-camera-interface.mjs",
+    "audit:bom": "bun scripts/audit-bom.mjs",
+    "render:progress": "bun scripts/render-progress.mjs"
   },
   "dependencies": {
     "react": "19.3.1"
@@ -44,6 +46,8 @@
     "@types/node": "24.10.0",
     "@types/react": "19.3.0",
     "tscircuit": "0.0.3033",
-    "typescript": "5.9.3"
+    "typescript": "5.9.3",
+    "circuit-json-to-gltf": "0.0.151",
+    "poppygl": "0.0.37"
   }
 }

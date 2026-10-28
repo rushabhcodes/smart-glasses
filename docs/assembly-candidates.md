@@ -9,7 +9,7 @@ architecture choice remain pending.
 
 | Exact product | Public availability at lookup | Manufacturer-listed assembly envelope | Compatibility and tradeoff |
 | --- | --- | --- | --- |
-| Adafruit5839 OV5640,120° low-distortion fixed lens |38 in stock,$12.50 |35.7 ×23.0 ×17.5 mm | Preferred bench candidate:5 MP DVP/JPEG, wide fixed lens. Retains QVGA JPEG capability but changes the current OV2640 backend/sensor choice |
+| Adafruit5839 OV5640,120° low-distortion fixed lens |38 in stock,$12.50 |35.7 ×23.0 ×17.5 mm | Reference5 MP DVP/JPEG, wide fixed lens; whole-carrier voltage conflict prevents qualification. Retains QVGA JPEG capability but changes the current OV2640 backend/sensor choice |
 | Adafruit5840 OV5640,72° autofocus |18 in stock,$9.95 |35.7 ×23.0 ×17.5 mm on product page | Narrower view; autofocus needs the camera's motor supply jumper and firmware upload over I2C. Not a silent substitution |
 | Waveshare8532 OV2640 Camera Board |**Discontinued** on manufacturer page | Not selected | Prior reference pinout is useful, but it is not a current procurement recommendation |
 
@@ -59,6 +59,11 @@ The reference PCB is CC BY-SA3.0. Only pin/rail facts were studied here; no refe
 layout was copied. Any future adaptation of its design files must retain attribution
 and comply with that license. Arducam's storefront returned a Cloudflare403; it was
 not retried or bypassed. No current Arducam assembly was qualified from that response.
+
+The user now authorizes autonomous compatible component selection. The camera
+remains a technical qualification gate, rather than a pending request to choose
+a component by preference. No complete module has yet met the rail/timing/sequence
+requirements; the former OV2640/OV5640 question is not treated as a prohibition.
 
 The [camera voltage review](camera-voltage-review.md) pins the carrier source to
 commit6eba497, confirms the conflict, and records conditional1.8 V level translation

@@ -1,7 +1,8 @@
-import { A_0603WAF1002T5E } from "../../imports/A_0603WAF1002T5E"
+import { A_0603WAF1500T5E } from "../../imports/A_0603WAF1500T5E"
 import { A_0603WAF1001T5E } from "../../imports/A_0603WAF1001T5E"
 import { A_150060RS75000 } from "../../imports/A_150060RS75000"
-import { A_1TS015B_2300_0453_CT } from "../../imports/A_1TS015B_2300_0453_CT"
+import { KMR221GLFS } from "../../imports/KMR221GLFS"
+import { A_0603WAF2701T5E } from "../../imports/A_0603WAF2701T5E"
 import { CC0603KRX7R9BB104 } from "../../imports/CC0603KRX7R9BB104"
 import { MMBT3904LT1G } from "../../imports/MMBT3904LT1G"
 import { SchematicParts } from "./schematic-parts"
@@ -11,12 +12,15 @@ export function MainControls() {
   return (
     <schematicsheet name="MainControls" displayName="Capture button and recording indicator" sheetIndex={1}>
       <SchematicParts section="Controls" title="Controls">
-        <A_0603WAF1002T5E name="R5" schRotation={270}
+        <A_0603WAF2701T5E name="R5" schRotation={270}
           pcbX={-34} pcbY={-5}
           connections={{ pin1: "net.VCORE3V3", pin2: "net.USER_BUTTON" }} />
-        <A_1TS015B_2300_0453_CT name="SW1" schRotation={-90}
+        <KMR221GLFS name="SW1" schRotation={-90}
           pcbX={-28} pcbY={-5}
-          connections={{ pin1: "net.USER_BUTTON", pin2: "net.GND" }} />
+          connections={{ pin1: "net.CAPTURE_CONTACT", pin2: "net.CAPTURE_CONTACT", pin3: "net.GND", pin4: "net.GND", pin5: "net.GND" }} />
+        {/* Limit the100nF discharge through the50mA-rated contacts; preserve >=1mA steady current. */}
+        <A_0603WAF1500T5E name="R27" pcbX={-31} pcbY={-7.8}
+          connections={{pin1:"net.USER_BUTTON",pin2:"net.CAPTURE_CONTACT"}} />
         <CC0603KRX7R9BB104 name="C4" maxVoltageRating="50V" schRotation={-90}
           pcbX={-31} pcbY={-2}
           connections={{ pin1: "net.USER_BUTTON", pin2: "net.GND" }} />
