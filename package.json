@@ -24,13 +24,14 @@
     "render:main": "tsci build src/main-board/main-board.circuit.tsx --svgs --pcb-png --schematic-png --routing-disabled --disable-parts-engine",
     "render:secondary": "tsci build src/secondary-board/secondary-board.circuit.tsx --svgs --pcb-png --schematic-png --routing-disabled --disable-parts-engine",
     "render": "npm run render:main && npm run render:secondary",
-    "validate": "npm run typecheck && npm run check:netlist && npm run check:schematic && npm run check:placement && npm run build && npm run check:main-core",
+    "validate": "npm run typecheck && npm run check:netlist && npm run check:schematic && npm run check:placement && npm run build && npm run check:main-core && npm run check:peripherals",
     "firmware:bootstrap": "bash firmware/scripts/bootstrap.sh",
     "firmware:prepare": "python3 firmware/scripts/prepare.py",
     "firmware:build": "bash firmware/scripts/build.sh build",
     "firmware:test": "bash firmware/scripts/build.sh test",
     "firmware:size": "bash firmware/scripts/build.sh size",
-    "check:main-core": "node scripts/check-main-core.mjs"
+    "check:main-core": "node scripts/check-main-core.mjs",
+    "check:peripherals": "node scripts/check-peripherals.mjs"
   },
   "dependencies": {
     "react": "19.3.1"

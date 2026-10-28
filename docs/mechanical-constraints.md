@@ -1,3 +1,7 @@
+> Current revision: [compact PICO design and validation gates](compact-design.md).
+> The original WROOM/INMP441/scaffold discussion below is historical planning;
+> current TSX/BOM and the compact-design status take precedence.
+
 # Mechanical constraints
 
 The initial two 60 × 25 mm, two-layer outlines are **arbitrary review coupons**. They are not

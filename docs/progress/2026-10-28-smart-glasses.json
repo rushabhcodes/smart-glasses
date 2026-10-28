@@ -1,0 +1,25 @@
+{
+  "timestampUTC": "2026-10-28T16:41:06.237802+00:00",
+  "timestampIST": "2026-10-28T22:11:06.237802+05:30",
+  "note": "Actual unrouted review circuits after final validation. Camera and external assemblies absent; no fit claim.",
+  "boards": {
+    "main": {
+      "width": 80,
+      "height": 18,
+      "components": 46,
+      "sha256": "18dd20032231084e3705d519c9015a1cb93a31c75c640200a0842177088ba0f9"
+    },
+    "secondary": {
+      "width": 100,
+      "height": 18,
+      "components": 46,
+      "sha256": "a8c081aea764248326afcd3e313c6710c966658c8f0855e973220456d166705b"
+    }
+  },
+  "image": {
+    "width": 1100,
+    "height": 620,
+    "sha256": "7d0c9667610624fa2ab31a5c61df56e4a8c9a241b59de7dc843435a39b4eb2f5",
+    "filename": "2026-10-28-smart-glasses.png"
+  }
+}

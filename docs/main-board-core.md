@@ -1,3 +1,7 @@
+> Current revision: [compact PICO design and validation gates](compact-design.md).
+> The original WROOM/INMP441/scaffold discussion below is historical planning;
+> current TSX/BOM and the compact-design status take precedence.
+
 # First tsCircuit hardware block: ESP32-S3 core
 
 Status: schematic review, 2026-10-28. No physical hardware has been assembled or tested.

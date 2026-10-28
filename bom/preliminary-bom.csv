@@ -1,42 +1,51 @@
-Component name,Manufacturer part number,Quantity,PCB location,Purpose,LCSC part number (if verified),Verification status
-ESP32-S3 radio/MCU module,ESP32-S3-WROOM-1U-N8R8,1,Left,Compute control; Wi-Fi; BLE; Muse Gadgets client,C2980300,JLCPCB identity verified 2026-10-28; tsci exact-footprint import; symbol pin map corrected against module datasheet; assembly/geometry discrepancy/fit/ordering stock and bench proof pending
-Camera module,TBD (OV2640-based DVP module),1,Left/front,JPEG capture,,OV2640 SDK backend compiled; module/rails/connector/physical pins and actual capture/stock UNVERIFIED
-Digital microphone,INMP441 (ordering suffix TBD),1,Left,I2S voice input,,Datasheet and Muse INMP441 adapter reviewed; shared 16 kHz/64Fs bus proposed; rail tolerance/physical port/stock and bench behavior UNVERIFIED
-3.3 V buck-boost regulator,TPS63031 (ordering suffix TBD),1,Left,Main regulated supply,,Datasheet reviewed; peak-load suitability and land pattern/stock UNVERIFIED
-Capture/push-to-talk button,TBD,1,Left,Physical input,,UNVERIFIED MPN/footprint/height
-Recording status LED,TBD,1,Left/front,Visible capture indication,,UNVERIFIED MPN/optical placement/drive
-External 2.4 GHz antenna and cable,TBD,1,Left/frame,Wi-Fi and BLE RF,,UNVERIFIED antenna/connector/clearance/matching
-Inter-board FPC connector,TBD,1,Left,System power/audio/control cable,,20-contact signal-group study updated for shared I2S and return paths; connector/current/physical contact mapping UNVERIFIED
-Single-cell charger,BQ24074 (ordering suffix TBD),1,Right,Charging and system power path,,Datasheet reviewed; charge/NTC/thermal/footprint/stock UNVERIFIED
-Battery fuel gauge,MAX17048 (package/suffix TBD),1,Right,"Protected cell state of charge; I2C polling, no baseline alert GPIO",,Datasheet reviewed; package/pinout/cell model/I-O/stock UNVERIFIED
-I2S Class-D amplifier,MAX98357A (package/suffix TBD),1,Right,Mono speaker drive,,16 kHz I2S/3.3 V audio logic reviewed; 24 kHz LRCLK unsupported; SD_MODE power interface/package/stock/bench behavior UNVERIFIED
-Touch controller,AT42QT1010 (package/suffix TBD),1,Right,Capacitive touch input,,Datasheet reviewed; package/electrode/footprint/stock UNVERIFIED
-Speaker connector,TBD,1,Right,Bridge output speaker interface,,UNVERIFIED polarity/keying/size
-Miniature speaker,TBD,1,Right/enclosure,Audio output,,UNVERIFIED impedance/power/acoustics/size
-Battery connector,TBD,1,Right,Protected LiPo connection,,UNVERIFIED current/polarity/keying/size
-Protected 1S LiPo pack,TBD,1,Right/enclosure,Single rechargeable 4.2 V-charge battery,,UNVERIFIED capacity/protection/NTC/current/size
-Physical power control,TBD,1,Right,Latching switch or button plus power latch,,UNVERIFIED off topology/current/footprint
-Inter-board FPC connector,TBD,1,Right,Mating system cable connection,,20-contact signal-group study updated for shared I2S and return paths; connector/current/physical contact mapping UNVERIFIED
-Charging contacts,TBD,2,Right,Dock power and return contacts,,UNVERIFIED mating/current/protection/mechanics
-Inter-temple flex cable,TBD,1,Frame,Electrical link between independent PCBs,,UNVERIFIED length/conductor rating/hinge life/contact orientation
-Battery temperature sensor,TBD,1,Right/pack,Charger temperature monitoring,,UNVERIFIED pack integration/NTC curve/TS bias
-System load switch/latch circuitry,TBD,TBD,Right,True system-off after charger OUT,,UNVERIFIED topology and parts; may be integrated in power control
-Regulator inductor,TBD,1,Left,Buck-boost energy storage,,UNVERIFIED inductance/saturation/current/size
-Other functional bypass and bulk capacitors,TBD,TBD,Both,Additional supply support; excludes separately listed mic/amp bypass items; excludes separately listed main MCU core C1-C3,,UNVERIFIED count/value/rating/derating
-Resistors and configuration networks,TBD,TBD,Both,Charge limits; pulls; LED; amplifier straps; excludes separately listed mic SD pulldown; excludes separately listed main MCU core R1-R4,,UNVERIFIED count/value/rating
-Input ESD and overcurrent protection,TBD,TBD,Right,Charging contact and cable protection,,UNVERIFIED circuit and ratings
-Camera rail/level circuitry,TBD,TBD,Left,Module-specific supply and I-O compatibility,,Conditional; needs exact module schematic
-Example scaffold capacitor,TBD (100 nF; 0603),1,Right,Right-board toolchain scaffold C1 only; DNP,,Generic footprint rendered; rating/MPN UNVERIFIED; not functional BOM completion
-Scaffold copper probe pads,PCB copper; no purchased MPN,2,Right,Right-board scaffold TP1/TP2 only,,1 mm generic pad geometry; not FPC contacts
-Camera flex connector,TBD,1,Left,Exact OV2640-module mating connector,,UNVERIFIED module-dependent pitch/contact side/height/pin map/footprint
-Microphone SD pulldown,TBD (100 kOhm),1,Left,Discharge tri-stated INMP441 SD line,,Nominal value reviewed in mic datasheet; MPN/tolerance/footprint/stock UNVERIFIED
-Microphone bypass capacitor,TBD (100 nF),1,Left,Local INMP441 supply bypass,,Nominal value reviewed; rating/derating/MPN/footprint/stock UNVERIFIED
-Amplifier high-frequency bypass,TBD (100 nF),1,Right,Local MAX98357A supply bypass,,Datasheet application value reviewed; final value/rating/MPN/footprint UNVERIFIED
-Amplifier local bulk capacitor,TBD (10 uF candidate),1,Right,MAX98357A burst/rail support,,Application starting point only; size/derating/ESR/value/MPN must follow load measurements
-Amplifier SD_MODE interface,TBD,TBD,Right,Default-off channel/shutdown control safe when VSYS is below MCU rail,,Required circuit review; resistor/transistor topology and all ratings UNVERIFIED
-Optional I2S source damping resistors,TBD,TBD,Left,Clock/data edge control for long FPC,,Reserve as needed after signal-integrity measurements; values/count/footprint UNVERIFIED
-MCU core bulk capacitor,CL21A226MAQNNNE,1,Left,C1; 22 uF nominal 25 V X5R; confirm effective capacitance,C45783,Supplier identity/rating checked and tsci imported; candidate only; assembly and electrical bench validation pending
-MCU core local bypass,CC0603KRX7R9BB104,1,Left,C2; 100 nF 50 V X7R,C14663,Supplier identity/rating checked and tsci imported; candidate only; assembly and electrical bench validation pending
-MCU EN delay capacitor,CL10A105KB8NNNC,1,Left,C3; 1 uF 50 V X5R,C15849,Supplier identity/rating checked and tsci imported; candidate only; assembly and electrical bench validation pending
-MCU core bias resistors,0603WAF1002T5E,4,Left,R1-R4; 10 kOhm 1%; EN/BOOT pull-ups and strap pull-downs,C25804,Supplier identity/rating checked and tsci imported; candidate only; assembly and electrical bench validation pending
-MCU core probe pads,PCB copper; no purchased MPN,6,Left,TP1-TP6; 3.3 V/GND/UART/EN/BOOT; no purchased connector,,1 mm copper pad review geometry; fixture/protection and production interface pending
+PCB location,References,Manufacturer part number,Quantity,LCSC/JLCPCB ID,Verification status
+Left,U2,TPS63070RNMR,1,C109322,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; current stock quantity not checked
+Left,R10 R11 R14 R15,RT0603BRD07100KL,4,C122538,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 1092600 at 2026-10-28T13:47:30.326877+00:00
+Left,U4,TLV3201AIDCKR,1,C130037,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 1 at 2026-10-28T15:44:03.150947+00:00
+Left,C2 C4 C5 C11 C12 C13,CC0603KRX7R9BB104,6,C14663,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; current stock quantity not checked
+Left,C3,CL10A105KB8NNNC,1,C15849,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; current stock quantity not checked
+Left,R13,0603WAF0000T5E,1,C21189,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 12138000 at 2026-10-28T15:02:05.267677+00:00
+Left,R8 R7 R6,0603WAF1001T5E,3,C21190,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; current stock quantity not checked
+Left,R12,0603WAF1003T5E,1,C25803,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; current stock quantity not checked
+Left,R1 R2 R3 R4 R5,0603WAF1002T5E,5,C25804,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; current stock quantity not checked
+Left,LED1,150060RS75000,1,C3030991,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; current stock quantity not checked
+Left,L1,XFL4020-152MEC,1,C3033018,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 18041 at 2026-10-28T13:40:47.920619+00:00
+Left,SW1,1TS015B-2300-0453-CT,1,C398741,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; current stock quantity not checked
+Left,J2,U.FL-R-SMT(10),1,C434808,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 21735 at 2026-10-28T15:02:34.399369+00:00
+Left,C1 C6 C7 C8 C9 C10,CL21A226MAQNNNE,6,C45783,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; current stock quantity not checked
+Left,U3,ICS-43434,1,C5656610,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 2893 at 2026-10-28T13:57:17.128347+00:00
+Left,J1,FH12-20S-0.5SH(55),1,C596730,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 5449 at 2026-10-28T13:40:48.476613+00:00
+Left,U1,ESP32-S3-PICO-1-N8R8,1,C7545129,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 0 at 2026-10-28T14:57:17.358854+00:00; ZERO STOCK; Standard-only/X-ray assembly gate; no substitution approved
+Left,Q1,MMBT3904LT1G,1,C81464,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 1581100 at 2026-10-28T13:50:15.764938+00:00
+Left,R9,RT0603BRD07312KL,1,C861315,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 3400 at 2026-10-28T15:02:33.039383+00:00
+Right,C33,CC0603KRX7R9BB102,1,C100040,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 1865750 at 2026-10-28T14:32:31.556264+00:00
+Right,C26,CC0603KRX7R9BB103,1,C100042,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 914500 at 2026-10-28T14:32:32.224256+00:00
+Right,U2,TPS22965DSGR,1,C122837,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 14265 at 2026-10-28T13:40:49.504602+00:00
+Right,J3 J4,B2B-PH-K-S(LF)(SN),2,C131337,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 151480 at 2026-10-28T14:32:29.300288+00:00
+Right,J2,B3B-PH-K-S(LF)(SN),1,C131339,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 97400 at 2026-10-28T15:02:07.067657+00:00
+Right,C34 C21 C22 C25 C27,CC0603KRX7R9BB104,5,C14663,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; current stock quantity not checked
+Right,C30,CL10A105KB8NNNC,1,C15849,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; current stock quantity not checked
+Right,R24 R25 R26,0603WAF1001T5E,3,C21190,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; current stock quantity not checked
+Right,SW2,JS102011SAQN,1,C221660,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 81 at 2026-10-28T14:32:27.092313+00:00
+Right,R34,0603WAF1872T5E,1,C22893,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 44600 at 2026-10-28T14:27:05.835733+00:00
+Right,R30,0603WAF2211T5E,1,C22903,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 17100 at 2026-10-28T14:27:06.699727+00:00
+Right,R33,0603WAF3092T5E,1,C23022,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 115200 at 2026-10-28T14:27:05.011740+00:00
+Right,R32 R21 R22,0603WAF4701T5E,3,C23162,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 3779200 at 2026-10-28T14:36:10.321311+00:00
+Right,R31,0603WAF6802T5E,1,C23231,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 594800 at 2026-10-28T14:27:07.395721+00:00
+Right,R35 R37 R23 R28 R29,0603WAF1003T5E,5,C25803,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; current stock quantity not checked
+Right,R36 R38 R27,0603WAF1002T5E,3,C25804,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; current stock quantity not checked
+Right,U3,MAX17048G+T10,1,C2682616,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 24396 at 2026-10-28T13:40:44.560657+00:00
+Right,C31 C32 C35 C23,CL21A226MAQNNNE,4,C45783,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; current stock quantity not checked
+Right,Q3,MMBT3906LT1G,1,C53444,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 916350 at 2026-10-28T13:50:17.492918+00:00
+Right,U1,BQ24075TRGTR,1,C544783,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 70 at 2026-10-28T15:02:07.607651+00:00
+Right,J1,FH12-20S-0.5SH(55),1,C596730,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 5449 at 2026-10-28T13:40:48.476613+00:00
+Right,U5,AT42QT1010-TSHR,1,C74512,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 1288 at 2026-10-28T13:50:19.912894+00:00
+Right,U6,SN74LVC1G125DCKR,1,C7833,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 35 at 2026-10-28T15:51:09.306262+00:00
+Right,Q2,MMBT3904LT1G,1,C81464,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 1581100 at 2026-10-28T13:50:15.764938+00:00
+Right,U4,MAX98357AETE+T,1,C910544,Official tsci exact-footprint import; generated connectivity checked; geometry/paste/assembly and physical validation pending; catalog stock 31112 at 2026-10-28T13:40:45.244649+00:00
+Left/front,Camera,TBD exact OV2640 module/lens/carrier,1,,"NOT IMPLEMENTED; exact connector, rails and PWDN/reset behavior required"
+External,Cell,Adafruit 2011 / PKCELL LP803860 (bench candidate),1,,Protected 2000mAh 1S; not a temple-fit selection; 2A discharge and charge0-45C per vendor; needs custom 3-wire adapter
+Battery-attached,Pack sensor,Vishay NTCLE100E3103JB0 (external candidate),1,,10k 5% B3977; C141588 catalog checked; not fitted or thermally validated
+External,Frame cable,Wurth 687620100002 (static bench candidate),1,,20contacts 0.5mm type1 100mm; 0.5A/conductor; mating/contact-side continuity and dynamic hinge rating unverified
+Right/external,Speaker,TBD exact >=8ohm speaker and acoustic enclosure,1,,No close-ear output or thermal limit established
+External,Antenna,TBD exact 2.4GHz antenna/U.FL plug/cable,1,,"RF matching, body loading, connector mating and clearance unverified"

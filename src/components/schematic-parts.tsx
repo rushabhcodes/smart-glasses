@@ -1,6 +1,6 @@
 import { Children, type ReactNode } from "react"
 
-/** Let schematic sections arrange each part while retaining explicit PCB review positions. */
+/** Keep review symbols individually grouped while retaining explicit PCB review positions. */
 export function SchematicParts({ section, title, children }: {
   section: string
   title: string

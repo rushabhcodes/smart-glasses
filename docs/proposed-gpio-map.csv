@@ -1,26 +1,26 @@
 Signal,Proposed GPIO,Module pad (datasheet lookup),Direction at MCU,Purpose,Status
-CAM_D0,4,4,In,Left; camera DVP bit 0,"PROPOSED; not wired, built or bench-validated"
-CAM_D1,5,5,In,Left; camera DVP bit 1,"PROPOSED; not wired, built or bench-validated"
-CAM_D2,6,6,In,Left; camera DVP bit 2,"PROPOSED; not wired, built or bench-validated"
-CAM_D3,7,7,In,Left; camera DVP bit 3,"PROPOSED; not wired, built or bench-validated"
-CAM_D4,8,12,In,Left; camera DVP bit 4,"PROPOSED; not wired, built or bench-validated"
-CAM_D5,9,17,In,Left; camera DVP bit 5,"PROPOSED; not wired, built or bench-validated"
-CAM_D6,10,18,In,Left; camera DVP bit 6,"PROPOSED; not wired, built or bench-validated"
-CAM_D7,11,19,In,Left; camera DVP bit 7,"PROPOSED; not wired, built or bench-validated"
-CAM_PCLK,12,20,In,Left; camera pixel clock,"PROPOSED; not wired, built or bench-validated"
-CAM_HREF,13,21,In,Left; camera line valid,"PROPOSED; not wired, built or bench-validated"
-CAM_VSYNC,14,22,In,Left; camera frame sync,"PROPOSED; not wired, built or bench-validated"
-CAM_XCLK,15,8,Out,Left; camera reference clock,"PROPOSED; not wired, built or bench-validated"
-CAM_SIOD,16,9,Bidirectional,Left; SCCB data; proposed I2C0,"PROPOSED; not wired, built or bench-validated"
-CAM_SIOC,17,10,Out,Left; SCCB clock; proposed I2C0,"PROPOSED; not wired, built or bench-validated"
-CAM_PWDN,18,11,Out,Left; only if exact module supports it,"PROPOSED; not wired, built or bench-validated"
-AUDIO_BCLK,38,31,Out,Shared mic/amp clock; to right over FPC,"PROPOSED; not wired, built or bench-validated"
-AUDIO_LRCLK,39,32,Out,Shared mic/amp word select; to right over FPC,"PROPOSED; not wired, built or bench-validated"
-MIC_SD,40,33,In,Left; INMP441 SD to I2S DIN,"PROPOSED; not wired, built or bench-validated"
-AUDIO_DOUT,41,34,Out,FPC to right MAX98357A DIN,"PROPOSED; not wired, built or bench-validated"
-CTRL_SDA,47,24,Bidirectional,FPC; proposed I2C1 gauge/control,"PROPOSED; not wired, built or bench-validated"
-CTRL_SCL,2,38,Out,FPC; proposed I2C1 gauge/control,"PROPOSED; not wired, built or bench-validated"
-TOUCH_OUT,21,23,In,FPC; right touch controller output,"PROPOSED; not wired, built or bench-validated"
-AMP_ENABLE,42,35,Out,FPC; voltage-safe default-off SD_MODE network TBD,"PROPOSED; not wired, built or bench-validated"
-USER_BUTTON,1,39,In,Left; capture/talk; external bias and debounce TBD,"PROPOSED; not wired, built or bench-validated"
-REC_LED,48,25,Out,Left/front; recording indication; drive network TBD,"PROPOSED; not wired, built or bench-validated"
+CAM_D0,4,9,In,Left; camera DVP bit 0,RESERVED; camera not wired; exact module pending
+CAM_D1,5,10,In,Left; camera DVP bit 1,RESERVED; camera not wired; exact module pending
+CAM_D2,6,11,In,Left; camera DVP bit 2,RESERVED; camera not wired; exact module pending
+CAM_D3,7,12,In,Left; camera DVP bit 3,RESERVED; camera not wired; exact module pending
+CAM_D4,8,13,In,Left; camera DVP bit 4,RESERVED; camera not wired; exact module pending
+CAM_D5,9,14,In,Left; camera DVP bit 5,RESERVED; camera not wired; exact module pending
+CAM_D6,10,15,In,Left; camera DVP bit 6,RESERVED; camera not wired; exact module pending
+CAM_D7,11,16,In,Left; camera DVP bit 7,RESERVED; camera not wired; exact module pending
+CAM_PCLK,12,17,In,Left; camera pixel clock,RESERVED; camera not wired; exact module pending
+CAM_HREF,13,18,In,Left; camera line valid,RESERVED; camera not wired; exact module pending
+CAM_VSYNC,14,19,In,Left; camera frame sync,RESERVED; camera not wired; exact module pending
+CAM_XCLK,15,21,Out,Left; camera reference clock,RESERVED; camera not wired; exact module pending
+CAM_SIOD,16,22,Bidirectional,Left; SCCB data; proposed I2C0,RESERVED; camera not wired; exact module pending
+CAM_SIOC,17,23,Out,Left; SCCB clock; proposed I2C0,RESERVED; camera not wired; exact module pending
+CAM_PWDN,18,24,Out,Left; only if exact module supports it,RESERVED; camera not wired; exact module pending
+AUDIO_BCLK,38,43,Out,Shared mic/amp clock; to right over FPC,WIRED in review TSX; no hardware validation
+AUDIO_LRCLK,39,44,Out,Shared mic/amp word select; to right over FPC,WIRED in review TSX; no hardware validation
+MIC_SD,40,45,In,Left; ICS-43434 SD to I2S DIN,WIRED in review TSX; no hardware validation
+AUDIO_DOUT,41,47,Out,FPC to right MAX98357A DIN,WIRED in review TSX; no hardware validation
+CTRL_SDA,47,37,Bidirectional,FPC; proposed I2C1 gauge/control,WIRED in review TSX; no hardware validation
+CTRL_SCL,2,7,Out,FPC; proposed I2C1 gauge/control,WIRED in review TSX; no hardware validation
+TOUCH_OUT,21,27,In,FPC; right touch controller output,WIRED in review TSX; no hardware validation
+AMP_ENABLE,42,48,Out,FPC; voltage-safe default-off SD_MODE network,WIRED in review TSX; no hardware validation
+USER_BUTTON,1,6,In,Left; capture/talk; external bias and debounce TBD,WIRED in review TSX; no hardware validation
+REC_LED,48,36,Out,Left/front; recording indication; drive network,WIRED in review TSX; no hardware validation

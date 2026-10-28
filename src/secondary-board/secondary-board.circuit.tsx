@@ -1,16 +1,17 @@
-import { PowerRailScaffold } from "../components/power-rail-scaffold"
+import schematicPlacement from "./schematic-placement.json"
+import { FrameInterconnect } from "../components/frame-interconnect"
+import { SecondaryPower } from "../components/secondary-power"
+import { SecondaryGauge } from "../components/secondary-gauge"
+import { SecondaryAudio } from "../components/secondary-audio"
+import { SecondaryTouch } from "../components/secondary-touch"
 
-/** Right temple entry point. Independent PCB; cable contact assignment remains TBD. */
+/** Independent provisional coupon; protected pack, speaker and enclosure remain external. */
 export default function SecondaryBoard() {
-  return (
-    <board title="Right power and audio board - REVIEW SCAFFOLD" width="60mm" height="25mm" layers={2} routingDisabled>
-      <schematicsheet name="PowerReview" displayName="Power rail scaffold" sheetIndex={0}>
-        <PowerRailScaffold />
-      </schematicsheet>
-      {/* TODO: Add a verified single-cell charger and protected battery interface. */}
-      {/* TODO: Verify fuel gauge, amplifier package, touch interface and power-off topology. */}
-      {/* TODO: Add speaker connector, charging contacts, NTC sensing and input protection. */}
-      {/* TODO: Replace probe-pad interconnect abstraction with the mating FPC connector. */}
-    </board>
-  )
+  return <board title="Right power and audio board / SCHEMATIC REVIEW" width="100mm" height="18mm" manualEdits={schematicPlacement} layers={4} routingDisabled>
+    <SecondaryPower />
+    <SecondaryGauge />
+    <SecondaryAudio />
+    <SecondaryTouch />
+    <FrameInterconnect side="secondary" pcbX={-44} />
+  </board>
 }

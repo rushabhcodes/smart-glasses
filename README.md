@@ -4,16 +4,16 @@ A tsCircuit/TypeScript research repository for custom AI-powered glasses with in
 left and right temple PCBs. The intended assistant is **Meta's Muse personal agent**, using
 the official **Muse Gadgets SDK**. Inference stays off the glasses.
 
-**Current state:** the left board now has an initial ESP32-S3 MCU-core schematic built from
-five verified JLCPCB import identifiers: module, bulk/bypass/reset capacitors and bias
-resistors. The right board still contains its original power-rail scaffold. See
-[MCU-core review and import corrections](docs/main-board-core.md).
+**Current state:** a compact **ESP32-S3-PICO-1-N8R8** review circuit replaces the
+WROOM module. The left board implements the SiP core, nominal 3.3 V buck-boost,
+ICS-43434 microphone, capture/LED controls, RF connector and frame connector. The
+right implements charger/power switch, gauge, amplifier, touch and mating connector.
+The camera module/interface is still unresolved. See [current design and gates](docs/compact-design.md).
 
-The [displayless Muse firmware port](firmware/README.md) compiles for S3 N8R8, but **no
-physical hardware has been assembled, flashed or tested**. Camera, microphone, audio,
-charger/regulator, recording controls and inter-board connectors are still schematic work
-in progress. Detailed PCB routing remains disabled. Board outlines are review space;
-these designs are not fabrication-ready or a verified fit inside glasses temples.
+No physical hardware has been assembled, flashed or tested. Detailed routing remains
+disabled. Provisional 80 × 18 mm / 100 × 18 mm four-layer outlines do not establish frame
+fit or fabrication readiness. The PICO candidate currently has zero catalog stock.
+The old WROOM implementation is preserved at `codex/wroom-power-baseline` (`c45edaa`).
 
 ## Intended features
 
@@ -29,33 +29,22 @@ consumer-frame fit are not established by this prototype plan.
 
 ## Hardware architecture
 
-| Board | Responsibilities | Preliminary candidates |
+| Board | Implemented schematic blocks | Open items |
 | --- | --- | --- |
-| Left main PCB | Muse client, radio, photo capture, microphone, 3.3 V regulation, capture control and recording indication | ESP32-S3-WROOM-1U-N8R8, exact OV2640 DVP module TBD, INMP441, TPS63031, button, LED, FPC connector and external antenna |
-| Right power/audio PCB | Charging, protected battery interface, battery gauge, speaker drive, touch and power control | BQ24074, MAX17048, MAX98357A, AT42QT1010, speaker/battery connectors, power button/switch, FPC connector and charging contacts |
+| Left | PICO-1 N8R8, TPS63070, ICS-43434, capture button/LED driver, U.FL and FH12 connector | Exact camera, RF matching/layout, sourcing and measured fit |
+| Right | BQ24075T, TPS22965 hardware switch, MAX17048, MAX98357A, AT42QT1010, JST and FH12 connectors | Selected cell/attached NTC, speaker/electrode/enclosure, input protection and thermal release |
 
-All components remain candidates. Five LCSC/JLCPCB identifiers for the initial MCU core
-are now verified and imported; other supplier fields remain blank rather than guessed.
-See [candidate compatibility review](docs/hardware-requirements.md) and the
-[preliminary BOM](bom/preliminary-bom.csv). Required passives, protection, camera supplies,
-power-switch circuitry and programming access are explicitly included as unresolved items.
-
-The S3 module's nominal 18 × 19.2 × 3.2 mm body may be too wide for conventional temples.
-Both 60 × 25 mm starter outlines are arbitrary review space, not a fit claim.
-[Mechanical constraints](docs/mechanical-constraints.md) records the required envelope work.
+The [BOM](bom/preliminary-bom.csv) reflects generated components; [dated sourcing
+observations](bom/sourcing-checks.json) are availability checks, not orders or reservations.
+All imported geometry still needs assembly review, including thermal vias and paste.
 
 ## Communication between PCBs
 
-The right board supplies the proposed switched system rail `VSYS` through the inter-temple
-FPC to the left regulator. The left supplies a proposed 3.3 V control rail back to the right.
-Common ground, I2S speaker data/clocks, I2C and control GPIO share that cable. The camera
-uses a separate, local DVP connection on the left. The speaker and battery stay local to the
-right, and the RF antenna uses its own compatible coax connection.
-
-The [logical interconnect contract](docs/pin-mapping.md) contains a 20-contact allocation
-study with no physical pin order. Cable length, conductor/contact current, ground returns,
-connector orientation, hinge bending and signal integrity remain open. Equal net names in
-two compiled circuits do not create or validate a physical interconnect.
+Four VSYS contacts and eight ground returns share the 20-contact connector with the
+left-regulated `VCORE3V3`, audio clocks/data, control I2C, touch and amplifier enable.
+The [pin contract](docs/pin-mapping.md) is checked against both generated netlists.
+Physical cable contact side, orientation, voltage drop and hinge life remain unverified.
+The camera stays local to the left; battery and bridge speaker outputs stay on the right.
 
 ## Smartphone, Muse and cloud architecture
 
@@ -77,28 +66,25 @@ Read [Muse integration and supported hardware](docs/muse-integration.md) for set
 The [camera/audio integration plan](docs/peripheral-integration.md) records the reviewed SDK
 paths, shared-clock bus, power constraints and remaining custom-port work.
 
-The media baseline is I2S0 at **16 kHz with two 32-bit wire slots** for INMP441 and
+The media baseline is I2S0 at **16 kHz with two 32-bit wire slots** for ICS-43434 and
 MAX98357A, plus a separate LCD_CAM/DVP OV2640 interface. The SDK's realtime session
 resamples to/from 24 kHz network audio; MAX98357A does not accept 24 kHz LRCLK. Ordinary
 voice-note replies currently return text, so spoken output needs an admitted experimental
 realtime voice session or an explicit TTS integration. The initial firmware adds OV2640
-capture commands and a displayless INMP441/MAX98357A audio backend. See
+capture commands and the original displayless INMP441/MAX98357A audio backend. The
+current circuit uses ICS-43434; this hardware combination remains bench-unverified. See
 [firmware setup and limitations](firmware/README.md) and [build checks](docs/firmware-validation.md).
 
 ## Electrical decisions that remain open
 
-- Complete peak-current budget: TPS63031 headroom is uncertain for camera plus Wi-Fi load.
-- Exact camera module, lens, supply rails, FPC connector and physical pinout.
-- Review and bench-test the [25-GPIO allocation proposal](docs/proposed-gpio-map.csv),
-  preserving PSRAM, boot, USB and UART reservations; camera connector contacts remain TBD.
-- True power-off topology, pack capacity/protection/NTC and safe charging current.
-- Actual IC ordering suffixes, verified symbols/land patterns, supplier stock and cable rating.
-- Frame envelope, antenna integration, acoustic ports, speaker output and thermal behavior.
+- Exact camera module/lens/connector and its power/reset sequence.
+- Measured frame envelope; actual battery, speaker and antenna assembly.
+- PICO sourcing (C7545129 currently zero stock), RF/memory-rail/thermal validation.
+- Protected cell and genuine battery-attached NTC; charge remains disabled by default.
+- Final input protection, cable current/continuity/hinge validation, routing and manufacturing review.
 
-ESP32-S3 is BLE-only; ordinary A2DP/HFP headset audio is unavailable. It needs external
-speaker conversion/amplification, a suitable SDK audio driver and verified I2S configuration.
-The candidate charger and fuel gauge do not replace battery overcharge/overdischarge/
-overcurrent protection. Detailed constraints are in [hardware requirements](docs/hardware-requirements.md).
+ESP32-S3 supports BLE, not classic A2DP/HFP headset audio. See the
+[current circuit review](docs/compact-design.md) for the electrical limits and release gates.
 
 ## Repository layout
 
@@ -192,7 +178,8 @@ tsCircuit hardware files; a token is required later for actual device pairing.
 | `npm run build` | Build both Circuit JSON outputs with routing disabled |
 | `npm run render` | Generate schematic/PCB SVG and PNG previews for both |
 | `npm run check:main-core` | Verify generated physical-pad connectivity, supplier IDs and reserved pins |
-| `npm run validate` | Typecheck → netlist → schematic placement → PCB placement → build → MCU-core guards |
+| `npm run check:peripherals` | Generated right-board and cable/power/interface invariants |
+| `npm run validate` | Typecheck → netlist → schematic/PCB placement → independent builds → both physical-pin guard suites |
 
 Per-board `build:main`, `build:secondary`, `render:main` and `render:secondary` scripts are
 also available. Every command supplies the source path explicitly; `tscircuit.config.json`
@@ -202,11 +189,11 @@ merged into one board. Shared TSX components are helpers, not additional circuit
 Build/render outputs are under `dist/`, with per-entry directories reported by the CLI.
 Review both schematic and PCB images after changes. The script wrapper propagates CLI
 failure and treats reported schematic placement issues as failures even if the CLI returns 0.
-Passing checks covers the implemented left MCU core and right scaffold. It does not
-validate absent peripherals, supply margins, RF performance, enclosure fit or physical hardware.
+Passing checks covers the implemented compact review circuits on both boards. It does not
+validate the unresolved camera, measured supply/RF performance, enclosure fit or physical hardware.
 
 No routing/shorts/manufacturing release check is claimed while copper routing is disabled.
-Do not manufacture the scaffold. When functional circuitry is reviewed and routing begins,
+Manufacturing release remains gated. When functional circuitry is reviewed and routing begins,
 add routing/shorts/fabrication checks appropriate to the actual implementation.
 
 ## Incremental implementation workflow
@@ -219,7 +206,7 @@ add routing/shorts/fabrication checks appropriate to the actual implementation.
 5. Re-run netlist and placement checks and inspect renders before proceeding to routing.
 
 The full [development roadmap](docs/development-roadmap.md) defines exit criteria.
-[Validation results](docs/validation.md) records the checks actually run and upstream issues.
+[Current validation results](docs/compact-validation.md) records the checks actually run and upstream issues.
 [Source register](docs/research-sources.md) links the evidence for technical assumptions.
 
 ## Firmware build (no flashing)

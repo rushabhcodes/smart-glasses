@@ -1,3 +1,7 @@
+> Current revision: [compact PICO design and validation gates](compact-design.md).
+> The original WROOM/INMP441/scaffold discussion below is historical planning;
+> current TSX/BOM and the compact-design status take precedence.
+
 # Muse camera and audio integration plan
 
 Reviewed 2026-10-28 against Muse Gadgets SDK revision

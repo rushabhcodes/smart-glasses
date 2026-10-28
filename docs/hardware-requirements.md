@@ -1,3 +1,7 @@
+> Current revision: [compact PICO design and validation gates](compact-design.md).
+> The original WROOM/INMP441/scaffold discussion below is historical planning;
+> current TSX/BOM and the compact-design status take precedence.
+
 # Hardware requirements and candidate review
 
 Research date: 2026-10-28. "Datasheet reviewed" means the listed facts were checked;

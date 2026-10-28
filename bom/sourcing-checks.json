@@ -1,0 +1,248 @@
+{
+  "note": "Public LCSC catalog observations, not a stock reservation or JLC assembly commitment. Unlisted parts have no current quantity check.",
+  "parts": [
+    {
+      "productCode": "C100040",
+      "productModel": "CC0603KRX7R9BB102",
+      "brandNameEn": "YAGEO",
+      "encapStandard": "0603",
+      "stockNumber": 1865750,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T14:32:31.556264+00:00"
+    },
+    {
+      "productCode": "C100042",
+      "productModel": "CC0603KRX7R9BB103",
+      "brandNameEn": "YAGEO",
+      "encapStandard": "0603",
+      "stockNumber": 914500,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T14:32:32.224256+00:00"
+    },
+    {
+      "productCode": "C122538",
+      "productModel": "RT0603BRD07100KL",
+      "brandNameEn": "YAGEO",
+      "encapStandard": "0603",
+      "stockNumber": 1092600,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T13:47:30.326877+00:00"
+    },
+    {
+      "productCode": "C122837",
+      "productModel": "TPS22965DSGR",
+      "brandNameEn": "TI",
+      "encapStandard": "UDFN-8-EP(2x2)",
+      "stockNumber": 14265,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T13:40:49.504602+00:00"
+    },
+    {
+      "productCode": "C130037",
+      "productModel": "TLV3201AIDCKR",
+      "brandNameEn": "TI",
+      "encapStandard": "SC-70-5",
+      "stockNumber": 1,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T15:44:03.150947+00:00"
+    },
+    {
+      "productCode": "C131337",
+      "productModel": "B2B-PH-K-S(LF)(SN)",
+      "brandNameEn": "JST",
+      "encapStandard": "Through Hole,P=2mm",
+      "stockNumber": 151480,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T14:32:29.300288+00:00"
+    },
+    {
+      "productCode": "C131339",
+      "productModel": "B3B-PH-K-S(LF)(SN)",
+      "brandNameEn": "JST",
+      "encapStandard": "Through Hole,P=2mm",
+      "stockNumber": 97400,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T15:02:07.067657+00:00"
+    },
+    {
+      "productCode": "C21189",
+      "productModel": "0603WAF0000T5E",
+      "brandNameEn": "UNI-ROYAL",
+      "encapStandard": "0603",
+      "stockNumber": 12138000,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T15:02:05.267677+00:00"
+    },
+    {
+      "productCode": "C221660",
+      "productModel": "JS102011SAQN",
+      "brandNameEn": "C&K",
+      "encapStandard": "SMD",
+      "stockNumber": 81,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T14:32:27.092313+00:00"
+    },
+    {
+      "productCode": "C22893",
+      "productModel": "0603WAF1872T5E",
+      "brandNameEn": "UNI-ROYAL",
+      "encapStandard": "0603",
+      "stockNumber": 44600,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T14:27:05.835733+00:00"
+    },
+    {
+      "productCode": "C22903",
+      "productModel": "0603WAF2211T5E",
+      "brandNameEn": "UNI-ROYAL",
+      "encapStandard": "0603",
+      "stockNumber": 17100,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T14:27:06.699727+00:00"
+    },
+    {
+      "productCode": "C23022",
+      "productModel": "0603WAF3092T5E",
+      "brandNameEn": "UNI-ROYAL",
+      "encapStandard": "0603",
+      "stockNumber": 115200,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T14:27:05.011740+00:00"
+    },
+    {
+      "productCode": "C23162",
+      "productModel": "0603WAF4701T5E",
+      "brandNameEn": "UNI-ROYAL",
+      "encapStandard": "0603",
+      "stockNumber": 3779200,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T14:36:10.321311+00:00"
+    },
+    {
+      "productCode": "C23231",
+      "productModel": "0603WAF6802T5E",
+      "brandNameEn": "UNI-ROYAL",
+      "encapStandard": "0603",
+      "stockNumber": 594800,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T14:27:07.395721+00:00"
+    },
+    {
+      "productCode": "C2682616",
+      "productModel": "MAX17048G+T10",
+      "brandNameEn": "MAXIM",
+      "encapStandard": "DFN-8-EP(2x2)",
+      "stockNumber": 24396,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T13:40:44.560657+00:00"
+    },
+    {
+      "productCode": "C3033018",
+      "productModel": "XFL4020-152MEC",
+      "brandNameEn": "Coilcraft",
+      "encapStandard": "SMD,4x4mm",
+      "stockNumber": 18041,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T13:40:47.920619+00:00"
+    },
+    {
+      "productCode": "C434808",
+      "productModel": "U.FL-R-SMT(10)",
+      "brandNameEn": "HRS",
+      "encapStandard": "SMD",
+      "stockNumber": 21735,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T15:02:34.399369+00:00"
+    },
+    {
+      "productCode": "C53444",
+      "productModel": "MMBT3906LT1G",
+      "brandNameEn": "onsemi",
+      "encapStandard": "SOT-23",
+      "stockNumber": 916350,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T13:50:17.492918+00:00"
+    },
+    {
+      "productCode": "C544783",
+      "productModel": "BQ24075TRGTR",
+      "brandNameEn": "TI",
+      "encapStandard": "VQFN-16-EP(3x3)",
+      "stockNumber": 70,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T15:02:07.607651+00:00"
+    },
+    {
+      "productCode": "C5656610",
+      "productModel": "ICS-43434",
+      "brandNameEn": "TDK InvenSense",
+      "encapStandard": "LGA-6(3.5x2.7)",
+      "stockNumber": 2893,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T13:57:17.128347+00:00"
+    },
+    {
+      "productCode": "C596730",
+      "productModel": "FH12-20S-0.5SH(55)",
+      "brandNameEn": "HRS",
+      "encapStandard": "SMD,P=0.5mm,Surface Mount,Right Angle",
+      "stockNumber": 5449,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T13:40:48.476613+00:00"
+    },
+    {
+      "productCode": "C74512",
+      "productModel": "AT42QT1010-TSHR",
+      "brandNameEn": "MICROCHIP",
+      "encapStandard": "SOT-23-6",
+      "stockNumber": 1288,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T13:50:19.912894+00:00"
+    },
+    {
+      "productCode": "C7545129",
+      "productModel": "ESP32-S3-PICO-1-N8R8",
+      "brandNameEn": "ESPRESSIF",
+      "encapStandard": "LGA-56(7x7)",
+      "stockNumber": 0,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T14:57:17.358854+00:00"
+    },
+    {
+      "productCode": "C7833",
+      "productModel": "SN74LVC1G125DCKR",
+      "brandNameEn": "TI",
+      "encapStandard": "SC-70-5",
+      "stockNumber": 35,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T15:51:09.306262+00:00"
+    },
+    {
+      "productCode": "C81464",
+      "productModel": "MMBT3904LT1G",
+      "brandNameEn": "onsemi",
+      "encapStandard": "SOT-23",
+      "stockNumber": 1581100,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T13:50:15.764938+00:00"
+    },
+    {
+      "productCode": "C861315",
+      "productModel": "RT0603BRD07312KL",
+      "brandNameEn": "YAGEO",
+      "encapStandard": "0603",
+      "stockNumber": 3400,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T15:02:33.039383+00:00"
+    },
+    {
+      "productCode": "C910544",
+      "productModel": "MAX98357AETE+T",
+      "brandNameEn": "MAXIM",
+      "encapStandard": "TQFN-16-EP(3x3)",
+      "stockNumber": 31112,
+      "isForeignOnsale": true,
+      "observedAtUTC": "2026-10-28T13:40:45.244649+00:00"
+    }
+  ]
+}
