@@ -1,0 +1,5 @@
+# Optional, pinned mechanical STL exporter and independent mesh validator.
+# The TypeScript geometry uses the unchanged tsCircuit npm lockfile.
+numpy==2.5.4
+manifold3d==3.3.2
+trimesh==4.9.0

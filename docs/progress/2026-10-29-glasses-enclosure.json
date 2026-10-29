@@ -1,0 +1,111 @@
+{
+  "savedAtUTC": "2026-10-29T02:05:18.545302+00:00",
+  "CADGeneratedAtUTC": "2026-10-29T02:03:04.617Z",
+  "mode": "assembled",
+  "dimensionsPx": [
+    1200,
+    900
+  ],
+  "sha256": "46cb76b31606f3bd3402017373b9917360f360ebac9480630c1bba027a7eedd6",
+  "GLB_SHA256": "e82407f4063bdb6cf548a967c74448f80609b2c4a3155eb1ead0aab934d019bc",
+  "renderer": "poppygl; actual exported Manifold3D solids compiled from tsCircuit/JSCAD plans, with current cached supplier PCB models",
+  "sourceHashes": {
+    "src/enclosure/glasses-parameters.ts": "cfa9ffc6fe6ae6de69bd41a6d047b5a18f9793217d5fcd3e0a77d8693054f902",
+    "src/enclosure/glasses-geometry.tsx": "a1e1075ca7ec18fe62bce6be577448cc49bd2cbef416f028f5324c630b13690e",
+    "src/enclosure/glasses-enclosure.circuit.tsx": "20a390adb037aeba7b3e5e0d27b98769048a5417775e38f00f08c10dfe64bc87",
+    "scripts/build-glasses-enclosure.ts": "cd9daa8e41d0f7259d820b2227306a528c6668e0fcbbe68f063b7324d31ff0ed",
+    "scripts/export-glasses-meshes.py": "4a3917a5dcfb4b2f7adcf1382ce22fe3937ca848a5c2e75e5389bbf47ecced18"
+  },
+  "boards": [
+    {
+      "side": "main",
+      "length": 80,
+      "height": 18,
+      "thickness": 1.4,
+      "localBounds": [
+        [
+          -40,
+          -9,
+          -1.5
+        ],
+        [
+          40,
+          9,
+          2.8000999999999996
+        ]
+      ],
+      "sourceSHA256": "a23411a7e459bca558d685edafc2cc5c1fd440abb14f560b96816cbacc72bff2",
+      "loadedImportedModels": 66,
+      "expectedImportedModels": 66,
+      "holes": [
+        {
+          "type": "pcb_hole",
+          "pcb_hole_id": "pcb_hole_0",
+          "pcb_component_id": "pcb_component_76",
+          "hole_shape": "circle",
+          "hole_diameter": 0.5,
+          "x": -29.2349266,
+          "y": 4,
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_76"
+        }
+      ]
+    },
+    {
+      "side": "secondary",
+      "length": 100,
+      "height": 18,
+      "thickness": 1.4,
+      "localBounds": [
+        [
+          -50,
+          -9,
+          -2.7999930000000006
+        ],
+        [
+          50,
+          9,
+          6.700007
+        ]
+      ],
+      "sourceSHA256": "50bd5a48a54b5b3b3b0c8d9842afcb820a61f8ab7f853029d40bab94736a5835",
+      "loadedImportedModels": 43,
+      "expectedImportedModels": 43,
+      "holes": [
+        {
+          "type": "pcb_hole",
+          "pcb_hole_id": "pcb_hole_0",
+          "pcb_component_id": "pcb_component_16",
+          "hole_shape": "circle",
+          "hole_diameter": 0.9,
+          "x": -16.400044,
+          "y": -3.7500282499999997,
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_46"
+        },
+        {
+          "type": "pcb_hole",
+          "pcb_hole_id": "pcb_hole_1",
+          "pcb_component_id": "pcb_component_16",
+          "hole_shape": "circle",
+          "hole_diameter": 0.9,
+          "x": -9.599956,
+          "y": -3.7500282499999997,
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_46"
+        }
+      ]
+    }
+  ],
+  "printedSizeMm_XYZ": [
+    165.25,
+    69,
+    199.45
+  ],
+  "validation": "11 watertight, consistently oriented binary STL parts; 0 detected static printed-part/component-AABB overlaps",
+  "limitations": [
+    "Prototype assumptions: no measured wearer fit or folding hinge.",
+    "Camera/battery are empty configurable reserves, not selected assemblies.",
+    "Supplier CAD is a visualization, not a qualified tolerance model."
+  ]
+}

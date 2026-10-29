@@ -1,0 +1,1157 @@
+{
+  "generatedAtUTC": "2026-10-29T02:03:04.617Z",
+  "units": "mm",
+  "assumptions": {
+    "lensCenters": [
+      -34,
+      34
+    ],
+    "lensOpening": [
+      48,
+      26
+    ],
+    "lensOuter": [
+      56,
+      40
+    ],
+    "frontDepth": 4.5,
+    "templeX": 73,
+    "templeY": 12,
+    "boardFront": 27,
+    "wall": 1.6,
+    "xyClearance": 0.6,
+    "coverGap": 0.25,
+    "endBay": 8,
+    "screwPilotRadius": 0.8,
+    "screwClearanceRadius": 1.15,
+    "micPort": {
+      "x": -29.2349266,
+      "y": 4,
+      "diameter": 1.6
+    },
+    "camera": {
+      "width": 24,
+      "height": 18,
+      "depth": 14,
+      "lensDiameter": 12,
+      "y": 32
+    },
+    "batteryReserve": {
+      "length": 30,
+      "secondaryLength": 10,
+      "height": 10,
+      "depth": 6
+    }
+  },
+  "boards": [
+    {
+      "side": "main",
+      "length": 80,
+      "height": 18,
+      "thickness": 1.4,
+      "localBounds": [
+        [
+          -40,
+          -9,
+          -1.5
+        ],
+        [
+          40,
+          9,
+          2.8000999999999996
+        ]
+      ],
+      "sourceSHA256": "a23411a7e459bca558d685edafc2cc5c1fd440abb14f560b96816cbacc72bff2",
+      "loadedImportedModels": 66,
+      "expectedImportedModels": 66,
+      "holes": [
+        {
+          "type": "pcb_hole",
+          "pcb_hole_id": "pcb_hole_0",
+          "pcb_component_id": "pcb_component_76",
+          "hole_shape": "circle",
+          "hole_diameter": 0.5,
+          "x": -29.2349266,
+          "y": 4,
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_76"
+        }
+      ]
+    },
+    {
+      "side": "secondary",
+      "length": 100,
+      "height": 18,
+      "thickness": 1.4,
+      "localBounds": [
+        [
+          -50,
+          -9,
+          -2.7999930000000006
+        ],
+        [
+          50,
+          9,
+          6.700007
+        ]
+      ],
+      "sourceSHA256": "50bd5a48a54b5b3b3b0c8d9842afcb820a61f8ab7f853029d40bab94736a5835",
+      "loadedImportedModels": 43,
+      "expectedImportedModels": 43,
+      "holes": [
+        {
+          "type": "pcb_hole",
+          "pcb_hole_id": "pcb_hole_0",
+          "pcb_component_id": "pcb_component_16",
+          "hole_shape": "circle",
+          "hole_diameter": 0.9,
+          "x": -16.400044,
+          "y": -3.7500282499999997,
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_46"
+        },
+        {
+          "type": "pcb_hole",
+          "pcb_hole_id": "pcb_hole_1",
+          "pcb_component_id": "pcb_component_16",
+          "hole_shape": "circle",
+          "hole_diameter": 0.9,
+          "x": -9.599956,
+          "y": -3.7500282499999997,
+          "is_covered_with_solder_mask": false,
+          "subcircuit_id": "subcircuit_source_group_46"
+        }
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C2913194.obj?uuid=6d30b5a04660477fbdff168686b01590",
+      "sha256": "8a4069c1b1478f835f6f318fcf8541c1aa77f2f4911435d2ab86bd266ddc6750"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C25804.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C45783.obj?uuid=b87ab0c5465a48b3a1c9a6dac8d30bc5",
+      "sha256": "a6ecf4d78195d1f061b045e187fdff13726b03dc2475a4f11803b44d86adebc1"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C14663.obj?uuid=ac9b32e974bc448eab36b1293f859dcb",
+      "sha256": "3af4d2000750b3be8149bdf53d8b14743d96fc20c1c8a963704802ada85759f2"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C25804.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C15849.obj?uuid=ac9b32e974bc448eab36b1293f859dcb",
+      "sha256": "3af4d2000750b3be8149bdf53d8b14743d96fc20c1c8a963704802ada85759f2"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C25804.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C25804.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C25804.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C21189.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C434808.obj?uuid=b608ffd257624968b7f500f01fd0153b",
+      "sha256": "d8dcd56f720c683ae9a281046f41d74cecb2a73ecd7d94139d559ee6b8a52b8c"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C21189.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C2940197.obj?uuid=aeccbecea0df4df4a2a68061a89a4c8e",
+      "sha256": "8bb33609025bf30de3092d1333e7c05ad7cb53b6b09f421430d6326083c4f99c"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C21189.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C21189.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C21189.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C21189.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C21189.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C21189.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C25804.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C25804.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C25804.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C14663.obj?uuid=ac9b32e974bc448eab36b1293f859dcb",
+      "sha256": "3af4d2000750b3be8149bdf53d8b14743d96fc20c1c8a963704802ada85759f2"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C15849.obj?uuid=ac9b32e974bc448eab36b1293f859dcb",
+      "sha256": "3af4d2000750b3be8149bdf53d8b14743d96fc20c1c8a963704802ada85759f2"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C14663.obj?uuid=ac9b32e974bc448eab36b1293f859dcb",
+      "sha256": "3af4d2000750b3be8149bdf53d8b14743d96fc20c1c8a963704802ada85759f2"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C167472.obj?uuid=c498e8771bc24312a11c6413631665a8",
+      "sha256": "b63526a517650b79fb6295c769af37c49321e39f50c7a23ca7c6a9b148031910"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C106997.obj?uuid=32fe2cf9314f444ca2785a33c2db7189",
+      "sha256": "11ff3d0e00ddf06caa7ba9e7a4127aa407425d2dbeb9d33203f865f52a44590d"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C106997.obj?uuid=32fe2cf9314f444ca2785a33c2db7189",
+      "sha256": "11ff3d0e00ddf06caa7ba9e7a4127aa407425d2dbeb9d33203f865f52a44590d"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C85897.obj?uuid=c3e75c3d90204c70b153866ab54c789f",
+      "sha256": "e53aaafdfc0ae9c44008cc94a07712e80f4673e3812020c58ffd4d931b2b2c70"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C86109.obj?uuid=fa57e36e003e4ee2b14b14feaebd32e1",
+      "sha256": "fdfcab608ccaaf964aa9913d5493207cf4675686251eb3df583cd12da05267f2"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C85897.obj?uuid=c3e75c3d90204c70b153866ab54c789f",
+      "sha256": "e53aaafdfc0ae9c44008cc94a07712e80f4673e3812020c58ffd4d931b2b2c70"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C18216.obj?uuid=c498e8771bc24312a11c6413631665a8",
+      "sha256": "b63526a517650b79fb6295c769af37c49321e39f50c7a23ca7c6a9b148031910"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C15849.obj?uuid=ac9b32e974bc448eab36b1293f859dcb",
+      "sha256": "3af4d2000750b3be8149bdf53d8b14743d96fc20c1c8a963704802ada85759f2"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C15849.obj?uuid=ac9b32e974bc448eab36b1293f859dcb",
+      "sha256": "3af4d2000750b3be8149bdf53d8b14743d96fc20c1c8a963704802ada85759f2"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C100042.obj?uuid=ac9b32e974bc448eab36b1293f859dcb",
+      "sha256": "3af4d2000750b3be8149bdf53d8b14743d96fc20c1c8a963704802ada85759f2"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C14663.obj?uuid=ac9b32e974bc448eab36b1293f859dcb",
+      "sha256": "3af4d2000750b3be8149bdf53d8b14743d96fc20c1c8a963704802ada85759f2"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C14663.obj?uuid=ac9b32e974bc448eab36b1293f859dcb",
+      "sha256": "3af4d2000750b3be8149bdf53d8b14743d96fc20c1c8a963704802ada85759f2"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C13167.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C72443.obj?uuid=40eb4b87cf0c4873966e77676402d6ca",
+      "sha256": "69dd277040ea78e2e8492c2b510d20ef740c529eaa8cc65a1f1ff1000a01b0d6"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C22808.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C14663.obj?uuid=ac9b32e974bc448eab36b1293f859dcb",
+      "sha256": "3af4d2000750b3be8149bdf53d8b14743d96fc20c1c8a963704802ada85759f2"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C21190.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C21190.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C81464.obj?uuid=cefd4596db214da394d9632b2b88f8f2",
+      "sha256": "eba3fbb208f2c1a7432380919e93350a471d50f840cc10ec11fdb1f59812c7b2"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C21190.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C3030991.obj?uuid=d0740cb8891c49a88b6949cb978926f3",
+      "sha256": "48b853b32050e3b0fe52d090b0c82f45539d9917a32d294915d0ef32bb8fbbee"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C109322.obj?uuid=9c311060aa57458ea4fd5ee4f53427d6",
+      "sha256": "16da8f76f78cebb07159ee30ed40732df2d1a93290762944ee65f5d5b408a1cc"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C3033018.obj?uuid=917e580a727645d0bd5a33a187108a81",
+      "sha256": "059221b367a887d9bab98ec2ce135e5c157c3e21b8342fbbc98cd364d8c95e43"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C861315.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C122538.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C122538.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C14663.obj?uuid=ac9b32e974bc448eab36b1293f859dcb",
+      "sha256": "3af4d2000750b3be8149bdf53d8b14743d96fc20c1c8a963704802ada85759f2"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C45783.obj?uuid=b87ab0c5465a48b3a1c9a6dac8d30bc5",
+      "sha256": "a6ecf4d78195d1f061b045e187fdff13726b03dc2475a4f11803b44d86adebc1"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C45783.obj?uuid=b87ab0c5465a48b3a1c9a6dac8d30bc5",
+      "sha256": "a6ecf4d78195d1f061b045e187fdff13726b03dc2475a4f11803b44d86adebc1"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C45783.obj?uuid=b87ab0c5465a48b3a1c9a6dac8d30bc5",
+      "sha256": "a6ecf4d78195d1f061b045e187fdff13726b03dc2475a4f11803b44d86adebc1"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C45783.obj?uuid=b87ab0c5465a48b3a1c9a6dac8d30bc5",
+      "sha256": "a6ecf4d78195d1f061b045e187fdff13726b03dc2475a4f11803b44d86adebc1"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C45783.obj?uuid=b87ab0c5465a48b3a1c9a6dac8d30bc5",
+      "sha256": "a6ecf4d78195d1f061b045e187fdff13726b03dc2475a4f11803b44d86adebc1"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C5656610.obj?uuid=7098589742ce4a2fb4f80d2ad85dc714",
+      "sha256": "17d04a11eaccf09c0618599f39534b56b0cfa420fc1d3ab74ca4149d5cdb306c"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C14663.obj?uuid=ac9b32e974bc448eab36b1293f859dcb",
+      "sha256": "3af4d2000750b3be8149bdf53d8b14743d96fc20c1c8a963704802ada85759f2"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C25803.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C133590.obj?uuid=cb969c45c1dd4fed98451329f3c3c26e",
+      "sha256": "9bddeafda4032f66aafa2d365af921fc450263ce13b2ffab3c8d1023cdea3929"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C14663.obj?uuid=ac9b32e974bc448eab36b1293f859dcb",
+      "sha256": "3af4d2000750b3be8149bdf53d8b14743d96fc20c1c8a963704802ada85759f2"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C122538.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C122538.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C14663.obj?uuid=ac9b32e974bc448eab36b1293f859dcb",
+      "sha256": "3af4d2000750b3be8149bdf53d8b14743d96fc20c1c8a963704802ada85759f2"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C596730.obj?uuid=713c50296573492cb96f0bb103f650ac",
+      "sha256": "5ef8dc43e8ee86c0f04ee6b2a3057bb317dfa24ce83f6d5f6f5798a6d3fed25e"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C544783.obj?uuid=3393915cc74240b786c7d7578739d4d7",
+      "sha256": "a40c00d7ba9744f5ce3467d42908b21bdf610b2d9221b1e2504b3a29e6728a4a"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C131339.obj?uuid=dad20adf37e74a59b293d1ce4ac84f72",
+      "sha256": "850cd1403a6b56f446a6493fa106502a07f7fc1b59c8b3f077c50b3e359a9f38"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C131337.obj?uuid=ee6b32b5c03144688a5663b32f9648c4",
+      "sha256": "8320268009bf3a8c474ba775580b349d2d9c81fa5b31c461ba9f6eaa3b513f6a"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C15849.obj?uuid=ac9b32e974bc448eab36b1293f859dcb",
+      "sha256": "3af4d2000750b3be8149bdf53d8b14743d96fc20c1c8a963704802ada85759f2"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C45783.obj?uuid=b87ab0c5465a48b3a1c9a6dac8d30bc5",
+      "sha256": "a6ecf4d78195d1f061b045e187fdff13726b03dc2475a4f11803b44d86adebc1"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C45783.obj?uuid=b87ab0c5465a48b3a1c9a6dac8d30bc5",
+      "sha256": "a6ecf4d78195d1f061b045e187fdff13726b03dc2475a4f11803b44d86adebc1"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C22903.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C23231.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C23162.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C23022.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C22893.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C25803.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C25804.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C122837.obj?uuid=ec33f86995434393b9d1cf92fd8f7247",
+      "sha256": "a0c90cd4b01bff311c49db8a51bffa3c0b3d7835bcc007211efab86d44457da2"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C221660.obj?uuid=d337b619ac8046ecb63111370d25527b",
+      "sha256": "42a9b2c6faf5765dee1d455f5c873ae741f3c94c7bb5d140156b62e0d3fdd2f2"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C25803.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C100040.obj?uuid=ac9b32e974bc448eab36b1293f859dcb",
+      "sha256": "3af4d2000750b3be8149bdf53d8b14743d96fc20c1c8a963704802ada85759f2"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C14663.obj?uuid=ac9b32e974bc448eab36b1293f859dcb",
+      "sha256": "3af4d2000750b3be8149bdf53d8b14743d96fc20c1c8a963704802ada85759f2"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C45783.obj?uuid=b87ab0c5465a48b3a1c9a6dac8d30bc5",
+      "sha256": "a6ecf4d78195d1f061b045e187fdff13726b03dc2475a4f11803b44d86adebc1"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C25804.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C2682616.obj?uuid=9f88ab37f18741bd85a157cdee617c79",
+      "sha256": "a18daf1d27390fe24cafaa98f70abe2f079de9f629b7c18e9c8bb6969e7d27a0"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C14663.obj?uuid=ac9b32e974bc448eab36b1293f859dcb",
+      "sha256": "3af4d2000750b3be8149bdf53d8b14743d96fc20c1c8a963704802ada85759f2"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C23162.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C23162.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C910544.obj?uuid=edc2f28e721b49ee8c25b04b981b88c3",
+      "sha256": "9485c9bb173bdfb6bc3d406c720edc98fabf82e0d4acfdc09548d3efb3ed9795"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C14663.obj?uuid=ac9b32e974bc448eab36b1293f859dcb",
+      "sha256": "3af4d2000750b3be8149bdf53d8b14743d96fc20c1c8a963704802ada85759f2"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C45783.obj?uuid=b87ab0c5465a48b3a1c9a6dac8d30bc5",
+      "sha256": "a6ecf4d78195d1f061b045e187fdff13726b03dc2475a4f11803b44d86adebc1"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C25803.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C131337.obj?uuid=ee6b32b5c03144688a5663b32f9648c4",
+      "sha256": "8320268009bf3a8c474ba775580b349d2d9c81fa5b31c461ba9f6eaa3b513f6a"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C81464.obj?uuid=cefd4596db214da394d9632b2b88f8f2",
+      "sha256": "eba3fbb208f2c1a7432380919e93350a471d50f840cc10ec11fdb1f59812c7b2"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C53444.obj?uuid=d777607a152f4f3aac9bb0d0c14ed6fd",
+      "sha256": "b579ed36991ffc8657e2b5bba0fd00fea2f2aa889925092ca9c543ce88ba8199"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C21190.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C21190.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C25804.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C25803.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C25803.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C74512.obj?uuid=229b69761e2c45dba6a83d8866dec72d",
+      "sha256": "b4a68fd1399fd2ab9e7baf51fd4bb6dd8b2a8be45c2b632e1f2c84723c5d7e45"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C14663.obj?uuid=ac9b32e974bc448eab36b1293f859dcb",
+      "sha256": "3af4d2000750b3be8149bdf53d8b14743d96fc20c1c8a963704802ada85759f2"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C100042.obj?uuid=ac9b32e974bc448eab36b1293f859dcb",
+      "sha256": "3af4d2000750b3be8149bdf53d8b14743d96fc20c1c8a963704802ada85759f2"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C21190.obj?uuid=6bd5cd867e9542ebae21caaf5d2d4c4d",
+      "sha256": "6fc2f81a61e2fefd1edbcd85a273d04530b3c25f0a35ea9abb254bf5b47f6f94"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C23654.obj?uuid=460193f9bf2d42e58cf3c2f675b07dc6",
+      "sha256": "d6cac869b152ff708dc4b3dfc70c9710cb1d3c1e492c59d8ce65d3e3a8340e78"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C14663.obj?uuid=ac9b32e974bc448eab36b1293f859dcb",
+      "sha256": "3af4d2000750b3be8149bdf53d8b14743d96fc20c1c8a963704802ada85759f2"
+    },
+    {
+      "url": "https://modelcdn.tscircuit.com/easyeda_models/assets/C596730.obj?uuid=713c50296573492cb96f0bb103f650ac",
+      "sha256": "5ef8dc43e8ee86c0f04ee6b2a3057bb317dfa24ce83f6d5f6f5798a6d3fed25e"
+    }
+  ],
+  "limitations": [
+    "Prototype assumptions: no measured wearer fit or folding hinge.",
+    "Camera/battery are empty configurable reserves, not selected assemblies.",
+    "Supplier CAD is a visualization, not a qualified tolerance model."
+  ],
+  "solid": {
+    "backend": "Manifold3D 3.3.2; same tsCircuit/JSCAD CSG plan; simplify tolerance 0.0001 mm; no hole filling",
+    "validation": "Trimesh 4.9.0 validates exact reloaded binary STL",
+    "parts": [
+      {
+        "name": "front-frame",
+        "boundsMm": [
+          [
+            -80.69999694824219,
+            -25,
+            -17.600000381469727
+          ],
+          [
+            76.80000305175781,
+            44,
+            16.700000762939453
+          ]
+        ],
+        "sizeMm": [
+          157.5,
+          69,
+          34.30000114440918
+        ],
+        "connectedSolids": 1,
+        "watertight": true,
+        "windingConsistent": true,
+        "volumeMm3": 28501.232229691737,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "triangles": 7460,
+        "vertices": 3704,
+        "finite": true,
+        "stlReview": {
+          "watertight": true,
+          "windingConsistent": true,
+          "volumeMm3": 28501.228863034532,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "triangles": 7460,
+          "vertices": 3704,
+          "finite": true
+        },
+        "stlSHA256": "eb242964de9b28a51c7090174d9f3bb478784ab33342abab2b5e41c87bb29833",
+        "printBoundsMm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            157.5,
+            69,
+            34.30000305175781
+          ]
+        ]
+      },
+      {
+        "name": "brow-cover",
+        "boundsMm": [
+          [
+            -75.5,
+            11.75,
+            3.75
+          ],
+          [
+            75.5,
+            32.29999923706055,
+            5.349999904632568
+          ]
+        ],
+        "sizeMm": [
+          151,
+          20.549999237060547,
+          1.5999999046325684
+        ],
+        "connectedSolids": 1,
+        "watertight": true,
+        "windingConsistent": true,
+        "volumeMm3": 3831.512266839463,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "triangles": 1692,
+        "vertices": 840,
+        "finite": true,
+        "stlReview": {
+          "watertight": true,
+          "windingConsistent": true,
+          "volumeMm3": 3831.512101003694,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "triangles": 1692,
+          "vertices": 840,
+          "finite": true
+        },
+        "stlSHA256": "897ce35bec64d8d6d71787d6b7220fe4e9697c26503c2eb57141f4cd8ba350c1",
+        "printBoundsMm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            151,
+            20.549999237060547,
+            1.5999999046325684
+          ]
+        ]
+      },
+      {
+        "name": "camera-cover",
+        "boundsMm": [
+          [
+            -17,
+            20,
+            -19.450000762939453
+          ],
+          [
+            17,
+            44,
+            -17.850000381469727
+          ]
+        ],
+        "sizeMm": [
+          34,
+          24,
+          1.6000003814697266
+        ],
+        "connectedSolids": 1,
+        "watertight": true,
+        "windingConsistent": true,
+        "volumeMm3": 1080.8299982914425,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "triangles": 1376,
+        "vertices": 680,
+        "finite": true,
+        "stlReview": {
+          "watertight": true,
+          "windingConsistent": true,
+          "volumeMm3": 1080.8299859702556,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "triangles": 1376,
+          "vertices": 680,
+          "finite": true
+        },
+        "stlSHA256": "090db828354e27312740c441d82507cc0b7cb197221c08dff171389638ce6bed",
+        "printBoundsMm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            34,
+            24,
+            1.6000003814697266
+          ]
+        ]
+      },
+      {
+        "name": "main-tray",
+        "boundsMm": [
+          [
+            67,
+            -18,
+            17
+          ],
+          [
+            79,
+            23.200000762939453,
+            180
+          ]
+        ],
+        "sizeMm": [
+          12,
+          41.20000076293945,
+          163
+        ],
+        "connectedSolids": 1,
+        "watertight": true,
+        "windingConsistent": true,
+        "volumeMm3": 12362.547811196453,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "triangles": 5272,
+        "vertices": 2612,
+        "finite": true,
+        "stlReview": {
+          "watertight": true,
+          "windingConsistent": true,
+          "volumeMm3": 12362.551330346332,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "triangles": 5272,
+          "vertices": 2612,
+          "finite": true
+        },
+        "stlSHA256": "89e36c1a937e7b0173d0625089476c541f4a80ba9cf879309f0c2437cf78125b",
+        "printBoundsMm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            163,
+            41.20000076293945,
+            12
+          ]
+        ]
+      },
+      {
+        "name": "main-cover",
+        "boundsMm": [
+          [
+            73.9000015258789,
+            0.7999999523162842,
+            19
+          ],
+          [
+            78.6500015258789,
+            23.200000762939453,
+            115
+          ]
+        ],
+        "sizeMm": [
+          4.75,
+          22.40000081062317,
+          96
+        ],
+        "connectedSolids": 1,
+        "watertight": true,
+        "windingConsistent": true,
+        "volumeMm3": 3255.7083533266755,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "triangles": 1584,
+        "vertices": 780,
+        "finite": true,
+        "stlReview": {
+          "watertight": true,
+          "windingConsistent": true,
+          "volumeMm3": 3255.711123828116,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "triangles": 1584,
+          "vertices": 780,
+          "finite": true
+        },
+        "stlSHA256": "48bf538cbbc146ada1e154450120142b8cddc417c705b3ebe2e4c08ffb531eca",
+        "printBoundsMm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            96,
+            22.399999618530273,
+            4.75
+          ]
+        ]
+      },
+      {
+        "name": "main-joint-splint",
+        "boundsMm": [
+          [
+            77.0250015258789,
+            16.299999237060547,
+            5.5
+          ],
+          [
+            80.5,
+            24.299999237060547,
+            28.5
+          ]
+        ],
+        "sizeMm": [
+          3.4749984741210938,
+          8,
+          23
+        ],
+        "connectedSolids": 1,
+        "watertight": true,
+        "windingConsistent": true,
+        "volumeMm3": 298.17965806792427,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "triangles": 1108,
+        "vertices": 552,
+        "finite": true,
+        "stlReview": {
+          "watertight": true,
+          "windingConsistent": true,
+          "volumeMm3": 298.17987864764444,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "triangles": 1108,
+          "vertices": 552,
+          "finite": true
+        },
+        "stlSHA256": "7b7a5edbb9ce68841f88e5856eb31bb6364ae97a7bbc5d71228566e60d38d0e3",
+        "printBoundsMm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            23,
+            8,
+            3.4749999046325684
+          ]
+        ]
+      },
+      {
+        "name": "main-tail-cover",
+        "boundsMm": [
+          [
+            79.25,
+            2,
+            117
+          ],
+          [
+            80.8499984741211,
+            18,
+            157
+          ]
+        ],
+        "sizeMm": [
+          1.5999984741210938,
+          16,
+          40
+        ],
+        "connectedSolids": 1,
+        "watertight": true,
+        "windingConsistent": true,
+        "volumeMm3": 992.8666393939251,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "triangles": 980,
+        "vertices": 488,
+        "finite": true,
+        "stlReview": {
+          "watertight": true,
+          "windingConsistent": true,
+          "volumeMm3": 992.8674480714935,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "triangles": 980,
+          "vertices": 488,
+          "finite": true
+        },
+        "stlSHA256": "b7ede50b53254ca403e27cc5ec8aa58fe54b263c2c027ba1f1cbd6815a4f1687",
+        "printBoundsMm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            40,
+            16,
+            1.5999999046325684
+          ]
+        ]
+      },
+      {
+        "name": "secondary-tray",
+        "boundsMm": [
+          [
+            -80.69999694824219,
+            -18,
+            17
+          ],
+          [
+            -66.9000015258789,
+            23.200000762939453,
+            180
+          ]
+        ],
+        "sizeMm": [
+          13.799995422363281,
+          41.20000076293945,
+          163
+        ],
+        "connectedSolids": 1,
+        "watertight": true,
+        "windingConsistent": true,
+        "volumeMm3": 14324.484504703252,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "triangles": 4968,
+        "vertices": 2462,
+        "finite": true,
+        "stlReview": {
+          "watertight": true,
+          "windingConsistent": true,
+          "volumeMm3": 14324.4889108418,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "triangles": 4968,
+          "vertices": 2462,
+          "finite": true
+        },
+        "stlSHA256": "cb180c1eb58729df48d20a38e3fe11e63ef63c091e0e8a6d661789ecd3798b43",
+        "printBoundsMm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            163,
+            41.20000076293945,
+            13.799999237060547
+          ]
+        ]
+      },
+      {
+        "name": "secondary-cover",
+        "boundsMm": [
+          [
+            -82.55000305175781,
+            0.7999999523162842,
+            19
+          ],
+          [
+            -73.9000015258789,
+            23.200000762939453,
+            135
+          ]
+        ],
+        "sizeMm": [
+          8.650001525878906,
+          22.40000081062317,
+          116
+        ],
+        "connectedSolids": 1,
+        "watertight": true,
+        "windingConsistent": true,
+        "volumeMm3": 3668.0241699765575,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "triangles": 1492,
+        "vertices": 732,
+        "finite": true,
+        "stlReview": {
+          "watertight": true,
+          "windingConsistent": true,
+          "volumeMm3": 3668.0130502325906,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "triangles": 1492,
+          "vertices": 732,
+          "finite": true
+        },
+        "stlSHA256": "6899197b1fb18123dd7347da2ff803533b114512bab3971ae8cfdc7b3e3b902d",
+        "printBoundsMm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            116,
+            22.399999618530273,
+            8.65000057220459
+          ]
+        ]
+      },
+      {
+        "name": "secondary-joint-splint",
+        "boundsMm": [
+          [
+            -84.4000015258789,
+            16.299999237060547,
+            5.5
+          ],
+          [
+            -80.92500305175781,
+            24.299999237060547,
+            28.5
+          ]
+        ],
+        "sizeMm": [
+          3.4749984741210938,
+          8,
+          23
+        ],
+        "connectedSolids": 1,
+        "watertight": true,
+        "windingConsistent": true,
+        "volumeMm3": 298.1796461494244,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "triangles": 1108,
+        "vertices": 552,
+        "finite": true,
+        "stlReview": {
+          "watertight": true,
+          "windingConsistent": true,
+          "volumeMm3": 298.1797832226244,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "triangles": 1108,
+          "vertices": 552,
+          "finite": true
+        },
+        "stlSHA256": "53ebd0dfced79057d22ecc6d31354adf1585103742a8186502e63a2fe330dbf5",
+        "printBoundsMm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            23,
+            8,
+            3.47499942779541
+          ]
+        ]
+      },
+      {
+        "name": "secondary-tail-cover",
+        "boundsMm": [
+          [
+            -80.8499984741211,
+            2,
+            137
+          ],
+          [
+            -79.25,
+            18,
+            157
+          ]
+        ],
+        "sizeMm": [
+          1.5999984741210938,
+          16,
+          20
+        ],
+        "connectedSolids": 1,
+        "watertight": true,
+        "windingConsistent": true,
+        "volumeMm3": 487.1926846318529,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "triangles": 980,
+        "vertices": 488,
+        "finite": true,
+        "stlReview": {
+          "watertight": true,
+          "windingConsistent": true,
+          "volumeMm3": 487.19306915997186,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "triangles": 980,
+          "vertices": 488,
+          "finite": true
+        },
+        "stlSHA256": "91ca7baf76c91d2093d7a3cbadb1c02869da430e7a669a76ab5de63745aa018d",
+        "printBoundsMm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            20,
+            16,
+            1.5999999046325684
+          ]
+        ]
+      }
+    ],
+    "interference": [],
+    "interferenceChecked": true
+  },
+  "sourceHashes": {
+    "src/enclosure/glasses-parameters.ts": "cfa9ffc6fe6ae6de69bd41a6d047b5a18f9793217d5fcd3e0a77d8693054f902",
+    "src/enclosure/glasses-geometry.tsx": "a1e1075ca7ec18fe62bce6be577448cc49bd2cbef416f028f5324c630b13690e",
+    "src/enclosure/glasses-enclosure.circuit.tsx": "20a390adb037aeba7b3e5e0d27b98769048a5417775e38f00f08c10dfe64bc87",
+    "scripts/build-glasses-enclosure.ts": "cd9daa8e41d0f7259d820b2227306a528c6668e0fcbbe68f063b7324d31ff0ed",
+    "scripts/export-glasses-meshes.py": "4a3917a5dcfb4b2f7adcf1382ce22fe3937ca848a5c2e75e5389bbf47ecced18"
+  }
+}

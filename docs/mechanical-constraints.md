@@ -1,3 +1,7 @@
+> Current enclosure: [glasses-shaped fit prototype](../mechanical/glasses/README.md),
+> around the actual 80 × 18 / 100 × 18 mm four-layer boards. The older coupon/module
+> discussion below is historical; no measured wearer fit is established.
+
 > Current revision: [compact PICO design and validation gates](compact-design.md).
 > The original WROOM/INMP441/scaffold discussion below is historical planning;
 > current TSX/BOM and the compact-design status take precedence.

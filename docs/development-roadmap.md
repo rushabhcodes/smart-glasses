@@ -19,6 +19,8 @@ Current status is detailed in [compact design](compact-design.md).
 - [x] Audit45 PCB supplier IDs against direct JLC records; distinguish LCSC inventory and process tiers.
 - [x] Replace scarce comparator/button and qualify touch-buffer package/initial crystal loads.
 - [ ] Confirm assembly inventory; measure clock/RF/memory behavior.
+- [x] Glasses-shaped tsCircuit/JSCAD fit prototype with 11 closed STL parts, actual board CAD, service covers and static interference checks.
+- [ ] Measure wearer/frame fit; qualify enclosure material, optics, fastening, cables and thermal/acoustic behavior.
 - [ ] Select physical cell/NTC adapter, antenna/coax, speaker and final frame envelope.
 - [ ] Finish input protection and low-battery shutdown/recovery against the selected pack.
 - [ ] Close footprint/paste/via-in-pad, power/thermal/RF/memory-rail and mechanical reviews.

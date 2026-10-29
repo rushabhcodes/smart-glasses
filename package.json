@@ -36,7 +36,9 @@
     "report:power-budget": "node scripts/report-power-budget.mjs",
     "report:camera-interface": "node scripts/report-camera-interface.mjs",
     "audit:bom": "bun scripts/audit-bom.mjs",
-    "render:progress": "bun scripts/render-progress.mjs"
+    "render:progress": "bun scripts/render-progress.mjs",
+    "build:enclosure": "tsci build src/enclosure/glasses-enclosure.circuit.tsx --routing-disabled --disable-parts-engine",
+    "export:enclosure": "bun scripts/build-glasses-enclosure.ts --verify"
   },
   "dependencies": {
     "react": "19.3.1"

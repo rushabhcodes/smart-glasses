@@ -1,4 +1,16 @@
-# Provisional mechanical carriers
+# Mechanical prototypes
+
+The current [glasses-shaped fit prototype](glasses/README.md) includes the front frame,
+bridge, two populated-board temples, ear sections, service covers and printable STL
+parts. It uses tsCircuit `assembly.printedpart` and JSCAD. Actual
+[assembled](../docs/progress/2026-10-29-glasses-enclosure.png) and
+[exploded](../docs/progress/2026-10-29-glasses-exploded.png) views are available.
+Frame dimensions are assumptions; fit, camera, battery and manufacturing gates remain.
+
+The earlier rectangular carrier and battery-envelope studies below are preserved as
+historical comparisons. They are not the current glasses-frame design.
+
+## Earlier provisional mechanical carriers
 
 `board-carriers.scad` is editable OpenSCAD CAD for the current PCB review coupons.
 It is a parameter study, not a model of Rushabh's frame or a printable product release.

@@ -1,0 +1,12 @@
+{
+  "snapshotUTC": "2026-10-29T01:18:04.154989+00:00",
+  "renderer": "poppygl, actual tsCircuit/JSCAD and cached supplier board models",
+  "dimensionsPx": [
+    1200,
+    900
+  ],
+  "stage": "Initial CAD; mesh repair in progress; not printable release",
+  "sha256": "505a3acd4aa6df625ddb450b8af12017b4ca03ccc58d34bae7bb8bcd2ecf03e1",
+  "sourceAtCapture": "dist/mechanical/glasses/assembled.glb",
+  "note": "Historical first render before solid-mesh and render-winding corrections. Its transient GLB path has since been rebuilt; use the separately frozen final enclosure snapshot and source hashes."
+}

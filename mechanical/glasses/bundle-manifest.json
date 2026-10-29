@@ -1,0 +1,9 @@
+{
+  "savedAtUTC": "2026-10-29T02:05:18.545302+00:00",
+  "bundle": "dist/mechanical/smart-glasses-fit-prototype-2026-10-29.zip",
+  "bytes": 17070426,
+  "sha256": "fa98c9d8bbc5a230843fea33da0cb95661b0d45c1958e1456a6edbbb32e28d7b",
+  "files": 83,
+  "zipCRC": "all passed",
+  "stage": "Unpowered mechanical fit prototype; not wearable/manufacturing-ready"
+}

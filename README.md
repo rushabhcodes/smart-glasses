@@ -11,13 +11,18 @@ right implements charger/power switch, gauge, amplifier, touch and mating connec
 The camera module/interface is still unresolved. See [current design and gates](docs/compact-design.md),
 [boot/memory review](docs/boot-memory-review.md) and [camera voltage review](docs/camera-voltage-review.md).
 
-Current [actual CAD snapshot](docs/progress/2026-10-28-contact-review.png) shows both review boards.
+The [glasses-shaped enclosure prototype](mechanical/glasses/README.md) uses supported tsCircuit
+printed parts around the actual boards. See the [assembled CAD view](docs/progress/2026-10-29-glasses-enclosure.png)
+and [exploded view](docs/progress/2026-10-29-glasses-exploded.png). It is a fixed-open fit prototype,
+with empty configurable camera/battery spaces and no measured wearer fit.
+
+The [board CAD snapshot](docs/progress/2026-10-28-contact-review.png) shows both review boards.
 Generate frozen PNG/GLB progress artifacts with `npm run render:progress` after building.
 
 No physical hardware has been assembled, flashed or tested. Detailed routing remains
 disabled. Provisional 80 × 18 mm / 100 × 18 mm four-layer outlines do not establish frame
 fit or fabrication readiness. The PICO comparison still has zero catalog stock; the current R8 and flash have dated
-LCSC stock observations. JLC assembly availability remains unconfirmed. See
+LCSC stock observations. The October 28 audit verified dated positive JLC catalog stock for 45 PCB IDs; this is not an assembly allocation or quote. See
 [MCU sourcing tradeoffs](docs/core-sourcing.md).
 The old WROOM implementation is preserved at `codex/wroom-power-baseline` (`c45edaa`).
 
