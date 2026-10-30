@@ -1,5 +1,20 @@
 # smart-glasses
 
+**WORK IN PROGRESS — schematic and mechanical fit prototype.** This is an unrouted,
+bench-unverified two-board design with a bulky fixed-open enclosure (approximately
+165 × 199 × 69 mm). Camera and protected-battery integration remain unresolved.
+It is not a validated wearable or a manufacturing-ready design.
+
+The tsCircuit package defaults to
+[`src/main-board/main-board.circuit.tsx`](src/main-board/main-board.circuit.tsx).
+The [secondary board](src/secondary-board/secondary-board.circuit.tsx) and
+[enclosure](src/enclosure/glasses-enclosure.circuit.tsx) remain separate source
+entrypoints; the main-board preview is not an assembled-glasses rendering.
+See the [actual assembled/exploded enclosure views](mechanical/glasses/README.md).
+The public registry release is a work-in-progress review checkpoint; detailed
+routing, battery/camera qualification, physical fit and electrical/thermal/RF/acoustic
+validation remain open.
+
 A tsCircuit/TypeScript research repository for custom AI-powered glasses with independent
 left and right temple PCBs. The intended assistant is **Meta's Muse personal agent**, using
 the official **Muse Gadgets SDK**. Inference stays off the glasses.

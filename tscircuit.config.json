@@ -2,7 +2,30 @@
   "$schema": "https://cdn.jsdelivr.net/npm/@tscircuit/cli/types/tscircuit.config.schema.json",
   "mainEntrypoint": "src/main-board/main-board.circuit.tsx",
   "ignoredFiles": [
+    "node_modules/**",
+    "dist/**",
+    "checks/**",
     "firmware/build/**",
-    "firmware/logs/**"
-  ]
+    "firmware/logs/**",
+    "**/__pycache__/**",
+    "**/*.pyc",
+    "**/*.log",
+    "**/sdkconfig",
+    "**/sdkconfig.old",
+    "**/sdkconfig.local*"
+  ],
+  "previewComponentPath": "src/main-board/main-board.circuit.tsx",
+  "alwaysUseLatestTscircuitOnCloud": false,
+  "useCloudAutorouting": false,
+  "includeBoardFiles": [
+    "src/main-board/main-board.circuit.tsx",
+    "src/secondary-board/secondary-board.circuit.tsx",
+    "src/enclosure/glasses-enclosure.circuit.tsx"
+  ],
+  "build": {
+    "circuitJson": true,
+    "previewImages": true,
+    "glbs": true,
+    "routingDisabled": true
+  }
 }

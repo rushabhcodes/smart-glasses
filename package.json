@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Two-board tsCircuit research scaffold for cloud-AI smart glasses",
+  "description": "WORK IN PROGRESS: unrouted two-board smart-glasses prototype with a bulky fixed-open fit enclosure; camera, battery and physical validation unresolved.",
   "license": "UNLICENSED",
   "engines": {
     "node": "24.x",
