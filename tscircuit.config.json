@@ -27,5 +27,6 @@
     "previewImages": true,
     "glbs": true,
     "routingDisabled": true
-  }
+  },
+  "siteDefaultComponentPath": "src/main-board/main-board.circuit.tsx"
 }

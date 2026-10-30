@@ -1,6 +1,6 @@
 {
   "name": "smart-glasses",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "type": "module",
   "description": "WORK IN PROGRESS: unrouted two-board smart-glasses prototype with a bulky fixed-open fit enclosure; camera, battery and physical validation unresolved.",
