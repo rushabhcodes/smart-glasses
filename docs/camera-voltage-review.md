@@ -1,5 +1,10 @@
 # Camera voltage and interface decision
 
+31 October update: a separate [OV5640 AF carrier prototype](camera-carrier-review.md)
+now implements the three-rail and translated interface. The historical screen
+below remains useful; AF, control/monitor transport, timing, physical connector
+and wearable integration are still unqualified.
+
 Reviewed28 October2026. The product camera remains **unselected and unwired**.
 The voltage conflict is confirmed in a pinned carrier source revision. A custom
 1.8 V I/O carrier can resolve the static logic mismatch without changing the MCU

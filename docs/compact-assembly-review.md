@@ -1,5 +1,9 @@
 # Compact battery and camera review — 31 October 2026
 
+Historical checkpoint `4580504`. Later work implements an independent
+[OV5640 AF carrier review board](camera-carrier-review.md), without qualifying a
+wearable battery or attaching the camera to either flex board.
+
 No replacement wearable battery or camera assembly is qualified or instantiated
 at this checkpoint. The earlier RRC1120 selection is rejected for temple fit;
 the Adafruit 5839 donor strategy is on hold. Existing electrical circuits,

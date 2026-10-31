@@ -1,0 +1,473 @@
+{
+  "recordedAtUTC": "2026-10-31T21:31:31.254744+00:00",
+  "baseCommit": "458050448fe6e9f61d99bc0abee0adb645774a15",
+  "status": "independent default-off camera-carrier review milestone; not integrated into the wearable",
+  "camera": {
+    "supplier": "Seeed",
+    "supplierSku": "114993115",
+    "frozenModuleRevision": "MJY5OAF-F3M-V1",
+    "drawingDate": "2023-06-20",
+    "alternateVariantNotInterchangeable": "OV5640-8225N-120 pins23/24 NC",
+    "nominalHeadMm": [
+      8.5,
+      8.5,
+      5.5
+    ],
+    "nominalAssemblyLengthMm": 70.5,
+    "nominalTongueWidthMm": 12.5,
+    "nominalTongueThicknessMm": 0.3,
+    "maximumAssembledEnvelopeVerified": false,
+    "externalCoreConfigurationNeedsDeliveredRevisionConfirmation": true,
+    "afSupplyAndDriverQualified": false,
+    "afPowerConnectedToThreeRails": false,
+    "physicalModuleAcquiredOrTested": false,
+    "stockEvidence": "manager observed in-stock $11.99; this executor did not re-fetch known denied storefront; no allocation",
+    "drawingSha256": "0a6e6120a71eb0d1bb323f76679a50e7f2c3c584db522e4c97ece9cafca84b43"
+  },
+  "board": {
+    "widthMm": 58,
+    "heightMm": 18,
+    "thicknessMm": 0.8,
+    "layers": 4,
+    "sourceComponents": 84,
+    "importedCadMeshes": 57,
+    "bottomPassives": 48,
+    "detailedRouting": false,
+    "hostInterface": "27 test pads including rail-monitor pads; no production connector selected",
+    "hostControlExpanderOrVoltageMonitorInstantiated": false,
+    "fittedToFrame": false,
+    "provisionalHeadReserveMm": [
+      10,
+      10,
+      7
+    ],
+    "headReserveIsManufacturerMaximum": false
+  },
+  "parts": [
+    {
+      "mpn": "AFC01-S24FCC-00",
+      "jlcpcbId": "C262276",
+      "reference": "J_CAM",
+      "candidateFile": "imports/AFC01_S24FCC_00.tsx",
+      "importSha256": "2a7bfbf6ac035f35f5d394cad67450928c35f3ab39c162a6b5173d724eb1aef9",
+      "imported": true,
+      "instantiatedInIndependentCarrier": true,
+      "instantiatedInWearable": false,
+      "landPatternAndPasteQualified": false,
+      "invocation": "tsci import --jlcpcb --use-exact-footprint C262276",
+      "logSha256": "910f309bd8b64314d20fc9561ec7bb12754b21b60cefc038645f6e2aca0a0626",
+      "importedAtUTC": "2026-10-31T21:14:37.808546+00:00",
+      "stockObservation": {
+        "source": "LCSC supplier inventory, not JLC assembly inventory",
+        "quantity": 3080,
+        "capturedAtUTC": "2026-10-31T21:15:30.504003+00:00",
+        "currentQuantityVerified": true,
+        "reserved": false
+      },
+      "jlcAssemblyAvailabilityTierAndFeesVerified": false
+    },
+    {
+      "mpn": "TLV75515PDBVR",
+      "jlcpcbId": "C2867152",
+      "reference": "U_CORE",
+      "candidateFile": "imports/TLV75515PDBVR.tsx",
+      "importSha256": "c46d3aaeb28e0a5d03c7911f241d6b9ad58a7d8249151198e3ace8067e7a4671",
+      "imported": true,
+      "instantiatedInIndependentCarrier": true,
+      "instantiatedInWearable": false,
+      "landPatternAndPasteQualified": false,
+      "invocation": "tsci import --jlcpcb --use-exact-footprint C2867152",
+      "logSha256": "cd2dcb1150ed4ee3a93c3c9b1fd73725d1f8923292321c478b9dea18e0c80b2e",
+      "importedAtUTC": "2026-10-31T21:16:29.723439+00:00",
+      "stockObservation": {
+        "source": "LCSC supplier inventory, not JLC assembly inventory",
+        "quantity": 1085,
+        "capturedAtUTC": "2026-10-31T21:15:30.504003+00:00",
+        "currentQuantityVerified": true,
+        "reserved": false
+      },
+      "jlcAssemblyAvailabilityTierAndFeesVerified": false
+    },
+    {
+      "mpn": "TLV75518PDBVR",
+      "jlcpcbId": "C2877863",
+      "reference": "U_IO",
+      "candidateFile": "imports/TLV75518PDBVR.tsx",
+      "importSha256": "099621dd1c371ff2e3771622a5573511d31d7b932c83f8f9ad623325394ceee9",
+      "imported": true,
+      "instantiatedInIndependentCarrier": true,
+      "instantiatedInWearable": false,
+      "landPatternAndPasteQualified": false,
+      "invocation": "tsci import --jlcpcb --use-exact-footprint C2877863",
+      "logSha256": "4756b5bd945d869bc48adfc59c91f5445d19449624f285459ebc11a0f0f1f09a",
+      "importedAtUTC": "2026-10-31T21:16:38.671354+00:00",
+      "stockObservation": {
+        "source": "LCSC supplier inventory, not JLC assembly inventory",
+        "quantity": 5400,
+        "capturedAtUTC": "2026-10-31T21:15:30.504003+00:00",
+        "currentQuantityVerified": true,
+        "reserved": false
+      },
+      "jlcAssemblyAvailabilityTierAndFeesVerified": false
+    },
+    {
+      "mpn": "TPS799285DDCR",
+      "jlcpcbId": "C2865893",
+      "reference": "U_ANALOG",
+      "candidateFile": "imports/TPS799285DDCR.tsx",
+      "importSha256": "725a0bae12b415f3665aa872a4c8b120afd8b8626f3809dcc794b3a7fa1e731c",
+      "imported": true,
+      "instantiatedInIndependentCarrier": true,
+      "instantiatedInWearable": false,
+      "landPatternAndPasteQualified": false,
+      "invocation": "tsci import --jlcpcb --use-exact-footprint C2865893",
+      "logSha256": "8f074ac77a4e312573108d9fa61117c130a8a5eda36a32fd661817dbb3c66e53",
+      "importedAtUTC": "2026-10-31T21:18:25.902394+00:00",
+      "stockObservation": {
+        "source": "LCSC supplier inventory, not JLC assembly inventory",
+        "quantity": null,
+        "capturedAtUTC": null,
+        "currentQuantityVerified": false,
+        "reserved": false
+      },
+      "jlcAssemblyAvailabilityTierAndFeesVerified": false
+    },
+    {
+      "mpn": "TCA9517DGKR",
+      "jlcpcbId": "C544515",
+      "reference": "U_SCCB",
+      "candidateFile": "imports/TCA9517DGKR.tsx",
+      "importSha256": "60268f4dd7d2a9d37dc379b301ed51a3e2a08d35d2e6e1fb068259b9ef6c1b10",
+      "imported": true,
+      "instantiatedInIndependentCarrier": true,
+      "instantiatedInWearable": false,
+      "landPatternAndPasteQualified": false,
+      "invocation": "tsci import --jlcpcb --use-exact-footprint C544515",
+      "logSha256": "ae065cc45ba663ec10e869690e3c278a4a664dddc776ab9302705d88fa480fc2",
+      "importedAtUTC": "2026-10-31T21:16:46.795273+00:00",
+      "stockObservation": {
+        "source": "LCSC supplier inventory, not JLC assembly inventory",
+        "quantity": 86,
+        "capturedAtUTC": "2026-10-31T21:15:30.504003+00:00",
+        "currentQuantityVerified": true,
+        "reserved": false
+      },
+      "jlcAssemblyAvailabilityTierAndFeesVerified": false
+    },
+    {
+      "mpn": "SN74AXC4T774PWR",
+      "jlcpcbId": "C1849453",
+      "reference": "U_DVP1\u20134",
+      "candidateFile": "imports/candidates/SN74AXC4T774PWR.tsx",
+      "importSha256": "957d352a64bdea9f6a3a9384e49f3e8a132ad372254da8a2d177d9406301a065",
+      "imported": true,
+      "instantiatedInIndependentCarrier": true,
+      "instantiatedInWearable": false,
+      "landPatternAndPasteQualified": false,
+      "invocation": "tsci import --jlcpcb --use-exact-footprint C1849453",
+      "logSha256": null,
+      "importedAtUTC": "2026-10-31T20:27:20.376017+00:00",
+      "stockObservation": {
+        "source": "LCSC supplier inventory, not JLC assembly inventory",
+        "quantity": null,
+        "capturedAtUTC": null,
+        "currentQuantityVerified": false,
+        "reserved": false
+      },
+      "jlcAssemblyAvailabilityTierAndFeesVerified": false
+    }
+  ],
+  "rails": {
+    "inputAtCarrierV": [
+      3.15,
+      3.45
+    ],
+    "inputIsRawVsys": false,
+    "core": {
+      "nominalV": 1.5,
+      "screenedV": [
+        1.4775,
+        1.5225
+      ],
+      "maxRegulatorA": 0.5
+    },
+    "io": {
+      "nominalV": 1.8,
+      "screenedV": [
+        1.773,
+        1.827
+      ],
+      "maxRegulatorA": 0.5
+    },
+    "analog": {
+      "nominalV": 2.85,
+      "screenedV": [
+        2.793,
+        2.907
+      ],
+      "maxRegulatorA": 0.2,
+      "accuracyMinimumInputV": 3.15,
+      "bleederOhm": 4700
+    },
+    "af": {
+      "net": "AF_EXTERNAL_2V8",
+      "nominalModuleV": 2.8,
+      "supplyInstantiated": false,
+      "sequencerRequiresBelowV": 0.1
+    }
+  },
+  "sequence": {
+    "implementation": "isolated portable C callbacks, not linked to active OV2640 firmware",
+    "order": [
+      "DOVDD",
+      "AVDD",
+      "DVDD"
+    ],
+    "riseTimeMustBeLessThanMs": 5,
+    "stableCoreToPwdnReleaseMs": 5,
+    "pwdnReleaseToResetReleaseMs": 1,
+    "resetReleaseToSccbMs": 20,
+    "clockStableBeforeRegisterAccessMinimumMs": 1,
+    "actualRailMonitoringAdapterImplemented": false,
+    "hostTests": "passed strict C11 compile and temporal/failure harness; not hardware tests"
+  },
+  "cameraPowerExample": {
+    "condition": "manufacturer external-DVDD 5MP/15fps JPEG, not measured QVGA or final-module maximum",
+    "analogA": 0.04,
+    "coreA": 0.125,
+    "ioA": 0.012,
+    "ldoUpstreamA": 0.177,
+    "hostRailV": 3.296,
+    "upstreamW": 0.5833919999999999,
+    "sensorRailPowerW": 0.3231,
+    "ldoLossW": 0.2602919999999999,
+    "excluded": [
+      "AF demand",
+      "LDO quiescent",
+      "analog bleed",
+      "translator dynamic current",
+      "SCCB",
+      "memory/CPU margins",
+      "inrush"
+    ],
+    "completePeakBudget": false,
+    "stressCellA": 1.654,
+    "stressLogicA": 1,
+    "stressIsMeasuredProductPeak": false,
+    "illustrativeLowerCellA": [
+      0.974,
+      1.191
+    ],
+    "lowerCasesQualifyBattery": false,
+    "coreLdoLossW": 0.22449999999999998,
+    "analogLdoLossW": 0.01783999999999999,
+    "ioLdoLossW": 0.017952
+  },
+  "battery": {
+    "selected": false,
+    "imported": false,
+    "instantiated": false,
+    "placeholderCandidates": [
+      {
+        "mpn": "CMB-851542",
+        "nominalCapacityMah": 450,
+        "nominalCellMm": [
+          8.5,
+          15,
+          42
+        ],
+        "advertisedC": 10
+      },
+      {
+        "mpn": "CMB-801437",
+        "nominalCapacityMah": 350,
+        "nominalCellMm": [
+          8,
+          14,
+          37
+        ]
+      }
+    ],
+    "protectedAssemblyContinuousCurrentVerified": false,
+    "assembledMaximumEnvelopeVerified": false,
+    "samplesOrStockVerified": false,
+    "supplierContacted": false,
+    "internalUnsentQuery": "docs/supplier-query-draft.md"
+  },
+  "primarySources": [
+    {
+      "name": "module",
+      "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/new-res/OV5640_Camera_Module_Specification.pdf",
+      "httpStatus": 200,
+      "pages": 1,
+      "sha256": "0a6e6120a71eb0d1bb323f76679a50e7f2c3c584db522e4c97ece9cafca84b43"
+    },
+    {
+      "name": "v12",
+      "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/XIAO_ESP32S3_Exp_Board_v1.2_SCH_PDF_260810.pdf",
+      "httpStatus": 200,
+      "pages": 1,
+      "sha256": "151a31f9edd3c36dd0fff27a24861205f6f32f6d1d6d99fdb3957b69297e9f9f"
+    },
+    {
+      "name": "sensor",
+      "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/OV5640_datasheet.pdf",
+      "httpStatus": 200,
+      "pages": 179,
+      "sha256": "0e0b34b90706043782568c39d982922f1727dbed41b288cfb7d404dde22fb742"
+    },
+    {
+      "name": "axc",
+      "url": "https://www.ti.com/lit/ds/symlink/sn74axc4t774.pdf",
+      "httpStatus": 200,
+      "pages": 43,
+      "sha256": "d2dffb7067c38d8602b5f66acd639269564b1abae4e9e4794f022cef620cb430"
+    },
+    {
+      "name": "pca9306",
+      "url": "https://www.ti.com/lit/ds/symlink/pca9306.pdf",
+      "httpStatus": 200,
+      "pages": 38,
+      "sha256": "1cd97c734729f2bfca26ccaa93521c04c373568e4ebe6d892267dba2571e21e6",
+      "usage": "research only; not instantiated; carrier uses TCA9517"
+    },
+    {
+      "name": "tlv755p",
+      "url": "https://www.ti.com/lit/ds/symlink/tlv755p.pdf",
+      "httpStatus": 200,
+      "sha256": "96e2706d4b13656d2d550fdbb5be9861c56b058822109bb39a906d4ad1beb019",
+      "capturedAtUTC": "2026-10-31T21:14:57.023803+00:00"
+    },
+    {
+      "name": "tps799",
+      "url": "https://www.ti.com/lit/ds/symlink/tps799.pdf",
+      "httpStatus": 200,
+      "sha256": "6f15dd5753263303526ae3fb491751094cfc1512d51e7eb6b6306d02afc74f25",
+      "capturedAtUTC": "2026-10-31T21:17:13.029340+00:00"
+    },
+    {
+      "name": "tca9517",
+      "url": "https://www.ti.com/lit/ds/symlink/tca9517.pdf",
+      "httpStatus": 200,
+      "sha256": "fde93fd601168d6f457bbf38377f8ee5eb14ab2589ed52974fdf9c847163f22c",
+      "capturedAtUTC": "2026-10-31T21:17:11.055927+00:00"
+    }
+  ],
+  "blockedOrUnsuccessful": [
+    {
+      "action": "download supplier-linked JUSHUO connector drawing",
+      "target": "https://datasheet.lcsc.com/datasheet/pdf/599ced13aa56815b9cdbe2f9bfb59155.pdf?productCode=C262276",
+      "result": "HTTP403, no retry; manufacturer land/mating qualification remains open"
+    },
+    {
+      "action": "Python supplier API queries",
+      "target": "wmsc.lcsc.com/ftps/wm/search/v3/global",
+      "result": "HTTP403; no retries of denied calls; prior successful normal Node/proxy observations retained"
+    },
+    {
+      "action": "original Node supplier search",
+      "result": "transport failed because Node fetch did not use inherited proxy; corrected using NODE_USE_ENV_PROXY=1 before later denials; no policy bypass"
+    },
+    {
+      "action": "official exact-MPN import TPS79928DDCR",
+      "result": "no matches; not selected. Exact TPS799285DDCR/C2865893 was imported instead after headroom/tolerance review"
+    }
+  ],
+  "checks": {
+    "typecheck": "passed",
+    "carrierBuild": "passed, zero native errors; initial syntax/layer/spacing errors corrected",
+    "contactRailDirectionAndPadAudit": "passed",
+    "strictHostCSequenceHarness": "passed",
+    "existingFlexElectricalAndLandEquivalence": "passed 76 main +46 secondary components",
+    "sourcePreservation": "passed original boards/flex/frame/active firmware unchanged",
+    "physicalTesting": "not run",
+    "detailedRouting": "not run",
+    "manufacturingOrAssemblyQualification": "not run",
+    "lastBuildAfterParameterization": "passed typecheck then native build/contact checks/render under set -e",
+    "nativeWarnings": [
+      {
+        "type": "schematic_sheet_styling_warning",
+        "message": "Schematic sheet \"OV5640 AF carrier and controlled interface\" uses a non-default size (1000 \u00d7 400 mm). Prefer the default A4 sheet size (297 \u00d7 210 mm) for consistent schematic styling."
+      },
+      {
+        "type": "source_refdes_convention_warning",
+        "message": "The \"J\" prefix is being used with a <chip />, try using it with a <connector /> or <jumper />"
+      }
+    ],
+    "nativeErrors": 0,
+    "drawingAreaOverflowWarnings": 0,
+    "snapshotSourceAndImageHashes": "passed; both snapshot bytes match their recorded SHA-256 and final circuit JSON",
+    "completedAtUTC": "2026-10-31T21:40:30.396272+00:00"
+  },
+  "remainingGates": [
+    "connector manufacturer land/paste/mating view and real continuity",
+    "delivered AF module identity, external-core strap and motor/driver/current/sequence",
+    "real EN/OE/SCCB/RESET control transport and voltage-monitor adapter; OV5640 firmware initialization",
+    "rail rise/fall, effective capacitors, droop, real concurrent transients and thermal measurements",
+    "DVP setup/hold/skew, clock profile, SCCB margins and physical interconnect",
+    "carrier/head/FPC/heat-sink integration and frame fit",
+    "protected compact battery exact ratings/assembly drawing/NTC/sourcing",
+    "routing, flex stackup/stiffener/coverlay exports, hinge/RF/fabrication and physical validation"
+  ],
+  "externalActions": {
+    "supplierContact": false,
+    "orders": false,
+    "push": false,
+    "merge": false,
+    "publication": false
+  },
+  "sourceMetadataReview": "Verified manufacturer supply/ground roles applied in carrier wrappers; original imported footprints and physical pin numbers unchanged",
+  "snapshots": {
+    "capturedAtUTC": "2026-10-31T21:39:16.935Z",
+    "boardMm": [
+      58,
+      18,
+      0.8
+    ],
+    "sourceSha256": "7fe332c4440fb3e5138f267d87411ec77086db1f26ee9b390ead9d7cbb4be227",
+    "requestedMeshes": 57,
+    "loadedMeshes": 57,
+    "uniqueAssets": 12,
+    "views": [
+      {
+        "mode": "assembled",
+        "path": "docs/progress/2026-10-31-camera-carrier-assembled.png",
+        "pngSha256": "92db9e42b858179ac656d155e9f85b6d6b4b9b716be4a227103e2ce54665aec3",
+        "bytes": 83622,
+        "camera": {
+          "camPos": [
+            31.66746237568276,
+            54.28707835831331,
+            -36.19138557220887
+          ],
+          "lookAt": [
+            0,
+            0,
+            0
+          ],
+          "fov": 50
+        }
+      },
+      {
+        "mode": "exploded",
+        "path": "docs/progress/2026-10-31-camera-carrier-exploded.png",
+        "pngSha256": "0b16e02951514470b2571ef83ccfe2aed407b706a21287591fb548a5e9fbd51f",
+        "bytes": 102963,
+        "camera": {
+          "camPos": [
+            31.66746237568276,
+            54.28707835831331,
+            -36.19138557220887
+          ],
+          "lookAt": [
+            0,
+            0,
+            0
+          ],
+          "fov": 50
+        }
+      }
+    ],
+    "note": "Actual independent unrouted carrier CAD. Exploded component meshes separated 3mm from PCB; no camera head/flex/heat sink or glasses-frame fit is depicted. Imported models need dimensional qualification."
+  }
+}

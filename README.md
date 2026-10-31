@@ -8,7 +8,12 @@ It is not a validated wearable or a manufacturing-ready design.
 The [compact battery/camera review](docs/compact-assembly-review.md) records the
 fit/current conflict and official interface-import results. The earlier RRC1120
 and donor OV5640 choices are superseded for wearable selection. No replacement
-battery or camera is yet electrically integrated into the circuits or CAD.
+battery or camera is yet integrated into the wearable boards or frame.
+
+The [OV5640 AF carrier review](docs/camera-carrier-review.md) adds a separate
+default-off 58 × 18 mm bench carrier with three controlled rails and translated
+signals. It is not connected to the wearable: AF supply, host sequence/monitor
+adapter, connector qualification and frame placement remain gates.
 
 The tsCircuit package defaults to
 [`src/main-board/main-board.circuit.tsx`](src/main-board/main-board.circuit.tsx).

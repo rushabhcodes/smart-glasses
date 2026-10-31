@@ -70,6 +70,12 @@ an established whole-frame length or dynamic hinge flex.
 
 ## Average use versus instantaneous demand
 
+The [new camera-carrier review](camera-carrier-review.md) records the external-core
+rail calculation, unresolved AF/interface overhead and standalone sequence contract.
+The1.654 A case is retained as an unmeasured stress allocation, not a required
+manufacturer peak. At0.552 A and0.70 A logic, the same model gives0.974 A and
+1.191 A battery; neither is a qualified lower supply limit.
+
 The1.654 A result is **cell-terminal current in a sustained stress scenario**, with
 3.0 V at the cell terminals before modeled0.20 Ω pack/PCM/FET/contact/cable losses.
 The modeled load node is2.669 V, the regulated logic rail3.296 V. It assumes1 A

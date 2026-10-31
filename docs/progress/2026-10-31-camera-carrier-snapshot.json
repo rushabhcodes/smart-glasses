@@ -1,0 +1,53 @@
+{
+  "capturedAtUTC": "2026-10-31T21:39:16.935Z",
+  "boardMm": [
+    58,
+    18,
+    0.8
+  ],
+  "sourceSha256": "7fe332c4440fb3e5138f267d87411ec77086db1f26ee9b390ead9d7cbb4be227",
+  "requestedMeshes": 57,
+  "loadedMeshes": 57,
+  "uniqueAssets": 12,
+  "views": [
+    {
+      "mode": "assembled",
+      "path": "docs/progress/2026-10-31-camera-carrier-assembled.png",
+      "pngSha256": "92db9e42b858179ac656d155e9f85b6d6b4b9b716be4a227103e2ce54665aec3",
+      "bytes": 83622,
+      "camera": {
+        "camPos": [
+          31.66746237568276,
+          54.28707835831331,
+          -36.19138557220887
+        ],
+        "lookAt": [
+          0,
+          0,
+          0
+        ],
+        "fov": 50
+      }
+    },
+    {
+      "mode": "exploded",
+      "path": "docs/progress/2026-10-31-camera-carrier-exploded.png",
+      "pngSha256": "0b16e02951514470b2571ef83ccfe2aed407b706a21287591fb548a5e9fbd51f",
+      "bytes": 102963,
+      "camera": {
+        "camPos": [
+          31.66746237568276,
+          54.28707835831331,
+          -36.19138557220887
+        ],
+        "lookAt": [
+          0,
+          0,
+          0
+        ],
+        "fov": 50
+      }
+    }
+  ],
+  "note": "Actual independent unrouted carrier CAD. Exploded component meshes separated 3mm from PCB; no camera head/flex/heat sink or glasses-frame fit is depicted. Imported models need dimensional qualification."
+}

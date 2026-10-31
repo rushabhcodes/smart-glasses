@@ -46,7 +46,10 @@
     "check:flex": "node scripts/check-flex.mjs",
     "check:flex-backing": "python scripts/check-flex-backing.py",
     "render:flex": "bun scripts/render-flex-progress.ts",
-    "export:flex-layout": "node scripts/export-flex-layout.mjs"
+    "export:flex-layout": "node scripts/export-flex-layout.mjs",
+    "build:camera-carrier": "tsci build src/camera-carrier/camera-carrier.circuit.tsx --ignore-config --routing-disabled --disable-parts-engine",
+    "check:camera-carrier": "node scripts/check-camera-carrier.mjs",
+    "render:camera-carrier": "bun scripts/render-camera-carrier.ts"
   },
   "dependencies": {
     "react": "19.3.1"

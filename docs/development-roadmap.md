@@ -11,8 +11,10 @@ Current status is detailed in [compact design](compact-design.md).
 - [x] Matching20-contact logical cable contract and generated connectivity guards.
 - [x] Review R8 supply/boot modes and add an external GPIO3 bias; generated guards pass.
 - [x] Pin the OV5640 carrier source revision and investigate a conditional1.8 V interface.
+- [x] Build an independent default-off Seeed AF-module carrier with audited contact mapping, three controlled rails, translated signals and host-tested sequencing contract; see [carrier review](camera-carrier-review.md).
+- [ ] Qualify the AF motor/driver supply, connector mating/lands, actual rail controls/monitor adapter, OV5640 firmware and compact frame integration.
 - [ ] Qualify and select exact camera/revision, rail sequencing and capture timing.
-- [ ] Receive battery architecture choice; neither direction is selected by silence.
+- [ ] Qualify a compact protected battery after delegated component selection; exact assembled rating, NTC, maximum dimensions and sourcing remain unverified.
 - [ ] Resolve exact camera module/lens/carrier and its connector/rails/reset behavior.
 - [x] Research stocked same-capacity R8 + external-flash alternative; preserve PICO milestone139a02a.
 - [x] Stocked ECS crystal/manual manufacturer land pattern and common3.3 V memory-feed review.
