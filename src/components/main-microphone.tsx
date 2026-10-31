@@ -6,9 +6,9 @@ import { A_0603WAF1003T5E } from "../../imports/A_0603WAF1003T5E"
 import { SchematicParts } from "./schematic-parts"
 
 /** Left-slot 24-bit Philips I2S, 16 kHz / 64 BCLK per frame; no MCLK. */
-export function MainMicrophone() {
+export function MainMicrophone({ pcbOffsetX = 0 }: { pcbOffsetX?: number } = {}) {
   return <schematicsheet name="Microphone" displayName="ICS-43434 I2S microphone" sheetIndex={3}>
-    <SchematicParts section="Mic" title="Bottom-port microphone">
+    <SchematicParts pcbOffsetX={pcbOffsetX} section="Mic" title="Bottom-port microphone">
       <ICS_43434 name="U3" pcbX={-30} pcbY={4}
         connections={{ pin1: "net.AUDIO_LRCLK", pin2: "net.GND", pin3: "net.GND",
           pin4: "net.AUDIO_BCLK", pin5: "net.VCORE3V3", pin6: "net.MIC_SD_RAW" }} />

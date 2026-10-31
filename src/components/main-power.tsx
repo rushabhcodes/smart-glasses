@@ -7,10 +7,10 @@ import { CC0603KRX7R9BB104 } from "../../imports/CC0603KRX7R9BB104"
 import { SchematicParts } from "./schematic-parts"
 
 /** TPS63070 data-sheet application, nominal 3.3 V for the PICO SiP and ICS-43434. */
-export function MainPower() {
+export function MainPower({ pcbOffsetX = 0 }: { pcbOffsetX?: number } = {}) {
   return (
     <schematicsheet name="MainPower" displayName="Switched VSYS to regulated 3.3 V" sheetIndex={2}>
-      <SchematicParts section="Regulator" title="3.3 V buck-boost">
+      <SchematicParts pcbOffsetX={pcbOffsetX} section="Regulator" title="3.3 V buck-boost">
         <TPS63070RNMR name="U2" schWidth={2.34} schHeight={1.8} pcbX={5} pcbY={1}
           noConnect={["pin6"]}
           connections={{

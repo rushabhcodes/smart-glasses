@@ -1,0 +1,57 @@
+{
+  "savedAtUTC": "2026-10-31T18:52:17.555Z",
+  "boards": [
+    {
+      "side": "main",
+      "sourceComponents": 76,
+      "loadedModels": 66,
+      "requestedModels": 66,
+      "bends": 1,
+      "stiffenerTiles": 35,
+      "flatLengthMm": 97.8921501500001,
+      "flatWidthMm": 20,
+      "sourceSHA256": "24aaa8485b655c5c723b07de03d75975a99bf27c6fb00b1446a75471a8657d7e",
+      "folded": true
+    },
+    {
+      "side": "secondary",
+      "sourceComponents": 46,
+      "loadedModels": 43,
+      "requestedModels": 43,
+      "bends": 2,
+      "stiffenerTiles": 18,
+      "flatLengthMm": 134.5371307499998,
+      "flatWidthMm": 20,
+      "sourceSHA256": "0e4ea3af3bc93ba8093b8f05ce0cbd9ad73b229255d9a2d2b9705987091aee12",
+      "folded": true
+    }
+  ],
+  "note": "Actual native pcbbend CAD; static curvature only. Stiffeners translated 6 mm for exploded inspection. Front frame is the earlier provisional reference; trays/hinge/pack/camera assembly are not fitted.",
+  "images": [
+    {
+      "path": "docs/progress/2026-10-31-flex-assembled.png",
+      "width": 1200,
+      "height": 1046,
+      "sha256": "abb2586d62713df521088e35fa286f7ede902533703844ee89c728561d2343e3"
+    },
+    {
+      "path": "docs/progress/2026-10-31-flex-exploded.png",
+      "width": 1200,
+      "height": 1046,
+      "sha256": "69e26cbf3303ca05f81e4de1d554b0b1d6aa65ebb9591018232f6167938b7072"
+    }
+  ],
+  "captionOnlyEdits": true,
+  "renderSourceComparison": {
+    "main": {
+      "geometryAndElectricalJSONIdentical": true,
+      "currentBuildSHA256": "470df7b067a0e46dde690ffb29a27df71f8ac29c87e57075d84eb16299afde48",
+      "rawDifference": "source_project_metadata filesystem hash only"
+    },
+    "secondary": {
+      "geometryAndElectricalJSONIdentical": true,
+      "currentBuildSHA256": "0e4ea3af3bc93ba8093b8f05ce0cbd9ad73b229255d9a2d2b9705987091aee12",
+      "rawDifference": "none"
+    }
+  }
+}

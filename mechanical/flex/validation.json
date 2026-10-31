@@ -1,0 +1,66 @@
+{
+  "baselineCommit": "27f7feab927d6391236d56bc8df1db0a380b343a",
+  "boards": {
+    "main": {
+      "sourceComponents": 76,
+      "electricalSHA256": "f42b1c86ce7c0c3b5c749d2687290161e7cfeb153b86ab65c4b44fbe739deceb",
+      "rigidCheckpointPreserved": true,
+      "landPatternsPreserved": true,
+      "bends": 1,
+      "thermalVias": 9,
+      "stiffenerTiles": 35,
+      "flatLengthMm": 97.8921501500001,
+      "flatWidthMm": 20,
+      "routedTraces": 0,
+      "backing": {
+        "core": {
+          "connectedPatches": 10,
+          "coverage": 0.666818173300393
+        },
+        "power": {
+          "connectedPatches": 1,
+          "coverage": 1
+        }
+      }
+    },
+    "secondary": {
+      "sourceComponents": 46,
+      "electricalSHA256": "1798eff35b2088009c7aabe9d6a1c0d004963d3e86871d0cf9f00ada2f6ba867",
+      "rigidCheckpointPreserved": true,
+      "landPatternsPreserved": true,
+      "bends": 2,
+      "thermalVias": 0,
+      "stiffenerTiles": 18,
+      "flatLengthMm": 134.5371307499998,
+      "flatWidthMm": 20,
+      "routedTraces": 0,
+      "backing": {
+        "power": {
+          "connectedPatches": 1,
+          "coverage": 0.9680221442664902
+        },
+        "audio": {
+          "connectedPatches": 1,
+          "coverage": 0.9818223529797754
+        },
+        "touch": {
+          "connectedPatches": 1,
+          "coverage": 1
+        }
+      }
+    }
+  },
+  "contractSHA256": "445be1986614310119d659a003c3249526d2100dba8f7cf1192b86fb151cb171",
+  "renderSourceComparison": {
+    "main": {
+      "geometryAndElectricalJSONIdentical": true,
+      "currentBuildSHA256": "470df7b067a0e46dde690ffb29a27df71f8ac29c87e57075d84eb16299afde48",
+      "rawDifference": "source_project_metadata filesystem hash only"
+    },
+    "secondary": {
+      "geometryAndElectricalJSONIdentical": true,
+      "currentBuildSHA256": "0e4ea3af3bc93ba8093b8f05ce0cbd9ad73b229255d9a2d2b9705987091aee12",
+      "rawDifference": "none"
+    }
+  }
+}

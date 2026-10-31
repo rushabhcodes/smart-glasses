@@ -20,9 +20,9 @@ import { SchematicParts } from "./schematic-parts"
  * Charge defaults DISABLED. Enable only after cell/real attached NTC and thermal review.
  * TP31-to-TP32 service link enables charge; neither software nor a dummy NTC enables it.
  * BQ24075T OUT can reach input voltage (5.25 V here); it is not a 3.3 V regulator. */
-export function SecondaryPower() {
+export function SecondaryPower({ pcbOffsetX = 0 }: { pcbOffsetX?: number } = {}) {
   return <schematicsheet name="ChargePower" displayName="Bench charger and hardware power switch" sheetIndex={0}>
-    <SchematicParts section="Power" title="Bench charger and hardware power switch">
+    <SchematicParts pcbOffsetX={pcbOffsetX} section="Power" title="Bench charger and hardware power switch">
       <BQ24075TRGTR name="U1" pcbX={-25} pcbY={0} noConnect={["pin7", "pin9"]}
         connections={{ pin1: "net.CHARGE_TS", pin2: "net.VBAT", pin3: "net.VBAT", pin4: "net.CHARGE_CE_N", pin5: "net.GND", pin6: "net.VOUT_ALWAYS", pin8: "net.GND", pin10: "net.VOUT_ALWAYS", pin11: "net.VOUT_ALWAYS", pin12: "net.CHARGE_ILIM", pin13: "net.CHARGE_5V", pin14: "net.CHARGE_TMR", pin15: "net.GND", pin16: "net.CHARGE_ISET", pin17: "net.GND" }} />
       <B3B_PH_K_S_LF__SN_ name="J2" pcbX={-35} pcbY={-5}

@@ -20,6 +20,8 @@ Current status is detailed in [compact design](compact-design.md).
 - [x] Replace scarce comparator/button and qualify touch-buffer package/initial crystal loads.
 - [ ] Confirm assembly inventory; measure clock/RF/memory behavior.
 - [x] Glasses-shaped tsCircuit/JSCAD fit prototype with 11 closed STL parts, actual board CAD, service covers and static interference checks.
+- [x] First local four-layer flex installation study: original electrical contracts preserved, two/three component islands, static bend keepouts and actual combined CAD views.
+- [ ] Qualify flex stackup, main-core backing/rigid-flex support, routing across necks, coverlay/stiffener fabrication data and replaceable hinge interconnect.
 - [ ] Measure wearer/frame fit; qualify enclosure material, optics, fastening, cables and thermal/acoustic behavior.
 - [ ] Select physical cell/NTC adapter, antenna/coax, speaker and final frame envelope.
 - [ ] Finish input protection and low-battery shutdown/recovery against the selected pack.

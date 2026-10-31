@@ -15,6 +15,12 @@ The public registry release is a work-in-progress review checkpoint; detailed
 routing, battery/camera qualification, physical fit and electrical/thermal/RF/acoustic
 validation remain open.
 
+The **local flex-temple study** preserves the electronics on stiffened component
+islands with static bend zones. See the [assessment and remaining support issues](docs/flex-adaptation.md),
+[actual combined CAD view](docs/progress/2026-10-31-flex-assembled.png) and
+[exploded view](docs/progress/2026-10-31-flex-exploded.png). It is unrouted and has
+not replaced the public rigid-board package; stackup, hinge life and frame fit remain unverified.
+
 A tsCircuit/TypeScript research repository for custom AI-powered glasses with independent
 left and right temple PCBs. The intended assistant is **Meta's Muse personal agent**, using
 the official **Muse Gadgets SDK**. Inference stays off the glasses.

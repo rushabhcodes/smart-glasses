@@ -6,9 +6,9 @@ import { CC0603KRX7R9BB104 } from "../../imports/CC0603KRX7R9BB104"
 import { SchematicParts } from "./schematic-parts"
 
 /** Low-power mode; Cs and final insulated electrode require enclosure tuning. */
-export function SecondaryTouch() {
+export function SecondaryTouch({ pcbOffsetX = 0 }: { pcbOffsetX?: number } = {}) {
   return <schematicsheet name="Touch" displayName="Capacitive touch input" sheetIndex={0}>
-    <SchematicParts section="Touch" title="Capacitive touch input">
+    <SchematicParts pcbOffsetX={pcbOffsetX} section="Touch" title="Capacitive touch input">
       <AT42QT1010_TSHR name="U5" pcbX={32} pcbY={2}
         connections={{ pin1: "net.TOUCH_RAW", pin2: "net.GND", pin3: "net.TOUCH_SNSK", pin4: "net.TOUCH_SNS", pin5: "net.VCORE3V3", pin6: "net.GND" }} />
       <CC0603KRX7R9BB104 name="C25" pcbX={32} pcbY={6} schRotation={-90} maxVoltageRating="50V"

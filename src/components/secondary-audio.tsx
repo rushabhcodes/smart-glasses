@@ -10,9 +10,9 @@ import { MMBT3906LT1G } from "../../imports/MMBT3906LT1G"
 import { SchematicParts } from "./schematic-parts"
 
 /** 3 dB gain, left I2S slot. PNP drives SD_MODE only from local VSYS, never directly from MCU. */
-export function SecondaryAudio() {
+export function SecondaryAudio({ pcbOffsetX = 0 }: { pcbOffsetX?: number } = {}) {
   return <schematicsheet name="Audio" displayName="I2S amplifier and default-off control" sheetIndex={0}>
-    <SchematicParts section="Audio" title="I2S amplifier and default-off control">
+    <SchematicParts pcbOffsetX={pcbOffsetX} section="Audio" title="I2S amplifier and default-off control">
       <MAX98357AETE_T name="U4" pcbX={16} pcbY={2} noConnect={["pin5", "pin6", "pin12", "pin13"]}
         connections={{ pin1: "net.AUDIO_DOUT", pin2: "net.AMP_GAIN", pin3: "net.GND", pin4: "net.AMP_SD_MODE", pin7: "net.VSYS", pin8: "net.VSYS", pin9: "net.SPK_P", pin10: "net.SPK_N", pin11: "net.GND", pin14: "net.AUDIO_LRCLK", pin15: "net.GND", pin16: "net.AUDIO_BCLK", pin17: "net.GND" }} />
       <CC0603KRX7R9BB104 name="C22" pcbX={11} pcbY={4} schRotation={-90} maxVoltageRating="50V"

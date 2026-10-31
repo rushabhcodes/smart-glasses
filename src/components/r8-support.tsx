@@ -13,10 +13,10 @@ import { A_0603WAF1002T5E } from "../../imports/A_0603WAF1002T5E"
 import { SchematicParts } from "./schematic-parts"
 
 /** Espressif reference topology; clock/RF values require board measurements. */
-export function R8Support() {
+export function R8Support({ pcbOffsetX = 0 }: { pcbOffsetX?: number } = {}) {
   return <>
     <schematicsheet name="R8Memory" displayName="8 MB external quad flash" sheetIndex={5}>
-      <SchematicParts section="Flash" title="R8 external flash, 3.3 V memory domain">
+      <SchematicParts pcbOffsetX={pcbOffsetX} section="Flash" title="R8 external flash, 3.3 V memory domain">
         {/* Common regulated3.3 V feed avoids loading the internal typical14-ohm path.
             Espressif HW guide1.3.2 / TRM10.3.4.3 external-power option; never1.8 V mode. */}
         <A_0603WAF0000T5E name="R25" layer="bottom" schRotation={-90} pcbX={-6} pcbY={-4.5}
@@ -46,7 +46,7 @@ export function R8Support() {
       </SchematicParts>
     </schematicsheet>
     <schematicsheet name="R8ClockRF" displayName="External crystal, analog bypass and untuned RF" sheetIndex={6}>
-      <SchematicParts section="ClockRF" title="R8 support — RF and clock tuning outstanding">
+      <SchematicParts pcbOffsetX={pcbOffsetX} section="ClockRF" title="R8 support — RF and clock tuning outstanding">
         <ECS400Crystal name="Y1" pcbX={-15} pcbY={7}
           connections={{ pin1: "net.XTAL_P", pin2: "net.GND", pin3: "net.XTAL_N", pin4: "net.GND" }} />
         <LQW15AN24NG00D name="L4" pcbX={-18.8} pcbY={5.9}
