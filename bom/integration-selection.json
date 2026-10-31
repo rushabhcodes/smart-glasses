@@ -1,0 +1,186 @@
+{
+  "recordedAtUTC": "2026-10-31T20:27:20.376467+00:00",
+  "baseCommit": "b25af4436939951b996377085934f311ee01740f",
+  "status": "selected for local integration; electrical/mechanical integration not yet implemented",
+  "battery": {
+    "mpn": "RRC1120",
+    "generation": 2,
+    "manufacturerPartNumber": "110018",
+    "chemistry": "Li-ion",
+    "configuration": "1S1P",
+    "nominalVoltageV": 3.6,
+    "capacityAh": 2.35,
+    "maxChargeV": 4.2,
+    "maxChargeA": 1.59,
+    "continuousDischargeA": 2.3,
+    "nominalBodyMm": [
+      52.5,
+      34.95,
+      11.15
+    ],
+    "maxBodyMm": [
+      52.7,
+      35.1,
+      11.25
+    ],
+    "massG": 42,
+    "contactsListedByManufacturer": [
+      "SCL",
+      "positive",
+      "SDA/ID",
+      "negative"
+    ],
+    "physicalContactNumberingVerified": false,
+    "matingConnector": "RRC-MC11-90-2",
+    "matingManufacturerPartNumber": "210520",
+    "chargingEnabled": false,
+    "supplier": {
+      "mouser_product_number": "328-RRC1120",
+      "supplier_part_number": "328-RRC1120",
+      "mfr": "RRC1120",
+      "manufacturer": "RRC Power Solutions",
+      "package": "",
+      "description": "Battery Packs 3.6V / 2.35Ah / 8.46Wh battery (1s1p)",
+      "detailed_description": "Battery Packs 3.6V / 2.35Ah / 8.46Wh battery (1s1p)",
+      "stock": 123,
+      "price": 52.34,
+      "category": "Battery Packs",
+      "subcategory": "Battery Packs",
+      "product_url": "https://www.mouser.com/en/ProductDetail/RRC-Power-Solutions/RRC1120?qs=C8aJjQqBHT3AC2DsfA6Ovg%3D%3D",
+      "datasheet_url": "https://www.mouser.com/datasheet/3/2601/1/DS_RRC1120.pdf",
+      "photo_url": "https://www.mouser.com/images/rrcpowersolutions/images/RRC1120987_SPL.jpg",
+      "normally_stocking": true,
+      "discontinued": false,
+      "marketplace": false,
+      "parameters": {
+        "Packaging": "Bulk",
+        "Standard Pack Qty": "200"
+      },
+      "source": "mouser"
+    },
+    "stockObservedAtUTC": "2026-10-31T20:16:15.614193+00:00",
+    "shippingEligibilityVerified": false
+  },
+  "camera": {
+    "procurementMPN": "5839",
+    "manufacturer": "Adafruit",
+    "selectedSubassembly": "FD5640 500W-V11 / C19938-001 sensor and flex only",
+    "suppliedCarrierSelected": false,
+    "reason": "Existing carrier DOVDD=3.3V conflicts with documented operating range",
+    "interface": "8-bit DVP and SCCB; JPEG",
+    "nominalBodyMm": [
+      8.5,
+      8.7,
+      5.1
+    ],
+    "maxHeightMm": 5.3,
+    "nominalOverallFlexLengthMm": 21,
+    "overallFlexLengthToleranceMm": 0.2,
+    "tailWidthMm": 12.5,
+    "pitchMm": 0.5,
+    "physicalContacts": {
+      "1": "NC",
+      "2": "AGND",
+      "3": "SDA",
+      "4": "AVDD",
+      "5": "SCL",
+      "6": "RESET",
+      "7": "VSYNC",
+      "8": "PWDN",
+      "9": "HREF",
+      "10": "DVDD",
+      "11": "DOVDD",
+      "12": "Y9",
+      "13": "MCLK",
+      "14": "Y8",
+      "15": "DGND",
+      "16": "Y7",
+      "17": "PCLK",
+      "18": "Y6",
+      "19": "Y2",
+      "20": "Y5",
+      "21": "Y3",
+      "22": "Y4",
+      "23": "AFVDD",
+      "24": "NC"
+    },
+    "drawingRailRangesV": {
+      "AVDD": [
+        2.8,
+        3.3
+      ],
+      "DOVDD": [
+        1.7,
+        2.8
+      ],
+      "DVDD": [
+        1.2,
+        1.5
+      ]
+    },
+    "fullSensorIntersectionReview": "docs/camera-voltage-review.md",
+    "carrierImplemented": false,
+    "supplier": {
+      "mouser_product_number": "485-5839",
+      "supplier_part_number": "485-5839",
+      "mfr": "5839",
+      "manufacturer": "Adafruit",
+      "package": "",
+      "description": "Camera Development Tools Adafruit OV5640 Camera Breakout - 120 Degree Low Distortion",
+      "detailed_description": "Camera Development Tools Adafruit OV5640 Camera Breakout - 120 Degree Low Distortion",
+      "stock": 51,
+      "price": 12.5,
+      "category": "Camera Development Tools",
+      "subcategory": "Camera Development Tools",
+      "product_url": "https://www.mouser.com/en/ProductDetail/Adafruit/5839?qs=mELouGlnn3e7IT6wYqPafQ%3D%3D",
+      "datasheet_url": "",
+      "photo_url": "https://www.mouser.com/images/adafruit/images/5839-03_SPL.jpg",
+      "normally_stocking": true,
+      "discontinued": false,
+      "marketplace": false,
+      "parameters": {
+        "Packaging": "Bulk",
+        "Standard Pack Qty": "1"
+      },
+      "source": "mouser"
+    },
+    "stockObservedAtUTC": "2026-10-31T20:14:50.290945+00:00"
+  },
+  "imports": [
+    {
+      "mpn": "B3B-PH-K-S(LF)(SN)",
+      "jlcpcb": "C131339",
+      "invocation": "tsci import --jlcpcb --use-exact-footprint C131339",
+      "exitCode": 0,
+      "candidateFile": "imports/candidates/B3B_PH_K_S_LF__SN_.tsx",
+      "sha256": "3444e5d7393e67fdbeda3db1310e55042c33836deff511660a017bcdba2bf982",
+      "instantiatedInProduct": false,
+      "landPatternQualified": false
+    },
+    {
+      "mpn": "SN74AXC4T774PWR",
+      "jlcpcb": "C1849453",
+      "invocation": "tsci import --jlcpcb --use-exact-footprint C1849453",
+      "exitCode": 0,
+      "candidateFile": "imports/candidates/SN74AXC4T774PWR.tsx",
+      "sha256": "957d352a64bdea9f6a3a9384e49f3e8a132ad372254da8a2d177d9406301a065",
+      "instantiatedInProduct": false,
+      "landPatternQualified": false
+    }
+  ],
+  "sourceHashes": {
+    "rrcDatasheet": "be493e5038be1d4a87d379a40699d9dd568e7e9f3f00f69a9081d49ef9b9b4df",
+    "rrcManual": "84875d549dd26bd81f3d0d5c4e04155e5b0b02f75d553d8900a113dea429caba",
+    "rrcStockQuery": "6ca476fa91391125b586546537d3429be325494849bb46ad1b06e24f62a5d13c",
+    "cameraStockQuery": "a6f607b25e9a223176e09cc3516bca3962fe2b6571349d94f874b36e152fe9be"
+  },
+  "moduleDrawingImageSHA256": "1fb2a0145aa979d7938ebf8ebb83d115a335cf162cbf6249e6176a3567a5b9e8",
+  "notCompleted": [
+    "RRC connector numbering/land pattern and adapter",
+    "Charging profile and pack-temperature interface",
+    "Camera regulator tolerance/headroom and power/reset sequence",
+    "Camera FPC contact orientation and keyed host connector",
+    "Electrical integration, new board builds and assembled/exploded CAD",
+    "Measured fit, routing/manufacturing exports, thermal/RF/hinge/hardware validation"
+  ]
+}
