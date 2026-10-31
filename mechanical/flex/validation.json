@@ -8,14 +8,14 @@
       "landPatternsPreserved": true,
       "bends": 1,
       "thermalVias": 9,
-      "stiffenerTiles": 35,
+      "stiffenerTiles": 40,
       "flatLengthMm": 97.8921501500001,
       "flatWidthMm": 20,
       "routedTraces": 0,
       "backing": {
         "core": {
-          "connectedPatches": 10,
-          "coverage": 0.666818173300393
+          "connectedPatches": 1,
+          "coverage": 0.7004907637248384
         },
         "power": {
           "connectedPatches": 1,
@@ -50,17 +50,5 @@
       }
     }
   },
-  "contractSHA256": "445be1986614310119d659a003c3249526d2100dba8f7cf1192b86fb151cb171",
-  "renderSourceComparison": {
-    "main": {
-      "geometryAndElectricalJSONIdentical": true,
-      "currentBuildSHA256": "470df7b067a0e46dde690ffb29a27df71f8ac29c87e57075d84eb16299afde48",
-      "rawDifference": "source_project_metadata filesystem hash only"
-    },
-    "secondary": {
-      "geometryAndElectricalJSONIdentical": true,
-      "currentBuildSHA256": "0e4ea3af3bc93ba8093b8f05ce0cbd9ad73b229255d9a2d2b9705987091aee12",
-      "rawDifference": "none"
-    }
-  }
+  "contractSHA256": "1110bf883181dafcbffcc6b4487baea85d4c3a96445c1b55501605ff856d9f55"
 }

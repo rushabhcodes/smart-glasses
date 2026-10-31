@@ -21,6 +21,7 @@ Current status is detailed in [compact design](compact-design.md).
 - [ ] Confirm assembly inventory; measure clock/RF/memory behavior.
 - [x] Glasses-shaped tsCircuit/JSCAD fit prototype with 11 closed STL parts, actual board CAD, service covers and static interference checks.
 - [x] First local four-layer flex installation study: original electrical contracts preserved, two/three component islands, static bend keepouts and actual combined CAD views.
+- [x] Correct main-core backing to one continuous windowed pattern; check actual native union, 0.6 mm structural spine and closed single-body review STL.
 - [ ] Qualify flex stackup, main-core backing/rigid-flex support, routing across necks, coverlay/stiffener fabrication data and replaceable hinge interconnect.
 - [ ] Measure wearer/frame fit; qualify enclosure material, optics, fastening, cables and thermal/acoustic behavior.
 - [ ] Select physical cell/NTC adapter, antenna/coax, speaker and final frame envelope.

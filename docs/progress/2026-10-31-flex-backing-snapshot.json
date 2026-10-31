@@ -1,0 +1,46 @@
+{
+  "savedAtUTC": "2026-10-31T19:21:15.086Z",
+  "boards": [
+    {
+      "side": "main",
+      "sourceComponents": 76,
+      "loadedModels": 66,
+      "requestedModels": 66,
+      "bends": 1,
+      "stiffenerTiles": 40,
+      "flatLengthMm": 97.8921501500001,
+      "flatWidthMm": 20,
+      "sourceSHA256": "6b499edc0ef98bc74f892912dff967c93110821b706c716a122b221e495adb35",
+      "folded": true
+    },
+    {
+      "side": "secondary",
+      "sourceComponents": 46,
+      "loadedModels": 43,
+      "requestedModels": 43,
+      "bends": 2,
+      "stiffenerTiles": 18,
+      "flatLengthMm": 134.5371307499998,
+      "flatWidthMm": 20,
+      "sourceSHA256": "839be55f0d4a6c0907daec2c6e8d96b5f3d58638cc8e48ccc7c2706575789d74",
+      "folded": true
+    }
+  ],
+  "note": "Actual native pcbbend CAD; static curvature only. Stiffeners translated 6 mm for exploded inspection. Front frame is the earlier provisional reference; trays/hinge/pack/camera assembly are not fitted.",
+  "images": [
+    {
+      "path": "docs/progress/2026-10-31-flex-backing-assembled.png",
+      "width": 1200,
+      "height": 1046,
+      "sha256": "0731c39bbfd0635c1bb6fb0649a4e55eebeb1779b931ccbdacbc71b8f4f00ca3"
+    },
+    {
+      "path": "docs/progress/2026-10-31-flex-backing-exploded.png",
+      "width": 1200,
+      "height": 1046,
+      "sha256": "0f3196dccce940734b197cc3ef186e4d109274934fb0570ead89c1e65003b9bb"
+    }
+  ],
+  "backingReview": "mechanical/flex/backing-review.json",
+  "captionOnlyEdits": true
+}

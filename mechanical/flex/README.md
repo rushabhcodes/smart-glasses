@@ -7,6 +7,12 @@ electrical equivalence checks, component candidates and unresolved support issue
 - [Secondary flat drawing](secondary-layout.svg): 134.537 × 20 mm, three islands / two static bends.
 - Editable board geometry and offsets: `src/flex/layout.json`, with native TSX
   entrypoints `main-flex.circuit.tsx` and `secondary-flex.circuit.tsx`.
+- [Main-core backing pattern](main-core-stiffener.svg): one compound cut pattern
+  with four internal windows, exact mm units, 0.20 mm FR4 / 0.05 mm adhesive intent.
+- [Main-core backing solid](main-core-stiffener.stl): closed single-body mm STL for
+  dimensional review, not instructions to 3D-print FR4 or an assembly approval.
+- [Backing verification](backing-review.json): actual native tile-union clearance,
+  connectivity, 0.6 mm structural-spine and independent STL checks.
 - Actual combined assembled/exploded PNG/GLB and circuit JSON: `dist/flex-review/`.
 
 Regenerate the SVGs with `node scripts/export-flex-layout.mjs`. SVG units are mm;
@@ -24,7 +30,13 @@ were established by that export. The native circuit JSON retains `pcb_bend`,
 the actual CAD views and local checks. A manufacturer-approved drawing/export
 workflow is required before fabrication. Do not order from the KiCad smoke export.
 
-The main core has ten disconnected backing patches around bottom components;
-its support stiffness and assembly process remain unresolved. No printable flex
+The corrected main core is one continuous windowed backing. The native API has
+no internal-hole property, so its 39 rectangles tile that single pattern; the SVG
+represents its actual cut boundaries, without internal tile seams. The previous
+ten-patch artifact is preserved at commit `004cb97`. Regenerate/refine the plan with
+`npm run plan:flex`, then rebuild both boards and run `npm run check:flex` and
+`npm run check:flex-backing` using the existing pinned optional Python geometry
+tools. Support stiffness, adhesive, machining radii and supplier limits remain
+unqualified. No printable flex
 PCB, qualified moving hinge, new temple enclosure, camera or battery installation
 is supplied by this milestone. The exploded backing offset is for inspection only.

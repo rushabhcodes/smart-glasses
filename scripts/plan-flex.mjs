@@ -98,9 +98,9 @@ function tilePlate(plate, holes) {
     active.clear()
     for (const [k, v] of next) active.set(k, v)
   }
-  return rects.filter(
-    (r) => r.x1 - r.x0 >= settings.minStiffenerWeb && r.y1 - r.y0 >= settings.minStiffenerWeb
-  )
+  // These rectangles are a decomposition, not separately manufactured strips.
+  // Removing narrow slabs here can disconnect a physically wide backing rail.
+  return rects.filter((r) => r.x1 - r.x0 > 1e-5 && r.y1 - r.y0 > 1e-5)
 }
 mkdirSync("src/flex", { recursive: true })
 const plans = { settings, boards: {} }

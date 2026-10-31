@@ -5,9 +5,10 @@ checkpoint `27f7feab927d6391236d56bc8df1db0a380b343a`. The original rigid entryp
 remain available and are checked against frozen generated contracts. This branch
 has not been pushed or published. It does not replace the published rigid prototype.
 
-Actual CAD: [assembled](progress/2026-10-31-flex-assembled.png) and
-[exploded backing inspection](progress/2026-10-31-flex-exploded.png), captured
-2026-10-31 at 18:52 UTC. Both populated boards are present. The blue front frame is
+Latest actual CAD: [assembled](progress/2026-10-31-flex-backing-assembled.png) and
+[exploded backing inspection](progress/2026-10-31-flex-backing-exploded.png), after
+the continuous-backing correction. The original 18:52 UTC images remain preserved
+at checkpoint `004cb97` and their original filenames. Both populated boards are present. The blue front frame is
 the earlier provisional reference; its camera pod is empty. The old rigid temple
 trays are omitted because they do not fit these boards. No new temple housings,
 installed hinge cable, battery, camera, or fitted antenna/coax are claimed.
@@ -43,16 +44,25 @@ Camera/USB/PSRAM reserved pins and charger default inhibit remain protected.
 Native `pcbstiffener` geometry represents bottom FR4 **0.20 mm** with **0.05 mm**
 adhesive, set back 0.4 mm from the island edges. Rectangular tiles describe cutouts
 for underside courtyards, the microphone aperture, and protruding connector/switch
-leads. Tiles are a CAD decomposition, not instructions to order 53 individual strips.
+leads. Tiles are a CAD decomposition, not separately manufactured strips.
 
-The main core has 24 underside components/test features. Its cutouts leave about
-**66.7% backing coverage in ten disconnected patches**, so this is **not a verified
-rigid core support**. The power island has full backing. Secondary backing is one
+The main core has 24 underside components/test features. The initial generator
+mistakenly removed narrow rectangles used for decomposition, breaking continuous
+rails into ten patches. The corrected generator retains the geometric union and
+uses a 0.6 mm rectilinear opening to remove thin residual webs. It produces **one
+connected windowed backing, 525.289 mm² / 70.05% coverage**, without moving any
+component, changing board dimensions, reducing clearances or entering bend zones.
+The 39 native rectangles describe one physical pattern with four internal windows;
+they are not 39 pieces to assemble. The power island has full backing. Secondary backing is one
 connected region per island: approximately 96.8% power, 98.2% audio and full touch
-coverage. These are area/connectivity calculations, not stiffness measurements.
+coverage. All five backings retain a connected structural spine after a 0.3 mm
+inward offset, checked on the actual built rectangle union. The main pattern's
+SVG and closed, consistently wound single-body 0.20 mm STL match that union.
+These are geometry/connectivity calculations, not stiffness measurements.
 A board supplier must review bonded support, bottom-part access, acoustic sealing,
 assembly order, via-in-pad/paste, and whether a true rigid-flex core is preferable.
-The backing arrangement is an explicit open design issue.
+Backing stiffness, adhesive process, tool radii and supplier feature limits remain
+qualification gates; the disconnected-pattern defect is corrected.
 
 Each bend has an all-four-layer keepout spanning the R×angle arc plus 2 mm at each
 end. Traces may cross; component placement, vias and pours remain excluded.
@@ -124,11 +134,14 @@ npm run build:main
 npm run build:secondary
 npm run build:flex
 npm run check:flex
+npm run check:flex-backing
 ```
 
 `src/flex/layout.json` is the reviewed placement/mechanics plan. `npm run plan:flex`
 recomputes it from the original rigid builds; review the diff before accepting a new
-plan. `baseline-contract.json` is frozen at the original commit, never regenerated
+plan. Planning/refining and the independent backing check use Python with the
+existing optional pinned [enclosure geometry tools](../mechanical/glasses/requirements.txt).
+The native TSX builds use the existing npm lockfile. `baseline-contract.json` is frozen at the original commit, never regenerated
 automatically from the design being tested.
 
 For the combined view, generate the original frame/cache once with the existing

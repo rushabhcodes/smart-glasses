@@ -109,7 +109,9 @@ for (const side of ["main", "secondary"]) {
     assert.equal(stiff.material, "fr4")
     near(stiff.thickness, 0.2, "FR4 thickness")
     near(stiff.adhesive_thickness, 0.05, "Adhesive")
-    assert.ok(Math.min(stiff.width, stiff.height) >= 0.6 - 1e-5, "Narrow stiffener tile")
+    // Tile edges are tessellation boundaries, not manufactured strip widths.
+    // The independent polygon-union check verifies the physical backing spine.
+    assert.ok(Math.min(stiff.width, stiff.height) > 1e-7, "Degenerate stiffener tile")
     const tile = rect(stiff),
       island = config.islands.find((i) => tile.x0 >= i.left - 1e-4 && tile.x1 <= i.right + 1e-4)
     assert.ok(island, "Stiffener outside component island")
@@ -143,6 +145,7 @@ for (const side of ["main", "secondary"]) {
         tiles.reduce((n, t) => n + t.width * t.height, 0) / ((island.length - 0.8) * 19.2)
       )
     }
+    assert.equal(backing[island.name].connectedPatches, 1, `${side}:${island.name} backing is disconnected`)
   }
   result.boards[side] = {
     sourceComponents: actual.sourceComponents,

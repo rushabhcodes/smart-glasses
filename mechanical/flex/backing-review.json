@@ -1,0 +1,44 @@
+{
+  "main:core": {
+    "connectedPieces": 1,
+    "areaMm2": 525.2893560843629,
+    "structuralSpineWidthMm": 0.6,
+    "erodedSpineConnectedPieces": 1,
+    "componentWindowOverlapMm2": 5.199012170775674e-08,
+    "reviewSTL": {
+      "closed": true,
+      "consistentWinding": true,
+      "bodies": 1,
+      "volumeMm3": 105.0578722167005,
+      "thicknessMm": 0.2
+    }
+  },
+  "main:power": {
+    "connectedPieces": 1,
+    "areaMm2": 791.7217921055421,
+    "structuralSpineWidthMm": 0.6,
+    "erodedSpineConnectedPieces": 1,
+    "componentWindowOverlapMm2": 0.0
+  },
+  "secondary:power": {
+    "connectedPieces": 1,
+    "areaMm2": 959.6062587964802,
+    "structuralSpineWidthMm": 0.6,
+    "erodedSpineConnectedPieces": 1,
+    "componentWindowOverlapMm2": 2.3034195893445464e-05
+  },
+  "secondary:audio": {
+    "connectedPieces": 1,
+    "areaMm2": 570.3667581929143,
+    "structuralSpineWidthMm": 0.6,
+    "erodedSpineConnectedPieces": 1,
+    "componentWindowOverlapMm2": 9.423481753756402e-06
+  },
+  "secondary:touch": {
+    "connectedPieces": 1,
+    "areaMm2": 350.40019202902914,
+    "structuralSpineWidthMm": 0.6,
+    "erodedSpineConnectedPieces": 1,
+    "componentWindowOverlapMm2": 0.0
+  }
+}

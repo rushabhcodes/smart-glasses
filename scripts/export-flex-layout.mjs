@@ -35,7 +35,7 @@ for (const [side, b] of Object.entries(plan.boards)) {
 <g font-family="sans-serif" font-size="1.8" fill="#222">
 <text x="${-width / 2 + 2}" y="17">${b.length.toFixed(3)} × 20 mm; 4-layer 0.20 mm stackup provisional; static R30 only</text>
 <text x="${-width / 2 + 2}" y="21">Olive: backing tiles; pink: bend keepout; blue: underside component envelope</text>
-<text x="${-width / 2 + 2}" y="25">Main core backing is discontinuous; no stiffness, hinge-life or fit qualification</text>
+<text x="${-width / 2 + 2}" y="25">Connected backing pattern; stiffness, supplier process, hinge life and fit unqualified</text>
 </g></svg>\n`
   writeFileSync(`${out}/${side}-layout.svg`, svg)
 }
