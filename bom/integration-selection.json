@@ -1,7 +1,7 @@
 {
   "recordedAtUTC": "2026-10-31T20:27:20.376467+00:00",
   "baseCommit": "b25af4436939951b996377085934f311ee01740f",
-  "status": "selected for local integration; electrical/mechanical integration not yet implemented",
+  "status": "SUPERSEDED: RRC1120 rejected for wearable fit; 5839 donor on hold; no qualified replacement integration",
   "battery": {
     "mpn": "RRC1120",
     "generation": 2,
@@ -59,7 +59,11 @@
       "source": "mouser"
     },
     "stockObservedAtUTC": "2026-10-31T20:16:15.614193+00:00",
-    "shippingEligibilityVerified": false
+    "shippingEligibilityVerified": false,
+    "selectedForWearable": false,
+    "status": "rejected for wearable fit",
+    "benchReferenceOnly": true,
+    "rejectionReason": "35.1 mm maximum width conflicts with approximately 20 mm temple target; no off-frame wearable architecture approved"
   },
   "camera": {
     "procurementMPN": "5839",
@@ -144,7 +148,10 @@
       },
       "source": "mouser"
     },
-    "stockObservedAtUTC": "2026-10-31T20:14:50.290945+00:00"
+    "stockObservedAtUTC": "2026-10-31T20:14:50.290945+00:00",
+    "selectedForWearable": false,
+    "status": "donor strategy on hold pending compact camera qualification; supplied carrier rejected",
+    "electricallyIntegrated": false
   },
   "imports": [
     {
@@ -182,5 +189,11 @@
     "Camera FPC contact orientation and keyed host connector",
     "Electrical integration, new board builds and assembled/exploded CAD",
     "Measured fit, routing/manufacturing exports, thermal/RF/hinge/hardware validation"
-  ]
+  ],
+  "reviewedAtUTC": "2026-10-31T21:04:01.851918+00:00",
+  "supersededBy": "bom/compact-assembly-review.json",
+  "currentSelection": {
+    "battery": null,
+    "cameraAssembly": null
+  }
 }

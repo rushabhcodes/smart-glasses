@@ -1,5 +1,12 @@
 # Battery/camera selection checkpoint — 31 October 2026
 
+**Superseded for wearable selection.** The RRC1120 is rejected for the compact
+temple envelope; its 35.1 mm width is incompatible with the approximately 20 mm
+target. It may remain a bench reference, not an off-frame wearable battery.
+The 5839 donor strategy is also on hold pending the compact OV2640 review.
+See [compact assembly review](compact-assembly-review.md). The dated observations
+below are preserved as history, not the current approved component selection.
+
 This is a **selection and official-import checkpoint**, based on flex milestone
 `b25af4436939951b996377085934f311ee01740f`. The selected assemblies have not yet
 been electrically integrated. No new assembly render, routing, firmware port,
@@ -7,7 +14,7 @@ fabrication, order, push or publication is claimed. The user's latest instructio
 delegates battery, camera and provisional frame choices; those choices are no
 longer waiting for a preference answer.
 
-## Battery selected for integration
+## Historical battery proposal — rejected for wearable fit
 
 **RRC1120 generation 2, manufacturer P/N 110018**, a protected 1S1P lithium-ion
 hardpack: 3.60 V nominal, 2.35 Ah / 8.46 Wh, 4.20 V maximum charge voltage,
@@ -50,7 +57,7 @@ Sources: [manufacturer product](https://www.rrc-ps.com/en/battery-packs/standard
 [Mouser listing](https://www.mouser.com/en/ProductDetail/RRC-Power-Solutions/RRC1120?qs=C8aJjQqBHT3AC2DsfA6Ovg%3D%3D),
 [mating connector](https://www.rrc-ps.com/en/power-management/battery-connectors/products/RRC-MC11-90-2).
 
-## Camera selected for integration
+## Historical camera proposal — on hold
 
 **Adafruit 5839**, fixed-focus 120° low-distortion OV5640 kit, used as the source
 of its **FD5640 500W-V11 / C19938-001 sensor/flex assembly**. Mouser's exact
@@ -82,7 +89,7 @@ Sources: [exact Mouser listing](https://www.mouser.com/en/ProductDetail/Adafruit
 The original module drawing and sensor specification were reviewed on 28 October.
 This turn's sensor-PDF refresh returned HTTP 403; no fresh PDF access is claimed.
 
-## Import results and next bounded implementation
+## Earlier import results and withdrawn implementation plan
 
 Installed CLI help confirms `tsci import --jlcpcb --use-exact-footprint <query>`.
 The following exact-ID commands succeeded in isolated local staging directories:
@@ -99,14 +106,14 @@ not the four-contact RRC mating connector. C1849453 is TI SN74AXC4T774PWR,
 whose 16 physical pin labels match the reviewed A/B translation contract. Its
 land pattern, paste and placement still require assembly review.
 
-The next bounded implementation is the RRC mating/adapter and charging contract,
+The withdrawn implementation plan was the RRC mating/adapter and charging contract,
 then the three-rail DVP camera carrier and its keyed interconnect. Preserve the
 existing flex circuits and nine thermal vias while adding those interfaces in a
 reviewable variant. A rear removable battery bay is the provisional packaging
 direction: allow at least the manufacturer's maximum pack envelope plus padding,
 retention and service clearance, separated from charger/regulator heat. Keep the
 existing approximately 165 mm frame width as an editable prototype assumption.
-New arm sections, carrier placement, bay dimensions and cable lengths must be
+This is not the current packaging direction. New arm sections, carrier placement, bay dimensions and cable lengths must be
 derived from the final component envelopes before CAD/fit checks. No measured
 wearer fit or completed new frame geometry is claimed at this checkpoint.
 

@@ -5,10 +5,10 @@ bench-unverified two-board design with a bulky fixed-open enclosure (approximate
 165 × 199 × 69 mm). Camera and protected-battery integration remain unresolved.
 It is not a validated wearable or a manufacturing-ready design.
 
-The latest [battery/camera selection checkpoint](docs/integration-selection.md)
-records the selected RRC1120 generation-2 pack, donor OV5640 sensor assembly and
-successful official interface imports. Their electrical/mechanical integration is
-still in progress; the published circuits and existing CAD do not include them yet.
+The [compact battery/camera review](docs/compact-assembly-review.md) records the
+fit/current conflict and official interface-import results. The earlier RRC1120
+and donor OV5640 choices are superseded for wearable selection. No replacement
+battery or camera is yet electrically integrated into the circuits or CAD.
 
 The tsCircuit package defaults to
 [`src/main-board/main-board.circuit.tsx`](src/main-board/main-board.circuit.tsx).

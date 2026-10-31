@@ -1,0 +1,349 @@
+{
+  "recordedAtUTC": "2026-10-31T21:04:01.851918+00:00",
+  "baseCommit": "ebff7b6f355237bf94654f537a4c1ae0d67945cf",
+  "status": "bounded compact-alternative review complete; no qualified replacement battery/camera or new integration",
+  "currentSelection": {
+    "battery": null,
+    "cameraAssembly": null
+  },
+  "changedProductElectricalDesign": false,
+  "changedMechanicalDesign": false,
+  "provisionalBoardWidthTargetMm": 20,
+  "measuredWearerFit": false,
+  "batteryCandidates": [
+    {
+      "mpn": "RRC1120",
+      "generation": 2,
+      "manufacturerPartNumber": "110018",
+      "status": "rejected for wearable fit; bench reference only",
+      "maxBodyMm": [
+        52.7,
+        35.1,
+        11.25
+      ],
+      "massG": 42,
+      "nominalEnergyWh": 8.46,
+      "continuousDischargeA": 2.3,
+      "qualifiedPulseCurrentA": null,
+      "source": "https://www.rrc-ps.com/fileadmin/Dokumente/Data-Sheets/DS_RRC1120.pdf",
+      "selected": false
+    },
+    {
+      "mpn": "LP801735",
+      "supplierPartNumber": "Adafruit 3898",
+      "status": "rejected against present load allocation and charge setting",
+      "maxBodyMm": [
+        37,
+        17.5,
+        8.2
+      ],
+      "nominalVoltageV": 3.7,
+      "typicalCapacityAh": 0.4,
+      "minimumCapacityAh": 0.38,
+      "nominalEnergyWh": 1.48,
+      "continuousDischargeA": 0.6,
+      "qualifiedPulseCurrentA": null,
+      "maxChargeA": 0.4,
+      "chargeTemperatureC": [
+        0,
+        45
+      ],
+      "normalRatedDischargeEndpointV": 3,
+      "pcmUndervoltageTripV": {
+        "nominal": 2.5,
+        "tolerance": 0.1
+      },
+      "pcmOvercurrentTripA": [
+        2,
+        5
+      ],
+      "pcmTripIsPermittedLoadRating": false,
+      "thermistorIncluded": false,
+      "connectorDrawingNote": "reverse JST-PHR-2P",
+      "numberedMatingPolarityVerified": false,
+      "leadsMm": {
+        "nominal": 25,
+        "tolerance": 5
+      },
+      "source": "https://cdn-shop.adafruit.com/product-files/3898/3898_specsheet_LP801735_400mAh_3.7V_20161129.pdf",
+      "sourceHttpStatus": 200,
+      "sourcePdfSha256": "659a6f7c440d80a67268723b5abdf3a0d9f27c96ca1a057e73ad89f6b8095818",
+      "sourceCapturedAtUTC": "2026-10-31T20:58:35.691813+00:00",
+      "supplyVerified": false,
+      "selected": false
+    },
+    {
+      "mpn": "LP561836JU",
+      "manufacturerPartNumber": "246501",
+      "manufacturer": "Jauch",
+      "bodyMm": [
+        38.5,
+        18.5,
+        5.6
+      ],
+      "continuousDischargeA": 0.37,
+      "qualifiedPulseCurrentA": null,
+      "maxChargeBelow15CA": 0.074,
+      "status": "rejected against load and charge allocation",
+      "supplyVerified": false,
+      "source": "https://www.jauch.com/downloadfile/677e36004f285c9b669ea5a9814f67e5d/matd_246501_20200507_350mah_-_lp561836ju_1s1p_2_wire_50mm.pdf",
+      "selected": false
+    },
+    {
+      "mpn": "P1450C3",
+      "manufacturer": "Keeppower",
+      "contactVariant": "ordinary opposite-end contacts, product id 640",
+      "maxDiameterMm": 14.6,
+      "maxLengthMm": 52.3,
+      "continuousDischargeA": null,
+      "qualifiedPulseCurrentA": null,
+      "status": "unqualified current rating, sourcing and cylindrical fit",
+      "source": "https://www.keeppower.com.cn/products_detail.php?id=640",
+      "supplyVerified": false,
+      "selected": false
+    },
+    {
+      "mpn": "P18350R2",
+      "manufacturer": "Keeppower",
+      "maxDiameterMm": 19.1,
+      "maxLengthMm": 39.9,
+      "massG": 25,
+      "nominalVoltageV": 3.6,
+      "nominalCapacityAh": 1.6,
+      "nominalEnergyWh": 5.76,
+      "conservativeContinuousDischargeA": 5,
+      "headlineContinuousDischargeA": 8,
+      "publishedPulseA": 8,
+      "qualifiedPulseCurrentA": null,
+      "pulseTimingSpecified": false,
+      "maxContinuousChargeA": 1.12,
+      "maxChargeV": 4.2,
+      "pcmFaultCutoffV": 2.5,
+      "ratingConflict": "headline 8A continuous versus detail table 5A continuous; use 5A only",
+      "status": "passes model current at conservative 5A; fit, stock, charging and temperature contract unqualified",
+      "source": "https://www.keeppower.com.cn/products_detail.php?id=881",
+      "sourceHtmlSha256": "7c7edc0e68abd456952b13239c65a3eb21b2235b9f335c347228c304313a92ec",
+      "sourceCapturedAtUTC": "2026-10-31T20:51:20.410865+00:00",
+      "supplyVerified": false,
+      "selected": false
+    }
+  ],
+  "cameraCandidate": {
+    "mpn": "M0031",
+    "manufacturer": "Arducam",
+    "sensor": "OV2640",
+    "status": "candidate only; exact contact drawing, rail/logic/sequence closure and supply missing",
+    "reportedBodyMm": [
+      21,
+      12.5,
+      5.85
+    ],
+    "reportedCoreV": {
+      "nominal": 1.3,
+      "toleranceFraction": 0.05
+    },
+    "reportedAnalogRangeV": [
+      2.5,
+      3
+    ],
+    "reportedIoRangeV": [
+      1.7,
+      3.3
+    ],
+    "reportedCompressedPowerW": 0.14,
+    "reportedContacts": 24,
+    "recommendedMatingConnector": "F32R-1A7H1-11024",
+    "contactNumberingVerified": false,
+    "supplyVerified": false,
+    "selected": false,
+    "instantiated": false,
+    "sourceEvidence": "trusted primary-source research supplied by manager; known direct HTTP 403 not retried",
+    "source": "https://www.arducam.com/arducam-ov2640-camera-module-2mp-mini-ccm-compact-camera-modules-compatible-with-arduino_m0031esp32-esp8266-development-board-with-dvp-24-pin-interface_.html"
+  },
+  "additionalImports": [
+    {
+      "mpn": "F32R-1A7H1-11024",
+      "manufacturer": "Amphenol",
+      "jlcpcb": "C3167938",
+      "invocation": "tsci import --jlcpcb --use-exact-footprint C3167938",
+      "exitCode": 1,
+      "result": "Component not found in EasyEDA library search; supplier catalog listing does not guarantee import data",
+      "libraryMissing": true,
+      "accessDenied": false,
+      "candidateFile": null,
+      "instantiated": false,
+      "logSha256": "7fc1e7dc0235d477086faeeb704b09fbf2956439af9581a26ce464682356a2a3",
+      "supplierObservation": {
+        "source": "LCSC",
+        "quantity": 81,
+        "jlcAssemblyInventoryVerified": false,
+        "capturedAtUTC": "2026-10-31T20:50:00.018481+00:00"
+      }
+    },
+    {
+      "mpn": "FH12-24S-0.5SH(55)",
+      "manufacturer": "HRS/Hirose",
+      "jlcpcb": "C202112",
+      "invocation": "tsci import --jlcpcb --use-exact-footprint C202112",
+      "exitCode": 0,
+      "candidateFile": "imports/candidates/FH12_24S_0_5SH_55_.tsx",
+      "fileSha256": "730d284f7ce1236a0dccbab73d25a38eaad66b56bea2bc3dd02bc43d0a9a8e5f",
+      "instantiated": false,
+      "selected": false,
+      "landPatternQualified": false,
+      "cameraMatingCompatibilityVerified": false,
+      "generatedSchematicPortCount": 26,
+      "signalPadCount": 24,
+      "largerMountingPadCount": 2,
+      "mountingPadsGeneratedAsPorts": [
+        25,
+        26
+      ],
+      "signalPitchMinMm": 0.4996179999999999,
+      "signalPitchMaxMm": 0.50038,
+      "supplierObservation": {
+        "source": "LCSC",
+        "quantity": 5133,
+        "capturedAtUTC": "2026-10-31T20:50:00.018481+00:00",
+        "jlcAssemblyInventoryVerified": false
+      },
+      "jlcProductPage": {
+        "url": "https://jlcpcb.com/partdetail/FH12_24S_0_5SH_55/C202112",
+        "httpStatus": 200,
+        "capturedAtUTC": "2026-10-31T20:58:36.764584+00:00",
+        "safeRawFields": {
+          "componentModelEn": "FH12-24S-0.5SH(55)",
+          "componentBrandEn": "HRS(Hirose)",
+          "componentCode": "C202112",
+          "assemblyMode": "smtWeld",
+          "componentProductType": 0,
+          "fixtureFlag": false,
+          "specialComponentFee": 0,
+          "overseasSpecialComponentFee": "$undefined",
+          "needAuditFlag": false,
+          "moistureSensitivityLevelEn": "MSL 1",
+          "xrayFlag": false,
+          "componentLibraryType": "expand",
+          "assemblyComponentFlag": false
+        },
+        "interpretation": "identity confirmed; raw flags/fees do not qualify order availability or fees for a chosen assembly service"
+      }
+    }
+  ],
+  "powerBudget": {
+    "modelGeneratedAtUTC": "2026-10-31T21:02:06.468Z",
+    "measured": false,
+    "assumptions": {
+      "logicRailV": 3.2960000000000003,
+      "logicLoadIncludesCamera": true,
+      "buckBoostEfficiency": 0.85,
+      "audioEfficiency": 0.85,
+      "speakerOhm": 8,
+      "auxiliaryCurrentA": 0.005,
+      "cellMinimumV": 3,
+      "thermalMetricsAreReferenceBoardOnly": true
+    },
+    "scenarios": [
+      {
+        "logicA": 0.35,
+        "sharedPathOhm": 0.2,
+        "batteryV": 3,
+        "vsysV": 2.862,
+        "batteryA": 0.69,
+        "amplifierAbove2p5V": true,
+        "measured": false
+      },
+      {
+        "logicA": 0.35,
+        "sharedPathOhm": 0.4,
+        "batteryV": 3,
+        "vsysV": 2.718,
+        "batteryA": 0.704,
+        "amplifierAbove2p5V": true,
+        "measured": false
+      },
+      {
+        "logicA": 0.7,
+        "sharedPathOhm": 0.2,
+        "batteryV": 3,
+        "vsysV": 2.762,
+        "batteryA": 1.191,
+        "amplifierAbove2p5V": true,
+        "measured": false
+      },
+      {
+        "logicA": 0.7,
+        "sharedPathOhm": 0.4,
+        "batteryV": 3,
+        "vsysV": 2.489,
+        "batteryA": 1.279,
+        "amplifierAbove2p5V": false,
+        "measured": false
+      },
+      {
+        "logicA": 1,
+        "sharedPathOhm": 0.2,
+        "batteryV": 3,
+        "vsysV": 2.669,
+        "batteryA": 1.654,
+        "amplifierAbove2p5V": true,
+        "measured": false
+      },
+      {
+        "logicA": 1,
+        "sharedPathOhm": 0.4,
+        "batteryV": 3,
+        "vsysV": 2.24,
+        "batteryA": 1.901,
+        "amplifierAbove2p5V": false,
+        "measured": false
+      }
+    ],
+    "chargeMaxA": 0.4456,
+    "chargingEnabled": false,
+    "radioCameraIllustration": {
+      "radio3p3VA": 0.34,
+      "cameraW": 0.14,
+      "cellV": 3,
+      "batteryAAt90Percent": 0.4674074074074074,
+      "batteryAAt85Percent": 0.49490196078431375,
+      "excludes": [
+        "memory",
+        "audio",
+        "other peripherals",
+        "extra LDO losses",
+        "inrush"
+      ],
+      "isGuaranteedPeakBudget": false
+    },
+    "oneAmpLogicStressIsMeasuredOrManufacturerMaximum": false,
+    "pulseEnvelopeQualified": false,
+    "runtimeMeasured": false
+  },
+  "checks": {
+    "generatedImportPadStructure": "passed 26 pads/ports, 24 signal contacts at approximately 0.5 mm pitch; mounting semantics unqualified",
+    "typecheck": "passed npm run typecheck (tsc --noEmit), exit 0",
+    "newBoardBuild": "not run: product circuits unchanged",
+    "integratedCameraBatteryRender": "not run: no integration",
+    "physicalFitOrFunction": "not tested",
+    "evidenceIntegrity": "passed JSON parsing, recorded candidate SHA-256, evidence-file existence and unselected-status checks",
+    "productSourcePreserved": "passed git diff --exit-code b25af4436939951b996377085934f311ee01740f -- src mechanical scripts package.json bun.lockb bun.lock",
+    "diffWhitespace": "passed git diff --check",
+    "completedAtUTC": "2026-10-31T21:04:38.081855+00:00"
+  },
+  "existingActualSnapshotCapturedAtUTC": "2026-10-31T19:21:15.086Z",
+  "remainingGates": [
+    "protected compact pack with sufficient continuous and qualified transient current, proven supply and safe charge/temperature contract",
+    "exact compact camera assembly contact order, connector orientation, rails, logic levels, sequencing and live sourcing",
+    "battery/camera interface integration and associated netlist/build/placement/render checks",
+    "routing and flex manufacturing bend/stiffener/coverlay export",
+    "thermal, RF, hinge-life, wearer fit and hardware validation"
+  ],
+  "networkPolicy": "smart-glasses runtime revision 4 unrestricted HTTP; inherited proxy/TLS preserved; vendor-specific HTTP 403s not bypassed",
+  "externalActions": {
+    "orders": false,
+    "push": false,
+    "merge": false,
+    "publication": false
+  }
+}
