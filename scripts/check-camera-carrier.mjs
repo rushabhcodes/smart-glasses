@@ -50,6 +50,7 @@ const raw=readFileSync('imports/AFC01_S24FCC_00.tsx','utf8')
 const pads=[...raw.matchAll(/<smtpad portHints=\{\["pin(\d+)"\]\} pcbX="([-.\d]+)mm" pcbY="([-.\d]+)mm" width="([.\d]+)mm" height="([.\d]+)mm"/g)].map(m=>m.slice(1).map(Number))
 assert.equal(pads.length,26);const signal=pads.filter(p=>p[0]<=24).sort((a,b)=>a[0]-b[0]);for(let i=1;i<24;i++)assert.ok(Math.abs(signal[i][1]-signal[i-1][1]-.5)<.001)
 assert.ok(signal.every(p=>Math.abs(p[3]-.3)<.001&&Math.abs(p[4]-1.3)<.001))
+// Base-accuracy arithmetic only, not a complete line/load/transient rail bound.
 for(const [v,e,min,max] of [[1.5,.015,1.425,1.575],[1.8,.015,1.71,3],[2.85,.02,2.66,2.94]])assert.ok(v*(1-e)>=min && v*(1+e)<=max)
 const result={passed:true,sourceComponents:components.size,physicalCameraContactsAudited:24,mountingPadsNotWired:[25,26],widthMm:58,heightMm:18,thicknessMm:board.thickness,nativeErrors:0,nativeWarnings:warnings.map(x=>({type:x.type,message:x.message})),detailedRouting:false,batteryInstantiated:false,afRegulatorInstantiated:false,hostIntegration:false,footprintAudit:'import pad numbering/pitch/dimensions checked; manufacturer drawing access blocked, mating/land qualification remains open',hardwareTested:false,checkedAtUTC:new Date().toISOString()}
 writeFileSync('dist/camera-carrier-checks.json',JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result,null,2))

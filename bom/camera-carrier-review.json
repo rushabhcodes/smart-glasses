@@ -185,19 +185,23 @@
     "inputIsRawVsys": false,
     "core": {
       "nominalV": 1.5,
-      "screenedV": [
+      "maxRegulatorA": 0.5,
+      "baseAccuracyOnlyV": [
         1.4775,
         1.5225
       ],
-      "maxRegulatorA": 0.5
+      "accuracyTestLoadA": 0.001,
+      "lineLoadTransientTotalBudgetQualified": false
     },
     "io": {
       "nominalV": 1.8,
-      "screenedV": [
+      "maxRegulatorA": 0.5,
+      "baseAccuracyOnlyV": [
         1.773,
         1.827
       ],
-      "maxRegulatorA": 0.5
+      "accuracyTestLoadA": 0.001,
+      "lineLoadTransientTotalBudgetQualified": false
     },
     "analog": {
       "nominalV": 2.85,
@@ -397,7 +401,8 @@
     "nativeErrors": 0,
     "drawingAreaOverflowWarnings": 0,
     "snapshotSourceAndImageHashes": "passed; both snapshot bytes match their recorded SHA-256 and final circuit JSON",
-    "completedAtUTC": "2026-10-31T21:40:30.396272+00:00"
+    "completedAtUTC": "2026-10-31T21:40:30.396272+00:00",
+    "regulatorAccuracyScreen": "base output-accuracy arithmetic only; TLV755 separate line/load terms and real transient/distribution behavior not qualified"
   },
   "remainingGates": [
     "connector manufacturer land/paste/mating view and real continuity",

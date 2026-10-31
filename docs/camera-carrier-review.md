@@ -79,6 +79,12 @@ existing nominal 3.296 V domain. Include distribution loss at this location;
 | I/O1.8V | **TLV75518PDBVR / C2877863**, 500 mA | ±1.5% gives1.773–1.827 V; accuracy headroom VIN≥2.3 V. |
 | Analog2.85V | **TPS799285DDCR / C2865893**, 200 mA | ±2% gives2.793–2.907 V, inside module2.8V±5% and sensor2.6–3.0V. **VIN≥2.85+0.3=3.15 V**. |
 
+The TLV755 ±1.5% ranges above are **base-accuracy screening at the
+datasheet test condition (1 mA load)**, not a complete line/load/transient
+rail bound. TI specifies line and load regulation separately. Those terms,
+distribution loss and temperature must be included before qualifying actual
+rail limits; the static arithmetic check alone does not prove this.
+
 Every EN is pulled down100 kΩ. TLV NC pins remain NC; TPS799 NR uses10 nF.
 The analog4.7 kΩ bleeder supplies >0.5 mA minimum load for the accuracy condition
 and assists discharge. Nominal22 µF input/output capacitors and local100 nF
