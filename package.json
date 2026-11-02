@@ -49,7 +49,14 @@
     "export:flex-layout": "node scripts/export-flex-layout.mjs",
     "build:camera-carrier": "tsci build src/camera-carrier/camera-carrier.circuit.tsx --ignore-config --routing-disabled --disable-parts-engine",
     "check:camera-carrier": "node scripts/check-camera-carrier.mjs",
-    "render:camera-carrier": "bun scripts/render-camera-carrier.ts"
+    "render:camera-carrier": "bun scripts/render-camera-carrier.ts",
+    "plan:slim": "node scripts/plan-slim.mjs placement",
+    "build:slim:main": "tsci build src/slim/main-slim.circuit.tsx --ignore-config --routing-disabled --disable-parts-engine",
+    "build:slim:secondary": "tsci build src/slim/secondary-slim.circuit.tsx --ignore-config --routing-disabled --disable-parts-engine",
+    "build:slim": "npm run build:slim:main && npm run build:slim:secondary",
+    "plan:slim-backing": "node scripts/plan-slim.mjs backing && python scripts/refine-flex-backing.py src/slim/layout.json mechanical/slim --connected-core",
+    "check:slim": "node scripts/check-slim.mjs && python scripts/check-flex-backing.py src/slim/layout.json slim mechanical/slim",
+    "render:slim": "bun scripts/render-flex-progress.ts dist/slim-review slim"
   },
   "dependencies": {
     "react": "19.3.1"

@@ -1,5 +1,11 @@
 # Component recommendation and JLC audit
 
+The figures below describe the earlier rigid/flex baseline. The local
+[17 mm slim variant](slim-temple-review.md) deliberately changes secondary J2/J3/J4
+to JST ACH headers with dated DigiKey evidence and **unverified JLC assembly
+inventory**. Its separate [BOM delta](../bom/slim-connector-delta.csv) must not be
+represented by the older all-JLC audit counts.
+
 Checked28 October2026; exact UTC observation times are recorded per part. The current45 PCB supplier IDs cover110
 assembly component placements;12 DNP test pads are excluded. Exact code/MPN
 identity is verified against JLC's public component-detail API, with positive

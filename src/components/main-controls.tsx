@@ -5,13 +5,13 @@ import { KMR221GLFS } from "../../imports/KMR221GLFS"
 import { A_0603WAF2701T5E } from "../../imports/A_0603WAF2701T5E"
 import { CC0603KRX7R9BB104 } from "../../imports/CC0603KRX7R9BB104"
 import { MMBT3904LT1G } from "../../imports/MMBT3904LT1G"
-import { SchematicParts } from "./schematic-parts"
+import { SchematicParts, type SheetPcbProps } from "./schematic-parts"
 
 /** GPIO1 capture/PTT input and GPIO48 active-high recording indication. */
-export function MainControls({ pcbOffsetX = 0 }: { pcbOffsetX?: number } = {}) {
+export function MainControls({ pcbOffsetX = 0, pcbPlacements }: SheetPcbProps = {}) {
   return (
     <schematicsheet name="MainControls" displayName="Capture button and recording indicator" sheetIndex={1}>
-      <SchematicParts pcbOffsetX={pcbOffsetX} section="Controls" title="Controls">
+      <SchematicParts pcbOffsetX={pcbOffsetX} pcbPlacements={pcbPlacements} section="Controls" title="Controls">
         <A_0603WAF2701T5E name="R5" schRotation={270}
           pcbX={-34} pcbY={-5}
           connections={{ pin1: "net.VCORE3V3", pin2: "net.USER_BUTTON" }} />

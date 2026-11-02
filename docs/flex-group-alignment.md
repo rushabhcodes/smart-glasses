@@ -13,3 +13,8 @@ relative to that anchor. Main and both secondary groups align with their keepout
 Actual global bend and keepout coordinates, every electrical connection, land
 pattern and nine thermal vias remain unchanged; native builds and flex guards pass.
 A regression check now compares group/keepout/bend centers. No viewer code changed.
+
+The installed core's `Group.calculatePcbGroupBounds` preserves an explicitly
+authored ordinary-group center while calculating its size from children. Our
+source authored center 0 with offset children. This is a project group-authoring
+mismatch, not evidence of a tsCircuit PCB-viewer defect.

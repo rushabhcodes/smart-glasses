@@ -20,6 +20,14 @@ battery, camera or hinge cable):
 
 ![Actual two-board flex installation study](docs/progress/2026-10-31-flex-backing-assembled.png)
 
+A separate **local slimmer-board study** now narrows both boards from 20 to 17 mm
+and replaces the secondary board's tall headers with JST ACH connectors. Populated
+CAD normal span is 3.10 mm main / 4.35 mm secondary, excluding harness, pack and
+housing. The original entrypoints and published 0.1.2 preview are preserved. See
+[dimensions, sourcing and qualification gates](docs/slim-temple-review.md) and the
+actual [assembled](docs/progress/2026-11-02-slim-temples-assembled.png) /
+[exploded](docs/progress/2026-11-02-slim-temples-exploded.png) views.
+
 The **58 × 18 × 0.8 mm standalone camera carrier** has three controlled rails,
 direction-controlled signal translation and a host-tested sequence contract.
 AF power, host controls/voltage monitoring, connector manufacturing qualification,
@@ -137,7 +145,7 @@ smart-glasses/
 │   ├── main-board/main-board.circuit.tsx
 │   ├── secondary-board/secondary-board.circuit.tsx
 │   └── components/power-rail-scaffold.tsx
-├── imports/                        # JLCPCB components imported by tsci
+├── imports/                        # audited component footprints and source references
 ├── firmware/                       # pinned SDK port; see its README
 ├── scripts/check-boards.mjs
 ├── docs/

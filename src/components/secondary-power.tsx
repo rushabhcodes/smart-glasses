@@ -1,3 +1,4 @@
+import { Ach2, Ach3 } from "../slim/jst-ach"
 import { A_0603WAF1002T5E } from "../../imports/A_0603WAF1002T5E"
 import { A_0603WAF1003T5E } from "../../imports/A_0603WAF1003T5E"
 import { A_0603WAF1872T5E } from "../../imports/A_0603WAF1872T5E"
@@ -14,20 +15,22 @@ import { CL10A105KB8NNNC } from "../../imports/CL10A105KB8NNNC"
 import { CL21A226MAQNNNE } from "../../imports/CL21A226MAQNNNE"
 import { JS102011SAQN } from "../../imports/JS102011SAQN"
 import { TPS22965DSGR } from "../../imports/TPS22965DSGR"
-import { SchematicParts } from "./schematic-parts"
+import { SchematicParts, type SheetPcbProps } from "./schematic-parts"
 
 /** Review circuit: 5 V +/-5%, 500 mA current-limited keyed bench input, protected 1S pack.
  * Charge defaults DISABLED. Enable only after cell/real attached NTC and thermal review.
  * TP31-to-TP32 service link enables charge; neither software nor a dummy NTC enables it.
  * BQ24075T OUT can reach input voltage (5.25 V here); it is not a 3.3 V regulator. */
-export function SecondaryPower({ pcbOffsetX = 0 }: { pcbOffsetX?: number } = {}) {
+export function SecondaryPower({ pcbOffsetX = 0, pcbPlacements, lowProfile = false }: SheetPcbProps & { lowProfile?: boolean } = {}) {
+  const BatteryConnector = lowProfile ? Ach3 : B3B_PH_K_S_LF__SN_
+  const ChargeConnector = lowProfile ? Ach2 : B2B_PH_K_S_LF__SN_
   return <schematicsheet name="ChargePower" displayName="Bench charger and hardware power switch" sheetIndex={0}>
-    <SchematicParts pcbOffsetX={pcbOffsetX} section="Power" title="Bench charger and hardware power switch">
+    <SchematicParts pcbOffsetX={pcbOffsetX} pcbPlacements={pcbPlacements} section="Power" title="Bench charger and hardware power switch">
       <BQ24075TRGTR name="U1" pcbX={-25} pcbY={0} noConnect={["pin7", "pin9"]}
         connections={{ pin1: "net.CHARGE_TS", pin2: "net.VBAT", pin3: "net.VBAT", pin4: "net.CHARGE_CE_N", pin5: "net.GND", pin6: "net.VOUT_ALWAYS", pin8: "net.GND", pin10: "net.VOUT_ALWAYS", pin11: "net.VOUT_ALWAYS", pin12: "net.CHARGE_ILIM", pin13: "net.CHARGE_5V", pin14: "net.CHARGE_TMR", pin15: "net.GND", pin16: "net.CHARGE_ISET", pin17: "net.GND" }} />
-      <B3B_PH_K_S_LF__SN_ name="J2" pcbX={-35} pcbY={-5}
+      <BatteryConnector name="J2" pcbX={-35} pcbY={-5}
         connections={{ pin1: "net.VBAT", pin2: "net.GND", pin3: "net.PACK_NTC" }} />
-      <B2B_PH_K_S_LF__SN_ name="J3" schWidth={0.6} schHeight={1} schPinArrangement={{ topSide: ["pin1"], bottomSide: ["pin2"] }} pcbX={-35} pcbY={5}
+      <ChargeConnector name="J3" schWidth={0.6} schHeight={1} schPinArrangement={{ topSide: ["pin1"], bottomSide: ["pin2"] }} pcbX={-35} pcbY={5}
         connections={{ pin1: "net.CHARGE_5V", pin2: "net.GND" }} />
       <CL10A105KB8NNNC name="C30" pcbX={-31} pcbY={1} schRotation={-90} maxVoltageRating="50V"
         connections={{ pin1: "net.CHARGE_5V", pin2: "net.GND" }} />

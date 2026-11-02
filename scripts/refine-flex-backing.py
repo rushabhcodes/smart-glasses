@@ -5,12 +5,13 @@ electrical placement, outline, bend geometry, camera or battery requirements.
 """
 import json
 import struct
+import sys
 from pathlib import Path
 
 import manifold3d as m
 import numpy as np
 
-path = Path('src/flex/layout.json')
+path = Path(sys.argv[1] if len(sys.argv) > 1 else 'src/flex/layout.json')
 plan = json.loads(path.read_text())
 board = plan['boards']['main']
 island = next(i for i in board['islands'] if i['name'] == 'core')
@@ -34,6 +35,16 @@ available = plate - windows
 # preserving every component/drill exclusion. Miter joins stay rectilinear,
 # permitting exact native pcbstiffener rectangle decomposition with no holes API.
 spine = available.offset(-web / 2, m.JoinType.Miter)
+pieces = spine.decompose()
+discarded = []
+if len(pieces) != 1 and '--connected-core' in sys.argv:
+    # The narrower local variant exposes a small peninsula joined only through
+    # a web below the chosen structural width. Omit that FR4 peninsula rather
+    # than bridge any underside component clearance or change a land pattern.
+    pieces.sort(key=lambda p: p.area(), reverse=True)
+    assert pieces[0].area() / spine.area() > .95, 'Major backing redesign required'
+    discarded = [p.area() for p in pieces[1:]]
+    spine = pieces[0]
 assert len(spine.decompose()) == 1, 'Backing needs a reviewed support redesign'
 backing = m.CrossSection.batch_boolean(
     [spine.offset(web / 2, m.JoinType.Miter), available], m.OpType.Intersect
@@ -88,12 +99,13 @@ island['stiffenerRefinement'] = {
     'areaMm2': native.area(),
     'nativeTileCount': len(tiles),
     'componentClearanceMm': settings['undersideClearance'],
+    'omittedWeakPeninsulaSpineAreasMm2': discarded,
     'note': 'Connected manufacturable-pattern intent, not a stiffness or supplier capability qualification.'
 }
 path.write_text(json.dumps(plan, indent=2)+'\n')
 
-out = Path('mechanical/flex')
-out.mkdir(exist_ok=True)
+out = Path(sys.argv[2] if len(sys.argv) > 2 else 'mechanical/flex')
+out.mkdir(parents=True, exist_ok=True)
 svg_path = ' '.join('M '+' L '.join(f'{x:.8f},{-y:.8f}' for x, y in c)+' Z' for c in contours)
 min_x, max_x = min(xs), max(xs)
 svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{max_x-min_x:.8f}mm" height="{2*half_height:.8f}mm" viewBox="{min_x:.8f} {-half_height:.8f} {max_x-min_x:.8f} {2*half_height:.8f}">

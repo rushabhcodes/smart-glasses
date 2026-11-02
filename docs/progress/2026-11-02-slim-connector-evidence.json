@@ -1,0 +1,31 @@
+{
+  "capturedOn": "2026-11-02",
+  "primaryDatasheet": "https://www.jst-mfg.com/product/pdf/eng/eACH.pdf",
+  "datasheetSHA256": "d1f9e9375b1c0dfc4814d5f633997484d84da6c0b03f712104df3bbdf462131b",
+  "kicadCommit": "7ebfa6b23cc292a56f751b7b5f4a0e12eeef69dd",
+  "verifiedJlcAssemblyInventory": false,
+  "parts": [
+    {
+      "mpn": "BM03B-ACHSS-GAN-ETF",
+      "manufacturer": "JST Sales America Inc.",
+      "supplier": "DigiKey",
+      "partNumber": "455-BM03B-ACHSS-GAN-ETFCT-ND",
+      "observedStock": 6643,
+      "source": "https://www.digikey.com/en/products/detail/jst-sales-america-inc/BM03B-ACHSS-GAN-ETF/9385560",
+      "savedAtUTC": "2026-11-02T06:15:22.833661+00:00",
+      "cliQuery": "tsci search --digikey --json BM03B-ACHSS-GAN-ETF",
+      "notPermanentAvailability": true
+    },
+    {
+      "mpn": "BM02B-ACHSS-GAN-ETF",
+      "manufacturer": "JST Sales America Inc.",
+      "supplier": "DigiKey",
+      "partNumber": "455-BM02B-ACHSS-GAN-ETFCT-ND",
+      "observedStock": 21197,
+      "source": "https://www.digikey.com/en/products/detail/jst-sales-america-inc/BM02B-ACHSS-GAN-ETF/9385559",
+      "savedAtUTC": "2026-11-02T06:16:45.348868+00:00",
+      "cliQuery": "tsci search --digikey --json BM02B-ACHSS-GAN-ETF",
+      "notPermanentAvailability": true
+    }
+  ]
+}

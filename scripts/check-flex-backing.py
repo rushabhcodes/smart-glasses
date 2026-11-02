@@ -1,12 +1,15 @@
 """Check actual built backing solids, independent of the tile planner."""
 import json
+import sys
 from pathlib import Path
 
 import manifold3d as m
 import numpy as np
 import trimesh
 
-plan = json.loads(Path('src/flex/layout.json').read_text())
+plan = json.loads(Path(sys.argv[1] if len(sys.argv) > 1 else 'src/flex/layout.json').read_text())
+variant = sys.argv[2] if len(sys.argv) > 2 else 'flex'
+out = Path(sys.argv[3] if len(sys.argv) > 3 else 'mechanical/flex')
 
 
 def rect(x0, x1, y0, y1):
@@ -15,7 +18,7 @@ def rect(x0, x1, y0, y1):
 
 review = {}
 for side, board in plan['boards'].items():
-    circuit = json.loads(Path(f'dist/src/flex/{side}-flex/circuit.json').read_text())
+    circuit = json.loads(Path(f'dist/src/{variant}/{side}-{variant}/circuit.json').read_text())
     for island in board['islands']:
         tiles = [x for x in circuit if x['type'] == 'pcb_stiffener'
                  and x['name'].startswith(f"STIFF_{island['name']}_")]
@@ -41,7 +44,7 @@ for side, board in plan['boards'].items():
             'erodedSpineConnectedPieces':1, 'componentWindowOverlapMm2':overlap,
         }
 
-mesh = trimesh.load('mechanical/flex/main-core-stiffener.stl', force='mesh')
+mesh = trimesh.load(out/'main-core-stiffener.stl', force='mesh')
 assert mesh.is_watertight and mesh.is_winding_consistent
 parents = list(range(len(mesh.faces)))
 def find(i):
@@ -62,5 +65,5 @@ assert abs(mesh.volume-core['areaMm2']*.2) < .001
 assert np.allclose(mesh.bounds[:,2], [0,.2], atol=1e-6)
 core['reviewSTL'] = {'closed':True,'consistentWinding':True,'bodies':1,
                      'volumeMm3':float(mesh.volume),'thicknessMm':.2}
-Path('mechanical/flex/backing-review.json').write_text(json.dumps(review,indent=2)+'\n')
+(out/'backing-review.json').write_text(json.dumps(review,indent=2)+'\n')
 print(json.dumps(review))

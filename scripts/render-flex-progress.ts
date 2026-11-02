@@ -2,7 +2,9 @@ import { readFile, writeFile, mkdir } from "node:fs/promises"
 import { createHash } from "node:crypto"
 import { convertCircuitJsonTo3D, convertSceneToGLTF } from "circuit-json-to-gltf"
 import { renderGLTFToPNGFromGLB } from "poppygl"
-import plan from "../src/flex/layout.json"
+const variant = process.argv[3] ?? "flex"
+if (!["flex", "slim"].includes(variant)) throw Error("Expected flex or slim variant")
+const plan = JSON.parse(await readFile(`src/${variant}/layout.json`, "utf8"))
 const out = process.argv[2] ?? "dist/flex-review"
 await mkdir(out, { recursive: true })
 const sha = (b: any) => createHash("sha256").update(b).digest("hex")
@@ -59,7 +61,7 @@ function rot(v: number[], r: any = {}) {
 const bodies: any[] = [],
   reports: any[] = []
 for (const side of ["main", "secondary"] as const) {
-  const bytes = await readFile(`dist/src/flex/${side}-flex/circuit.json`),
+  const bytes = await readFile(`dist/src/${variant}/${side}-${variant}/circuit.json`),
     original = JSON.parse(bytes.toString()),
     a = structuredClone(original)
   const errors = a.filter((x: any) => x.type.includes("error"))
@@ -67,10 +69,12 @@ for (const side of ["main", "secondary"] as const) {
   let requested = 0
   for (const e of a)
     if (e.type === "cad_component" && e.model_obj_url) {
-      const u = new URL(e.model_obj_url)
-      if (u.searchParams.get("cachebust_origin") === "") u.searchParams.delete("cachebust_origin")
-      const b = await readFile(`dist/progress-model-cache/${sha(u.toString())}.obj`)
-      e.model_obj_url = `data:text/plain;base64,${b.toString("base64")}`
+      if (!e.model_obj_url.startsWith("data:")) {
+        const u = new URL(e.model_obj_url)
+        if (u.searchParams.get("cachebust_origin") === "") u.searchParams.delete("cachebust_origin")
+        const b = await readFile(`dist/progress-model-cache/${sha(u.toString())}.obj`)
+        e.model_obj_url = `data:text/plain;base64,${b.toString("base64")}`
+      }
       requested++
     }
   const scene = await convertCircuitJsonTo3D(a, {
@@ -80,6 +84,10 @@ for (const side of ["main", "secondary"] as const) {
     }),
     loaded = scene.boxes.filter((b) => b.meshUrl?.startsWith("data:") && b.mesh?.triangles?.length).length
   if (loaded !== requested) throw Error(`${side}: missing model geometry ${loaded}/${requested}`)
+  if (variant === "slim") {
+    const flat = await convertCircuitJsonTo3D(a, {foldPcbs:false,renderBoardTextures:false,pcbColor:"#b98530"})
+    await writeFile(`${out}/${side}-flat.glb`, new Uint8Array((await convertSceneToGLTF(flat,{binary:true})) as ArrayBuffer))
+  }
   const sources = new Map(
       a.filter((e: any) => e.type === "source_component").map((e: any) => [e.source_component_id, e.name])
     ),
@@ -118,7 +126,7 @@ for (const side of ["main", "secondary"] as const) {
     bends: a.filter((x: any) => x.type === "pcb_bend").length,
     stiffenerTiles: a.filter((x: any) => x.type === "pcb_stiffener").length,
     flatLengthMm: plan.boards[side].length,
-    flatWidthMm: 20,
+    flatWidthMm: plan.boards[side].height,
     sourceSHA256: sha(bytes),
     folded: true
   }
@@ -176,7 +184,7 @@ await writeFile(
     {
       savedAtUTC: new Date().toISOString(),
       boards: reports,
-      note: "Actual native pcbbend CAD; static curvature only. Stiffeners translated 6 mm for exploded inspection. Front frame is the earlier provisional reference; trays/hinge/pack/camera assembly are not fitted."
+      note: "Actual native pcbbend CAD; static curvature only. Stiffeners translated 6 mm for exploded inspection. Front frame is the earlier provisional reference; trays/hinge/pack/camera assembly are not fitted. JST ACH models, when present, are manufacturer-backed mated bounding envelopes, not detailed vendor models."
     },
     null,
     2

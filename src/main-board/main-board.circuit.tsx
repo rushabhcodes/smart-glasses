@@ -11,7 +11,7 @@ import { MainControls } from "../components/main-controls"
 import { MainPower } from "../components/main-power"
 import { MainMicrophone } from "../components/main-microphone"
 import { FrameInterconnect } from "../components/frame-interconnect"
-import { SchematicParts } from "../components/schematic-parts"
+import { SchematicParts, type SheetPcbProps } from "../components/schematic-parts"
 
 /** Provisional narrow review coupon. No measured fit or routed RF geometry. */
 export default function MainBoard() {
@@ -27,9 +27,9 @@ export default function MainBoard() {
   </board>
 }
 
-export function MainCoreSheet({ pcbOffsetX = 0 }: { pcbOffsetX?: number } = {}) {
+export function MainCoreSheet({ pcbOffsetX = 0, pcbPlacements }: SheetPcbProps = {}) {
   return <schematicsheet name="MainCore" displayName="S3R8 core - nominal 3.3 V" sheetIndex={0}>
-    <SchematicParts pcbOffsetX={pcbOffsetX} section="Core" title="Compact R8 core">
+    <SchematicParts pcbOffsetX={pcbOffsetX} pcbPlacements={pcbPlacements} section="Core" title="Compact R8 core">
       <Esp32S3R8Core />
       {/* GPIO3 has no internal bias. High chooses USB JTAG when strap selection is enabled. */}
       <A_0603WAF1002T5E name="R26" layer="bottom" pcbX={-23.5} pcbY={-2} schRotation={270}

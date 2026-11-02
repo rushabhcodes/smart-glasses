@@ -1,0 +1,48 @@
+{
+  "savedAtUTC": "2026-11-02T06:46:19.367Z",
+  "boards": [
+    {
+      "side": "main",
+      "sourceComponents": 76,
+      "loadedModels": 66,
+      "requestedModels": 66,
+      "bends": 1,
+      "stiffenerTiles": 26,
+      "flatLengthMm": 97.8921501500001,
+      "flatWidthMm": 17,
+      "sourceSHA256": "d0ab1df26be4f10670616caeec29ff2c4b2433ac3c058bafe316c2a92afc58fe",
+      "folded": true
+    },
+    {
+      "side": "secondary",
+      "sourceComponents": 46,
+      "loadedModels": 43,
+      "requestedModels": 43,
+      "bends": 2,
+      "stiffenerTiles": 9,
+      "flatLengthMm": 134.5371307499998,
+      "flatWidthMm": 17,
+      "sourceSHA256": "dad3cb6cccb1511a9a0342d3dafcda03e97d5a30a789d67796b4544ad27abf49",
+      "folded": true
+    }
+  ],
+  "note": "Actual native pcbbend CAD; static curvature only. Stiffeners translated 6 mm for exploded inspection. Front frame is the earlier provisional reference; trays/hinge/pack/camera assembly are not fitted. JST ACH models, when present, are manufacturer-backed mated bounding envelopes, not detailed vendor models.",
+  "localBranch": "codex/slim-temple-review",
+  "publishedBaselineCommit": "7aef3782d619b0daf21f56876a795cf06a5ba2c8",
+  "images": [
+    {
+      "path": "docs/progress/2026-11-02-slim-temples-assembled.png",
+      "width": 1200,
+      "height": 900,
+      "byteLength": 62192,
+      "sha256": "3ecec65323015d169ab524f556c1dd81fb5bd0b092d7d0369a60def05c3887e9"
+    },
+    {
+      "path": "docs/progress/2026-11-02-slim-temples-exploded.png",
+      "width": 1200,
+      "height": 900,
+      "byteLength": 69846,
+      "sha256": "21f36d2ea463ff01a11f04eab7c6433f70b8b30bc7c2b2beceadc8b3ce99e3a7"
+    }
+  ]
+}

@@ -24,6 +24,8 @@ Current status is detailed in [compact design](compact-design.md).
 - [x] Glasses-shaped tsCircuit/JSCAD fit prototype with 11 closed STL parts, actual board CAD, service covers and static interference checks.
 - [x] First local four-layer flex installation study: original electrical contracts preserved, two/three component islands, static bend keepouts and actual combined CAD views.
 - [x] Correct main-core backing to one continuous windowed pattern; check actual native union, 0.6 mm structural spine and closed single-body review STL.
+- [x] Local 17 mm slim-board variant with unchanged functional pin connections, low-profile ACH headers, continuous backing and measured CAD; see [form-factor review](slim-temple-review.md).
+- [ ] Qualify ACH assembly sourcing, mating harness/polarity, wire clearance/current/temperature rise and a fitted slim temple housing.
 - [ ] Qualify flex stackup, main-core backing/rigid-flex support, routing across necks, coverlay/stiffener fabrication data and replaceable hinge interconnect.
 - [ ] Measure wearer/frame fit; qualify enclosure material, optics, fastening, cables and thermal/acoustic behavior.
 - [ ] Select physical cell/NTC adapter, antenna/coax, speaker and final frame envelope.
@@ -35,5 +37,6 @@ Current status is detailed in [compact design](compact-design.md).
 - [ ] Physical fit, hinge endurance, acoustic and thermal tests before wearable trials.
 
 Implemented source and passing host checks are schematic milestones. They are not
-routing completion, manufacturability, a fit claim or hardware validation. No publication,
-purchase, fabrication order, main merge or flashing is part of the current work.
+routing completion, manufacturability, a fit claim or hardware validation. Published
+0.1.2 retains the earlier checkpoint; the slimmer variant is local only. No purchase,
+fabrication order, main merge or flashing is part of the current work.

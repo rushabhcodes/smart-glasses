@@ -1,0 +1,69 @@
+{
+  "baselineCommit": "7aef3782d619b0daf21f56876a795cf06a5ba2c8",
+  "boards": {
+    "main": {
+      "components": 76,
+      "lengthMm": 97.8921501500001,
+      "widthMm": 17,
+      "thicknessMm": 0.2,
+      "widthReductionPercent": 15,
+      "changedConnectors": [],
+      "allOtherLandPatternsAndMetadataPreserved": true,
+      "physicalPinConnectivityPreserved": true,
+      "thermalVias": 9,
+      "minCourtyardToOutlineMm": 0.7000000000000002,
+      "nativeErrors": 0,
+      "bends": 1,
+      "stiffenerTiles": 26
+    },
+    "secondary": {
+      "components": 46,
+      "lengthMm": 134.5371307499998,
+      "widthMm": 17,
+      "thicknessMm": 0.2,
+      "widthReductionPercent": 15,
+      "changedConnectors": [
+        "J2",
+        "J3",
+        "J4"
+      ],
+      "allOtherLandPatternsAndMetadataPreserved": true,
+      "physicalPinConnectivityPreserved": true,
+      "thermalVias": 0,
+      "minCourtyardToOutlineMm": 0.7000000000000002,
+      "nativeErrors": 0,
+      "bends": 2,
+      "stiffenerTiles": 9
+    }
+  },
+  "routing": "outstanding",
+  "physicalFit": "unverified",
+  "checksPassed": [
+    "TypeScript",
+    "main and secondary slim native builds",
+    "both original rigid native builds",
+    "both original flex native builds",
+    "source/netlist/schematic/placement checks",
+    "main-core and peripheral guards",
+    "frozen rigid/flex electrical and footprint contract",
+    "slim physical pin connectivity and unchanged-part land equivalence",
+    "ACH physical pad numbering/pitch/size and mounting-tab NC checks",
+    "0.7mm courtyard-to-rounded-outline margin",
+    "all five backing unions and 0.6mm spine",
+    "closed single-body main backing STL",
+    "109 requested component CAD models loaded",
+    "both 1200x900 actual CAD views rendered and visually inspected",
+    "flat CAD thickness measurement and new-connector bounding-envelope nonintersection"
+  ],
+  "notRunOrUnresolved": [
+    "detailed copper routing and routed DRC",
+    "JLC ACH identity/inventory/assembly allocation",
+    "qualified flex stackup and coverlay/stiffener manufacturing exports",
+    "complete harness and mated U.FL clearance",
+    "battery assembly selection/qualification",
+    "camera carrier integration",
+    "fitted slim housings and physical wearer/frame measurements",
+    "physical electrical/thermal/RF/acoustic/hinge tests",
+    "hardware firmware verification; unchanged firmware not rebuilt this milestone"
+  ]
+}

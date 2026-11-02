@@ -1,12 +1,12 @@
 import { A_0603WAF4701T5E } from "../../imports/A_0603WAF4701T5E"
 import { CC0603KRX7R9BB104 } from "../../imports/CC0603KRX7R9BB104"
 import { MAX17048G_T10 } from "../../imports/MAX17048G_T10"
-import { SchematicParts } from "./schematic-parts"
+import { SchematicParts, type SheetPcbProps } from "./schematic-parts"
 
 /** Gauge stays on VBAT; bus pull-ups use switched logic power to avoid off-state backfeed. */
-export function SecondaryGauge({ pcbOffsetX = 0 }: { pcbOffsetX?: number } = {}) {
+export function SecondaryGauge({ pcbOffsetX = 0, pcbPlacements }: SheetPcbProps = {}) {
   return <schematicsheet name="Gauge" displayName="Always-on cell fuel gauge" sheetIndex={0}>
-    <SchematicParts pcbOffsetX={pcbOffsetX} section="Gauge" title="Always-on cell fuel gauge">
+    <SchematicParts pcbOffsetX={pcbOffsetX} pcbPlacements={pcbPlacements} section="Gauge" title="Always-on cell fuel gauge">
       <MAX17048G_T10 name="U3" pcbX={-5} pcbY={3} noConnect={["pin5"]}
         connections={{ pin1: "net.GND", pin2: "net.VBAT", pin3: "net.VBAT", pin4: "net.GND", pin6: "net.GND", pin7: "net.CTRL_SCL", pin8: "net.CTRL_SDA", pin9: "net.GND" }} />
       <CC0603KRX7R9BB104 name="C21" pcbX={-9} pcbY={3} schRotation={-90} maxVoltageRating="50V"

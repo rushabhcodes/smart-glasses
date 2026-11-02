@@ -1,0 +1,4 @@
+board,reference,old_mpn,new_mpn,quantity,mating_housing,contact_awg28,supplier_part_number,observed_stock_2026_11_02,jlc_assembly_inventory,status
+secondary,J2,B3B-PH-K-S(LF)(SN),BM03B-ACHSS-GAN-ETF,1,ACHR-03V-S,SACH-003G-P0.2,455-BM03B-ACHSS-GAN-ETFCT-ND,6643,unverified,local prototype connector; pack and harness unqualified
+secondary,J3,B2B-PH-K-S(LF)(SN),BM02B-ACHSS-GAN-ETF,1,ACHR-02V-S,SACH-003G-P0.2,455-BM02B-ACHSS-GAN-ETFCT-ND,21197,unverified,local prototype connector; current-limited bench input
+secondary,J4,B2B-PH-K-S(LF)(SN),BM02B-ACHSS-GAN-ETF,1,ACHR-02V-S,SACH-003G-P0.2,455-BM02B-ACHSS-GAN-ETFCT-ND,21197,unverified,local prototype connector; bridge speaker output

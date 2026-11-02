@@ -1,0 +1,42 @@
+{
+  "description": "Measured pre-slim native flex CAD; baseline parts/lands checked against frozen contract. Group anchor correction does not change global physical geometry.",
+  "publishedComparisonCommit": "7aef3782d619b0daf21f56876a795cf06a5ba2c8",
+  "boards": {
+    "main": {
+      "glbSHA256": "1e92fcc68ae473bcd3dac778e016ac7fd13cf30fe4954854d58bc0cda755492b",
+      "worldBoundsMm": [
+        [
+          -48.946075439453125,
+          -0.9000000119209295,
+          -10.0
+        ],
+        [
+          48.946075439453125,
+          2.200100040435791,
+          10.0
+        ]
+      ],
+      "flatLengthMm": 97.89215087890625,
+      "widthMm": 20.0,
+      "populatedNormalSpanMm": 3.1001000523567206
+    },
+    "secondary": {
+      "glbSHA256": "43c52630ce50350e3723fd22a9c3192327790b9bfb98839e4dfedac1c85b5cf4",
+      "worldBoundsMm": [
+        [
+          -67.26856231689453,
+          -3.399993085861207,
+          -10.0
+        ],
+        [
+          67.26856231689453,
+          6.100007152557373,
+          10.0
+        ]
+      ],
+      "flatLengthMm": 134.53712463378906,
+      "widthMm": 20.0,
+      "populatedNormalSpanMm": 9.500000238418579
+    }
+  }
+}
