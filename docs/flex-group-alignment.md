@@ -1,6 +1,8 @@
 # Mechanical group outline alignment
 
-Local correction after published0.1.2; not pushed or published.
+Publication note: this checkpoint is included in the authorized 0.1.3 update; see [release scope](publication-0.1.3.md).
+
+Initially saved locally after published 0.1.2; included in the 0.1.3 update scope.
 
 The original main STATIC_1_MECHANICAL pcb_group was centered at x=0, while
 its actual bend/keepout center was x=-1.089427875 mm. Both boxes were9.235987756 mm

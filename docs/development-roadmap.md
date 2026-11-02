@@ -39,5 +39,5 @@ Current status is detailed in [compact design](compact-design.md).
 
 Implemented source and passing host checks are schematic milestones. They are not
 routing completion, manufacturability, a fit claim or hardware validation. Published
-0.1.2 retains the earlier checkpoint; the slimmer variant is local only. No purchase,
+0.1.2 retains the earlier checkpoint; the 0.1.3 update exposes the slimmer boards and static envelopes. No purchase,
 fabrication order, main merge or flashing is part of the current work.

@@ -1,18 +1,18 @@
 {
   "name": "smart-glasses",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": true,
   "type": "module",
-  "description": "WORK IN PROGRESS: unrouted two-board flex smart-glasses study and separate default-off OV5640 AF carrier; battery, camera integration, frame fit and physical validation unresolved.",
+  "description": "WORK IN PROGRESS: 17mm unrouted flex smart-glasses boards and static arm-envelope CAD fit study; JLC ACH sourcing, retention, harness, battery/camera, manufacturing and physical validation unresolved.",
   "license": "UNLICENSED",
   "engines": {
     "node": "24.x",
     "bun": ">=1.3.3"
   },
   "scripts": {
-    "dev": "tsci dev src/main-board/main-board.circuit.tsx",
-    "dev:main": "tsci dev src/main-board/main-board.circuit.tsx",
-    "dev:secondary": "tsci dev src/secondary-board/secondary-board.circuit.tsx --port 3021",
+    "dev": "tsci dev src/slim/main-slim.circuit.tsx",
+    "dev:main": "tsci dev src/slim/main-slim.circuit.tsx",
+    "dev:secondary": "tsci dev src/slim/secondary-slim.circuit.tsx --port 3021",
     "typecheck": "tsc --noEmit",
     "build:main": "tsci build src/main-board/main-board.circuit.tsx --routing-disabled --disable-parts-engine",
     "build:secondary": "tsci build src/secondary-board/secondary-board.circuit.tsx --routing-disabled --disable-parts-engine",
@@ -60,7 +60,9 @@
     "plan:slim-housing": "python scripts/plan-slim-housing.py",
     "build:slim-housing": "tsci build src/slim/slim-housing.circuit.tsx --ignore-config --routing-disabled --disable-parts-engine",
     "export:slim-housing": "bun scripts/build-slim-housing.ts && python scripts/check-slim-housing.py",
-    "render:slim-housing": "bun scripts/render-flex-progress.ts dist/slim-housing-review slim --housing-fit"
+    "render:slim-housing": "bun scripts/render-flex-progress.ts dist/slim-housing-review slim --housing-fit",
+    "build:gallery": "tsci build --disable-parts-engine --site --transpile --use-cdn-javascript --concurrency 2 && npm run render:gallery-housing",
+    "render:gallery-housing": "bun scripts/render-housing-gallery.ts"
   },
   "dependencies": {
     "react": "19.3.1"
@@ -73,5 +75,10 @@
     "typescript": "5.9.3",
     "circuit-json-to-gltf": "0.0.151",
     "poppygl": "0.0.37"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rushabhcodes/smart-glasses.git"
+  },
+  "homepage": "https://tscircuit.com/rushabhcodes/smart-glasses"
 }

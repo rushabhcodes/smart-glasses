@@ -1,6 +1,6 @@
 {
   "$schema": "https://cdn.jsdelivr.net/npm/@tscircuit/cli/types/tscircuit.config.schema.json",
-  "mainEntrypoint": "src/flex/main-flex.circuit.tsx",
+  "mainEntrypoint": "src/slim/main-slim.circuit.tsx",
   "ignoredFiles": [
     "node_modules/**",
     "dist/**",
@@ -14,12 +14,13 @@
     "**/sdkconfig.old",
     "**/sdkconfig.local*"
   ],
-  "previewComponentPath": "src/flex/main-flex.circuit.tsx",
+  "previewComponentPath": "src/slim/main-slim.circuit.tsx",
   "alwaysUseLatestTscircuitOnCloud": false,
   "useCloudAutorouting": false,
   "includeBoardFiles": [
-    "src/flex/main-flex.circuit.tsx",
-    "src/flex/secondary-flex.circuit.tsx",
+    "src/slim/main-slim.circuit.tsx",
+    "src/slim/secondary-slim.circuit.tsx",
+    "src/slim/slim-housing.circuit.tsx",
     "src/camera-carrier/camera-carrier.circuit.tsx",
     "src/enclosure/glasses-enclosure.circuit.tsx"
   ],
@@ -29,5 +30,6 @@
     "glbs": true,
     "routingDisabled": true
   },
-  "siteDefaultComponentPath": "src/flex/main-flex.circuit.tsx"
+  "siteDefaultComponentPath": "src/slim/main-slim.circuit.tsx",
+  "buildCommand": "npm run build:gallery"
 }

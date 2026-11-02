@@ -15,7 +15,7 @@ export default function SecondarySlim() {
     power=b.islands.find(i=>i.name==="power")!.offsetX,
     audio=b.islands.find(i=>i.name==="audio")!.offsetX,
     touch=b.islands.find(i=>i.name==="touch")!.offsetX
-  return <board title="LOCAL 17mm SECONDARY FLEX / ACH headers / unrouted fit study" material="flex"
+  return <board title="WIP 17mm SECONDARY FLEX / ACH headers / unrouted fit study" material="flex"
     thickness={s.thickness} layers={4} width={b.length} height={b.height} outline={b.outline}
     pcbRelative manualEdits={schematic} routingDisabled>
     <SecondaryPower pcbPlacements={pcbPlacements} pcbOffsetX={power} lowProfile/><SecondaryGauge pcbPlacements={pcbPlacements} pcbOffsetX={power}/>

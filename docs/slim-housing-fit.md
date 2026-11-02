@@ -1,5 +1,7 @@
 # Static arm-envelope CAD fit assessment
 
+Publication note: this checkpoint is included in the authorized 0.1.3 update; see [release scope](publication-0.1.3.md).
+
 This local follow-up to `ffe0375` fits original tsCircuit/JSCAD envelope geometry
 to the **actual folded slim-board CAD**. The boards, components, pin mappings and
 electrical design are unchanged. It is a provisional geometric clearance study,

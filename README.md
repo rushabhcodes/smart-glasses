@@ -1,39 +1,42 @@
 # smart-glasses
 
-**WORK IN PROGRESS — unrouted flex-board study and separate camera-carrier review.**
-The glasses study has two independent populated flex boards with static temple
-curvature and provisional stiffened islands. The standalone OV5640 AF carrier is
-**not connected to either board or fitted into the frame**. No battery assembly
-is selected. Routing, flex fabrication data, thermal/RF/hinge testing and physical
-fit/function remain unresolved; this is not a manufacturing-ready wearable.
+**WORK IN PROGRESS — 17 mm unrouted flex boards and static arm-envelope CAD.**
+The main and secondary boards retain camera/Wi-Fi/audio capability and provisional
+stiffened islands. The new arm envelopes pass static nominal-CAD containment;
+physical wearable fit and function remain unverified. JLC ACH connector sourcing,
+retention/fastening, port and harness access, battery/camera integration, copper
+routing and manufacturing/thermal/RF/hinge qualification remain open.
 
-The default tsCircuit preview is the [main flex board](src/flex/main-flex.circuit.tsx).
-The [secondary flex board](src/flex/secondary-flex.circuit.tsx),
+The default tsCircuit preview is the [17 mm main board](src/slim/main-slim.circuit.tsx).
+Separate gallery entries expose the [17 mm secondary board](src/slim/secondary-slim.circuit.tsx),
+[static arm envelopes](src/slim/slim-housing.circuit.tsx),
 [standalone camera carrier](src/camera-carrier/camera-carrier.circuit.tsx) and
-[earlier fixed-open enclosure](src/enclosure/glasses-enclosure.circuit.tsx) are
-separate gallery entries. The earlier enclosure contains the rigid baseline and
-is not a fitted housing for the flex boards or new camera carrier. The original
-rigid main/secondary entrypoints remain in source for regression and comparison.
+[legacy rigid-board frame](src/enclosure/glasses-enclosure.circuit.tsx).
+The arm-envelope entry displays four mechanical parts; it does not claim an
+assembled electronic product. Earlier rigid and 20 mm flex board entrypoints
+remain in source for regression and comparison. The legacy frame does not fit the
+longer folded flex boards.
 
-Actual combined flex progress view (provisional front frame, no fitted temples,
-battery, camera or hinge cable):
+Actual assembled CAD study, combining the folded boards, provisional envelopes
+and existing front-frame reference:
 
-![Actual two-board flex installation study](docs/progress/2026-10-31-flex-backing-assembled.png)
+![Static slim-board and arm-envelope CAD study](docs/progress/2026-11-02-slim-housing-assembled.png)
 
-A separate **local slimmer-board study** now narrows both boards from 20 to 17 mm
-and replaces the secondary board's tall headers with JST ACH connectors. Populated
-CAD normal span is 3.10 mm main / 4.35 mm secondary, excluding harness, pack and
-housing. The original entrypoints and published 0.1.2 preview are preserved. See
-[dimensions, sourcing and qualification gates](docs/slim-temple-review.md) and the
-actual [assembled](docs/progress/2026-11-02-slim-temples-assembled.png) /
+Both boards are 17 mm wide, with populated flat CAD spans of **3.10 mm main /
+4.35 mm secondary**. Under the documented clearance/wall/cable assumptions, the
+new envelopes are 21.4 mm high and at most about **8.69 / 9.87 mm thick locally**.
+These figures exclude an installed battery, actual harness and antenna mating
+assembly; they are not measured hardware dimensions. No battery is selected and
+the separate camera carrier is not integrated.
+
+See [board dimensions and sourcing](docs/slim-temple-review.md),
+[static fit assessment and unfinished features](docs/slim-housing-fit.md),
+[exploded envelope view](docs/progress/2026-11-02-slim-housing-exploded.png), and
+[bare-board assembled](docs/progress/2026-11-02-slim-temples-assembled.png) /
 [exploded](docs/progress/2026-11-02-slim-temples-exploded.png) views.
-
-The subsequent [static arm-envelope assessment](docs/slim-housing-fit.md) checks
-those folded boards against the old cavities and adds original split CAD envelopes
-with explicit wall, component and cable allowances. Actual
-[assembled](docs/progress/2026-11-02-slim-housing-assembled.png) /
-[exploded](docs/progress/2026-11-02-slim-housing-exploded.png) views are a geometric
-fit study; retention, attachment, port access and physical fit remain unfinished.
+The new secondary JST ACH headers have dated DigiKey evidence; **JLC assembly
+identity/inventory is unverified**. The [BOM delta](bom/slim-connector-delta.csv)
+supersedes the older header rows for this variant.
 
 The **58 × 18 × 0.8 mm standalone camera carrier** has three controlled rails,
 direction-controlled signal translation and a host-tested sequence contract.
@@ -45,7 +48,7 @@ that independent review board.
 
 See [flex study](docs/flex-adaptation.md), [camera-carrier review](docs/camera-carrier-review.md),
 [compact component review](docs/compact-assembly-review.md) and
-[November publication scope](docs/publication-2026-11-02.md). RRC1120 was rejected
+[0.1.3 publication scope](docs/publication-0.1.3.md). RRC1120 was rejected
 for wearable fit. CMB battery candidates have unverified assembled dimensions,
 continuous ratings, NTC and sample availability; supplier questions remain unsent.
 
@@ -81,9 +84,10 @@ consumer-frame fit are not established by this prototype plan.
 | Left | S3R8 +8 MB flash, TPS63070, ICS-43434, capture button/LED driver, U.FL and FH12 connector | Exact camera, RF matching/layout, sourcing and measured fit |
 | Right | BQ24075T, TPS22965 hardware switch, MAX17048, MAX98357A, AT42QT1010, JST and FH12 connectors | Selected cell/attached NTC, speaker/electrode/enclosure, input protection and thermal release |
 
-The [BOM](bom/preliminary-bom.csv) reflects generated components; the
+The original rigid/flex [BOM](bom/preliminary-bom.csv) is the baseline; apply the
+[slim connector delta](bom/slim-connector-delta.csv) for secondary J2/J3/J4. The
 [verified recommendation](docs/recommended-bom.md), [complete catalog audit](bom/component-audit.json)
-and [CSV](bom/jlcpcb-recommendation.csv) record current JLC/LCSC stock and process gates.
+and [CSV](bom/jlcpcb-recommendation.csv) record dated JLC/LCSC stock and process gates.
 Earlier [LCSC observations](bom/sourcing-checks.json) remain available for comparison.
 Catalog observations are availability checks, not orders or reservations.
 All imported geometry still needs assembly review, including thermal vias and paste.

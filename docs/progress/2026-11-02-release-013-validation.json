@@ -1,0 +1,148 @@
+{
+  "checkedAtUTC": "2026-11-02T12:53:28.247695+00:00",
+  "version": "0.1.3",
+  "designCheckpoints": [
+    "ffe03752654a2a707a86afd922aae0e4a0d26684",
+    "8fcb0a47ccdf56ffae15be0fa222289630599b8a"
+  ],
+  "configuredGallery": [
+    {
+      "entry": "src/slim/main-slim",
+      "sourceComponents": 76,
+      "nativeErrors": 0,
+      "routedTraces": 0,
+      "outputs": {
+        "circuit.json": {
+          "bytes": 1414436,
+          "sha256": "43349a4ffb80c898fd08340aa796053b1d089c82763f9ac474ed24107c17b673"
+        },
+        "3d.png": {
+          "bytes": 23265,
+          "sha256": "e58a8e7f0c29f3a1408e567375027df5bfcf0eca7303a9e82b21e79eb385deeb"
+        },
+        "3d.glb": {
+          "bytes": 10535556,
+          "sha256": "51f2754e62c429b04747def57c710e453bd18191640d41b47cef2fd85be552ef"
+        }
+      },
+      "nativeWarnings": []
+    },
+    {
+      "entry": "src/slim/secondary-slim",
+      "sourceComponents": 46,
+      "nativeErrors": 0,
+      "routedTraces": 0,
+      "outputs": {
+        "circuit.json": {
+          "bytes": 913107,
+          "sha256": "c150272eca26bd8664979691a62bb6479cbddf9de1bf995c4f416595c2543ed1"
+        },
+        "3d.png": {
+          "bytes": 18913,
+          "sha256": "42c59ff4ac7551c053d61e3b00ed6a760f293567cc86a941180eb9b746a7db06"
+        },
+        "3d.glb": {
+          "bytes": 9607772,
+          "sha256": "b873140ad9224a89196fadb380828badadf31e36a73f60a053bfc1e3f5162c9a"
+        }
+      },
+      "nativeWarnings": []
+    },
+    {
+      "entry": "src/slim/slim-housing",
+      "sourceComponents": 4,
+      "nativeErrors": 0,
+      "routedTraces": 0,
+      "outputs": {
+        "circuit.json": {
+          "bytes": 276842,
+          "sha256": "ce593962a5b8c37d7977bf2d5e4dbeafbe149e327b8f4ae838be33b118f8575a"
+        },
+        "3d.png": {
+          "bytes": 9355,
+          "sha256": "15192a109912ced35c3685f5d37751a03595132ac363ec4908cd6ea650da9239"
+        },
+        "3d.glb": {
+          "bytes": 294796,
+          "sha256": "204270059bba68e3b1234a30a79077919c2558ee2d698ac93cd94858811ff581"
+        }
+      },
+      "nativeWarnings": []
+    },
+    {
+      "entry": "src/camera-carrier/camera-carrier",
+      "sourceComponents": 84,
+      "nativeErrors": 0,
+      "routedTraces": 0,
+      "outputs": {
+        "circuit.json": {
+          "bytes": 1084497,
+          "sha256": "d93db508de04a6a2d683fe0d3cbf2126ed3c919aa6b0a6fa47d4d99d5848ba68"
+        },
+        "3d.png": {
+          "bytes": 27900,
+          "sha256": "722a31cb53c87a908f37054bc0441a90d321c49143e6ccbbe8aaab905584ea19"
+        },
+        "3d.glb": {
+          "bytes": 6946600,
+          "sha256": "fbc92225728a645f2f860b0b567dba60ee656eebec393e321ae7602af6e8b563"
+        }
+      },
+      "nativeWarnings": [
+        {
+          "type": "schematic_sheet_styling_warning",
+          "message": "Schematic sheet \"OV5640 AF carrier and controlled interface\" uses a non-default size (1000 \u00d7 400 mm). Prefer the default A4 sheet size (297 \u00d7 210 mm) for consistent schematic styling."
+        },
+        {
+          "type": "source_refdes_convention_warning",
+          "message": "The \"J\" prefix is being used with a <chip />, try using it with a <connector /> or <jumper />"
+        }
+      ]
+    },
+    {
+      "entry": "src/enclosure/glasses-enclosure",
+      "sourceComponents": 11,
+      "nativeErrors": 0,
+      "routedTraces": 0,
+      "outputs": {
+        "circuit.json": {
+          "bytes": 89724,
+          "sha256": "cfe6259e7a517f336cd6d8a8ec2f65f76498dfdcd1669a0be4c66274d5b6b674"
+        },
+        "3d.png": {
+          "bytes": 60639,
+          "sha256": "1aa8533f53a4eae6c51067a557b7f2b13fc6387228fe25453128804bc6276020"
+        },
+        "3d.glb": {
+          "bytes": 3351852,
+          "sha256": "f06cbdc9cf5bf4548e49b85f65d721447611792659d87454a4dfeb01649482bd"
+        }
+      },
+      "nativeWarnings": []
+    }
+  ],
+  "defaultEntrypoint": "src/slim/main-slim.circuit.tsx",
+  "localSiteDefaultVerified": true,
+  "housingCameraStepVerified": true,
+  "checksPassed": [
+    "TypeScript",
+    "five configured gallery builds with native previews/GLBs/site/transpilation",
+    "four legacy rigid/flex builds",
+    "main/peripheral physical-pin guards",
+    "frozen legacy electrical/land contracts",
+    "slim physical-pin/land/thermal-via/outline and backing invariants",
+    "four closed oriented housing solids and conservative triangle-slab containment",
+    "camera carrier contact/rail/direction/default-state checks",
+    "strict C11 camera sequence host harness",
+    "assembly snapshot geometry parity except board title/filesystem metadata"
+  ],
+  "notRunOrQualified": [
+    "copper routing and routed manufacturing DRC",
+    "JLC ACH assembly identity/inventory",
+    "harness, retention/fastening/front attachment and port access",
+    "protected battery/NTC and camera integration",
+    "flex stackup and fabrication exports",
+    "physical fit, thermal/RF/acoustic/hinge and hardware firmware tests"
+  ],
+  "remotePublicationState": "Verified separately in task evidence after push; no remote success pre-asserted"
+}

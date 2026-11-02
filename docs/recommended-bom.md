@@ -1,6 +1,6 @@
 # Component recommendation and JLC audit
 
-The figures below describe the earlier rigid/flex baseline. The local
+The figures below describe the earlier rigid/flex baseline. The
 [17 mm slim variant](slim-temple-review.md) deliberately changes secondary J2/J3/J4
 to JST ACH headers with dated DigiKey evidence and **unverified JLC assembly
 inventory**. Its separate [BOM delta](../bom/slim-connector-delta.csv) must not be

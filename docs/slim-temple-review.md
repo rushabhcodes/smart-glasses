@@ -1,12 +1,14 @@
 # Local slimmer temple-board study — 2 November 2026
 
+Publication note: this checkpoint is included in the authorized 0.1.3 update; see [release scope](publication-0.1.3.md).
+
 This is the board-only checkpoint. The later [arm-envelope assessment](slim-housing-fit.md)
 adds separate provisional housing geometry and actual folded-CAD containment checks.
 
-This local revision preserves the ESP32-S3R8 camera/Wi-Fi/audio architecture and
+This slimmer revision preserves the ESP32-S3R8 camera/Wi-Fi/audio architecture and
 both independent flex boards. It narrows their component islands and replaces
 three tall headers. It is separate from the published **0.1.2 / 7aef378** release.
-The default preview and older rigid/flex entrypoints retain that baseline.
+The older rigid/flex entrypoints retain that baseline; the 0.1.3 defaults select the slimmer boards.
 
 | Actual flat CAD measurement | Earlier flex | Local slim variant |
 | --- | ---: | ---: |

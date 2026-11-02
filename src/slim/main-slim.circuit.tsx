@@ -15,7 +15,7 @@ export default function MainSlim() {
   const b=layout.boards.main, s=layout.settings,
     core=b.islands.find(i=>i.name==="core")!.offsetX,
     power=b.islands.find(i=>i.name==="power")!.offsetX
-  return <board title="LOCAL 17mm MAIN FLEX / unrouted fit study" material="flex"
+  return <board title="WIP 17mm MAIN FLEX / unrouted fit study" material="flex"
     thickness={s.thickness} layers={4} width={b.length} height={b.height} outline={b.outline}
     pcbRelative manualEdits={schematic}
     isViaInPadAllowed routingDisabled>
