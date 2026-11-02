@@ -178,3 +178,7 @@ independent carrier, not a camera module or glasses assembly.
 Core LDO dissipation alone is approximately 0.2245 W in the documented sensor
 example. A narrow enclosed board needs real temperature testing; that number
 does not establish wearable surface temperature.
+
+November 2 publication revalidation regenerated the same carrier geometry and
+source-backed PNGs; current capture metadata is in the snapshot JSON. The
+October 31 filenames identify the design milestone. Physical gates are unchanged.

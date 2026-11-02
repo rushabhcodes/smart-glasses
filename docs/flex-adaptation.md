@@ -2,8 +2,10 @@
 
 This is the first **local, unrouted flex installation study**, based on the electrical
 checkpoint `27f7feab927d6391236d56bc8df1db0a380b343a`. The original rigid entrypoints
-remain available and are checked against frozen generated contracts. This branch
-has not been pushed or published. It does not replace the published rigid prototype.
+remain available and are checked against frozen generated contracts.
+The November publication update retains these limits and publishes the flex
+entrypoints separately from the legacy rigid prototype and standalone carrier.
+See [publication scope](publication-2026-11-02.md).
 
 Latest actual CAD: [assembled](progress/2026-10-31-flex-backing-assembled.png) and
 [exploded backing inspection](progress/2026-10-31-flex-backing-exploded.png), after

@@ -1,70 +1,51 @@
 # smart-glasses
 
-**WORK IN PROGRESS — schematic and mechanical fit prototype.** This is an unrouted,
-bench-unverified two-board design with a bulky fixed-open enclosure (approximately
-165 × 199 × 69 mm). Camera and protected-battery integration remain unresolved.
-It is not a validated wearable or a manufacturing-ready design.
+**WORK IN PROGRESS — unrouted flex-board study and separate camera-carrier review.**
+The glasses study has two independent populated flex boards with static temple
+curvature and provisional stiffened islands. The standalone OV5640 AF carrier is
+**not connected to either board or fitted into the frame**. No battery assembly
+is selected. Routing, flex fabrication data, thermal/RF/hinge testing and physical
+fit/function remain unresolved; this is not a manufacturing-ready wearable.
 
-The [compact battery/camera review](docs/compact-assembly-review.md) records the
-fit/current conflict and official interface-import results. The earlier RRC1120
-and donor OV5640 choices are superseded for wearable selection. No replacement
-battery or camera is yet integrated into the wearable boards or frame.
+The default tsCircuit preview is the [main flex board](src/flex/main-flex.circuit.tsx).
+The [secondary flex board](src/flex/secondary-flex.circuit.tsx),
+[standalone camera carrier](src/camera-carrier/camera-carrier.circuit.tsx) and
+[earlier fixed-open enclosure](src/enclosure/glasses-enclosure.circuit.tsx) are
+separate gallery entries. The earlier enclosure contains the rigid baseline and
+is not a fitted housing for the flex boards or new camera carrier. The original
+rigid main/secondary entrypoints remain in source for regression and comparison.
 
-The [OV5640 AF carrier review](docs/camera-carrier-review.md) adds a separate
-default-off 58 × 18 mm bench carrier with three controlled rails and translated
-signals. It is not connected to the wearable: AF supply, host sequence/monitor
-adapter, connector qualification and frame placement remain gates.
+Actual combined flex progress view (provisional front frame, no fitted temples,
+battery, camera or hinge cable):
 
-The tsCircuit package defaults to
-[`src/main-board/main-board.circuit.tsx`](src/main-board/main-board.circuit.tsx).
-The [secondary board](src/secondary-board/secondary-board.circuit.tsx) and
-[enclosure](src/enclosure/glasses-enclosure.circuit.tsx) remain separate source
-entrypoints; the main-board preview is not an assembled-glasses rendering.
-See the [actual assembled/exploded enclosure views](mechanical/glasses/README.md).
-The public registry release is a work-in-progress review checkpoint; detailed
-routing, battery/camera qualification, physical fit and electrical/thermal/RF/acoustic
-validation remain open.
+![Actual two-board flex installation study](docs/progress/2026-10-31-flex-backing-assembled.png)
 
-The **local flex-temple study** preserves the electronics on stiffened component
-islands with static bend zones and a continuous windowed main-core backing. See the [assessment and remaining qualification gates](docs/flex-adaptation.md),
-[actual combined CAD view](docs/progress/2026-10-31-flex-backing-assembled.png) and
-[exploded view](docs/progress/2026-10-31-flex-backing-exploded.png). It is unrouted and has
-not replaced the public rigid-board package; stackup, hinge life and frame fit remain unverified.
+The **58 × 18 × 0.8 mm standalone camera carrier** has three controlled rails,
+direction-controlled signal translation and a host-tested sequence contract.
+AF power, host controls/voltage monitoring, connector manufacturing qualification,
+OV5640 initialization and frame integration remain gates. Its own
+[assembled](docs/progress/2026-10-31-camera-carrier-assembled.png) and
+[exploded](docs/progress/2026-10-31-camera-carrier-exploded.png) views show only
+that independent review board.
 
-A tsCircuit/TypeScript research repository for custom AI-powered glasses with independent
-left and right temple PCBs. The intended assistant is **Meta's Muse personal agent**, using
-the official **Muse Gadgets SDK**. Inference stays off the glasses.
+See [flex study](docs/flex-adaptation.md), [camera-carrier review](docs/camera-carrier-review.md),
+[compact component review](docs/compact-assembly-review.md) and
+[November publication scope](docs/publication-2026-11-02.md). RRC1120 was rejected
+for wearable fit. CMB battery candidates have unverified assembled dimensions,
+continuous ratings, NTC and sample availability; supplier questions remain unsent.
 
-**Current state:** a compact **ESP32-S3R8 with external 8 MB flash** review circuit replaces the
-WROOM module. The left board implements the R8 core, nominal 3.3 V buck-boost,
-ICS-43434 microphone, capture/LED controls, RF connector and frame connector. The
-right implements charger/power switch, gauge, amplifier, touch and mating connector.
-The camera module/interface is still unresolved. See [current design and gates](docs/compact-design.md),
-[boot/memory review](docs/boot-memory-review.md) and [camera voltage review](docs/camera-voltage-review.md).
+The electronics retain **ESP32-S3R8**, external **8 MB flash** and in-package
+**8 MB PSRAM**, ICS-43434 microphone, U.FL antenna interface and TPS63070 regulator.
+The secondary board retains the BQ24075T charger, hardware switch, gauge,
+MAX98357A amplifier and touch input. Muse/cloud processing remains the intended
+assistant path. No physical assembly, flashing, camera image or wearable function
+has been demonstrated. Supplier observations are dated catalog checks, not an
+assembly allocation; see [core sourcing](docs/core-sourcing.md) and
+[boot/memory review](docs/boot-memory-review.md).
 
-The [glasses-shaped enclosure prototype](mechanical/glasses/README.md) uses supported tsCircuit
-printed parts around the actual boards. See the [assembled CAD view](docs/progress/2026-10-29-glasses-enclosure.png)
-and [exploded view](docs/progress/2026-10-29-glasses-exploded.png). It is a fixed-open fit prototype,
-with empty configurable camera/battery spaces and no measured wearer fit.
-
-The [board CAD snapshot](docs/progress/2026-10-28-contact-review.png) shows both review boards.
-Generate frozen PNG/GLB progress artifacts with `npm run render:progress` after building.
-
-No physical hardware has been assembled, flashed or tested. Detailed routing remains
-disabled. Provisional 80 × 18 mm / 100 × 18 mm four-layer outlines do not establish frame
-fit or fabrication readiness. The PICO comparison still has zero catalog stock; the current R8 and flash have dated
-LCSC stock observations. The October 28 audit verified dated positive JLC catalog stock for 45 PCB IDs; this is not an assembly allocation or quote. See
-[MCU sourcing tradeoffs](docs/core-sourcing.md).
-The old WROOM implementation is preserved at `codex/wroom-power-baseline` (`c45edaa`).
-
-Latest actual [clock/memory board snapshot](docs/progress/2026-10-28-clock-memory-review.png) and
-[provisional carrier CAD view](docs/progress/2026-10-28-carrier-access.png).
-Neither image establishes mechanical fit or hardware function.
-
-Candidate camera/pack evidence and the pending battery architecture decision are in
-[assembly candidates](docs/assembly-candidates.md); [power review](docs/electrical-power-review.md)
-records current and thermal constraints. [Routing scope](docs/routing-scope-and-plan.md)
-distinguishes the current stage setting from a user prohibition.
+The earlier [enclosure CAD and printable prototypes](mechanical/glasses/README.md)
+and [rigid-board review](docs/compact-design.md) remain available for comparison.
+The WROOM baseline is preserved at `codex/wroom-power-baseline` (`c45edaa`).
 
 ## Intended features
 

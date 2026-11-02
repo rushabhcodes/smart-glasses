@@ -423,13 +423,13 @@
   },
   "sourceMetadataReview": "Verified manufacturer supply/ground roles applied in carrier wrappers; original imported footprints and physical pin numbers unchanged",
   "snapshots": {
-    "capturedAtUTC": "2026-10-31T21:39:16.935Z",
+    "capturedAtUTC": "2026-11-02T05:44:27.446Z",
     "boardMm": [
       58,
       18,
       0.8
     ],
-    "sourceSha256": "7fe332c4440fb3e5138f267d87411ec77086db1f26ee9b390ead9d7cbb4be227",
+    "sourceSha256": "6b18263d28e8aa699a57e710e4027c37df25f89ca465bcf875ac6967d79ebaea",
     "requestedMeshes": 57,
     "loadedMeshes": 57,
     "uniqueAssets": 12,
@@ -474,5 +474,6 @@
       }
     ],
     "note": "Actual independent unrouted carrier CAD. Exploded component meshes separated 3mm from PCB; no camera head/flex/heat sink or glasses-frame fit is depicted. Imported models need dimensional qualification."
-  }
+  },
+  "publicationRevalidationAtUTC": "2026-11-02T05:48:03.102255+00:00"
 }

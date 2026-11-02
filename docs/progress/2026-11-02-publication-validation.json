@@ -1,0 +1,71 @@
+{
+  "checkedAtUTC": "2026-11-02T05:48:03.102255+00:00",
+  "designCheckpoint": "6330b6331ca5d9ef32b2ee32893566108261ae1c",
+  "targetVersion": "0.1.2",
+  "boards": {
+    "rigid_main": {
+      "sourceComponents": 76,
+      "errors": 0,
+      "warnings": {},
+      "sourceSha256": "94557ca851b51b3823694d59fced92ee3a13069d5e605338665e69f93f366c8d"
+    },
+    "rigid_secondary": {
+      "sourceComponents": 46,
+      "errors": 0,
+      "warnings": {},
+      "sourceSha256": "1f4aee57bab0abf2a652c67e27201211ff4166a1dd79be438365971b3bff50af"
+    },
+    "flex_main": {
+      "sourceComponents": 76,
+      "errors": 0,
+      "warnings": {},
+      "sourceSha256": "4dfa395bf74b06b34f7f50b9724e8c1d041bcd70f4d4ae20ec9b143ac8406367"
+    },
+    "flex_secondary": {
+      "sourceComponents": 46,
+      "errors": 0,
+      "warnings": {},
+      "sourceSha256": "269ba9f68ae0cfdec3cb098cfcd7d45f24b1dc22dfdc76de189f8978bdc75641"
+    },
+    "camera_carrier": {
+      "sourceComponents": 84,
+      "errors": 0,
+      "warnings": {
+        "schematic_sheet_styling_warning": 1,
+        "source_refdes_convention_warning": 1
+      },
+      "sourceSha256": "6b18263d28e8aa699a57e710e4027c37df25f89ca465bcf875ac6967d79ebaea"
+    },
+    "legacy_enclosure": {
+      "sourceComponents": 11,
+      "errors": 0,
+      "warnings": {},
+      "sourceSha256": "dff8a5e7a107218db0e9f4a4420b4657a40da15ee63b8c99bf1ce779de7a4961"
+    }
+  },
+  "passed": [
+    "TypeScript",
+    "six independent native circuit builds",
+    "legacy source/netlist/schematic/placement checks",
+    "main core and peripheral invariants",
+    "flex physical-pin/land-pattern equivalence and bend keepouts",
+    "backing union, structural spine and closed STL",
+    "camera contact/rail/direction/default-state/NC checks",
+    "strict C11 camera sequence timing/failure host harness",
+    "enclosure closed-mesh and static interference checks",
+    "actual flex and carrier CAD render generation"
+  ],
+  "renders": {
+    "flexModelsLoaded": 109,
+    "cameraModelsLoaded": 57,
+    "flexBatchCompletedAtUTC": "2026-11-02T05:45:05.860Z",
+    "carrierBatchCompletedAtUTC": "2026-11-02T05:44:27.446Z"
+  },
+  "notRun": [
+    "routing and manufacturing checks",
+    "hardware assembly or flashing",
+    "battery/camera integration and physical tests",
+    "wearer fit, hinge fatigue, RF/thermal/acoustic measurements"
+  ],
+  "publicationStatus": "prepublication validation; remote SHA and hosted release checked separately after push"
+}
