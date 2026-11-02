@@ -1,0 +1,216 @@
+{
+  "backend": "Manifold3D 3.3.2; same tsCircuit/JSCAD CSG plan; simplify tolerance 0.0001 mm; no hole filling",
+  "validation": "Trimesh 4.9.0 validates exact reloaded binary STL",
+  "parts": [
+    {
+      "name": "main-inner-envelope",
+      "boundsMm": [
+        [
+          62.15340042114258,
+          1.2999999523162842,
+          18.59000015258789
+        ],
+        [
+          74.300048828125,
+          22.700000762939453,
+          166.20179748535156
+        ]
+      ],
+      "sizeMm": [
+        12.146648406982422,
+        21.40000081062317,
+        147.61179733276367
+      ],
+      "connectedSolids": 1,
+      "watertight": true,
+      "windingConsistent": true,
+      "volumeMm3": 6103.238943055156,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "triangles": 1516,
+      "vertices": 760,
+      "finite": true,
+      "stlReview": {
+        "watertight": true,
+        "windingConsistent": true,
+        "volumeMm3": 6103.239297903531,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "triangles": 1516,
+        "vertices": 760,
+        "finite": true
+      },
+      "stlSHA256": "4bf987b225f5c2068a43dc0ebc7da564236c6c7cc480490d2a78c00539e02ea5",
+      "printBoundsMm": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          12.146648406982422,
+          21.400001525878906,
+          147.61180114746094
+        ]
+      ]
+    },
+    {
+      "name": "main-outer-envelope",
+      "boundsMm": [
+        [
+          65.391357421875,
+          1.2999999523162842,
+          18.59000015258789
+        ],
+        [
+          78.4601058959961,
+          22.700000762939453,
+          166.20179748535156
+        ]
+      ],
+      "sizeMm": [
+        13.068748474121094,
+        21.40000081062317,
+        147.61179733276367
+      ],
+      "connectedSolids": 1,
+      "watertight": true,
+      "windingConsistent": true,
+      "volumeMm3": 6103.413779846276,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "triangles": 1612,
+      "vertices": 808,
+      "finite": true,
+      "stlReview": {
+        "watertight": true,
+        "windingConsistent": true,
+        "volumeMm3": 6103.414092395488,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "triangles": 1612,
+        "vertices": 808,
+        "finite": true
+      },
+      "stlSHA256": "eccce6813f9ae6362bea3b583d5544331d18a9084a91f336a6c795480874565a",
+      "printBoundsMm": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          13.068748474121094,
+          21.400001525878906,
+          147.61180114746094
+        ]
+      ]
+    },
+    {
+      "name": "secondary-inner-envelope",
+      "boundsMm": [
+        [
+          -75.0250015258789,
+          1.2999999523162842,
+          18.59000015258789
+        ],
+        [
+          -56.506919860839844,
+          22.700000762939453,
+          166.20179748535156
+        ]
+      ],
+      "sizeMm": [
+        18.518081665039062,
+        21.40000081062317,
+        147.61179733276367
+      ],
+      "connectedSolids": 1,
+      "watertight": true,
+      "windingConsistent": true,
+      "volumeMm3": 6395.666918720778,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "triangles": 1652,
+      "vertices": 828,
+      "finite": true,
+      "stlReview": {
+        "watertight": true,
+        "windingConsistent": true,
+        "volumeMm3": 6395.667278085006,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "triangles": 1652,
+        "vertices": 828,
+        "finite": true
+      },
+      "stlSHA256": "6b217656452810c0e186cf498338566bbeafd6bbf7b60bad938ad7a1befb694a",
+      "printBoundsMm": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          18.518081665039062,
+          21.400001525878906,
+          147.61180114746094
+        ]
+      ]
+    },
+    {
+      "name": "secondary-outer-envelope",
+      "boundsMm": [
+        [
+          -79.91000366210938,
+          1.2999999523162842,
+          18.59000015258789
+        ],
+        [
+          -60.40730285644531,
+          22.700000762939453,
+          166.20179748535156
+        ]
+      ],
+      "sizeMm": [
+        19.502700805664062,
+        21.40000081062317,
+        147.61179733276367
+      ],
+      "connectedSolids": 1,
+      "watertight": true,
+      "windingConsistent": true,
+      "volumeMm3": 6397.093423453567,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "triangles": 1712,
+      "vertices": 858,
+      "finite": true,
+      "stlReview": {
+        "watertight": true,
+        "windingConsistent": true,
+        "volumeMm3": 6397.093749099423,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "triangles": 1712,
+        "vertices": 858,
+        "finite": true
+      },
+      "stlSHA256": "d38d1e69c97361b3d2e9b2f9731df039d14c62432c71f59583845237a2b17f48",
+      "printBoundsMm": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          19.502700805664062,
+          21.400001525878906,
+          147.61180114746094
+        ]
+      ]
+    }
+  ],
+  "interference": [],
+  "interferenceChecked": false
+}

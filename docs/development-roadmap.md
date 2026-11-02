@@ -25,6 +25,7 @@ Current status is detailed in [compact design](compact-design.md).
 - [x] First local four-layer flex installation study: original electrical contracts preserved, two/three component islands, static bend keepouts and actual combined CAD views.
 - [x] Correct main-core backing to one continuous windowed pattern; check actual native union, 0.6 mm structural spine and closed single-body review STL.
 - [x] Local 17 mm slim-board variant with unchanged functional pin connections, low-profile ACH headers, continuous backing and measured CAD; see [form-factor review](slim-temple-review.md).
+- [x] Assess the actual folded slim CAD against old arm cavities; add static split envelopes with measured clearances and conservative solid-containment checks. See [fit review](slim-housing-fit.md).
 - [ ] Qualify ACH assembly sourcing, mating harness/polarity, wire clearance/current/temperature rise and a fitted slim temple housing.
 - [ ] Qualify flex stackup, main-core backing/rigid-flex support, routing across necks, coverlay/stiffener fabrication data and replaceable hinge interconnect.
 - [ ] Measure wearer/frame fit; qualify enclosure material, optics, fastening, cables and thermal/acoustic behavior.

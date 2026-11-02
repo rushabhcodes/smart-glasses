@@ -1,0 +1,27 @@
+{
+  "scope": "Static arm-envelope geometric fit review; no physical qualification",
+  "geometryCheckpoint": "ffe03752654a2a707a86afd922aae0e4a0d26684",
+  "sources": {
+    "src/slim/housing-profile.json": "53bb5e0ed35a7f5521d10a7e25bf27554601abd0e2e9b923b6a0ba4b4c0039d0",
+    "src/slim/slim-housing.tsx": "1173c1ac60e353f84bbba31ee4e1acaef9aee58ec05fb0fec0ff34f392004025",
+    "src/slim/slim-housing.circuit.tsx": "e629f2c74f85a22259e994261cbc4e20c598d00e24da92568f75c5bb30ae955a",
+    "scripts/plan-slim-housing.py": "88e6019a80aead523f2392af20d433d2e4f2769caac4bf0ff25d4c29d52636c3",
+    "scripts/build-slim-housing.ts": "89c0c27328b5b5ab48f53ba874ae79e1dc7e5effdd0fc222804f397ad96b9914",
+    "scripts/check-slim-housing.py": "1d72cdf0d765766675beeec8b1b04803776b146d0a220a55ad94563ad2d572d7",
+    "scripts/export-glasses-meshes.py": "4a3917a5dcfb4b2f7adcf1382ce22fe3937ca848a5c2e75e5389bbf47ecced18"
+  },
+  "assembled": {
+    "path": "docs/progress/2026-11-02-slim-housing-assembled.png",
+    "width": 1200,
+    "height": 900,
+    "sha256": "b3f4290850331759e04181950e7630be025c193ee7bb14e8c3359254f8b5ccbd",
+    "byte_length": 69612
+  },
+  "exploded": {
+    "path": "docs/progress/2026-11-02-slim-housing-exploded.png",
+    "width": 1200,
+    "height": 900,
+    "sha256": "e8c2130cdfaa1f727e1ef3f0eaf3ad01b81b1d9a62e5187dbd9d3404d3089c1a",
+    "byte_length": 105689
+  }
+}

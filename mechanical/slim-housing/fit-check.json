@@ -1,0 +1,60 @@
+{
+  "method": "Actual transformed CAD triangles clipped into slabs; conservative containing solids checked against exported housing CSG solids.",
+  "parts": 4,
+  "exportedStlsClosedAndOriented": true,
+  "componentSlabIntersections": [
+    {
+      "part": "main-inner-envelope",
+      "cadSide": "main",
+      "intersectionVolumeMm3": 0.0
+    },
+    {
+      "part": "main-inner-envelope",
+      "cadSide": "secondary",
+      "intersectionVolumeMm3": 0.0
+    },
+    {
+      "part": "main-outer-envelope",
+      "cadSide": "main",
+      "intersectionVolumeMm3": 0.0
+    },
+    {
+      "part": "main-outer-envelope",
+      "cadSide": "secondary",
+      "intersectionVolumeMm3": 0.0
+    },
+    {
+      "part": "secondary-inner-envelope",
+      "cadSide": "main",
+      "intersectionVolumeMm3": 0.0
+    },
+    {
+      "part": "secondary-inner-envelope",
+      "cadSide": "secondary",
+      "intersectionVolumeMm3": 0.0
+    },
+    {
+      "part": "secondary-outer-envelope",
+      "cadSide": "main",
+      "intersectionVolumeMm3": 0.0
+    },
+    {
+      "part": "secondary-outer-envelope",
+      "cadSide": "secondary",
+      "intersectionVolumeMm3": 0.0
+    }
+  ],
+  "housingPartIntersections": 0,
+  "referenceFrontIntersections": 0,
+  "minimumWallNormalMm": 1.6,
+  "minimumCoverSeamNormalMm": 0.24416111667627247,
+  "notValidated": [
+    "physical fit",
+    "retention/fasteners/front attachment",
+    "component and antenna mating tolerances",
+    "actual harness",
+    "camera/pack integration",
+    "thermal/acoustic/hinge behavior",
+    "manufacturing process"
+  ]
+}

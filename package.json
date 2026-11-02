@@ -56,7 +56,11 @@
     "build:slim": "npm run build:slim:main && npm run build:slim:secondary",
     "plan:slim-backing": "node scripts/plan-slim.mjs backing && python scripts/refine-flex-backing.py src/slim/layout.json mechanical/slim --connected-core",
     "check:slim": "node scripts/check-slim.mjs && python scripts/check-flex-backing.py src/slim/layout.json slim mechanical/slim",
-    "render:slim": "bun scripts/render-flex-progress.ts dist/slim-review slim"
+    "render:slim": "bun scripts/render-flex-progress.ts dist/slim-review slim",
+    "plan:slim-housing": "python scripts/plan-slim-housing.py",
+    "build:slim-housing": "tsci build src/slim/slim-housing.circuit.tsx --ignore-config --routing-disabled --disable-parts-engine",
+    "export:slim-housing": "bun scripts/build-slim-housing.ts && python scripts/check-slim-housing.py",
+    "render:slim-housing": "bun scripts/render-flex-progress.ts dist/slim-housing-review slim --housing-fit"
   },
   "dependencies": {
     "react": "19.3.1"

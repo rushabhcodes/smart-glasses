@@ -4,6 +4,7 @@ import { convertCircuitJsonTo3D, convertSceneToGLTF } from "circuit-json-to-gltf
 import { renderGLTFToPNGFromGLB } from "poppygl"
 const variant = process.argv[3] ?? "flex"
 if (!["flex", "slim"].includes(variant)) throw Error("Expected flex or slim variant")
+const housingFit = process.argv.includes("--housing-fit")
 const plan = JSON.parse(await readFile(`src/${variant}/layout.json`, "utf8"))
 const out = process.argv[2] ?? "dist/flex-review"
 await mkdir(out, { recursive: true })
@@ -139,6 +140,13 @@ for (const side of ["main", "secondary"] as const) {
   await writeFile(`${out}/${side}.circuit.json`, bytes)
 }
 // Reuse only our frozen, existing front-frame solids; old rigid board trays are not shown.
+if (housingFit) {
+  const envelopes=JSON.parse(await readFile("dist/slim-housing-review/world-triangles.json","utf8"))
+  for (const [name,tris] of Object.entries(envelopes)) bodies.push({
+    tris,label:`envelope:${name}`,side:name.startsWith("main")?"main":"secondary",stiff:false,
+    color:name.includes("outer")?"#2d525e":"#46717c"
+  })
+}
 const frame = JSON.parse(await readFile("dist/mechanical/glasses/world-triangles.json", "utf8"))
 for (const [name, color] of [
   ["front-frame", "#183e4b"],
@@ -154,7 +162,10 @@ for (const [name, color] of [
   })
 for (const mode of ["assembled", "exploded"]) {
   const boxes = bodies.map((b) => {
-    const dx = mode === "exploded" && b.stiff ? (b.side === "main" ? -6 : 6) : 0
+    const dx = mode === "exploded"
+      ? b.stiff ? (b.side === "main" ? -6 : 6)
+        : b.label.startsWith("envelope:") && b.label.includes("outer") ? (b.side === "main" ? 20 : -20) : 0
+      : 0
     return sceneBox(
       b.tris.map((t: number[][]) => t.map((p) => [p[0] + dx, p[1], p[2]])),
       b.label,
@@ -184,6 +195,8 @@ await writeFile(
     {
       savedAtUTC: new Date().toISOString(),
       boards: reports,
+      housingFit,
+      housingNote: housingFit ? "Static split envelopes fitted to actual folded CAD with stated allowances; retention, fastening, port access, harness, battery, camera and physical fit remain unfinished." : undefined,
       note: "Actual native pcbbend CAD; static curvature only. Stiffeners translated 6 mm for exploded inspection. Front frame is the earlier provisional reference; trays/hinge/pack/camera assembly are not fitted. JST ACH models, when present, are manufacturer-backed mated bounding envelopes, not detailed vendor models."
     },
     null,

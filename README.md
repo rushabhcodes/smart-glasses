@@ -28,6 +28,13 @@ housing. The original entrypoints and published 0.1.2 preview are preserved. See
 actual [assembled](docs/progress/2026-11-02-slim-temples-assembled.png) /
 [exploded](docs/progress/2026-11-02-slim-temples-exploded.png) views.
 
+The subsequent [static arm-envelope assessment](docs/slim-housing-fit.md) checks
+those folded boards against the old cavities and adds original split CAD envelopes
+with explicit wall, component and cable allowances. Actual
+[assembled](docs/progress/2026-11-02-slim-housing-assembled.png) /
+[exploded](docs/progress/2026-11-02-slim-housing-exploded.png) views are a geometric
+fit study; retention, attachment, port access and physical fit remain unfinished.
+
 The **58 × 18 × 0.8 mm standalone camera carrier** has three controlled rails,
 direction-controlled signal translation and a host-tested sequence contract.
 AF power, host controls/voltage monitoring, connector manufacturing qualification,

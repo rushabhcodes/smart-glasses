@@ -1,5 +1,8 @@
 # Local slimmer temple-board study — 2 November 2026
 
+This is the board-only checkpoint. The later [arm-envelope assessment](slim-housing-fit.md)
+adds separate provisional housing geometry and actual folded-CAD containment checks.
+
 This local revision preserves the ESP32-S3R8 camera/Wi-Fi/audio architecture and
 both independent flex boards. It narrows their component islands and replaces
 three tall headers. It is separate from the published **0.1.2 / 7aef378** release.

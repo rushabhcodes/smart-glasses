@@ -1,0 +1,32 @@
+{
+  "savedAtUTC": "2026-11-02T07:08:59.768Z",
+  "boards": [
+    {
+      "side": "main",
+      "sourceComponents": 76,
+      "loadedModels": 66,
+      "requestedModels": 66,
+      "bends": 1,
+      "stiffenerTiles": 26,
+      "flatLengthMm": 97.8921501500001,
+      "flatWidthMm": 17,
+      "sourceSHA256": "d0ab1df26be4f10670616caeec29ff2c4b2433ac3c058bafe316c2a92afc58fe",
+      "folded": true
+    },
+    {
+      "side": "secondary",
+      "sourceComponents": 46,
+      "loadedModels": 43,
+      "requestedModels": 43,
+      "bends": 2,
+      "stiffenerTiles": 9,
+      "flatLengthMm": 134.5371307499998,
+      "flatWidthMm": 17,
+      "sourceSHA256": "dad3cb6cccb1511a9a0342d3dafcda03e97d5a30a789d67796b4544ad27abf49",
+      "folded": true
+    }
+  ],
+  "housingFit": true,
+  "housingNote": "Static split envelopes fitted to actual folded CAD with stated allowances; retention, fastening, port access, harness, battery, camera and physical fit remain unfinished.",
+  "note": "Actual native pcbbend CAD; static curvature only. Stiffeners translated 6 mm for exploded inspection. Front frame is the earlier provisional reference; trays/hinge/pack/camera assembly are not fitted. JST ACH models, when present, are manufacturer-backed mated bounding envelopes, not detailed vendor models."
+}
