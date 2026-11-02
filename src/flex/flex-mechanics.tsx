@@ -6,12 +6,12 @@ export function FlexMechanics({ side }: { side: FlexSide }) {
   return (
     <>
       {b.bends.map((bend) => (
-        <group key={bend.name} name={`${bend.name}_MECHANICAL`} pcbX={0} pcbY={0}>
+        <group key={bend.name} name={`${bend.name}_MECHANICAL`} pcbX={bend.x} pcbY={0}>
           <pcbbend
             name={bend.name}
-            x1={bend.x}
+            x1={0}
             y1={-s.neckWidth / 2}
-            x2={bend.x}
+            x2={0}
             y2={s.neckWidth / 2}
             bendAngle={bend.angle}
             bendRadius={bend.radius}
@@ -19,7 +19,7 @@ export function FlexMechanics({ side }: { side: FlexSide }) {
           />
           <keepout
             shape="rect"
-            pcbX={bend.x}
+            pcbX={0}
             pcbY={0}
             width={bend.zoneWidth}
             height={s.islandHeight}

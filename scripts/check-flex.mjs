@@ -55,6 +55,14 @@ for (const side of ["main", "secondary"]) {
     near(now.y, old.y, `${side}: via Y`)
     for (const key of ["hole_diameter", "outer_diameter", "net"]) assert.equal(now[key], old[key])
   }
+  for (const bend of all("pcb_bend")) {
+    const group = all("pcb_group").find(g => g.pcb_group_id === bend.pcb_group_id)
+    const zone = all("pcb_keepout").find(k => k.pcb_group_id === bend.pcb_group_id)
+    assert.ok(group && zone, `${side}: mechanical group or keepout missing`)
+    near(group.center.x, zone.center.x, `${side}:${bend.name} diagnostic group X`)
+    near(group.center.y, zone.center.y, `${side}:${bend.name} diagnostic group Y`)
+    near(bend.start.x, zone.center.x, `${side}:${bend.name} bend X`)
+  }
   const board = all("pcb_board")[0]
   assert.equal(all("pcb_board").length, 1)
   assert.equal(board.material, "flex")
